@@ -1,0 +1,90 @@
+# made by ChatGPT
+
+portals1 = [
+    {"state": "Buenos Aires", "city": "La Plata", "newsportalname": "El Día", "newsportalurl": "https://www.eldia.com/"},
+    {"state": "Buenos Aires", "city": "Mar del Plata", "newsportalname": "La Capital", "newsportalurl": "https://www.lacapitalmdp.com/"},
+    {"state": "CABA", "city": "Buenos Aires", "newsportalname": "Clarín", "newsportalurl": "https://www.clarin.com/"},
+    {"state": "Catamarca", "city": "San Fernando del Valle de Catamarca", "newsportalname": "El Esquiú", "newsportalurl": "https://www.elesquiu.com/"},
+    {"state": "Catamarca", "city": "San Isidro", "newsportalname": "El Sanisidrense", "newsportalurl": "https://www.elsanisidrense.com.ar/"},
+    {"state": "Chaco", "city": "Resistencia", "newsportalname": "Diario Norte", "newsportalurl": "https://www.diarionorte.com/"},
+    {"state": "Chaco", "city": "Sáenz Peña", "newsportalname": "Diario Chaco", "newsportalurl": "https://www.diariochaco.com/"},
+    {"state": "Chubut", "city": "Rawson", "newsportalname": "El Chubut", "newsportalurl": "https://www.elchubut.com.ar/"},
+    {"state": "Chubut", "city": "Comodoro Rivadavia", "newsportalname": "Crónica", "newsportalurl": "https://www.cronica.com.ar/"},
+    {"state": "Córdoba", "city": "Córdoba", "newsportalname": "La Voz", "newsportalurl": "https://www.lavoz.com.ar/"},
+    {"state": "Córdoba", "city": "Río Cuarto", "newsportalname": "Puntal", "newsportalurl": "https://www.puntal.com.ar/"},
+    {"state": "Corrientes", "city": "Corrientes", "newsportalname": "Época", "newsportalurl": "https://www.ellitoral.com.ar/corrientes/"},
+    {"state": "Corrientes", "city": "Goya", "newsportalname": "Goya en Noticias", "newsportalurl": "https://www.goyaennoticias.com.ar/"},
+    {"state": "Entre Ríos", "city": "Paraná", "newsportalname": "El Once", "newsportalurl": "https://www.elonce.com/"},
+    {"state": "Entre Ríos", "city": "Concordia", "newsportalname": "Diario Río Uruguay", "newsportalurl": "https://www.diarioriouruguay.com.ar/"},
+    {"state": "Formosa", "city": "Formosa", "newsportalname": "El Comercial", "newsportalurl": "https://www.elcomercial.com.ar/"},
+    {"state": "Formosa", "city": "Clorinda", "newsportalname": "Expres Diario", "newsportalurl": "https://www.expresdiario.com.ar/"},
+    {"state": "Jujuy", "city": "San Salvador de Jujuy", "newsportalname": "El Tribuno Jujuy", "newsportalurl": "https://www.eltribuno.com/jujuy/"},
+    {"state": "Jujuy", "city": "Palpalá", "newsportalname": "Jujuy Al Momento", "newsportalurl": "https://www.jujuyalmomento.com/"},
+    {"state": "La Pampa", "city": "Santa Rosa", "newsportalname": "Diario Textual", "newsportalurl": "https://www.diariotextual.com/"},
+    {"state": "La Pampa", "city": "General Pico", "newsportalname": "Infopico", "newsportalurl": "https://www.infopico.com/"},
+    {"state": "La Rioja", "city": "La Rioja", "newsportalname": "El Independiente", "newsportalurl": "https://www.elindependiente.com.ar/"},
+    {"state": "La Rioja", "city": "Chilecito", "newsportalname": "El Independiente Chilecito", "newsportalurl": "https://elindependiente.com.ar/secciones/chilecito/"},
+    {"state": "Mendoza", "city": "Mendoza", "newsportalname": "Los Andes", "newsportalurl": "https://www.losandes.com.ar/"},
+    {"state": "Mendoza", "city": "San Rafael", "newsportalname": "Diario San Rafael", "newsportalurl": "https://diariosanrafael.com.ar/"},
+    {"state": "Misiones", "city": "Posadas", "newsportalname": "Primera Edición", "newsportalurl": "https://www.primeraedicion.com.ar/"},
+    {"state": "Misiones", "city": "Oberá", "newsportalname": "El Territorio", "newsportalurl": "https://www.elterritorio.com.ar/"},
+    {"state": "Neuquén", "city": "Neuquén", "newsportalname": "LM Neuquén", "newsportalurl": "https://www.lmneuquen.com/"},
+    {"state": "Neuquén", "city": "Plottier", "newsportalname": "Minuto Neuquén", "newsportalurl": "https://www.minutoneuquen.com/"},
+    {"state": "Río Negro", "city": "Viedma", "newsportalname": "Noticias de la Costa", "newsportalurl": "https://www.noticiasdelacosta.com.ar/"},
+    {"state": "Río Negro", "city": "Bariloche", "newsportalname": "El Cordillerano", "newsportalurl": "https://www.elcordillerano.com.ar/"},
+    {"state": "Salta", "city": "Salta", "newsportalname": "El Tribuno", "newsportalurl": "https://www.eltribuno.com/salta/"},
+    {"state": "Salta", "city": "Orán", "newsportalname": "El Oranense", "newsportalurl": "http://eloranense.com/"},
+    {"state": "San Juan", "city": "San Juan", "newsportalname": "Diario de Cuyo", "newsportalurl": "https://www.diariodecuyo.com.ar/"},
+    {"state": "San Juan", "city": "Rivadavia", "newsportalname": "Tiempo de San Juan", "newsportalurl": "https://www.tiempodesanjuan.com/"},
+    {"state": "San Luis", "city": "San Luis", "newsportalname": "El Diario de la República", "newsportalurl": "https://www.eldiariodelarepublica.com/"},
+    {"state": "San Luis", "city": "Villa Mercedes", "newsportalname": "Diario La Ventana", "newsportalurl": "https://www.diariolaventana.com/"},
+    {"state": "Santa Cruz", "city": "Río Gallegos", "newsportalname": "Tiempo Sur", "newsportalurl": "https://www.tiemposur.com.ar/"},
+    {"state": "Santa Cruz", "city": "Caleta Olivia", "newsportalname": "Voces y Apuntes", "newsportalurl": "http://www.vocesyapuntes.com/"},
+    {"state": "Santa Fe", "city": "Santa Fe", "newsportalname": "El Litoral", "newsportalurl": "https://www.ellitoral.com/"},
+    {"state": "Santa Fe", "city": "Rosario", "newsportalname": "La Capital", "newsportalurl": "https://www.lacapital.com.ar/"},
+    {"state": "Santiago del Estero", "city": "Santiago del Estero", "newsportalname": "El Liberal", "newsportalurl": "https://www.elliberal.com.ar/"},
+    {"state": "Santiago del Estero", "city": "La Banda", "newsportalname": "Nuevo Diario Web", "newsportalurl": "https://www.nuevodiarioweb.com.ar/"},
+    {"state": "Tierra del Fuego", "city": "Ushuaia", "newsportalname": "El Diario del Fin del Mundo", "newsportalurl": "https://www.eldiariodelfindelmundo.com/"},
+    {"state": "Tierra del Fuego", "city": "Río Grande", "newsportalname": "El Sureño", "newsportalurl": "https://www.surenio.com.ar/"},
+    {"state": "Tucumán", "city": "San Miguel de Tucumán", "newsportalname": "La Gaceta", "newsportalurl": "https://www.lagaceta.com.ar/"},
+    {"state": "Tucumán", "city": "Tafí Viejo", "newsportalname": "Tucumán Noticias", "newsportalurl": "https://www.tucumanoticias.com.ar/"}
+]
+
+portals2 = [
+    {"state": "Buenos Aires", "city": "Buenos Aires", "newsportalname": "Infobae", "newsportalurl": "https://www.infobae.com/"},
+    {"state": "Buenos Aires", "city": "Buenos Aires", "newsportalname": "La Nación", "newsportalurl": "https://www.lanacion.com.ar/"},
+    {"state": "Buenos Aires", "city": "Buenos Aires", "newsportalname": "Página 12", "newsportalurl": "https://www.pagina12.com.ar/"},
+    {"state": "Buenos Aires", "city": "Buenos Aires", "newsportalname": "El Cronista", "newsportalurl": "https://www.cronista.com/"},
+    {"state": "Buenos Aires", "city": "Buenos Aires", "newsportalname": "Perfil", "newsportalurl": "https://www.perfil.com/"},
+    {"state": "Buenos Aires", "city": "Buenos Aires", "newsportalname": "Diario Popular", "newsportalurl": "https://www.diariopopular.com.ar/"},
+    {"state": "Buenos Aires", "city": "La Plata", "newsportalname": "El Día", "newsportalurl": "https://www.eldia.com/"},
+    {"state": "Buenos Aires", "city": "Buenos Aires", "newsportalname": "La Voz", "newsportalurl": "https://www.lavoz.com.ar/"},
+    {"state": "Buenos Aires", "city": "Buenos Aires", "newsportalname": "La Gaceta", "newsportalurl": "https://www.lagaceta.com.ar/"},
+    {"state": "Córdoba", "city": "Córdoba", "newsportalname": "La Voz del Interior", "newsportalurl": "https://www.lavoz.com.ar/"},
+    {"state": "Córdoba", "city": "Córdoba", "newsportalname": "Día a Día", "newsportalurl": "https://diaadia.com.ar/"},
+    {"state": "Córdoba", "city": "Carlos Paz", "newsportalname": "El Diario de Carlos Paz", "newsportalurl": "https://www.eldiariodecarlospaz.com.ar/"},
+    {"state": "Santa Fe", "city": "Santa Fe", "newsportalname": "El Litoral", "newsportalurl": "https://www.ellitoral.com/"},
+    {"state": "Santa Fe", "city": "Rosario", "newsportalname": "La Capital", "newsportalurl": "https://www.lacapital.com.ar/"},
+    {"state": "Santa Fe", "city": "Rosario", "newsportalname": "Rosario3", "newsportalurl": "https://www.rosario3.com/"},
+    {"state": "Mendoza", "city": "Mendoza", "newsportalname": "Los Andes", "newsportalurl": "https://www.losandes.com.ar/"},
+    {"state": "Mendoza", "city": "Mendoza", "newsportalname": "El Sol", "newsportalurl": "https://www.elsol.com.ar/"},
+    {"state": "Tucumán", "city": "San Miguel de Tucumán", "newsportalname": "La Gaceta", "newsportalurl": "https://www.lagaceta.com.ar/"},
+    {"state": "Tucumán", "city": "San Miguel de Tucumán", "newsportalname": "El Tucumano", "newsportalurl": "https://www.eltucumano.com/"},
+    {"state": "Entre Ríos", "city": "Paraná", "newsportalname": "El Día", "newsportalurl": "https://www.eldiaonline.com/"},
+    {"state": "Entre Ríos", "city": "Paraná", "newsportalname": "El Entre Ríos", "newsportalurl": "https://www.elentrerios.com/"},
+    {"state": "Chaco", "city": "Resistencia", "newsportalname": "Diario Norte", "newsportalurl": "https://www.diarionorte.com/"},
+    {"state": "Chaco", "city": "Resistencia", "newsportalname": "Chaco Día por Día", "newsportalurl": "https://www.chacodiapordia.com/"},
+    {"state": "Corrientes", "city": "Corrientes", "newsportalname": "El Litoral", "newsportalurl": "https://www.ellitoral.com.ar/"},
+    {"state": "Corrientes", "city": "Corrientes", "newsportalname": "Época", "newsportalurl": "https://www.diarioepoca.com/"},
+    {"state": "Neuquén", "city": "Neuquén", "newsportalname": "LM Neuquén", "newsportalurl": "https://www.lmneuquen.com/"},
+    {"state": "Río Negro", "city": "Viedma", "newsportalname": "Río Negro", "newsportalurl": "https://www.rionegro.com.ar/"},
+    {"state": "Río Negro", "city": "Neuquén", "newsportalname": "La Mañana de Neuquén", "newsportalurl": "https://www.lmneuquen.com/"}
+]
+
+urls = [item['newsportalurl'] for item in portals1]
+
+import pandas as pd
+# Define the DataFrame
+df = pd.DataFrame(portals2)
+# Write to CSV file
+df.to_csv('portals2.csv', index=False)

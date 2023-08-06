@@ -21,3 +21,6 @@ datasets
 retro-pytorch
 sacremoses
 newspaper3k
+news-please
+langchain
+clean-text
