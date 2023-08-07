@@ -1,0 +1,74 @@
+WARNING:newspaper.parsers:fromstring() returned an invalid string: ...
+WARNING:newspaper.source:Source https://www.analisisdigital.com/ parse error.
+CRITICAL:newspaper.network:[REQUEST FAILED] HTTPSConnectionPool(host='www.analisisdigital.com', port=443): Max retries exceeded with url: / (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x7f3f96559a90>, 'Connection to www.analisisdigital.com timed out. (connect timeout=7)'))
+WARNING:newspaper.source:Deleting category https://www.analisisdigital.com/ from source https://www.analisisdigital.com/ due to download error
+CRITICAL:newspaper.network:[REQUEST FAILED] HTTPSConnectionPool(host='www.analisisdigital.com', port=443): Max retries exceeded with url: /feeds (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x7f3f96520760>, 'Connection to www.analisisdigital.com timed out. (connect timeout=7)'))
+CRITICAL:newspaper.network:[REQUEST FAILED] HTTPSConnectionPool(host='www.analisisdigital.com', port=443): Max retries exceeded with url: /rss (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x7f3f9650d970>, 'Connection to www.analisisdigital.com timed out. (connect timeout=7)'))
+CRITICAL:newspaper.network:[REQUEST FAILED] HTTPSConnectionPool(host='www.analisisdigital.com', port=443): Max retries exceeded with url: /feed (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x7f3f965629d0>, 'Connection to www.analisisdigital.com timed out. (connect timeout=7)'))
+ERROR:root:An error occurred while processing https://www.analisisdigital.com/: 'Configuration' object has no attribute 'get'
+WARNING:newspaper.parsers:fromstring() returned an invalid string: ...
+WARNING:newspaper.source:Source https://www.analisisdigital.com/ parse error.
+CRITICAL:newspaper.network:[REQUEST FAILED] HTTPSConnectionPool(host='www.analisisdigital.com', port=443): Max retries exceeded with url: / (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x7f81ea961160>, 'Connection to www.analisisdigital.com timed out. (connect timeout=7)'))
+WARNING:newspaper.source:Deleting category https://www.analisisdigital.com/ from source https://www.analisisdigital.com/ due to download error
+CRITICAL:newspaper.network:[REQUEST FAILED] HTTPSConnectionPool(host='www.analisisdigital.com', port=443): Max retries exceeded with url: /feed (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x7f81ea91eb80>, 'Connection to www.analisisdigital.com timed out. (connect timeout=7)'))
+CRITICAL:newspaper.network:[REQUEST FAILED] HTTPSConnectionPool(host='www.analisisdigital.com', port=443): Max retries exceeded with url: /rss (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x7f81ea961160>, 'Connection to www.analisisdigital.com timed out. (connect timeout=7)'))
+CRITICAL:newspaper.network:[REQUEST FAILED] HTTPSConnectionPool(host='www.analisisdigital.com', port=443): Max retries exceeded with url: /feeds (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x7f81ea91e970>, 'Connection to www.analisisdigital.com timed out. (connect timeout=7)'))
+ERROR:root:An error occurred while processing https://www.analisisdigital.com/: 'Configuration' object has no attribute 'get'
+WARNING:newspaper.parsers:fromstring() returned an invalid string: ...
+WARNING:newspaper.source:Source https://www.analisisdigital.com/ parse error.
+CRITICAL:newspaper.network:[REQUEST FAILED] HTTPSConnectionPool(host='www.analisisdigital.com', port=443): Max retries exceeded with url: / (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x7f4ebde21dc0>, 'Connection to www.analisisdigital.com timed out. (connect timeout=7)'))
+WARNING:newspaper.source:Deleting category https://www.analisisdigital.com/ from source https://www.analisisdigital.com/ due to download error
+CRITICAL:newspaper.network:[REQUEST FAILED] HTTPSConnectionPool(host='www.analisisdigital.com', port=443): Max retries exceeded with url: /rss (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x7f4ebdddfd90>, 'Connection to www.analisisdigital.com timed out. (connect timeout=7)'))
+CRITICAL:newspaper.network:[REQUEST FAILED] HTTPSConnectionPool(host='www.analisisdigital.com', port=443): Max retries exceeded with url: /feed (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x7f4ebddd7b80>, 'Connection to www.analisisdigital.com timed out. (connect timeout=7)'))
+CRITICAL:newspaper.network:[REQUEST FAILED] HTTPSConnectionPool(host='www.analisisdigital.com', port=443): Max retries exceeded with url: /feeds (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x7f4ebde1af70>, 'Connection to www.analisisdigital.com timed out. (connect timeout=7)'))
+ERROR:root:An error occurred while processing https://www.analisisdigital.com/: 'Configuration' object has no attribute 'get'
+WARNING:newspaper.parsers:fromstring() returned an invalid string: ...
+WARNING:newspaper.source:Source https://www.analisisdigital.com/ parse error.
+CRITICAL:newspaper.network:[REQUEST FAILED] HTTPSConnectionPool(host='www.analisisdigital.com', port=443): Max retries exceeded with url: / (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x7fd9a99a0c40>, 'Connection to www.analisisdigital.com timed out. (connect timeout=7)'))
+WARNING:newspaper.source:Deleting category https://www.analisisdigital.com/ from source https://www.analisisdigital.com/ due to download error
+CRITICAL:newspaper.network:[REQUEST FAILED] HTTPSConnectionPool(host='www.analisisdigital.com', port=443): Max retries exceeded with url: /rss (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x7fd9a99a0c40>, 'Connection to www.analisisdigital.com timed out. (connect timeout=7)'))
+CRITICAL:newspaper.network:[REQUEST FAILED] HTTPSConnectionPool(host='www.analisisdigital.com', port=443): Max retries exceeded with url: /feeds (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x7fd9a995f880>, 'Connection to www.analisisdigital.com timed out. (connect timeout=7)'))
+CRITICAL:newspaper.network:[REQUEST FAILED] HTTPSConnectionPool(host='www.analisisdigital.com', port=443): Max retries exceeded with url: /feed (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x7fd9a995fca0>, 'Connection to www.analisisdigital.com timed out. (connect timeout=7)'))
+ERROR:root:An error occurred while processing https://www.analisisdigital.com/: 'Configuration' object has no attribute 'get'
+WARNING:newspaper.parsers:fromstring() returned an invalid string: ...
+WARNING:newspaper.source:Source https://www.analisisdigital.com/ parse error.
+CRITICAL:newspaper.network:[REQUEST FAILED] HTTPSConnectionPool(host='www.analisisdigital.com', port=443): Max retries exceeded with url: / (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x7f68177e1100>, 'Connection to www.analisisdigital.com timed out. (connect timeout=7)'))
+WARNING:newspaper.source:Deleting category https://www.analisisdigital.com/ from source https://www.analisisdigital.com/ due to download error
+CRITICAL:newspaper.network:[REQUEST FAILED] HTTPSConnectionPool(host='www.analisisdigital.com', port=443): Max retries exceeded with url: /feed (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x7f6817797910>, 'Connection to www.analisisdigital.com timed out. (connect timeout=7)'))
+CRITICAL:newspaper.network:[REQUEST FAILED] HTTPSConnectionPool(host='www.analisisdigital.com', port=443): Max retries exceeded with url: /rss (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x7f681779fb20>, 'Connection to www.analisisdigital.com timed out. (connect timeout=7)'))
+CRITICAL:newspaper.network:[REQUEST FAILED] HTTPSConnectionPool(host='www.analisisdigital.com', port=443): Max retries exceeded with url: /feeds (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x7f68177e1100>, 'Connection to www.analisisdigital.com timed out. (connect timeout=7)'))
+ERROR:root:An error occurred while processing https://www.analisisdigital.com/: 'Configuration' object has no attribute 'get'
+WARNING:newspaper.parsers:fromstring() returned an invalid string: ...
+WARNING:newspaper.source:Source https://www.analisisdigital.com/ parse error.
+CRITICAL:newspaper.network:[REQUEST FAILED] HTTPSConnectionPool(host='www.analisisdigital.com', port=443): Max retries exceeded with url: / (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x7f8feb41ad60>, 'Connection to www.analisisdigital.com timed out. (connect timeout=7)'))
+WARNING:newspaper.source:Deleting category https://www.analisisdigital.com/ from source https://www.analisisdigital.com/ due to download error
+CRITICAL:newspaper.network:[REQUEST FAILED] HTTPSConnectionPool(host='www.analisisdigital.com', port=443): Max retries exceeded with url: /feed (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x7f8feb3ce730>, 'Connection to www.analisisdigital.com timed out. (connect timeout=7)'))
+CRITICAL:newspaper.network:[REQUEST FAILED] HTTPSConnectionPool(host='www.analisisdigital.com', port=443): Max retries exceeded with url: /rss (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x7f8feb3e3700>, 'Connection to www.analisisdigital.com timed out. (connect timeout=7)'))
+CRITICAL:newspaper.network:[REQUEST FAILED] HTTPSConnectionPool(host='www.analisisdigital.com', port=443): Max retries exceeded with url: /feeds (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x7f8feb3dabe0>, 'Connection to www.analisisdigital.com timed out. (connect timeout=7)'))
+ERROR:root:An error occurred while processing https://www.analisisdigital.com/: 'Configuration' object has no attribute 'get'
+INFO:root:ETL saved data
+WARNING:newspaper.parsers:fromstring() returned an invalid string: ...
+WARNING:newspaper.source:Source https://www.infobae.com/ parse error.
+CRITICAL:newspaper.network:[REQUEST FAILED] 404 Client Error: Not Found for url: https://www.infobae.com/feeds/
+CRITICAL:newspaper.network:[REQUEST FAILED] 404 Client Error: Not Found for url: https://www.infobae.com/rss/
+CRITICAL:newspaper.network:[REQUEST FAILED] 404 Client Error: Not Found for url: https://www.infobae.com/feed/
+ERROR:root:An error occurred while processing https://www.infobae.com/: name 'config1' is not defined
+INFO:root:ETL saved data
+CRITICAL:newspaper.network:[REQUEST FAILED] 404 Client Error: Not Found for url: https://www.infobae.com/feeds/
+CRITICAL:newspaper.network:[REQUEST FAILED] 404 Client Error: Not Found for url: https://www.infobae.com/rss/
+CRITICAL:newspaper.network:[REQUEST FAILED] 404 Client Error: Not Found for url: https://www.infobae.com/feed/
+ERROR:root:An error occurred while processing https://www.infobae.com/: Article `download()` failed with HTTPSConnectionPool(host='www.infobae.com', port=443): Read timed out. (read timeout=7) on URL https://www.infobae.com/deportes/2023/08/07/sociedad-con-jordi-alba-y-tres-minutos-de-suspenso-por-el-var-asi-fue-el-gol-con-el-que-messi-abrio-el-marcador-ante-dallas/
+INFO:root:ETL saved data
+CRITICAL:newspaper.network:[REQUEST FAILED] 404 Client Error: Not Found for url: https://www.infobae.com/feeds/
+CRITICAL:newspaper.network:[REQUEST FAILED] 404 Client Error: Not Found for url: https://www.infobae.com/rss/
+CRITICAL:newspaper.network:[REQUEST FAILED] 404 Client Error: Not Found for url: https://www.infobae.com/feed/
+ERROR:root:An error occurred while processing https://www.infobae.com/: Article `download()` failed with HTTPSConnectionPool(host='www.infobae.com', port=443): Read timed out. (read timeout=7) on URL https://www.infobae.com/teleshow/2023/08/07/nicolas-magaldi-debuto-con-intratables-invitando-a-todos-los-candidatos-es-un-programa-de-puertas-abiertas/
+INFO:root:ETL saved data
+CRITICAL:newspaper.network:[REQUEST FAILED] 404 Client Error: Not Found for url: https://www.elonce.com/feed
+CRITICAL:newspaper.network:[REQUEST FAILED] 404 Client Error: Not Found for url: https://www.elonce.com/feeds
+ERROR:root:An error occurred while processing https://www.elonce.com/: Article `download()` failed with HTTPConnectionPool(host='superdeportivo.elonce.com', port=80): Read timed out. (read timeout=7) on URL http://superdeportivo.elonce.com/secciones/sociedad/765951-el-calor-dar-alivio-este-lunes-anuncian-un-descenso-de-temperatura-en-paran.htm
+INFO:root:ETL saved data
+CRITICAL:newspaper.network:[REQUEST FAILED] 404 Client Error: Not Found for url: https://www.elonce.com/feed
+CRITICAL:newspaper.network:[REQUEST FAILED] 404 Client Error: Not Found for url: https://www.elonce.com/feeds
+ERROR:root:An error occurred while processing https://www.elonce.com/: Article `download()` failed with ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response')) on URL http://superdeportivo.elonce.com/secciones/policiales/765948-detuvieron-a-un-sujeto-que-quiso-agredir-con-un-machete-a-policas.htm
+INFO:root:ETL saved data

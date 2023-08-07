@@ -1,3 +1,6 @@
+import polars as pl
+import os 
+
 keywords = [
     'narcotráfico',
     'drogas',
@@ -28,3 +31,7 @@ keywords = [
     'blanqueo de capitales',
     'corrupción'
 ]
+
+def load_urls():
+    df = pl.read_csv('data/portals.csv')
+    return df['newsportalurl'].to_list()
