@@ -24,3 +24,8 @@ newspaper3k
 news-please
 langchain
 clean-text
+gensim
+fasttext
+sentence-transformers
+python-dotenv
+spacy

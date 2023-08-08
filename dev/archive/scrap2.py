@@ -8,7 +8,7 @@ import logging
 import configparser
 from tqdm import tqdm
 from urllib.parse import urlparse
-from src import utils
+from src.utils import load_embeddings, load_keywords, load_urls
 
 # Read the configuration file
 config = configparser.ConfigParser()
@@ -33,6 +33,13 @@ def extract_text(html):
 # Function to check if a string contains any of the keywords
 def is_drug_related(string):
     return any(keyword in string.lower() for keyword in keywords)
+
+##### new code
+wordvectors = load_embeddings()
+
+
+
+
 
 # Configure newspaper
 confignews = Config()
