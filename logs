@@ -72,3 +72,60 @@ CRITICAL:newspaper.network:[REQUEST FAILED] 404 Client Error: Not Found for url:
 CRITICAL:newspaper.network:[REQUEST FAILED] 404 Client Error: Not Found for url: https://www.elonce.com/feeds
 ERROR:root:An error occurred while processing https://www.elonce.com/: Article `download()` failed with ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response')) on URL http://superdeportivo.elonce.com/secciones/policiales/765948-detuvieron-a-un-sujeto-que-quiso-agredir-con-un-machete-a-policas.htm
 INFO:root:ETL saved data
+INFO:gensim.models.keyedvectors:loading projection weights from models/wiki.es.vec
+INFO:gensim.utils:KeyedVectors lifecycle event {'msg': 'loaded (100000, 300) matrix of type float32 from models/wiki.es.vec', 'binary': False, 'encoding': 'utf8', 'datetime': '2023-08-08T17:47:25.901257', 'gensim': '4.3.1', 'python': '3.9.13 (main, Aug 25 2022, 23:26:10) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-78-generic-x86_64-with-glibc2.35', 'event': 'load_word2vec_format'}
+CRITICAL:newspaper.network:[REQUEST FAILED] 404 Client Error: Not Found for url: https://www.elonce.com/feeds
+CRITICAL:newspaper.network:[REQUEST FAILED] 404 Client Error: Not Found for url: https://www.elonce.com/feed
+ERROR:root:An error occurred while processing https://www.elonce.com/: name 'source' is not defined
+CRITICAL:newspaper.network:[REQUEST FAILED] 404 Client Error: Not Found for url: https://www.analisisdigital.com.ar/feed
+CRITICAL:newspaper.network:[REQUEST FAILED] 404 Client Error: Not Found for url: https://www.analisisdigital.com.ar/feeds
+CRITICAL:newspaper.network:[REQUEST FAILED] 404 Client Error: Not Found for url: https://www.analisisdigital.com.ar/rss
+ERROR:root:An error occurred while processing https://www.analisisdigital.com.ar/: name 'source' is not defined
+INFO:root:ETL saved data
+INFO:gensim.models.keyedvectors:loading projection weights from models/wiki.es.vec
+INFO:gensim.utils:KeyedVectors lifecycle event {'msg': 'loaded (100000, 300) matrix of type float32 from models/wiki.es.vec', 'binary': False, 'encoding': 'utf8', 'datetime': '2023-08-08T17:53:55.032976', 'gensim': '4.3.1', 'python': '3.9.13 (main, Aug 25 2022, 23:26:10) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-78-generic-x86_64-with-glibc2.35', 'event': 'load_word2vec_format'}
+CRITICAL:newspaper.network:[REQUEST FAILED] 404 Client Error: Not Found for url: https://www.elonce.com/feeds
+CRITICAL:newspaper.network:[REQUEST FAILED] 404 Client Error: Not Found for url: https://www.elonce.com/feed
+ERROR:root:An error occurred while processing https://www.elonce.com/: name 'source' is not defined
+CRITICAL:newspaper.network:[REQUEST FAILED] 404 Client Error: Not Found for url: https://www.analisisdigital.com.ar/feed
+CRITICAL:newspaper.network:[REQUEST FAILED] 404 Client Error: Not Found for url: https://www.analisisdigital.com.ar/feeds
+CRITICAL:newspaper.network:[REQUEST FAILED] 404 Client Error: Not Found for url: https://www.analisisdigital.com.ar/rss
+ERROR:root:An error occurred while processing https://www.analisisdigital.com.ar/: name 'source' is not defined
+INFO:root:ETL saved data
+INFO:gensim.models.keyedvectors:loading projection weights from models/wiki.es.vec
+INFO:gensim.utils:KeyedVectors lifecycle event {'msg': 'loaded (100000, 300) matrix of type float32 from models/wiki.es.vec', 'binary': False, 'encoding': 'utf8', 'datetime': '2023-08-08T18:03:34.277316', 'gensim': '4.3.1', 'python': '3.9.13 (main, Aug 25 2022, 23:26:10) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-78-generic-x86_64-with-glibc2.35', 'event': 'load_word2vec_format'}
+CRITICAL:newspaper.network:[REQUEST FAILED] 404 Client Error: Not Found for url: https://www.elonce.com/feed
+CRITICAL:newspaper.network:[REQUEST FAILED] 404 Client Error: Not Found for url: https://www.elonce.com/feeds
+ERROR:root:An error occurred while processing https://www.elonce.com/secciones/politicas/766195-ausentismo-y-voto-en-blanco-preocupan-a-los-precandidatos-a-das-de-las-paso.htm: name 're' is not defined
+CRITICAL:newspaper.network:[REQUEST FAILED] 404 Client Error: Not Found for url: https://www.analisisdigital.com.ar/rss
+CRITICAL:newspaper.network:[REQUEST FAILED] 404 Client Error: Not Found for url: https://www.analisisdigital.com.ar/feed
+CRITICAL:newspaper.network:[REQUEST FAILED] 404 Client Error: Not Found for url: https://www.analisisdigital.com.ar/feeds
+ERROR:root:An error occurred while processing https://www.analisisdigital.com.ar/nacionales/2023/08/08/massa-en-la-cgt-el-domingo-se-empieza-discutir-que-argentina-vamos: name 're' is not defined
+INFO:root:ETL saved data
+INFO:gensim.models.keyedvectors:loading projection weights from models/wiki.es.vec
+INFO:gensim.utils:KeyedVectors lifecycle event {'msg': 'loaded (100000, 300) matrix of type float32 from models/wiki.es.vec', 'binary': False, 'encoding': 'utf8', 'datetime': '2023-08-08T18:06:01.131831', 'gensim': '4.3.1', 'python': '3.9.13 (main, Aug 25 2022, 23:26:10) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-78-generic-x86_64-with-glibc2.35', 'event': 'load_word2vec_format'}
+CRITICAL:newspaper.network:[REQUEST FAILED] 404 Client Error: Not Found for url: https://www.elonce.com/feeds
+CRITICAL:newspaper.network:[REQUEST FAILED] 404 Client Error: Not Found for url: https://www.elonce.com/feed
+ERROR:root:An error occurred while processing https://clasificados.elonce.com/item/en-venta-quinta-en-b-las-acacias-con-terreno-de-796-m2-1-1.htm: name 'df' is not defined
+CRITICAL:newspaper.network:[REQUEST FAILED] 404 Client Error: Not Found for url: https://www.analisisdigital.com.ar/feeds
+CRITICAL:newspaper.network:[REQUEST FAILED] 404 Client Error: Not Found for url: https://www.analisisdigital.com.ar/feed
+CRITICAL:newspaper.network:[REQUEST FAILED] 404 Client Error: Not Found for url: https://www.analisisdigital.com.ar/rss
+ERROR:root:An error occurred while processing https://www.analisisdigital.com.ar/economia/2023/08/05/la-pobreza-trepo-al-387-hay-18-millones-de-personas-que-no-acceden-la-canasta: name 'df' is not defined
+INFO:root:ETL saved data
+INFO:gensim.models.keyedvectors:loading projection weights from models/wiki.es.vec
+INFO:gensim.utils:KeyedVectors lifecycle event {'msg': 'loaded (100000, 300) matrix of type float32 from models/wiki.es.vec', 'binary': False, 'encoding': 'utf8', 'datetime': '2023-08-08T18:20:47.024790', 'gensim': '4.3.1', 'python': '3.9.13 (main, Aug 25 2022, 23:26:10) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-78-generic-x86_64-with-glibc2.35', 'event': 'load_word2vec_format'}
+CRITICAL:newspaper.network:[REQUEST FAILED] 404 Client Error: Not Found for url: https://www.elonce.com/feed
+CRITICAL:newspaper.network:[REQUEST FAILED] 404 Client Error: Not Found for url: https://www.elonce.com/feeds
+CRITICAL:newspaper.network:[REQUEST FAILED] 404 Client Error: Not Found for url: https://www.analisisdigital.com.ar/feed
+CRITICAL:newspaper.network:[REQUEST FAILED] 404 Client Error: Not Found for url: https://www.analisisdigital.com.ar/feeds
+CRITICAL:newspaper.network:[REQUEST FAILED] 404 Client Error: Not Found for url: https://www.analisisdigital.com.ar/rss
+ERROR:root:An error occurred while processing https://www.analisisdigital.com.ar/economia/2023/08/05/aduana-secuestro-mas-de-38500-productos-valuados-en-1000-millones: name 'df' is not defined
+INFO:root:ETL saved data
+INFO:gensim.models.keyedvectors:loading projection weights from models/wiki.es.vec
+INFO:gensim.utils:KeyedVectors lifecycle event {'msg': 'loaded (100000, 300) matrix of type float32 from models/wiki.es.vec', 'binary': False, 'encoding': 'utf8', 'datetime': '2023-08-08T18:32:31.937919', 'gensim': '4.3.1', 'python': '3.9.13 (main, Aug 25 2022, 23:26:10) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-78-generic-x86_64-with-glibc2.35', 'event': 'load_word2vec_format'}
+CRITICAL:newspaper.network:[REQUEST FAILED] 404 Client Error: Not Found for url: https://www.elonce.com/feed
+CRITICAL:newspaper.network:[REQUEST FAILED] 404 Client Error: Not Found for url: https://www.elonce.com/feeds
+CRITICAL:newspaper.network:[REQUEST FAILED] 404 Client Error: Not Found for url: https://www.analisisdigital.com.ar/feed
+CRITICAL:newspaper.network:[REQUEST FAILED] 404 Client Error: Not Found for url: https://www.analisisdigital.com.ar/feeds
+CRITICAL:newspaper.network:[REQUEST FAILED] 404 Client Error: Not Found for url: https://www.analisisdigital.com.ar/rss
+INFO:root:ETL saved data
