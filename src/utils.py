@@ -1,6 +1,16 @@
 import polars as pl
 import os 
 import numpy as np
+import re
+import nltk
+from nltk.stem.snowball import SnowballStemmer
+import string
+import spacy
+
+# Stopword and stemer
+stemmer = SnowballStemmer("spanish")
+nlp = spacy.load("es_core_news_sm")
+spanish_stopwords_spacy = spacy.lang.es.stop_words.STOP_WORDS
 
 # Helper functions
 # Define a mapping of accented characters to their unaccented counterparts
