@@ -104,6 +104,7 @@ def main(
     dates = []
     contents = []
     links = []
+    authors = []
 
     # Your main loop starts here
     for url in tqdm(urls, desc="Processing URLs"):
@@ -144,11 +145,12 @@ def main(
 
             # Go through each articles of the urls with double match (REGEX + SIMILARITY)
             for u in urls_second_match:
-                date, content, link = download_and_parse_article(u)
+                date, content, link, author = download_and_parse_article(u)
 
                 dates.append(date)
                 contents.append(content)
                 links.append(link)
+                authors.append(author)
                 time.sleep(int(sleep_time))
 
             # Store results
@@ -187,6 +189,7 @@ def main(
                         "date_article": dates,
                         "content": contents,
                         "link": links,
+                        "authors": authors
                     }
                 )
             except Exception:
@@ -246,7 +249,7 @@ if __name__ == "__main__":
     start_time = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
     log_messages = [f"-START:{start_time}"]
 
-    stat_etl_topic_related, news_topic_related = main(urls=['https://www.analisisdigital.com.ar/'])
+    stat_etl_topic_related, news_topic_related = main(urls=['https://www.infobae.com/'])
 
     save_dataframes(
         stat_etl_topic_related, news_topic_related, config, topic=topic, mode="local"
