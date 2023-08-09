@@ -147,3 +147,6 @@ def extract_text(html):
     paragraphs = soup.find_all("p")
     text = " ".join([p.get_text() for p in paragraphs])
     return text
+
+def view_string(long_string, chunk_size=100):     
+    return [long_string[i:i+chunk_size] for i in range(0, len(long_string), chunk_size)]

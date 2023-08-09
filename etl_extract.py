@@ -249,7 +249,9 @@ if __name__ == "__main__":
     start_time = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
     log_messages = [f"-START:{start_time}"]
 
-    stat_etl_topic_related, news_topic_related = main(urls=['https://www.infobae.com/'])
+    urls = load_urls()
+
+    stat_etl_topic_related, news_topic_related = main(urls=urls)
 
     save_dataframes(
         stat_etl_topic_related, news_topic_related, config, topic=topic, mode="local"
