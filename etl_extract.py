@@ -1,18 +1,16 @@
 import polars as pl
 import datetime
-import numpy as np
 import os
-import re
 import time
-import string
-import spacy
 import logging
 import configparser
 from tqdm import tqdm
 from nltk.stem.snowball import SnowballStemmer
 from gensim.models.keyedvectors import KeyedVectors
+from newspaper import Config
 from urllib.parse import urlparse
 from src.utils import *
+from src.extaction import *
 
 # hyperparameter---------------------------------------------
 topic = 'narcotráfico'
@@ -41,9 +39,9 @@ start_time = time.strftime('%Y-%m-%d %H:%M:%S', time.localtime())
 log_messages = [f"-START:{start_time}"]
 
 # Tools -------------------------------------------------------
-stemmer = SnowballStemmer("spanish")
-nlp = spacy.load("es_core_news_sm")
-spanish_stopwords_spacy = spacy.lang.es.stop_words.STOP_WORDS
+#stemmer = SnowballStemmer("spanish")
+#nlp = spacy.load("es_core_news_sm")
+#spanish_stopwords_spacy = spacy.lang.es.stop_words.STOP_WORDS
 wordvectors = load_embeddings(path='models/wiki.es.vec', limit=100000)
 
 # Data -------------------------------------------------------
@@ -108,7 +106,7 @@ for url in tqdm(urls, desc='Processing URLs'):
             date = article.publish_date if article.publish_date else datetime.datetime.now()
             link = article.url if article.url else u
             text = text if len(text) > 0 else None
-            
+
             dates.append(date)
             contents.append(text)
             links.append(link)
