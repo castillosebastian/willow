@@ -5,6 +5,7 @@ import re
 from urllib.parse import urlparse
 from nltk.stem.snowball import SnowballStemmer
 from gensim.models.keyedvectors import KeyedVectors
+import datetime
 from newspaper import Article, build
 from src.utils import *
 
@@ -46,7 +47,19 @@ def filter_articles_with_similarity(urls_matches, topic, wordvectors, similarity
     return urls_second_match
 
 def download_and_parse_article(url):
+
     article = Article(url=url)
     article.download()
     article.parse()
-    return article
+
+    # Extract the text from the article's HTML
+    text = extract_text(article.html)
+    
+    # Only update lists if the text is valid and the URL has a scheme
+    if text and urlparse(article.url).scheme:
+        # Store the article's publication date, text, and URL
+        date = article.publish_date if article.publish_date else datetime.datetime.now()
+        link = article.url if article.url else url
+        content = text if len(text) > 0 else None        
+
+    return date, content, link

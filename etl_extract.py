@@ -47,8 +47,8 @@ wordvectors = load_embeddings(path='models/wiki.es.vec', limit=100000)
 # Data -------------------------------------------------------
 keywords = load_keywords(topic=topic)
 # urls = load_urls(topic=topic)
-urls = ['https://www.elonce.com/', 'https://www.analisisdigital.com.ar/' ]
-#urls = ['https://www.infobae.com/']
+#urls = ['https://www.elonce.com/', 'https://www.analisisdigital.com.ar/' ]
+urls = ['https://www.infobae.com/']
 
 # Initialize the lists for the DataFrame
 url_list = []
@@ -93,22 +93,11 @@ for url in tqdm(urls, desc='Processing URLs'):
 
         # Go through each articles of the urls with double match (REGEX + SIMILARITY)
         for u in urls_second_match:
-            article = download_and_parse_article(u)
-            text = extract_text(article.html)
-
-            if not text or not urlparse(article.url).scheme:
-                continue
-
-            # Increment topic related text
-            total_text_topic_related += len(text)
-
-            # Store the article's publication date, text, and URL
-            date = article.publish_date if article.publish_date else datetime.datetime.now()
-            link = article.url if article.url else u
-            text = text if len(text) > 0 else None
+            
+            date, content, link = download_and_parse_article(u)            
 
             dates.append(date)
-            contents.append(text)
+            contents.append(content)
             links.append(link)
             time.sleep(int(sleep_time))
 
