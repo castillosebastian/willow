@@ -1,5 +1,5 @@
 import polars as pl
-import os 
+import os
 import numpy as np
 import re
 from urllib.parse import urlparse
@@ -15,7 +15,10 @@ from src.utils import *
 def build_newspaper_from_url(url, config):
     return build(url, config=config)
 
-def extract_articles_with_regex(source, keywords, evaluate_mode_for_matches, evaluate_mode_for_matches_term):
+
+def extract_articles_with_regex(
+    source, keywords, evaluate_mode_for_matches, evaluate_mode_for_matches_term
+):
     urls_matches = []
     found_matches = []
 
@@ -34,7 +37,10 @@ def extract_articles_with_regex(source, keywords, evaluate_mode_for_matches, eva
 
     return urls_matches, found_matches
 
-def filter_articles_with_similarity(urls_matches, topic, wordvectors, similarity_treshold):
+
+def filter_articles_with_similarity(
+    urls_matches, topic, wordvectors, similarity_treshold
+):
     max_similarity_scores = []
     urls_second_match = []
 
@@ -46,20 +52,20 @@ def filter_articles_with_similarity(urls_matches, topic, wordvectors, similarity
 
     return urls_second_match
 
-def download_and_parse_article(url):
 
+def download_and_parse_article(url):
     article = Article(url=url)
     article.download()
     article.parse()
 
     # Extract the text from the article's HTML
     text = extract_text(article.html)
-    
+
     # Only update lists if the text is valid and the URL has a scheme
     if text and urlparse(article.url).scheme:
         # Store the article's publication date, text, and URL
         date = article.publish_date if article.publish_date else datetime.datetime.now()
         link = article.url if article.url else url
-        content = text if len(text) > 0 else None        
+        content = text if len(text) > 0 else None
 
     return date, content, link
