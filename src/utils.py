@@ -4,6 +4,8 @@ import numpy as np
 import re
 import nltk
 from nltk.stem.snowball import SnowballStemmer
+from gensim.models.keyedvectors import KeyedVectors
+from bs4 import BeautifulSoup
 import string
 import spacy
 
@@ -30,8 +32,6 @@ def load_urls(topic = 'narcotráfico'):
     df = pl.read_csv('data/portals.csv')
     df = df.filter(pl.col('topic') == topic)
     return df['newsportalurl'].to_list()
-
-from gensim.models.keyedvectors import KeyedVectors
 
 def load_embeddings(path='models/wiki.es.vec', limit=100000):
     """
@@ -116,3 +116,10 @@ def compute_max_similarity(url, topic_word, wordvec):
     
     # Return median score    
     return np.max(scores) if scores else 0.0
+
+# Function to extract text from HTML using BeautifulSoup
+def extract_text(html):
+    soup = BeautifulSoup(html, 'html.parser')
+    paragraphs = soup.find_all('p')
+    text = ' '.join([p.get_text() for p in paragraphs])
+    return text
