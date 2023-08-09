@@ -105,3 +105,112 @@
 2023-08-09 11:59:30,522-scrap_v3.py-CRITICAL-[REQUEST FAILED] 404 Client Error: Not Found for url: https://www.infobae.com/feed/
 2023-08-09 11:59:33,831-scrap_v3.py-ERROR-An error occurred while processing https://www.infobae.com/: Expected a file path; 'temp' is a directory
 2023-08-09 11:59:33,836-scrap_v3.py-INFO--START:2023-08-09 11:59:10 - END:2023-08-09 11:59:33
+2023-08-09 13:06:13,205-etl_extract.py-INFO-loading projection weights from models/wiki.es.vec
+2023-08-09 13:06:27,177-etl_extract.py-INFO-KeyedVectors lifecycle event {'msg': 'loaded (100000, 300) matrix of type float32 from models/wiki.es.vec', 'binary': False, 'encoding': 'utf8', 'datetime': '2023-08-09T13:06:27.161063', 'gensim': '4.3.1', 'python': '3.9.13 (main, Aug 25 2022, 23:26:10) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-78-generic-x86_64-with-glibc2.35', 'event': 'load_word2vec_format'}
+2023-08-09 13:06:27,217-etl_extract.py-ERROR-An error occurred while processing https://www.infobae.com/
+Traceback (most recent call last):
+  File "/home/sebacastillo/willow/etl_extract.py", line 77, in <module>
+    source = build_newspaper_from_url(url, confignews)
+  File "/home/sebacastillo/willow/src/utils.py", line 131, in build_newspaper_from_url
+    return build(url, config=config)
+NameError: name 'build' is not defined
+2023-08-09 13:06:27,220-etl_extract.py-INFO--START:2023-08-09 13:06:12 - END:2023-08-09 13:06:27
+2023-08-09 13:09:34,684-etl_extract.py-INFO-loading projection weights from models/wiki.es.vec
+2023-08-09 13:09:47,348-etl_extract.py-INFO-KeyedVectors lifecycle event {'msg': 'loaded (100000, 300) matrix of type float32 from models/wiki.es.vec', 'binary': False, 'encoding': 'utf8', 'datetime': '2023-08-09T13:09:47.332153', 'gensim': '4.3.1', 'python': '3.9.13 (main, Aug 25 2022, 23:26:10) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-78-generic-x86_64-with-glibc2.35', 'event': 'load_word2vec_format'}
+2023-08-09 13:09:50,375-etl_extract.py-CRITICAL-[REQUEST FAILED] 404 Client Error: Not Found for url: https://www.infobae.com/feeds/
+2023-08-09 13:09:51,017-etl_extract.py-CRITICAL-[REQUEST FAILED] 404 Client Error: Not Found for url: https://www.infobae.com/feed/
+2023-08-09 13:09:51,775-etl_extract.py-CRITICAL-[REQUEST FAILED] 404 Client Error: Not Found for url: https://www.infobae.com/rss/
+2023-08-09 13:09:54,476-etl_extract.py-INFO--START:2023-08-09 13:09:34 - END:2023-08-09 13:09:54
+2023-08-09 13:10:43,427-etl_extract.py-INFO-loading projection weights from models/wiki.es.vec
+2023-08-09 13:10:56,535-etl_extract.py-INFO-KeyedVectors lifecycle event {'msg': 'loaded (100000, 300) matrix of type float32 from models/wiki.es.vec', 'binary': False, 'encoding': 'utf8', 'datetime': '2023-08-09T13:10:56.520369', 'gensim': '4.3.1', 'python': '3.9.13 (main, Aug 25 2022, 23:26:10) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-78-generic-x86_64-with-glibc2.35', 'event': 'load_word2vec_format'}
+2023-08-09 13:11:00,818-etl_extract.py-CRITICAL-[REQUEST FAILED] 404 Client Error: Not Found for url: https://www.infobae.com/feed/
+2023-08-09 13:11:00,820-etl_extract.py-CRITICAL-[REQUEST FAILED] 404 Client Error: Not Found for url: https://www.infobae.com/rss/
+2023-08-09 13:11:00,910-etl_extract.py-CRITICAL-[REQUEST FAILED] 404 Client Error: Not Found for url: https://www.infobae.com/feeds/
+2023-08-09 13:11:03,814-etl_extract.py-INFO--START:2023-08-09 13:10:43 - END:2023-08-09 13:11:03
+2023-08-09 13:30:34,744-etl_extract.py-INFO-loading projection weights from models/wiki.es.vec
+2023-08-09 13:30:47,406-etl_extract.py-INFO-KeyedVectors lifecycle event {'msg': 'loaded (100000, 300) matrix of type float32 from models/wiki.es.vec', 'binary': False, 'encoding': 'utf8', 'datetime': '2023-08-09T13:30:47.391089', 'gensim': '4.3.1', 'python': '3.9.13 (main, Aug 25 2022, 23:26:10) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-78-generic-x86_64-with-glibc2.35', 'event': 'load_word2vec_format'}
+2023-08-09 13:30:50,089-etl_extract.py-CRITICAL-[REQUEST FAILED] 404 Client Error: Not Found for url: https://www.infobae.com/feeds/
+2023-08-09 13:30:50,529-etl_extract.py-CRITICAL-[REQUEST FAILED] 404 Client Error: Not Found for url: https://www.infobae.com/rss/
+2023-08-09 13:30:50,723-etl_extract.py-CRITICAL-[REQUEST FAILED] 404 Client Error: Not Found for url: https://www.infobae.com/feed/
+2023-08-09 13:30:51,110-etl_extract.py-ERROR-An error occurred while processing https://www.infobae.com/
+Traceback (most recent call last):
+  File "/home/sebacastillo/willow/etl_extract.py", line 98, in <module>
+    date, content, link = download_and_parse_article(u, dates, contents, links)
+TypeError: download_and_parse_article() takes 1 positional argument but 4 were given
+2023-08-09 13:30:51,114-etl_extract.py-INFO--START:2023-08-09 13:30:34 - END:2023-08-09 13:30:51
+2023-08-09 13:31:38,099-etl_extract.py-INFO-loading projection weights from models/wiki.es.vec
+2023-08-09 13:31:51,421-etl_extract.py-INFO-KeyedVectors lifecycle event {'msg': 'loaded (100000, 300) matrix of type float32 from models/wiki.es.vec', 'binary': False, 'encoding': 'utf8', 'datetime': '2023-08-09T13:31:51.405377', 'gensim': '4.3.1', 'python': '3.9.13 (main, Aug 25 2022, 23:26:10) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-78-generic-x86_64-with-glibc2.35', 'event': 'load_word2vec_format'}
+2023-08-09 13:31:55,128-etl_extract.py-CRITICAL-[REQUEST FAILED] 404 Client Error: Not Found for url: https://www.infobae.com/feed/
+2023-08-09 13:31:55,133-etl_extract.py-CRITICAL-[REQUEST FAILED] 404 Client Error: Not Found for url: https://www.infobae.com/feeds/
+2023-08-09 13:31:55,973-etl_extract.py-CRITICAL-[REQUEST FAILED] 404 Client Error: Not Found for url: https://www.infobae.com/rss/
+2023-08-09 13:31:56,939-etl_extract.py-ERROR-An error occurred while processing https://www.infobae.com/
+Traceback (most recent call last):
+  File "/home/sebacastillo/willow/etl_extract.py", line 98, in <module>
+    date, content, link = download_and_parse_article(u, dates, contents, links)
+  File "/home/sebacastillo/willow/src/utils.py", line 174, in download_and_parse_article
+    if text and urlparse(article.url).scheme:
+NameError: name 'urlparse' is not defined
+2023-08-09 13:31:56,943-etl_extract.py-INFO--START:2023-08-09 13:31:37 - END:2023-08-09 13:31:56
+2023-08-09 13:35:04,619-etl_extract.py-INFO-loading projection weights from models/wiki.es.vec
+2023-08-09 13:35:17,310-etl_extract.py-INFO-KeyedVectors lifecycle event {'msg': 'loaded (100000, 300) matrix of type float32 from models/wiki.es.vec', 'binary': False, 'encoding': 'utf8', 'datetime': '2023-08-09T13:35:17.294521', 'gensim': '4.3.1', 'python': '3.9.13 (main, Aug 25 2022, 23:26:10) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-78-generic-x86_64-with-glibc2.35', 'event': 'load_word2vec_format'}
+2023-08-09 13:35:20,718-etl_extract.py-CRITICAL-[REQUEST FAILED] 404 Client Error: Not Found for url: https://www.infobae.com/feeds/
+2023-08-09 13:35:20,813-etl_extract.py-CRITICAL-[REQUEST FAILED] 404 Client Error: Not Found for url: https://www.infobae.com/rss/
+2023-08-09 13:35:21,121-etl_extract.py-CRITICAL-[REQUEST FAILED] 404 Client Error: Not Found for url: https://www.infobae.com/feed/
+2023-08-09 13:36:03,763-etl_extract.py-INFO-loading projection weights from models/wiki.es.vec
+2023-08-09 13:36:16,268-etl_extract.py-INFO-KeyedVectors lifecycle event {'msg': 'loaded (100000, 300) matrix of type float32 from models/wiki.es.vec', 'binary': False, 'encoding': 'utf8', 'datetime': '2023-08-09T13:36:16.252034', 'gensim': '4.3.1', 'python': '3.9.13 (main, Aug 25 2022, 23:26:10) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-78-generic-x86_64-with-glibc2.35', 'event': 'load_word2vec_format'}
+2023-08-09 13:36:19,087-etl_extract.py-CRITICAL-[REQUEST FAILED] 404 Client Error: Not Found for url: https://www.infobae.com/rss/
+2023-08-09 13:36:19,096-etl_extract.py-CRITICAL-[REQUEST FAILED] 404 Client Error: Not Found for url: https://www.infobae.com/feeds/
+2023-08-09 13:36:19,097-etl_extract.py-CRITICAL-[REQUEST FAILED] 404 Client Error: Not Found for url: https://www.infobae.com/feed/
+2023-08-09 13:37:02,064-etl_extract.py-INFO-loading projection weights from models/wiki.es.vec
+2023-08-09 13:37:15,855-etl_extract.py-INFO-KeyedVectors lifecycle event {'msg': 'loaded (100000, 300) matrix of type float32 from models/wiki.es.vec', 'binary': False, 'encoding': 'utf8', 'datetime': '2023-08-09T13:37:15.839921', 'gensim': '4.3.1', 'python': '3.9.13 (main, Aug 25 2022, 23:26:10) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-78-generic-x86_64-with-glibc2.35', 'event': 'load_word2vec_format'}
+2023-08-09 13:37:19,285-etl_extract.py-CRITICAL-[REQUEST FAILED] 404 Client Error: Not Found for url: https://www.infobae.com/feed/
+2023-08-09 13:37:19,290-etl_extract.py-CRITICAL-[REQUEST FAILED] 404 Client Error: Not Found for url: https://www.infobae.com/feeds/
+2023-08-09 13:37:19,304-etl_extract.py-CRITICAL-[REQUEST FAILED] 404 Client Error: Not Found for url: https://www.infobae.com/rss/
+2023-08-09 13:38:36,658-etl_extract.py-INFO-loading projection weights from models/wiki.es.vec
+2023-08-09 13:39:01,876-etl_extract.py-INFO-KeyedVectors lifecycle event {'msg': 'loaded (100000, 300) matrix of type float32 from models/wiki.es.vec', 'binary': False, 'encoding': 'utf8', 'datetime': '2023-08-09T13:39:01.859844', 'gensim': '4.3.1', 'python': '3.9.13 (main, Aug 25 2022, 23:26:10) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-78-generic-x86_64-with-glibc2.35', 'event': 'load_word2vec_format'}
+2023-08-09 13:39:17,633-etl_extract.py-CRITICAL-[REQUEST FAILED] 404 Client Error: Not Found for url: https://www.infobae.com/feeds/
+2023-08-09 13:39:20,562-etl_extract.py-CRITICAL-[REQUEST FAILED] 404 Client Error: Not Found for url: https://www.infobae.com/feed/
+2023-08-09 13:39:22,055-etl_extract.py-CRITICAL-[REQUEST FAILED] 404 Client Error: Not Found for url: https://www.infobae.com/rss/
+2023-08-09 13:43:38,151-etl_extract.py-INFO-loading projection weights from models/wiki.es.vec
+2023-08-09 13:43:51,394-etl_extract.py-INFO-KeyedVectors lifecycle event {'msg': 'loaded (100000, 300) matrix of type float32 from models/wiki.es.vec', 'binary': False, 'encoding': 'utf8', 'datetime': '2023-08-09T13:43:51.377592', 'gensim': '4.3.1', 'python': '3.9.13 (main, Aug 25 2022, 23:26:10) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-78-generic-x86_64-with-glibc2.35', 'event': 'load_word2vec_format'}
+2023-08-09 13:44:01,967-etl_extract.py-CRITICAL-[REQUEST FAILED] 404 Client Error: Not Found for url: https://www.infobae.com/feed/
+2023-08-09 13:44:02,464-etl_extract.py-CRITICAL-[REQUEST FAILED] 404 Client Error: Not Found for url: https://www.infobae.com/feeds/
+2023-08-09 13:44:09,979-etl_extract.py-CRITICAL-[REQUEST FAILED] HTTPSConnectionPool(host='www.infobae.com', port=443): Read timed out.
+2023-08-09 13:44:14,538-etl_extract.py-INFO--START:2023-08-09 13:43:37 - END:2023-08-09 13:44:14
+2023-08-09 13:46:16,805-etl_extract.py-INFO-loading projection weights from models/wiki.es.vec
+2023-08-09 13:46:30,227-etl_extract.py-INFO-KeyedVectors lifecycle event {'msg': 'loaded (100000, 300) matrix of type float32 from models/wiki.es.vec', 'binary': False, 'encoding': 'utf8', 'datetime': '2023-08-09T13:46:30.212091', 'gensim': '4.3.1', 'python': '3.9.13 (main, Aug 25 2022, 23:26:10) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-78-generic-x86_64-with-glibc2.35', 'event': 'load_word2vec_format'}
+2023-08-09 13:46:51,890-etl_extract.py-CRITICAL-[REQUEST FAILED] HTTPSConnectionPool(host='www.elonce.com', port=443): Read timed out.
+2023-08-09 13:46:52,803-etl_extract.py-CRITICAL-[REQUEST FAILED] HTTPSConnectionPool(host='www.elonce.com', port=443): Read timed out.
+2023-08-09 13:46:52,805-etl_extract.py-WARNING-Deleting category https://www.elonce.com/ from source https://www.elonce.com/ due to download error
+2023-08-09 13:46:52,806-etl_extract.py-WARNING-Deleting category https://www.elonce.com/videos from source https://www.elonce.com/ due to download error
+2023-08-09 13:46:53,491-etl_extract.py-CRITICAL-[REQUEST FAILED] 404 Client Error: Not Found for url: https://www.elonce.com/feed
+2023-08-09 13:46:54,655-etl_extract.py-CRITICAL-[REQUEST FAILED] 404 Client Error: Not Found for url: https://www.elonce.com/feeds
+2023-08-09 13:47:03,675-etl_extract.py-WARNING-fromstring() returned an invalid string: ...
+2023-08-09 13:47:03,675-etl_extract.py-WARNING-Source https://www.analisisdigital.com.ar/ parse error.
+2023-08-09 13:47:10,953-etl_extract.py-CRITICAL-[REQUEST FAILED] HTTPSConnectionPool(host='www.analisisdigital.com.ar', port=443): Read timed out. (read timeout=7)
+2023-08-09 13:47:10,965-etl_extract.py-CRITICAL-[REQUEST FAILED] HTTPSConnectionPool(host='www.analisisdigital.com.ar', port=443): Read timed out. (read timeout=7)
+2023-08-09 13:47:17,351-etl_extract.py-WARNING-Deleting category https://www.analisisdigital.com.ar from source https://www.analisisdigital.com.ar/ due to download error
+2023-08-09 13:47:17,351-etl_extract.py-WARNING-Deleting category https://www.analisisdigital.com.ar/opinion from source https://www.analisisdigital.com.ar/ due to download error
+2023-08-09 13:47:26,562-etl_extract.py-CRITICAL-[REQUEST FAILED] 404 Client Error: Not Found for url: https://www.analisisdigital.com.ar/rss
+2023-08-09 13:47:28,415-etl_extract.py-CRITICAL-[REQUEST FAILED] 404 Client Error: Not Found for url: https://www.analisisdigital.com.ar/feeds
+2023-08-09 13:47:31,589-etl_extract.py-CRITICAL-[REQUEST FAILED] 404 Client Error: Not Found for url: https://www.analisisdigital.com.ar/feed
+2023-08-09 13:48:35,221-etl_extract.py-ERROR-An error occurred while processing https://www.analisisdigital.com.ar/
+Traceback (most recent call last):
+  File "/home/sebacastillo/willow/etl_extract.py", line 98, in <module>
+    article = download_and_parse_article(u)
+  File "/home/sebacastillo/willow/src/utils.py", line 168, in download_and_parse_article
+    article.parse()
+  File "/home/sebacastillo/.willow/lib/python3.9/site-packages/newspaper/article.py", line 191, in parse
+    self.throw_if_not_downloaded_verbose()
+  File "/home/sebacastillo/.willow/lib/python3.9/site-packages/newspaper/article.py", line 531, in throw_if_not_downloaded_verbose
+    raise ArticleException('Article `download()` failed with %s on URL %s' %
+newspaper.article.ArticleException: Article `download()` failed with HTTPSConnectionPool(host='www.analisisdigital.com.ar', port=443): Read timed out. on URL https://www.analisisdigital.com.ar/policiales/2023/08/07/gualeguaychu-identificaron-siete-cazadores-secuestraron-armas-y-cartucheria
+2023-08-09 13:48:35,259-etl_extract.py-INFO--START:2023-08-09 13:46:16 - END:2023-08-09 13:48:35
+2023-08-09 15:02:30,174-etl_extract.py-INFO-loading projection weights from models/wiki.es.vec
+2023-08-09 15:02:43,712-etl_extract.py-INFO-KeyedVectors lifecycle event {'msg': 'loaded (100000, 300) matrix of type float32 from models/wiki.es.vec', 'binary': False, 'encoding': 'utf8', 'datetime': '2023-08-09T15:02:43.695742', 'gensim': '4.3.1', 'python': '3.9.13 (main, Aug 25 2022, 23:26:10) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-78-generic-x86_64-with-glibc2.35', 'event': 'load_word2vec_format'}
+2023-08-09 15:02:46,585-etl_extract.py-CRITICAL-[REQUEST FAILED] 404 Client Error: Not Found for url: https://www.elonce.com/feeds
+2023-08-09 15:02:46,586-etl_extract.py-CRITICAL-[REQUEST FAILED] 404 Client Error: Not Found for url: https://www.elonce.com/feed
+2023-08-09 15:03:02,044-etl_extract.py-CRITICAL-[REQUEST FAILED] 404 Client Error: Not Found for url: https://www.analisisdigital.com.ar/feeds
+2023-08-09 15:03:02,045-etl_extract.py-CRITICAL-[REQUEST FAILED] 404 Client Error: Not Found for url: https://www.analisisdigital.com.ar/rss
+2023-08-09 15:03:02,045-etl_extract.py-CRITICAL-[REQUEST FAILED] 404 Client Error: Not Found for url: https://www.analisisdigital.com.ar/feed
+2023-08-09 15:03:15,886-etl_extract.py-INFO--START:2023-08-09 15:02:29 - END:2023-08-09 15:03:15

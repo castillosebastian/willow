@@ -11,7 +11,6 @@ import configparser
 from tqdm import tqdm
 from nltk.stem.snowball import SnowballStemmer
 from gensim.models.keyedvectors import KeyedVectors
-from newspaper import Article, Config, build
 from urllib.parse import urlparse
 from src.utils import *
 
@@ -21,6 +20,7 @@ similarity_treshold = 0.4
 confignews = Config() # newspaper configuration
 confignews.fetch_images = False
 confignews.memoize_articles = False
+sleep_time = 1 
 #confignews.request_timeout = 30
 evaluate_mode_for_matches = False # evaluate match functions
 evaluate_mode_for_matches_term = ''
@@ -49,8 +49,8 @@ wordvectors = load_embeddings(path='models/wiki.es.vec', limit=100000)
 # Data -------------------------------------------------------
 keywords = load_keywords(topic=topic)
 # urls = load_urls(topic=topic)
-# urls = ['https://www.elonce.com/', 'https://www.analisisdigital.com.ar/' ]
-urls = ['https://www.infobae.com/']
+urls = ['https://www.elonce.com/', 'https://www.analisisdigital.com.ar/' ]
+#urls = ['https://www.infobae.com/']
 
 # Initialize the lists for the DataFrame
 url_list = []
@@ -63,112 +63,67 @@ dates = []
 contents = []
 links = []
 
-# main script to extract web informatcion 
-for url in tqdm(urls, desc='Processing URLs'):    
+# main loop
+for url in tqdm(urls, desc='Processing URLs'):
     try:
-        # Initialize the counters        
-        total_articles = 0      #       
-        total_text_topic_related = 0 #
-        match1_regex = 0 #
-        match2_similarity = 0 #   
-        fail_build_source = False             
-        
+        # Initialize the counters
+        total_articles = 0
+        total_text_topic_related = 0
+        match1_regex = 0
+        match2_similarity = 0
+        fail_build_source = False
+
         # Build the newspaper
-        source = build(url, config=confignews) 
+        source = build_newspaper_from_url(url, confignews)
 
         if not source:
             fail_build_source = True
-            continue    
+            continue
 
         # Total Articles
         total_articles = source.size()
 
         # First match processing with REGEX
-        urls_matches = []
-        found_matches = []   
+        urls_matches, found_matches = extract_articles_with_regex(source, keywords, evaluate_mode_for_matches, evaluate_mode_for_matches_term)
 
-        for article in source.articles:            
-            urlm = article.url
-            match_score, found_match = evaluate_matches(urlm, keywords)
+        match1_regex += len(urls_matches)
 
-            if evaluate_mode_for_matches:
-                match = re.search(evaluate_mode_for_matches_term, urlm)
-                if match:
-                    print(urlm), print(match_score), print(found_match), print(keywords)   
+        # Second match processing with SIMILARITY
+        urls_second_match = filter_articles_with_similarity(urls_matches, topic, wordvectors, similarity_treshold)
 
-            if match_score > 0:
-                urls_matches.append(urlm) 
-                found_matches.append(found_match)     
+        match2_similarity += len(urls_second_match)
 
-        match1_regex += len(urls_matches)            
+        # Go through each articles of the urls with double match (REGEX + SIMILARITY)
+        for u in urls_second_match:
+            article = download_and_parse_article(u)
+            text = extract_text(article.html)
 
-        # Second match processing with SIMILARITY         
-        if len(urls_matches) > 0:   
-                  
-            max_sin_scores = []
-            urls_second_match = []
-            is_similar = []
+            if not text or not urlparse(article.url).scheme:
+                continue
 
-            for url_match in urls_matches:
-                max_sin_score = compute_max_similarity(url_match, topic, wordvectors) 
-                max_sin_scores.append(max_sin_score)
-                urls_second_match.append(url_match)
-                is_similar.append(max_sin_score>similarity_treshold) 
-           
-            match2_similarity += len(urls_second_match)            
+            # Increment topic related text
+            total_text_topic_related += len(text)
 
-            # Go through each articles of the urls with double math (REGEX + SIMILARITY)        
-            for u in urls_second_match:                
-                article = Article(url=u)      
-                article.download()            
-                article.parse()
-                # Extract the text from the article's HTML
-                text = extract_text(article.html)
-                # Validate the article text and URL
-                if not text or not urlparse(article.url).scheme:
-                    continue
-                # Increment topic related text            
-                total_text_topic_related += len(text)
-                # Store the article's publication date, text, and URL
-                date = article.publish_date if article.publish_date else datetime.datetime.now()
-                link = article.url if article.url else u
-                text = text if len(text) > 0 else None
-                dates.append(date)
-                contents.append(text)
-                links.append(link)       
-                time.sleep(int(config.get('main', 'sleep_time')))
-
-            # Add the counts to the lists
-            url_list.append(url)
-            fail_build_source_list.append(fail_build_source)
-            total_articles_list.append(total_articles)  
-            match1_regex_list.append(match1_regex)       
-            match2_similarity_list.append(match2_similarity)         
-            total_text_topic_related_list.append(total_text_topic_related)
+            # Store the article's publication date, text, and URL
+            date = article.publish_date if article.publish_date else datetime.datetime.now()
+            link = article.url if article.url else u
+            text = text if len(text) > 0 else None
             
-            # Backup intermediate results
-            backup_df = pl.DataFrame({
-                'url': url_list,
-                'build_source': fail_build_source_list,
-                'total_articles': total_articles_list,
-                'match1_url': match1_regex_list,
-                'match2_url_topic_related': match2_similarity_list,     
-                'total_text_topic_related': total_text_topic_related_list
-            })
-            backup_df.write_csv(config.get('main', 'backup_file'))
+            dates.append(date)
+            contents.append(text)
+            links.append(link)
+            time.sleep(int(sleep_time))
 
-        else:            
-            # Add the counts to the lists for 0 match
-            url_list.append(url)
-            fail_build_source_list.append(fail_build_source)
-            total_articles_list.append(total_articles)     
-            match1_regex_list.append(match1_regex)               
-            match2_similarity_list.append(match2_similarity)               
-            total_text_topic_related_list.append(total_text_topic_related)
-            continue
-
-    except Exception as e:
-        logging.error(f'An error occurred while processing {url}: {e}')
+        # Store results
+        url_list.append(url)
+        fail_build_source_list.append(fail_build_source)
+        total_articles_list.append(total_articles)
+        match1_regex_list.append(match1_regex)
+        match2_similarity_list.append(match2_similarity)
+        total_text_topic_related_list.append(total_text_topic_related)
+        
+    except Exception:
+        logging.exception(f'An error occurred while processing {url}')
 
 
 try: 
