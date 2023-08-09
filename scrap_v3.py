@@ -17,16 +17,13 @@ from src.utils import *
 
 # hyperparameter---------------------------------------------
 topic = 'narcotráfico'
-#keywords = load_keywords(topic='narcotráfico')
-keywords = [topic]
-# urls = load_urls(topic=topic)
-urls = ['https://www.elonce.com/', 'https://www.analisisdigital.com.ar/' ]
 similarity_treshold = 0.4
 confignews = Config() # newspaper configuration
 confignews.fetch_images = False
 confignews.memoize_articles = False
 #confignews.request_timeout = 30
-
+evaluate_mode_for_matches = False # evaluate match functions
+evaluate_mode_for_matches_term = ''
 
 # Prepare env------------------------------------------------
 config = configparser.ConfigParser()
@@ -48,6 +45,12 @@ stemmer = SnowballStemmer("spanish")
 nlp = spacy.load("es_core_news_sm")
 spanish_stopwords_spacy = spacy.lang.es.stop_words.STOP_WORDS
 wordvectors = load_embeddings(path='models/wiki.es.vec', limit=100000)
+
+# Data -------------------------------------------------------
+keywords = load_keywords(topic=topic)
+# urls = load_urls(topic=topic)
+# urls = ['https://www.elonce.com/', 'https://www.analisisdigital.com.ar/' ]
+urls = ['https://www.infobae.com/']
 
 # Initialize the lists for the DataFrame
 url_list = []
@@ -86,7 +89,13 @@ for url in tqdm(urls, desc='Processing URLs'):
 
         for article in source.articles:            
             urlm = article.url
-            match_score, found_match = evaluate_matches(url, keywords)            
+            match_score, found_match = evaluate_matches(urlm, keywords)
+
+            if evaluate_mode_for_matches:
+                match = re.search(evaluate_mode_for_matches_term, urlm)
+                if match:
+                    print(urlm), print(match_score), print(found_match), print(keywords)   
+
             if match_score > 0:
                 urls_matches.append(urlm) 
                 found_matches.append(found_match)     

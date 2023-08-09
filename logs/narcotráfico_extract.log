@@ -22,3 +22,86 @@
 2023-08-09 10:41:10,029-scrap_v3.py-CRITICAL-[REQUEST FAILED] 404 Client Error: Not Found for url: https://www.analisisdigital.com.ar/feed
 2023-08-09 10:41:10,029-scrap_v3.py-CRITICAL-[REQUEST FAILED] 404 Client Error: Not Found for url: https://www.analisisdigital.com.ar/rss
 2023-08-09 10:41:10,220-scrap_v3.py-INFO--START:2023-08-09 10:40:49 - END:2023-08-09 10:41:10
+2023-08-09 10:49:34,354-scrap_v3.py-INFO-loading projection weights from models/wiki.es.vec
+2023-08-09 10:49:48,823-scrap_v3.py-INFO-KeyedVectors lifecycle event {'msg': 'loaded (100000, 300) matrix of type float32 from models/wiki.es.vec', 'binary': False, 'encoding': 'utf8', 'datetime': '2023-08-09T10:49:48.806991', 'gensim': '4.3.1', 'python': '3.9.13 (main, Aug 25 2022, 23:26:10) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-78-generic-x86_64-with-glibc2.35', 'event': 'load_word2vec_format'}
+2023-08-09 10:49:52,265-scrap_v3.py-CRITICAL-[REQUEST FAILED] 404 Client Error: Not Found for url: https://www.infobae.com/feed/
+2023-08-09 10:49:52,315-scrap_v3.py-CRITICAL-[REQUEST FAILED] 404 Client Error: Not Found for url: https://www.infobae.com/feeds/
+2023-08-09 10:49:52,766-scrap_v3.py-CRITICAL-[REQUEST FAILED] 404 Client Error: Not Found for url: https://www.infobae.com/rss/
+2023-08-09 10:49:52,871-scrap_v3.py-INFO--START:2023-08-09 10:49:33 - END:2023-08-09 10:49:52
+2023-08-09 10:53:26,074-scrap_v3.py-INFO-loading projection weights from models/wiki.es.vec
+2023-08-09 10:53:39,383-scrap_v3.py-INFO-KeyedVectors lifecycle event {'msg': 'loaded (100000, 300) matrix of type float32 from models/wiki.es.vec', 'binary': False, 'encoding': 'utf8', 'datetime': '2023-08-09T10:53:39.366419', 'gensim': '4.3.1', 'python': '3.9.13 (main, Aug 25 2022, 23:26:10) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-78-generic-x86_64-with-glibc2.35', 'event': 'load_word2vec_format'}
+2023-08-09 10:53:43,011-scrap_v3.py-CRITICAL-[REQUEST FAILED] 404 Client Error: Not Found for url: https://www.infobae.com/feeds/
+2023-08-09 10:53:43,203-scrap_v3.py-CRITICAL-[REQUEST FAILED] 404 Client Error: Not Found for url: https://www.infobae.com/rss/
+2023-08-09 10:53:43,466-scrap_v3.py-CRITICAL-[REQUEST FAILED] 404 Client Error: Not Found for url: https://www.infobae.com/feed/
+2023-08-09 10:53:43,549-scrap_v3.py-INFO--START:2023-08-09 10:53:25 - END:2023-08-09 10:53:43
+2023-08-09 10:58:57,159-scrap_v3.py-INFO-loading projection weights from models/wiki.es.vec
+2023-08-09 10:59:11,109-scrap_v3.py-INFO-KeyedVectors lifecycle event {'msg': 'loaded (100000, 300) matrix of type float32 from models/wiki.es.vec', 'binary': False, 'encoding': 'utf8', 'datetime': '2023-08-09T10:59:11.092012', 'gensim': '4.3.1', 'python': '3.9.13 (main, Aug 25 2022, 23:26:10) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-78-generic-x86_64-with-glibc2.35', 'event': 'load_word2vec_format'}
+2023-08-09 10:59:15,068-scrap_v3.py-CRITICAL-[REQUEST FAILED] 404 Client Error: Not Found for url: https://www.infobae.com/feeds/
+2023-08-09 10:59:15,239-scrap_v3.py-CRITICAL-[REQUEST FAILED] 404 Client Error: Not Found for url: https://www.infobae.com/feed/
+2023-08-09 10:59:15,311-scrap_v3.py-CRITICAL-[REQUEST FAILED] 404 Client Error: Not Found for url: https://www.infobae.com/rss/
+2023-08-09 10:59:15,388-scrap_v3.py-INFO--START:2023-08-09 10:58:56 - END:2023-08-09 10:59:15
+2023-08-09 11:00:35,790-scrap_v3.py-INFO-loading projection weights from models/wiki.es.vec
+2023-08-09 11:00:48,599-scrap_v3.py-INFO-KeyedVectors lifecycle event {'msg': 'loaded (100000, 300) matrix of type float32 from models/wiki.es.vec', 'binary': False, 'encoding': 'utf8', 'datetime': '2023-08-09T11:00:48.583465', 'gensim': '4.3.1', 'python': '3.9.13 (main, Aug 25 2022, 23:26:10) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-78-generic-x86_64-with-glibc2.35', 'event': 'load_word2vec_format'}
+2023-08-09 11:00:51,675-scrap_v3.py-CRITICAL-[REQUEST FAILED] 404 Client Error: Not Found for url: https://www.infobae.com/feed/
+2023-08-09 11:00:51,679-scrap_v3.py-CRITICAL-[REQUEST FAILED] 404 Client Error: Not Found for url: https://www.infobae.com/rss/
+2023-08-09 11:00:51,687-scrap_v3.py-CRITICAL-[REQUEST FAILED] 404 Client Error: Not Found for url: https://www.infobae.com/feeds/
+2023-08-09 11:00:51,744-scrap_v3.py-INFO--START:2023-08-09 11:00:35 - END:2023-08-09 11:00:51
+2023-08-09 11:14:33,690-scrap_v3.py-INFO-loading projection weights from models/wiki.es.vec
+2023-08-09 11:14:49,101-scrap_v3.py-INFO-KeyedVectors lifecycle event {'msg': 'loaded (100000, 300) matrix of type float32 from models/wiki.es.vec', 'binary': False, 'encoding': 'utf8', 'datetime': '2023-08-09T11:14:49.086044', 'gensim': '4.3.1', 'python': '3.9.13 (main, Aug 25 2022, 23:26:10) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-78-generic-x86_64-with-glibc2.35', 'event': 'load_word2vec_format'}
+2023-08-09 11:14:52,663-scrap_v3.py-CRITICAL-[REQUEST FAILED] 404 Client Error: Not Found for url: https://www.infobae.com/feeds/
+2023-08-09 11:14:53,196-scrap_v3.py-CRITICAL-[REQUEST FAILED] 404 Client Error: Not Found for url: https://www.infobae.com/rss/
+2023-08-09 11:14:53,474-scrap_v3.py-CRITICAL-[REQUEST FAILED] 404 Client Error: Not Found for url: https://www.infobae.com/feed/
+2023-08-09 11:14:53,567-scrap_v3.py-ERROR-An error occurred while processing https://www.infobae.com/: Expected a file path; 'output' is a directory
+2023-08-09 11:14:53,570-scrap_v3.py-INFO--START:2023-08-09 11:14:33 - END:2023-08-09 11:14:53
+2023-08-09 11:19:00,039-scrap_v3.py-INFO-loading projection weights from models/wiki.es.vec
+2023-08-09 11:19:12,646-scrap_v3.py-INFO-KeyedVectors lifecycle event {'msg': 'loaded (100000, 300) matrix of type float32 from models/wiki.es.vec', 'binary': False, 'encoding': 'utf8', 'datetime': '2023-08-09T11:19:12.630424', 'gensim': '4.3.1', 'python': '3.9.13 (main, Aug 25 2022, 23:26:10) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-78-generic-x86_64-with-glibc2.35', 'event': 'load_word2vec_format'}
+2023-08-09 11:19:16,600-scrap_v3.py-CRITICAL-[REQUEST FAILED] 404 Client Error: Not Found for url: https://www.infobae.com/feeds/
+2023-08-09 11:19:16,745-scrap_v3.py-CRITICAL-[REQUEST FAILED] 404 Client Error: Not Found for url: https://www.infobae.com/feed/
+2023-08-09 11:19:16,750-scrap_v3.py-CRITICAL-[REQUEST FAILED] 404 Client Error: Not Found for url: https://www.infobae.com/rss/
+2023-08-09 11:19:16,822-scrap_v3.py-ERROR-An error occurred while processing https://www.infobae.com/: CSV format does not support nested data
+2023-08-09 11:19:16,825-scrap_v3.py-INFO--START:2023-08-09 11:18:59 - END:2023-08-09 11:19:16
+2023-08-09 11:29:50,724-scrap_v3.py-INFO-loading projection weights from models/wiki.es.vec
+2023-08-09 11:30:03,679-scrap_v3.py-INFO-KeyedVectors lifecycle event {'msg': 'loaded (100000, 300) matrix of type float32 from models/wiki.es.vec', 'binary': False, 'encoding': 'utf8', 'datetime': '2023-08-09T11:30:03.663000', 'gensim': '4.3.1', 'python': '3.9.13 (main, Aug 25 2022, 23:26:10) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-78-generic-x86_64-with-glibc2.35', 'event': 'load_word2vec_format'}
+2023-08-09 11:30:07,129-scrap_v3.py-CRITICAL-[REQUEST FAILED] 404 Client Error: Not Found for url: https://www.infobae.com/feeds/
+2023-08-09 11:30:07,636-scrap_v3.py-CRITICAL-[REQUEST FAILED] 404 Client Error: Not Found for url: https://www.infobae.com/rss/
+2023-08-09 11:30:07,637-scrap_v3.py-CRITICAL-[REQUEST FAILED] 404 Client Error: Not Found for url: https://www.infobae.com/feed/
+2023-08-09 11:30:07,719-scrap_v3.py-ERROR-An error occurred while processing https://www.infobae.com/: sequence item 0: expected str instance, list found
+2023-08-09 11:30:07,723-scrap_v3.py-INFO--START:2023-08-09 11:29:50 - END:2023-08-09 11:30:07
+2023-08-09 11:35:15,727-scrap_v3.py-INFO-loading projection weights from models/wiki.es.vec
+2023-08-09 11:35:28,419-scrap_v3.py-INFO-KeyedVectors lifecycle event {'msg': 'loaded (100000, 300) matrix of type float32 from models/wiki.es.vec', 'binary': False, 'encoding': 'utf8', 'datetime': '2023-08-09T11:35:28.403170', 'gensim': '4.3.1', 'python': '3.9.13 (main, Aug 25 2022, 23:26:10) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-78-generic-x86_64-with-glibc2.35', 'event': 'load_word2vec_format'}
+2023-08-09 11:35:31,963-scrap_v3.py-CRITICAL-[REQUEST FAILED] 404 Client Error: Not Found for url: https://www.infobae.com/feeds/
+2023-08-09 11:35:32,424-scrap_v3.py-CRITICAL-[REQUEST FAILED] 404 Client Error: Not Found for url: https://www.infobae.com/rss/
+2023-08-09 11:35:32,502-scrap_v3.py-CRITICAL-[REQUEST FAILED] 404 Client Error: Not Found for url: https://www.infobae.com/feed/
+2023-08-09 11:35:32,595-scrap_v3.py-INFO--START:2023-08-09 11:35:15 - END:2023-08-09 11:35:32
+2023-08-09 11:36:52,144-scrap_v3.py-INFO-loading projection weights from models/wiki.es.vec
+2023-08-09 11:37:04,918-scrap_v3.py-INFO-KeyedVectors lifecycle event {'msg': 'loaded (100000, 300) matrix of type float32 from models/wiki.es.vec', 'binary': False, 'encoding': 'utf8', 'datetime': '2023-08-09T11:37:04.903219', 'gensim': '4.3.1', 'python': '3.9.13 (main, Aug 25 2022, 23:26:10) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-78-generic-x86_64-with-glibc2.35', 'event': 'load_word2vec_format'}
+2023-08-09 11:37:08,260-scrap_v3.py-CRITICAL-[REQUEST FAILED] 404 Client Error: Not Found for url: https://www.infobae.com/feeds/
+2023-08-09 11:37:08,265-scrap_v3.py-CRITICAL-[REQUEST FAILED] 404 Client Error: Not Found for url: https://www.infobae.com/feed/
+2023-08-09 11:37:08,266-scrap_v3.py-CRITICAL-[REQUEST FAILED] 404 Client Error: Not Found for url: https://www.infobae.com/rss/
+2023-08-09 11:37:08,357-scrap_v3.py-INFO--START:2023-08-09 11:36:51 - END:2023-08-09 11:37:08
+2023-08-09 11:38:13,930-scrap_v3.py-INFO-loading projection weights from models/wiki.es.vec
+2023-08-09 11:38:28,457-scrap_v3.py-INFO-KeyedVectors lifecycle event {'msg': 'loaded (100000, 300) matrix of type float32 from models/wiki.es.vec', 'binary': False, 'encoding': 'utf8', 'datetime': '2023-08-09T11:38:28.441672', 'gensim': '4.3.1', 'python': '3.9.13 (main, Aug 25 2022, 23:26:10) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-78-generic-x86_64-with-glibc2.35', 'event': 'load_word2vec_format'}
+2023-08-09 11:38:31,628-scrap_v3.py-CRITICAL-[REQUEST FAILED] 404 Client Error: Not Found for url: https://www.infobae.com/feeds/
+2023-08-09 11:38:32,317-scrap_v3.py-CRITICAL-[REQUEST FAILED] 404 Client Error: Not Found for url: https://www.infobae.com/feed/
+2023-08-09 11:38:32,341-scrap_v3.py-CRITICAL-[REQUEST FAILED] 404 Client Error: Not Found for url: https://www.infobae.com/rss/
+2023-08-09 11:38:32,402-scrap_v3.py-INFO--START:2023-08-09 11:38:13 - END:2023-08-09 11:38:32
+2023-08-09 11:41:30,872-scrap_v3.py-INFO-loading projection weights from models/wiki.es.vec
+2023-08-09 11:41:44,054-scrap_v3.py-INFO-KeyedVectors lifecycle event {'msg': 'loaded (100000, 300) matrix of type float32 from models/wiki.es.vec', 'binary': False, 'encoding': 'utf8', 'datetime': '2023-08-09T11:41:44.038696', 'gensim': '4.3.1', 'python': '3.9.13 (main, Aug 25 2022, 23:26:10) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-78-generic-x86_64-with-glibc2.35', 'event': 'load_word2vec_format'}
+2023-08-09 11:41:48,023-scrap_v3.py-CRITICAL-[REQUEST FAILED] 404 Client Error: Not Found for url: https://www.infobae.com/feeds/
+2023-08-09 11:41:48,138-scrap_v3.py-CRITICAL-[REQUEST FAILED] 404 Client Error: Not Found for url: https://www.infobae.com/rss/
+2023-08-09 11:41:48,447-scrap_v3.py-CRITICAL-[REQUEST FAILED] 404 Client Error: Not Found for url: https://www.infobae.com/feed/
+2023-08-09 11:41:48,811-scrap_v3.py-INFO--START:2023-08-09 11:41:30 - END:2023-08-09 11:41:48
+2023-08-09 11:54:33,560-scrap_v3.py-INFO-loading projection weights from models/wiki.es.vec
+2023-08-09 11:54:47,650-scrap_v3.py-INFO-KeyedVectors lifecycle event {'msg': 'loaded (100000, 300) matrix of type float32 from models/wiki.es.vec', 'binary': False, 'encoding': 'utf8', 'datetime': '2023-08-09T11:54:47.634097', 'gensim': '4.3.1', 'python': '3.9.13 (main, Aug 25 2022, 23:26:10) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-78-generic-x86_64-with-glibc2.35', 'event': 'load_word2vec_format'}
+2023-08-09 11:54:52,642-scrap_v3.py-CRITICAL-[REQUEST FAILED] 404 Client Error: Not Found for url: https://www.infobae.com/feed/
+2023-08-09 11:54:52,732-scrap_v3.py-CRITICAL-[REQUEST FAILED] 404 Client Error: Not Found for url: https://www.infobae.com/feeds/
+2023-08-09 11:54:53,076-scrap_v3.py-CRITICAL-[REQUEST FAILED] 404 Client Error: Not Found for url: https://www.infobae.com/rss/
+2023-08-09 11:54:56,007-scrap_v3.py-ERROR-An error occurred while processing https://www.infobae.com/: Expected a file path; 'temp' is a directory
+2023-08-09 11:54:56,066-scrap_v3.py-INFO--START:2023-08-09 11:54:33 - END:2023-08-09 11:54:56
+2023-08-09 11:59:11,204-scrap_v3.py-INFO-loading projection weights from models/wiki.es.vec
+2023-08-09 11:59:25,054-scrap_v3.py-INFO-KeyedVectors lifecycle event {'msg': 'loaded (100000, 300) matrix of type float32 from models/wiki.es.vec', 'binary': False, 'encoding': 'utf8', 'datetime': '2023-08-09T11:59:25.038493', 'gensim': '4.3.1', 'python': '3.9.13 (main, Aug 25 2022, 23:26:10) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-78-generic-x86_64-with-glibc2.35', 'event': 'load_word2vec_format'}
+2023-08-09 11:59:29,321-scrap_v3.py-CRITICAL-[REQUEST FAILED] 404 Client Error: Not Found for url: https://www.infobae.com/feeds/
+2023-08-09 11:59:30,268-scrap_v3.py-CRITICAL-[REQUEST FAILED] 404 Client Error: Not Found for url: https://www.infobae.com/rss/
+2023-08-09 11:59:30,522-scrap_v3.py-CRITICAL-[REQUEST FAILED] 404 Client Error: Not Found for url: https://www.infobae.com/feed/
+2023-08-09 11:59:33,831-scrap_v3.py-ERROR-An error occurred while processing https://www.infobae.com/: Expected a file path; 'temp' is a directory
+2023-08-09 11:59:33,836-scrap_v3.py-INFO--START:2023-08-09 11:59:10 - END:2023-08-09 11:59:33
