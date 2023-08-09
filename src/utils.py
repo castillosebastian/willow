@@ -1,11 +1,8 @@
 import polars as pl
-import os 
 import numpy as np
 import re
-import nltk
 from nltk.stem.snowball import SnowballStemmer
 from gensim.models.keyedvectors import KeyedVectors
-#from newspaper import Article, Config, build
 from bs4 import BeautifulSoup
 import string
 import spacy
