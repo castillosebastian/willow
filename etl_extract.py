@@ -23,7 +23,7 @@ filename = os.path.basename(__file__)
 def main(
     topic="narcotráfico",
     similarity_threshold=0.4,
-    info_source_bd=['https://www.losandes.com.ar/', 'https://www.infobae.com/'],
+    info_source_bd= None,
     sleep_time=1,
     evaluate_mode_for_matches=False,
     evaluate_mode_for_matches_term="",
@@ -87,10 +87,10 @@ def main(
     # Bd source
     if isinstance(info_source_bd, pl.DataFrame):
         urls = info_source_bd['newsportalurl'].to_list()
-    elif isinstance(info_source_bd, list):
-        urls = info_source_bd
+        states = info_source_bd['state'].to_list()
+        cities = info_source_bd['city'].to_list()      
     else:
-        raise TypeError("info_source_bd must be either a DataFrame or a list") 
+        raise TypeError("info_source_bd must be DataFrame") 
 
     # Extractor
     config_news_extractor = Config()
@@ -115,9 +115,9 @@ def main(
     authors = []
 
     # Your main loop starts here
-    for url in tqdm(urls, desc="Processing URLs"):
+    for url, state, city in tqdm(zip(urls, states, cities), total=len(urls), desc="Processing URLs"):
         try:
-            # Initialize the counters
+            # Initialize the counters            
             total_articles = 0
             total_text_topic_related = 0
             match1_regex = 0
@@ -167,7 +167,7 @@ def main(
             total_articles_list.append(total_articles)
             match1_regex_list.append(match1_regex)
             match2_similarity_list.append(match2_similarity)
-            total_text_topic_related_list.append(total_text_topic_related)
+            total_text_topic_related_list.append(total_text_topic_related)          
 
             try:
                 # Create a DataFrame
@@ -188,7 +188,7 @@ def main(
                 outputlists = [dates, contents, links, authors]
                 for lst in outputlists:
                     if not lst:
-                        lst.append("No news")
+                        lst.append("No news")               
 
                 news_topic_related = pl.DataFrame(
                     {
@@ -197,9 +197,13 @@ def main(
                         "topic": topic,
                         "content": contents,
                         "link": links,
-                        "authors": authors
+                        "authors": authors,
+                        "portal": url,
+                        "state": state,
+                        "city": city
                     }
-                )
+                )               
+
             except Exception:
                 logging.exception(f"An error occurred while generating dataframes")
 
@@ -256,9 +260,9 @@ if __name__ == "__main__":
     start_time = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
     log_messages = [f"-START:{start_time}"]
 
-    #info_source_bd = load_urls().df.filter(pl.col('topic') == topic)
+    info_source_bd = load_bd_source(topic=topic, state = 'Mendoza')
     
-    stat_etl_topic_related, news_topic_related = main()
+    stat_etl_topic_related, news_topic_related = main(info_source_bd=info_source_bd)
     
     save_dataframes(
         stat_etl_topic_related, news_topic_related, config, topic=topic, mode="local"

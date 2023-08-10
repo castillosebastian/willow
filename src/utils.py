@@ -38,10 +38,11 @@ def load_keywords(topic="narcotráfico"):
     return df["keywords"].to_list()
 
 
-def load_urls(topic="narcotráfico"):
+def load_bd_source(topic="narcotráfico", state=None):
     df = pl.read_csv("data/portals.csv")
     df = df.filter(pl.col("topic") == topic)
-    return df["newsportalurl"].to_list()
+    df = df.filter(pl.col("state") == state)
+    return df
 
 
 def load_embeddings(path="models/wiki.es.vec", limit=100000):
