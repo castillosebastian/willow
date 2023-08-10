@@ -507,3 +507,77 @@ exceptions.ShapeError: could not create a new dataframe: series "date_extract" h
 2023-08-09 22:22:19,743-etl_extract.py-INFO-loading projection weights from models/wiki.es.vec
 2023-08-09 22:22:34,332-etl_extract.py-INFO-KeyedVectors lifecycle event {'msg': 'loaded (100000, 300) matrix of type float32 from models/wiki.es.vec', 'binary': False, 'encoding': 'utf8', 'datetime': '2023-08-09T22:22:34.316430', 'gensim': '4.3.1', 'python': '3.9.13 (main, Aug 25 2022, 23:26:10) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-78-generic-x86_64-with-glibc2.35', 'event': 'load_word2vec_format'}
 2023-08-09 22:22:54,310-etl_extract.py-INFO--START:2023-08-09 22:22:19 - END:2023-08-09 22:22:54
+2023-08-10 11:17:16,055-etl_extract.py-INFO--START:2023-08-10 11:17:16 - END:2023-08-10 11:17:16
+2023-08-10 11:19:06,087-etl_extract.py-INFO--START:2023-08-10 11:19:06 - END:2023-08-10 11:19:06
+2023-08-10 11:20:25,676-etl_extract.py-INFO-loading projection weights from models/wiki.es.vec
+2023-08-10 11:20:40,954-etl_extract.py-INFO-KeyedVectors lifecycle event {'msg': 'loaded (100000, 300) matrix of type float32 from models/wiki.es.vec', 'binary': False, 'encoding': 'utf8', 'datetime': '2023-08-10T11:20:40.922003', 'gensim': '4.3.1', 'python': '3.9.13 (main, Aug 25 2022, 23:26:10) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-78-generic-x86_64-with-glibc2.35', 'event': 'load_word2vec_format'}
+2023-08-10 11:20:46,190-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.losandes.com.ar/opinion/
+2023-08-10 11:20:46,324-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.losandes.com.ar/salud
+2023-08-10 11:20:46,351-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.losandes.com.ar/empleos/
+2023-08-10 11:20:46,498-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.losandes.com.ar/arquitectura
+2023-08-10 11:20:47,075-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.losandes.com.ar/turismo
+2023-08-10 11:20:47,159-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.losandes.com.ar/receptorias
+2023-08-10 11:20:47,162-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.losandes.com.ar/
+2023-08-10 11:20:47,195-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.losandes.com.ar/economia
+2023-08-10 11:20:48,205-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.losandes.com.ar/politica
+2023-08-10 11:20:48,823-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.losandes.com.ar/clima
+2023-08-10 11:20:48,936-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.losandes.com.ar/mundo/
+2023-08-10 11:20:49,168-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.losandes.com.ar/mele
+2023-08-10 11:20:49,233-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.losandes.com.ar/vecinos
+2023-08-10 11:20:49,234-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.losandes.com.ar/sociales
+2023-08-10 11:20:49,282-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.losandes.com.ar/espectaculo
+2023-08-10 11:20:49,351-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.losandes.com.ar/policiales
+2023-08-10 11:20:52,739-etl_extract.py-CRITICAL-[REQUEST FAILED] HTTPSConnectionPool(host='clasificados.losandes.com.ar', port=443): Read timed out. (read timeout=7)
+2023-08-10 11:20:53,895-etl_extract.py-CRITICAL-[REQUEST FAILED] HTTPConnectionPool(host='sanjuan.losandes.com.ar', port=80): Read timed out. (read timeout=7)
+2023-08-10 11:20:56,647-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.losandes.com.ar:443/
+2023-08-10 11:20:56,650-etl_extract.py-WARNING-Deleting category https://clasificados.losandes.com.ar from source https://www.losandes.com.ar/ due to download error
+2023-08-10 11:20:56,652-etl_extract.py-WARNING-Deleting category http://sanjuan.losandes.com.ar from source https://www.losandes.com.ar/ due to download error
+2023-08-10 11:20:58,687-etl_extract.py-ERROR-An error occurred while processing https://www.losandes.com.ar/
+Traceback (most recent call last):
+  File "/home/sebacastillo/willow/etl_extract.py", line 156, in main
+    date, content, link, author = download_and_parse_article(u)
+  File "/home/sebacastillo/willow/src/extraction.py", line 67, in download_and_parse_article
+    article.parse()
+  File "/home/sebacastillo/.willow/lib/python3.9/site-packages/newspaper/article.py", line 191, in parse
+    self.throw_if_not_downloaded_verbose()
+  File "/home/sebacastillo/.willow/lib/python3.9/site-packages/newspaper/article.py", line 531, in throw_if_not_downloaded_verbose
+    raise ArticleException('Article `download()` failed with %s on URL %s' %
+newspaper.article.ArticleException: Article `download()` failed with 429 Client Error: Too Many Requests for url: https://www.losandes.com.ar/politica/anibal-fernandez-hablo-del-crimen-de-morena-no-tengo-por-que-meterme-en-ese-tema/ on URL https://www.losandes.com.ar/politica/anibal-fernandez-hablo-del-crimen-de-morena-no-tengo-por-que-meterme-en-ese-tema/
+2023-08-10 11:21:19,286-etl_extract.py-INFO--START:2023-08-10 11:20:25 - END:2023-08-10 11:21:19
+2023-08-10 11:23:31,898-etl_extract.py-INFO-loading projection weights from models/wiki.es.vec
+2023-08-10 11:23:44,804-etl_extract.py-INFO-KeyedVectors lifecycle event {'msg': 'loaded (100000, 300) matrix of type float32 from models/wiki.es.vec', 'binary': False, 'encoding': 'utf8', 'datetime': '2023-08-10T11:23:44.790012', 'gensim': '4.3.1', 'python': '3.9.13 (main, Aug 25 2022, 23:26:10) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-78-generic-x86_64-with-glibc2.35', 'event': 'load_word2vec_format'}
+2023-08-10 11:23:48,084-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.losandes.com.ar/empleos/
+2023-08-10 11:23:48,146-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.losandes.com.ar/da-la-nota
+2023-08-10 11:23:48,249-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.losandes.com.ar/mas-deportes/
+2023-08-10 11:23:48,309-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.losandes.com.ar/turismo
+2023-08-10 11:23:48,312-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.losandes.com.ar/estilo
+2023-08-10 11:23:48,322-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.losandes.com.ar/receptorias
+2023-08-10 11:23:48,334-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.losandes.com.ar/salud/
+2023-08-10 11:23:48,387-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: http://sanjuan.losandes.com.ar/
+2023-08-10 11:23:48,504-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.losandes.com.ar/economia
+2023-08-10 11:23:48,508-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.losandes.com.ar/
+2023-08-10 11:23:48,525-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.losandes.com.ar/fincas
+2023-08-10 11:23:48,533-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.losandes.com.ar/por-las-redes/
+2023-08-10 11:23:48,587-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.losandes.com.ar/editorial
+2023-08-10 11:23:48,608-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.losandes.com.ar/arquitectura/
+2023-08-10 11:23:48,653-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.losandes.com.ar/politica
+2023-08-10 11:23:48,659-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.losandes.com.ar/mundo
+2023-08-10 11:23:48,710-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.losandes.com.ar/clima
+2023-08-10 11:23:48,730-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.losandes.com.ar/policiales
+2023-08-10 11:23:48,753-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.losandes.com.ar/mele
+2023-08-10 11:23:49,064-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.losandes.com.ar/vecinos
+2023-08-10 11:23:49,068-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.losandes.com.ar/espectaculo
+2023-08-10 11:23:49,070-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.losandes.com.ar/sociales
+2023-08-10 11:23:49,621-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.losandes.com.ar:443/
+2023-08-10 11:23:51,492-etl_extract.py-ERROR-An error occurred while processing https://www.losandes.com.ar/
+Traceback (most recent call last):
+  File "/home/sebacastillo/willow/etl_extract.py", line 156, in main
+    date, content, link, author = download_and_parse_article(u)
+  File "/home/sebacastillo/willow/src/extraction.py", line 67, in download_and_parse_article
+    article.parse()
+  File "/home/sebacastillo/.willow/lib/python3.9/site-packages/newspaper/article.py", line 191, in parse
+    self.throw_if_not_downloaded_verbose()
+  File "/home/sebacastillo/.willow/lib/python3.9/site-packages/newspaper/article.py", line 531, in throw_if_not_downloaded_verbose
+    raise ArticleException('Article `download()` failed with %s on URL %s' %
+newspaper.article.ArticleException: Article `download()` failed with 429 Client Error: Too Many Requests for url: https://www.losandes.com.ar/politica/anibal-fernandez-hablo-del-crimen-de-morena-no-tengo-por-que-meterme-en-ese-tema/ on URL https://www.losandes.com.ar/politica/anibal-fernandez-hablo-del-crimen-de-morena-no-tengo-por-que-meterme-en-ese-tema/
+2023-08-10 11:24:11,122-etl_extract.py-INFO--START:2023-08-10 11:23:31 - END:2023-08-10 11:24:11

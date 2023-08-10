@@ -23,7 +23,7 @@ filename = os.path.basename(__file__)
 def main(
     topic="narcotráfico",
     similarity_threshold=0.4,
-    urls=["https://www.infobae.com/"],
+    info_source_bd=['https://www.losandes.com.ar/', 'https://www.infobae.com/'],
     sleep_time=1,
     evaluate_mode_for_matches=False,
     evaluate_mode_for_matches_term="",
@@ -44,9 +44,9 @@ def main(
         topic and content in the articles. Articles exceeding this threshold
         are considered relevant. Default is 0.4.
 
-    urls : list of str
-        A list of URLs (news websites) from which articles are to be scraped.
-        Default is ['https://www.infobae.com/'].
+    info_source_bd : pl.DataFrame with 'topic' and 'newsportalurl' or list of urls
+        (news websites) from which articles are to be scraped.
+        Ej: ['https://www.infobae.com/'].
 
     sleep_time : int
         The amount of time (in seconds) the scraper waits between consecutive requests
@@ -84,6 +84,13 @@ def main(
 
     # HYPERPARAMETERS and MODELS
     keywords = load_keywords(topic=topic)
+    # Bd source
+    if isinstance(info_source_bd, pl.DataFrame):
+        urls = info_source_bd['newsportalurl'].to_list()
+    elif isinstance(info_source_bd, list):
+        urls = info_source_bd
+    else:
+        raise TypeError("info_source_bd must be either a DataFrame or a list") 
 
     # Extractor
     config_news_extractor = Config()
@@ -93,6 +100,7 @@ def main(
 
     # Models
     word_vectors = load_embeddings(path="models/wiki.es.vec", limit=100000)
+
 
     # Initialize the lists for the DataFrame
     url_list = []
@@ -166,6 +174,7 @@ def main(
                 stat_etl_topic_related = pl.DataFrame(
                     {
                         "date_extract": start_time,
+                        "topic": topic,
                         "url": url_list,
                         "fail_build": fail_build_source_list,
                         "total_articles": total_articles_list,
@@ -176,17 +185,16 @@ def main(
                 )
 
                 # Create a Polars DataFrame with the data
-                if len(dates) == 0:
-                    dates.append("No news")
-                if len(contents) == 0:
-                    contents.append("No news")
-                if len(links) == 0:
-                    links.append("No news")
+                outputlists = [dates, contents, links, authors]
+                for lst in outputlists:
+                    if not lst:
+                        lst.append("No news")
 
                 news_topic_related = pl.DataFrame(
                     {
                         "date_extract": start_time,
                         "date_article": dates,
+                        "topic": topic,
                         "content": contents,
                         "link": links,
                         "authors": authors
@@ -220,7 +228,6 @@ def save_dataframes(stat_df, news_df, config, topic=None, mode="local", db_param
             + datetime.datetime.now().strftime("%Y-%m-%d_%H%M")
             + ".csv",
         )
-
         # Save the DataFrame to a file
         news_df.write_csv(filename_news_topic_related)
         stat_df.write_csv(filename_stat_etl_topic_related)
@@ -249,9 +256,10 @@ if __name__ == "__main__":
     start_time = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
     log_messages = [f"-START:{start_time}"]
 
-    #urls = load_urls()
-    stat_etl_topic_related, news_topic_related = main(urls=['https://www.infobae.com/'])
-
+    #info_source_bd = load_urls().df.filter(pl.col('topic') == topic)
+    
+    stat_etl_topic_related, news_topic_related = main()
+    
     save_dataframes(
         stat_etl_topic_related, news_topic_related, config, topic=topic, mode="local"
     )
