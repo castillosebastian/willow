@@ -6,14 +6,22 @@ from urllib.parse import urlparse
 from nltk.stem.snowball import SnowballStemmer
 from gensim.models.keyedvectors import KeyedVectors
 import datetime
-from newspaper import Article, build
+import newspaper
+from newspaper import Article
 from src.utils import *
 
 # etl helper object and helper functios
 
 
 def build_newspaper_from_url(url, config):
-    return build(url, config=config)
+    source = newspaper.Source(url, config)
+    source.download()
+    source.parse()
+    source.set_categories()
+    source.download_categories()  
+    source.parse_categories()
+    source.generate_articles()
+    return source
 
 
 def extract_articles_with_regex(

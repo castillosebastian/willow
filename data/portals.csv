@@ -2,7 +2,6 @@ state,city,newsportalname,newsportalurl,topic
 Buenos Aires,La Plata,El Día,https://www.eldia.com/,narcotráfico
 Buenos Aires,Mar del Plata,La Capital,https://www.lacapitalmdp.com/,narcotráfico
 CABA,Buenos Aires,Clarín,https://www.clarin.com/,narcotráfico
-Catamarca,San Isidro,El Sanisidrense,https://www.elsanisidrense.com.ar/,narcotráfico
 Chaco,Resistencia,Diario Norte,https://www.diarionorte.com/,narcotráfico
 Chaco,Sáenz Peña,Diario Chaco,https://www.diariochaco.com/,narcotráfico
 Chubut,Rawson,El Chubut,https://www.elchubut.com.ar/,narcotráfico
@@ -51,7 +50,6 @@ Buenos Aires,Buenos Aires,Página 12,https://www.pagina12.com.ar/,narcotráfico
 Buenos Aires,Buenos Aires,El Cronista,https://www.cronista.com/,narcotráfico
 Buenos Aires,Buenos Aires,Perfil,https://www.perfil.com/,narcotráfico
 Buenos Aires,Buenos Aires,Diario Popular,https://www.diariopopular.com.ar/,narcotráfico
-Buenos Aires,La Plata,El Día,https://www.eldia.com/,narcotráfico
 Buenos Aires,Buenos Aires,La Voz,https://www.lavoz.com.ar/,narcotráfico
 Buenos Aires,Buenos Aires,La Gaceta,https://www.lagaceta.com.ar/,narcotráfico
 Córdoba,Córdoba,La Voz del Interior,https://www.lavoz.com.ar/,narcotráfico
