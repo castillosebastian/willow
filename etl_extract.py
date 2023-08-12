@@ -104,6 +104,8 @@ def main(
 
     # Initialize the lists for the DataFrame
     url_list = []
+    state_list = []
+    cities_list = []
     fail_build_source_list = []
     total_articles_list = []
     match1_regex_list = []
@@ -159,10 +161,12 @@ def main(
                 contents.append(content)
                 links.append(link)
                 authors.append(author)
+                state_list.append(state)
+                cities_list.append(city)
                 time.sleep(int(sleep_time))
 
             # Store results
-            url_list.append(url)
+            url_list.append(url)            
             fail_build_source_list.append(fail_build_source)
             total_articles_list.append(total_articles)
             match1_regex_list.append(match1_regex)
@@ -175,7 +179,7 @@ def main(
                     {
                         "date_extract": start_time,
                         "topic": topic,
-                        "url": url_list,
+                        "url": url_list,                        
                         "fail_build": fail_build_source_list,
                         "total_articles": total_articles_list,
                         "match1_url": match1_regex_list,
@@ -185,7 +189,7 @@ def main(
                 )
 
                 # Create a Polars DataFrame with the data
-                outputlists = [dates, contents, links, authors]
+                outputlists = [dates, contents, links, authors, state_list, cities_list]
                 for lst in outputlists:
                     if not lst:
                         lst.append("No news")               
@@ -199,8 +203,8 @@ def main(
                         "link": links,
                         "authors": authors,
                         "portal": url,
-                        "state": state,
-                        "city": city
+                        "state": state_list,
+                        "city": cities_list
                     }
                 )               
 
