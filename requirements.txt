@@ -1,5 +1,6 @@
 pandas
 polars
+numpy
 black
 torch
 ipykernel
@@ -28,6 +29,6 @@ fasttext
 sentence-transformers
 python-dotenv
 spacy
-bertopic
-numpy==1.21.4 # this downgrade was do to need of bertopic-numba
-numba==0.53
+#bertopic # downgrade numpy give crash other script!
+#numpy==1.21.4 # this downgrade was do to need of bertopic-numba
+#numba==0.53
