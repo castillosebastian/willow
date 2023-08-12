@@ -1,0 +1,595 @@
+2023-08-12 12:09:27,904-url_check_spider.py-INFO-Scrapy 2.10.0 started (bot: url_checker)
+2023-08-12 12:09:27,918-url_check_spider.py-INFO-Versions: lxml 4.9.3.0, libxml2 2.10.3, cssselect 1.2.0, parsel 1.8.1, w3lib 2.1.2, Twisted 22.10.0, Python 3.9.13 (main, Aug 25 2022, 23:26:10) - [GCC 11.2.0], pyOpenSSL 23.2.0 (OpenSSL 3.1.2 1 Aug 2023), cryptography 41.0.3, Platform Linux-5.15.0-78-generic-x86_64-with-glibc2.35
+2023-08-12 12:09:27,930-url_check_spider.py-INFO-Enabled addons:
+[]
+2023-08-12 12:09:27,931-url_check_spider.py-INFO-Overridden settings:
+{'BOT_NAME': 'url_checker',
+ 'FEED_EXPORT_ENCODING': 'utf-8',
+ 'NEWSPIDER_MODULE': 'url_checker.spiders',
+ 'REQUEST_FINGERPRINTER_IMPLEMENTATION': '2.7',
+ 'ROBOTSTXT_OBEY': True,
+ 'SPIDER_MODULES': ['url_checker.spiders'],
+ 'TWISTED_REACTOR': 'twisted.internet.asyncioreactor.AsyncioSelectorReactor'}
+2023-08-12 12:09:27,933-url_check_spider.py-DEBUG-Using selector: EpollSelector
+2023-08-12 12:09:27,935-url_check_spider.py-DEBUG-Using reactor: twisted.internet.asyncioreactor.AsyncioSelectorReactor
+2023-08-12 12:09:27,935-url_check_spider.py-DEBUG-Using asyncio event loop: asyncio.unix_events._UnixSelectorEventLoop
+2023-08-12 12:09:27,954-url_check_spider.py-INFO-Telnet Password: 56cb949846f20dc8
+2023-08-12 12:09:28,122-url_check_spider.py-INFO-Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.memusage.MemoryUsage',
+ 'scrapy.extensions.logstats.LogStats']
+2023-08-12 12:09:28,206-url_check_spider.py-INFO-Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.robotstxt.RobotsTxtMiddleware',
+ 'scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2023-08-12 12:09:28,209-url_check_spider.py-INFO-Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2023-08-12 12:09:28,209-url_check_spider.py-INFO-Enabled item pipelines:
+[]
+2023-08-12 12:09:28,210-url_check_spider.py-INFO-Spider opened
+2023-08-12 12:09:28,213-url_check_spider.py-INFO-Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2023-08-12 12:09:28,215-url_check_spider.py-INFO-Telnet console listening on 127.0.0.1:6023
+2023-08-12 12:09:28,473-url_check_spider.py-DEBUG-Crawled (200) <GET https://www.clarin.com/robots.txt> (referer: None)
+2023-08-12 12:09:28,534-url_check_spider.py-DEBUG-Crawled (200) <GET https://www.clarin.com/> (referer: None)
+2023-08-12 12:09:28,642-url_check_spider.py-INFO-Got response from https://www.clarin.com/ with status 200
+2023-08-12 12:09:28,661-url_check_spider.py-DEBUG-Crawled (200) <GET https://www.puntal.com.ar/robots.txt> (referer: None)
+2023-08-12 12:09:28,686-url_check_spider.py-DEBUG-Crawled (200) <GET https://www.lavoz.com.ar/robots.txt> (referer: None)
+2023-08-12 12:09:28,813-url_check_spider.py-DEBUG-Crawled (200) <GET https://www.lavoz.com.ar/> (referer: None)
+2023-08-12 12:09:28,824-url_check_spider.py-DEBUG-Crawled (200) <GET https://www.diariochaco.com/robots.txt> (referer: None)
+2023-08-12 12:09:28,833-url_check_spider.py-DEBUG-Crawled (200) <GET https://www.diarionorte.com/robots.txt> (referer: None)
+2023-08-12 12:09:28,844-url_check_spider.py-DEBUG-Crawled (403) <GET https://www.cronica.com.ar/robots.txt> (referer: None)
+2023-08-12 12:09:28,845-url_check_spider.py-DEBUG-Rule at line 1 without any user agent to enforce it on.
+2023-08-12 12:09:28,845-url_check_spider.py-DEBUG-Rule at line 3 without any user agent to enforce it on.
+2023-08-12 12:09:28,845-url_check_spider.py-DEBUG-Rule at line 16 without any user agent to enforce it on.
+2023-08-12 12:09:28,916-url_check_spider.py-INFO-Got response from https://www.lavoz.com.ar/ with status 200
+2023-08-12 12:09:28,931-url_check_spider.py-WARNING-Remote certificate is not valid for hostname "www.goyaennoticias.com.ar"; VerificationError(errors=[DNSMismatch(mismatched_id=DNS_ID(hostname=b'www.goyaennoticias.com.ar'))])
+2023-08-12 12:09:29,011-url_check_spider.py-DEBUG-Crawled (403) <GET https://www.cronica.com.ar/> (referer: None)
+2023-08-12 12:09:29,119-url_check_spider.py-INFO-Ignoring response <403 https://www.cronica.com.ar/>: HTTP status code is not handled or not allowed
+2023-08-12 12:09:29,175-url_check_spider.py-DEBUG-Crawled (200) <GET https://www.eldia.com/robots.txt> (referer: None)
+2023-08-12 12:09:29,225-url_check_spider.py-DEBUG-Crawled (200) <GET https://www.lacapitalmdp.com/robots.txt> (referer: None)
+2023-08-12 12:09:29,355-url_check_spider.py-DEBUG-Crawled (200) <GET https://www.ellitoral.com.ar/robots.txt> (referer: None)
+2023-08-12 12:09:29,426-url_check_spider.py-DEBUG-Crawled (200) <GET https://www.puntal.com.ar/> (referer: None)
+2023-08-12 12:09:29,511-url_check_spider.py-DEBUG-Crawled (200) <GET https://www.diariochaco.com/> (referer: None)
+2023-08-12 12:09:29,531-url_check_spider.py-DEBUG-Crawled (200) <GET https://www.diarionorte.com/> (referer: None)
+2023-08-12 12:09:29,531-url_check_spider.py-INFO-Got response from https://www.puntal.com.ar/ with status 200
+2023-08-12 12:09:29,566-url_check_spider.py-DEBUG-Redirecting (301) to <GET https://goyaennoticias.com.ar/robots.txt> from <GET https://www.goyaennoticias.com.ar/robots.txt>
+2023-08-12 12:09:29,612-url_check_spider.py-INFO-Got response from https://www.diariochaco.com/ with status 200
+2023-08-12 12:09:29,620-url_check_spider.py-DEBUG-Crawled (200) <GET https://www.jujuyalmomento.com/robots.txt> (referer: None)
+2023-08-12 12:09:29,635-url_check_spider.py-DEBUG-Crawled (200) <GET https://www.lacapitalmdp.com/> (referer: None)
+2023-08-12 12:09:29,636-url_check_spider.py-INFO-Got response from https://www.diarionorte.com/ with status 200
+2023-08-12 12:09:29,739-url_check_spider.py-INFO-Got response from https://www.lacapitalmdp.com/ with status 200
+2023-08-12 12:09:29,790-url_check_spider.py-DEBUG-Crawled (200) <GET https://www.eldia.com/> (referer: None)
+2023-08-12 12:09:29,814-url_check_spider.py-DEBUG-Crawled (200) <GET https://www.elcomercial.com.ar/robots.txt> (referer: None)
+2023-08-12 12:09:29,876-url_check_spider.py-DEBUG-Crawled (200) <GET https://www.eltribuno.com/robots.txt> (referer: None)
+2023-08-12 12:09:29,892-url_check_spider.py-INFO-Got response from https://www.eldia.com/ with status 200
+2023-08-12 12:09:30,037-url_check_spider.py-DEBUG-Crawled (200) <GET https://www.expresdiario.com.ar/robots.txt> (referer: None)
+2023-08-12 12:09:30,064-url_check_spider.py-DEBUG-Redirecting (302) to <GET https://www.eltribuno.com/jujuy> from <GET https://www.eltribuno.com/jujuy/>
+2023-08-12 12:09:30,242-url_check_spider.py-DEBUG-Crawled (200) <GET https://www.elcomercial.com.ar/> (referer: None)
+2023-08-12 12:09:30,260-url_check_spider.py-DEBUG-Crawled (404) <GET https://elindependiente.com.ar/robots.txt> (referer: None)
+2023-08-12 12:09:30,317-url_check_spider.py-DEBUG-Crawled (200) <GET https://goyaennoticias.com.ar/robots.txt> (referer: None)
+2023-08-12 12:09:30,330-url_check_spider.py-DEBUG-Crawled (200) <GET https://www.diariotextual.com/robots.txt> (referer: None)
+2023-08-12 12:09:30,344-url_check_spider.py-INFO-Got response from https://www.elcomercial.com.ar/ with status 200
+2023-08-12 12:09:30,364-url_check_spider.py-DEBUG-Crawled (200) <GET https://www.jujuyalmomento.com/> (referer: None)
+2023-08-12 12:09:30,386-url_check_spider.py-DEBUG-Crawled (200) <GET https://www.ellitoral.com.ar/corrientes/> (referer: None)
+2023-08-12 12:09:30,388-url_check_spider.py-DEBUG-Crawled (404) <GET https://elindependiente.com.ar/secciones/chilecito/> (referer: None)
+2023-08-12 12:09:30,439-url_check_spider.py-DEBUG-Crawled (200) <GET https://www.expresdiario.com.ar/> (referer: None)
+2023-08-12 12:09:30,445-url_check_spider.py-DEBUG-Crawled (404) <GET https://www.elindependiente.com.ar/robots.txt> (referer: None)
+2023-08-12 12:09:30,466-url_check_spider.py-INFO-Got response from https://www.jujuyalmomento.com/ with status 200
+2023-08-12 12:09:30,489-url_check_spider.py-INFO-Got response from https://www.ellitoral.com.ar/corrientes/ with status 200
+2023-08-12 12:09:30,490-url_check_spider.py-INFO-Ignoring response <404 https://elindependiente.com.ar/secciones/chilecito/>: HTTP status code is not handled or not allowed
+2023-08-12 12:09:30,541-url_check_spider.py-INFO-Got response from https://www.expresdiario.com.ar/ with status 200
+2023-08-12 12:09:30,575-url_check_spider.py-DEBUG-Crawled (200) <GET https://www.elindependiente.com.ar/> (referer: None)
+2023-08-12 12:09:30,592-url_check_spider.py-DEBUG-Crawled (200) <GET https://www.losandes.com.ar/robots.txt> (referer: None)
+2023-08-12 12:09:30,649-url_check_spider.py-DEBUG-Crawled (200) <GET https://www.infopico.com/robots.txt> (referer: None)
+2023-08-12 12:09:30,679-url_check_spider.py-INFO-Got response from https://www.elindependiente.com.ar/ with status 200
+2023-08-12 12:09:30,764-url_check_spider.py-DEBUG-Crawled (200) <GET https://www.losandes.com.ar/> (referer: None)
+2023-08-12 12:09:30,795-url_check_spider.py-DEBUG-Crawled (200) <GET https://www.eltribuno.com/jujuy> (referer: None)
+2023-08-12 12:09:30,863-url_check_spider.py-DEBUG-Crawled (200) <GET https://www.lmneuquen.com/robots.txt> (referer: None)
+2023-08-12 12:09:30,864-url_check_spider.py-DEBUG-Rule at line 3 without any user agent to enforce it on.
+2023-08-12 12:09:30,864-url_check_spider.py-DEBUG-Rule at line 4 without any user agent to enforce it on.
+2023-08-12 12:09:30,864-url_check_spider.py-DEBUG-Rule at line 5 without any user agent to enforce it on.
+2023-08-12 12:09:30,867-url_check_spider.py-INFO-Got response from https://www.losandes.com.ar/ with status 200
+2023-08-12 12:09:30,885-url_check_spider.py-DEBUG-Retrying <GET https://www.noticiasdelacosta.com.ar/robots.txt> (failed 1 times): DNS lookup failed: no results for hostname lookup: www.noticiasdelacosta.com.ar.
+2023-08-12 12:09:30,899-url_check_spider.py-INFO-Got response from https://www.eltribuno.com/jujuy with status 200
+2023-08-12 12:09:30,934-url_check_spider.py-DEBUG-Crawled (200) <GET https://www.infopico.com/> (referer: None)
+2023-08-12 12:09:30,941-url_check_spider.py-DEBUG-Crawled (200) <GET https://www.elterritorio.com.ar/robots.txt> (referer: None)
+2023-08-12 12:09:30,965-url_check_spider.py-DEBUG-Retrying <GET https://www.noticiasdelacosta.com.ar/robots.txt> (failed 2 times): DNS lookup failed: no results for hostname lookup: www.noticiasdelacosta.com.ar.
+2023-08-12 12:09:30,972-url_check_spider.py-DEBUG-Crawled (200) <GET https://www.primeraedicion.com.ar/robots.txt> (referer: None)
+2023-08-12 12:09:30,998-url_check_spider.py-DEBUG-Redirecting (301) to <GET https://goyaennoticias.com.ar/> from <GET https://www.goyaennoticias.com.ar/>
+2023-08-12 12:09:31,035-url_check_spider.py-INFO-Got response from https://www.infopico.com/ with status 200
+2023-08-12 12:09:31,048-url_check_spider.py-ERROR-Gave up retrying <GET https://www.noticiasdelacosta.com.ar/robots.txt> (failed 3 times): DNS lookup failed: no results for hostname lookup: www.noticiasdelacosta.com.ar.
+2023-08-12 12:09:31,048-url_check_spider.py-ERROR-Error downloading <GET https://www.noticiasdelacosta.com.ar/robots.txt>: DNS lookup failed: no results for hostname lookup: www.noticiasdelacosta.com.ar.
+Traceback (most recent call last):
+  File "/home/sebacastillo/.willow/lib/python3.9/site-packages/twisted/internet/defer.py", line 1693, in _inlineCallbacks
+    result = context.run(
+  File "/home/sebacastillo/.willow/lib/python3.9/site-packages/twisted/python/failure.py", line 518, in throwExceptionIntoGenerator
+    return g.throw(self.type, self.value, self.tb)
+  File "/home/sebacastillo/.willow/lib/python3.9/site-packages/scrapy/core/downloader/middleware.py", line 54, in process_request
+    return (yield download_func(request=request, spider=spider))
+  File "/home/sebacastillo/.willow/lib/python3.9/site-packages/twisted/internet/defer.py", line 892, in _runCallbacks
+    current.result = callback(  # type: ignore[misc]
+  File "/home/sebacastillo/.willow/lib/python3.9/site-packages/twisted/internet/endpoints.py", line 1022, in startConnectionAttempts
+    raise error.DNSLookupError(
+twisted.internet.error.DNSLookupError: DNS lookup failed: no results for hostname lookup: www.noticiasdelacosta.com.ar.
+2023-08-12 12:09:31,135-url_check_spider.py-DEBUG-Retrying <GET https://www.noticiasdelacosta.com.ar/> (failed 1 times): DNS lookup failed: no results for hostname lookup: www.noticiasdelacosta.com.ar.
+2023-08-12 12:09:31,161-url_check_spider.py-DEBUG-Redirecting (302) to <GET https://www.eltribuno.com/salta> from <GET https://www.eltribuno.com/salta/>
+2023-08-12 12:09:31,219-url_check_spider.py-DEBUG-Retrying <GET https://www.noticiasdelacosta.com.ar/> (failed 2 times): DNS lookup failed: no results for hostname lookup: www.noticiasdelacosta.com.ar.
+2023-08-12 12:09:31,243-url_check_spider.py-DEBUG-Redirecting (301) to <GET https://diariotextual.com/inicio/> from <GET https://www.diariotextual.com/>
+2023-08-12 12:09:31,294-url_check_spider.py-DEBUG-Crawled (200) <GET https://diariosanrafael.com.ar/robots.txt> (referer: None)
+2023-08-12 12:09:31,310-url_check_spider.py-ERROR-Gave up retrying <GET https://www.noticiasdelacosta.com.ar/> (failed 3 times): DNS lookup failed: no results for hostname lookup: www.noticiasdelacosta.com.ar.
+2023-08-12 12:09:31,336-url_check_spider.py-DEBUG-Crawled (200) <GET https://www.elchubut.com.ar/robots.txt> (referer: None)
+2023-08-12 12:09:31,370-url_check_spider.py-DEBUG-Crawled (200) <GET https://www.lmneuquen.com/> (referer: None)
+2023-08-12 12:09:31,375-url_check_spider.py-DEBUG-Crawled (200) <GET https://www.eltribuno.com/salta> (referer: None)
+2023-08-12 12:09:31,435-url_check_spider.py-ERROR-Error downloading <GET https://www.noticiasdelacosta.com.ar/>
+Traceback (most recent call last):
+  File "/home/sebacastillo/.willow/lib/python3.9/site-packages/twisted/internet/defer.py", line 1693, in _inlineCallbacks
+    result = context.run(
+  File "/home/sebacastillo/.willow/lib/python3.9/site-packages/twisted/python/failure.py", line 518, in throwExceptionIntoGenerator
+    return g.throw(self.type, self.value, self.tb)
+  File "/home/sebacastillo/.willow/lib/python3.9/site-packages/scrapy/core/downloader/middleware.py", line 54, in process_request
+    return (yield download_func(request=request, spider=spider))
+  File "/home/sebacastillo/.willow/lib/python3.9/site-packages/twisted/internet/defer.py", line 892, in _runCallbacks
+    current.result = callback(  # type: ignore[misc]
+  File "/home/sebacastillo/.willow/lib/python3.9/site-packages/twisted/internet/endpoints.py", line 1022, in startConnectionAttempts
+    raise error.DNSLookupError(
+twisted.internet.error.DNSLookupError: DNS lookup failed: no results for hostname lookup: www.noticiasdelacosta.com.ar.
+2023-08-12 12:09:31,472-url_check_spider.py-INFO-Got response from https://www.lmneuquen.com/ with status 200
+2023-08-12 12:09:31,489-url_check_spider.py-INFO-Got response from https://www.eltribuno.com/salta with status 200
+2023-08-12 12:09:31,497-url_check_spider.py-DEBUG-Crawled (200) <GET https://www.primeraedicion.com.ar/> (referer: None)
+2023-08-12 12:09:31,499-url_check_spider.py-DEBUG-Crawled (200) <GET https://www.elcordillerano.com.ar/robots.txt> (referer: None)
+2023-08-12 12:09:31,506-url_check_spider.py-DEBUG-Crawled (200) <GET https://www.minutoneuquen.com/robots.txt> (referer: None)
+2023-08-12 12:09:31,524-url_check_spider.py-DEBUG-Retrying <GET https://diariosanrafael.com.ar/> (failed 1 times): 429 Unknown Status
+2023-08-12 12:09:31,535-url_check_spider.py-DEBUG-Retrying <GET http://eloranense.com/robots.txt> (failed 1 times): DNS lookup failed: no results for hostname lookup: eloranense.com.
+2023-08-12 12:09:31,552-url_check_spider.py-DEBUG-Crawled (200) <GET https://www.elterritorio.com.ar/> (referer: None)
+2023-08-12 12:09:31,599-url_check_spider.py-INFO-Got response from https://www.primeraedicion.com.ar/ with status 200
+2023-08-12 12:09:31,621-url_check_spider.py-DEBUG-Retrying <GET http://eloranense.com/robots.txt> (failed 2 times): DNS lookup failed: no results for hostname lookup: eloranense.com.
+2023-08-12 12:09:31,624-url_check_spider.py-DEBUG-Crawled (200) <GET https://goyaennoticias.com.ar/robots.txt> (referer: None)
+2023-08-12 12:09:31,653-url_check_spider.py-INFO-Got response from https://www.elterritorio.com.ar/ with status 200
+2023-08-12 12:09:31,702-url_check_spider.py-ERROR-Gave up retrying <GET http://eloranense.com/robots.txt> (failed 3 times): DNS lookup failed: no results for hostname lookup: eloranense.com.
+2023-08-12 12:09:31,702-url_check_spider.py-ERROR-Error downloading <GET http://eloranense.com/robots.txt>: DNS lookup failed: no results for hostname lookup: eloranense.com.
+Traceback (most recent call last):
+  File "/home/sebacastillo/.willow/lib/python3.9/site-packages/twisted/internet/defer.py", line 1693, in _inlineCallbacks
+    result = context.run(
+  File "/home/sebacastillo/.willow/lib/python3.9/site-packages/twisted/python/failure.py", line 518, in throwExceptionIntoGenerator
+    return g.throw(self.type, self.value, self.tb)
+  File "/home/sebacastillo/.willow/lib/python3.9/site-packages/scrapy/core/downloader/middleware.py", line 54, in process_request
+    return (yield download_func(request=request, spider=spider))
+  File "/home/sebacastillo/.willow/lib/python3.9/site-packages/twisted/internet/defer.py", line 892, in _runCallbacks
+    current.result = callback(  # type: ignore[misc]
+  File "/home/sebacastillo/.willow/lib/python3.9/site-packages/twisted/internet/endpoints.py", line 1022, in startConnectionAttempts
+    raise error.DNSLookupError(
+twisted.internet.error.DNSLookupError: DNS lookup failed: no results for hostname lookup: eloranense.com.
+2023-08-12 12:09:31,782-url_check_spider.py-DEBUG-Retrying <GET http://eloranense.com/> (failed 1 times): DNS lookup failed: no results for hostname lookup: eloranense.com.
+2023-08-12 12:09:31,827-url_check_spider.py-DEBUG-Crawled (200) <GET https://www.tiempodesanjuan.com/robots.txt> (referer: None)
+2023-08-12 12:09:31,869-url_check_spider.py-DEBUG-Retrying <GET http://eloranense.com/> (failed 2 times): DNS lookup failed: no results for hostname lookup: eloranense.com.
+2023-08-12 12:09:31,975-url_check_spider.py-DEBUG-Crawled (200) <GET https://www.diariodecuyo.com.ar/robots.txt> (referer: None)
+2023-08-12 12:09:31,984-url_check_spider.py-DEBUG-Crawled (200) <GET https://diariotextual.com/robots.txt> (referer: None)
+2023-08-12 12:09:32,011-url_check_spider.py-DEBUG-Crawled (200) <GET https://www.elcordillerano.com.ar/> (referer: None)
+2023-08-12 12:09:32,069-url_check_spider.py-ERROR-Gave up retrying <GET http://eloranense.com/> (failed 3 times): DNS lookup failed: no results for hostname lookup: eloranense.com.
+2023-08-12 12:09:32,113-url_check_spider.py-INFO-Got response from https://www.elcordillerano.com.ar/ with status 200
+2023-08-12 12:09:32,178-url_check_spider.py-DEBUG-Crawled (200) <GET https://www.diariodecuyo.com.ar/> (referer: None)
+2023-08-12 12:09:32,181-url_check_spider.py-ERROR-Error downloading <GET http://eloranense.com/>
+Traceback (most recent call last):
+  File "/home/sebacastillo/.willow/lib/python3.9/site-packages/twisted/internet/defer.py", line 1693, in _inlineCallbacks
+    result = context.run(
+  File "/home/sebacastillo/.willow/lib/python3.9/site-packages/twisted/python/failure.py", line 518, in throwExceptionIntoGenerator
+    return g.throw(self.type, self.value, self.tb)
+  File "/home/sebacastillo/.willow/lib/python3.9/site-packages/scrapy/core/downloader/middleware.py", line 54, in process_request
+    return (yield download_func(request=request, spider=spider))
+  File "/home/sebacastillo/.willow/lib/python3.9/site-packages/twisted/internet/defer.py", line 892, in _runCallbacks
+    current.result = callback(  # type: ignore[misc]
+  File "/home/sebacastillo/.willow/lib/python3.9/site-packages/twisted/internet/endpoints.py", line 1022, in startConnectionAttempts
+    raise error.DNSLookupError(
+twisted.internet.error.DNSLookupError: DNS lookup failed: no results for hostname lookup: eloranense.com.
+2023-08-12 12:09:32,196-url_check_spider.py-DEBUG-Crawled (200) <GET https://www.eldiariodelarepublica.com/robots.txt> (referer: None)
+2023-08-12 12:09:32,227-url_check_spider.py-DEBUG-Crawled (200) <GET https://www.ellitoral.com/robots.txt> (referer: None)
+2023-08-12 12:09:32,282-url_check_spider.py-INFO-Got response from https://www.diariodecuyo.com.ar/ with status 200
+2023-08-12 12:09:32,296-url_check_spider.py-DEBUG-Crawled (200) <GET https://www.ellitoral.com/> (referer: None)
+2023-08-12 12:09:32,309-url_check_spider.py-DEBUG-Crawled (200) <GET https://www.lacapital.com.ar/robots.txt> (referer: None)
+2023-08-12 12:09:32,326-url_check_spider.py-DEBUG-Crawled (200) <GET https://www.tiempodesanjuan.com/> (referer: None)
+2023-08-12 12:09:32,377-url_check_spider.py-DEBUG-Crawled (404) <GET https://www.diariolaventana.com/robots.txt> (referer: None)
+2023-08-12 12:09:32,402-url_check_spider.py-DEBUG-Crawled (200) <GET https://www.tiemposur.com.ar/robots.txt> (referer: None)
+2023-08-12 12:09:32,420-url_check_spider.py-INFO-Got response from https://www.ellitoral.com/ with status 200
+2023-08-12 12:09:32,427-url_check_spider.py-DEBUG-Redirecting (301) to <GET https://www.vocesyapuntes.com/robots.txt> from <GET http://www.vocesyapuntes.com/robots.txt>
+2023-08-12 12:09:32,439-url_check_spider.py-INFO-Got response from https://www.tiempodesanjuan.com/ with status 200
+2023-08-12 12:09:32,952-url_check_spider.py-DEBUG-Crawled (200) <GET https://goyaennoticias.com.ar/> (referer: None)
+2023-08-12 12:09:33,054-url_check_spider.py-INFO-Got response from https://goyaennoticias.com.ar/ with status 200
+2023-08-12 12:09:33,072-url_check_spider.py-DEBUG-Redirecting (meta refresh) to <GET http://www.diariolaventana.com.ar> from <GET https://www.diariolaventana.com/>
+2023-08-12 12:09:33,269-url_check_spider.py-DEBUG-Crawled (200) <GET https://www.elchubut.com.ar/> (referer: None)
+2023-08-12 12:09:33,287-url_check_spider.py-DEBUG-Crawled (200) <GET https://www.tiemposur.com.ar/> (referer: None)
+2023-08-12 12:09:33,389-url_check_spider.py-INFO-Got response from https://www.elchubut.com.ar/ with status 200
+2023-08-12 12:09:33,392-url_check_spider.py-INFO-Got response from https://www.tiemposur.com.ar/ with status 200
+2023-08-12 12:09:33,409-url_check_spider.py-DEBUG-Crawled (200) <GET https://www.elliberal.com.ar/robots.txt> (referer: None)
+2023-08-12 12:09:33,476-url_check_spider.py-DEBUG-Crawled (200) <GET https://www.eldiariodelfindelmundo.com/robots.txt> (referer: None)
+2023-08-12 12:09:33,482-url_check_spider.py-DEBUG-Crawled (200) <GET https://www.eldiariodelarepublica.com/> (referer: None)
+2023-08-12 12:09:33,487-url_check_spider.py-DEBUG-Redirecting (301) to <GET https://www.diariolaventana.com.ar/robots.txt> from <GET http://www.diariolaventana.com.ar/robots.txt>
+2023-08-12 12:09:33,491-url_check_spider.py-DEBUG-Crawled (200) <GET https://www.vocesyapuntes.com/robots.txt> (referer: None)
+2023-08-12 12:09:33,526-url_check_spider.py-DEBUG-Crawled (404) <GET https://www.nuevodiarioweb.com.ar/robots.txt> (referer: None)
+2023-08-12 12:09:33,583-url_check_spider.py-INFO-Got response from https://www.eldiariodelarepublica.com/ with status 200
+2023-08-12 12:09:33,637-url_check_spider.py-DEBUG-Crawled (200) <GET https://www.lagaceta.com.ar/robots.txt> (referer: None)
+2023-08-12 12:09:33,680-url_check_spider.py-DEBUG-Crawled (200) <GET https://diariotextual.com/inicio/> (referer: None)
+2023-08-12 12:09:33,684-url_check_spider.py-DEBUG-Redirecting (301) to <GET http://www.vocesyapuntes.com/v6> from <GET http://www.vocesyapuntes.com/>
+2023-08-12 12:09:33,782-url_check_spider.py-INFO-Got response from https://diariotextual.com/inicio/ with status 200
+2023-08-12 12:09:33,868-url_check_spider.py-DEBUG-Crawled (200) <GET https://www.lacapital.com.ar/> (referer: None)
+2023-08-12 12:09:33,872-url_check_spider.py-DEBUG-Crawled (200) <GET https://www.elliberal.com.ar/> (referer: None)
+2023-08-12 12:09:33,878-url_check_spider.py-DEBUG-Redirecting (301) to <GET http://www.vocesyapuntes.com/v6/> from <GET http://www.vocesyapuntes.com/v6>
+2023-08-12 12:09:33,891-url_check_spider.py-DEBUG-Crawled (200) <GET https://www.minutoneuquen.com/> (referer: None)
+2023-08-12 12:09:33,994-url_check_spider.py-DEBUG-Crawled (200) <GET https://www.infobae.com/robots.txt> (referer: None)
+2023-08-12 12:09:34,030-url_check_spider.py-DEBUG-Crawled (200) <GET https://www.nuevodiarioweb.com.ar/> (referer: None)
+2023-08-12 12:09:34,032-url_check_spider.py-INFO-Got response from https://www.lacapital.com.ar/ with status 200
+2023-08-12 12:09:34,033-url_check_spider.py-INFO-Got response from https://www.elliberal.com.ar/ with status 200
+2023-08-12 12:09:34,034-url_check_spider.py-INFO-Got response from https://www.minutoneuquen.com/ with status 200
+2023-08-12 12:09:34,063-url_check_spider.py-DEBUG-Crawled (200) <GET https://diariosanrafael.com.ar/> (referer: None)
+2023-08-12 12:09:34,067-url_check_spider.py-DEBUG-Crawled (200) <GET https://www.pagina12.com.ar/robots.txt> (referer: None)
+2023-08-12 12:09:34,078-url_check_spider.py-DEBUG-Crawled (200) <GET https://www.lanacion.com.ar/robots.txt> (referer: None)
+2023-08-12 12:09:34,087-url_check_spider.py-DEBUG-Crawled (200) <GET https://www.surenio.com.ar/robots.txt> (referer: None)
+2023-08-12 12:09:34,132-url_check_spider.py-INFO-Got response from https://www.nuevodiarioweb.com.ar/ with status 200
+2023-08-12 12:09:34,165-url_check_spider.py-INFO-Got response from https://diariosanrafael.com.ar/ with status 200
+2023-08-12 12:09:34,219-url_check_spider.py-DEBUG-Crawled (200) <GET https://www.eldiariodelfindelmundo.com/> (referer: None)
+2023-08-12 12:09:34,228-url_check_spider.py-DEBUG-Crawled (200) <GET https://www.cronista.com/robots.txt> (referer: None)
+2023-08-12 12:09:34,256-url_check_spider.py-DEBUG-Crawled (200) <GET https://www.lanacion.com.ar/> (referer: None)
+2023-08-12 12:09:34,332-url_check_spider.py-DEBUG-Crawled (200) <GET https://www.surenio.com.ar/> (referer: None)
+2023-08-12 12:09:34,346-url_check_spider.py-INFO-Got response from https://www.eldiariodelfindelmundo.com/ with status 200
+2023-08-12 12:09:34,362-url_check_spider.py-INFO-Got response from https://www.lanacion.com.ar/ with status 200
+2023-08-12 12:09:34,365-url_check_spider.py-DEBUG-Crawled (200) <GET https://www.tucumanoticias.com.ar/robots.txt> (referer: None)
+2023-08-12 12:09:34,375-url_check_spider.py-DEBUG-Crawled (200) <GET https://www.cronista.com/> (referer: None)
+2023-08-12 12:09:34,380-url_check_spider.py-DEBUG-Crawled (200) <GET https://www.lagaceta.com.ar/> (referer: None)
+2023-08-12 12:09:34,395-url_check_spider.py-DEBUG-Redirecting (301) to <GET https://vocesyapuntes.com/v6/> from <GET http://www.vocesyapuntes.com/v6/>
+2023-08-12 12:09:34,398-url_check_spider.py-DEBUG-Crawled (200) <GET https://www.diariolaventana.com.ar/robots.txt> (referer: None)
+2023-08-12 12:09:34,436-url_check_spider.py-INFO-Got response from https://www.surenio.com.ar/ with status 200
+2023-08-12 12:09:34,469-url_check_spider.py-DEBUG-Crawled (200) <GET https://www.pagina12.com.ar/> (referer: None)
+2023-08-12 12:09:34,476-url_check_spider.py-INFO-Got response from https://www.cronista.com/ with status 200
+2023-08-12 12:09:34,482-url_check_spider.py-INFO-Got response from https://www.lagaceta.com.ar/ with status 200
+2023-08-12 12:09:34,492-url_check_spider.py-DEBUG-Crawled (200) <GET https://www.lavoz.com.ar/> (referer: None)
+2023-08-12 12:09:34,532-url_check_spider.py-DEBUG-Crawled (404) <GET https://www.diariopopular.com.ar/robots.txt> (referer: None)
+2023-08-12 12:09:34,533-url_check_spider.py-DEBUG-Rule at line 1 without any user agent to enforce it on.
+2023-08-12 12:09:34,533-url_check_spider.py-DEBUG-Rule at line 2 without any user agent to enforce it on.
+2023-08-12 12:09:34,533-url_check_spider.py-DEBUG-Rule at line 4 without any user agent to enforce it on.
+2023-08-12 12:09:34,533-url_check_spider.py-DEBUG-Rule at line 12 without any user agent to enforce it on.
+2023-08-12 12:09:34,533-url_check_spider.py-DEBUG-Rule at line 13 without any user agent to enforce it on.
+2023-08-12 12:09:34,533-url_check_spider.py-DEBUG-Rule at line 14 without any user agent to enforce it on.
+2023-08-12 12:09:34,534-url_check_spider.py-DEBUG-Rule at line 15 without any user agent to enforce it on.
+2023-08-12 12:09:34,534-url_check_spider.py-DEBUG-Rule at line 16 without any user agent to enforce it on.
+2023-08-12 12:09:34,534-url_check_spider.py-DEBUG-Rule at line 17 without any user agent to enforce it on.
+2023-08-12 12:09:34,534-url_check_spider.py-DEBUG-Rule at line 18 without any user agent to enforce it on.
+2023-08-12 12:09:34,534-url_check_spider.py-DEBUG-Rule at line 19 without any user agent to enforce it on.
+2023-08-12 12:09:34,534-url_check_spider.py-DEBUG-Rule at line 20 without any user agent to enforce it on.
+2023-08-12 12:09:34,534-url_check_spider.py-DEBUG-Rule at line 26 without any user agent to enforce it on.
+2023-08-12 12:09:34,534-url_check_spider.py-DEBUG-Rule at line 28 without any user agent to enforce it on.
+2023-08-12 12:09:34,534-url_check_spider.py-DEBUG-Rule at line 29 without any user agent to enforce it on.
+2023-08-12 12:09:34,534-url_check_spider.py-DEBUG-Rule at line 31 without any user agent to enforce it on.
+2023-08-12 12:09:34,534-url_check_spider.py-DEBUG-Rule at line 32 without any user agent to enforce it on.
+2023-08-12 12:09:34,535-url_check_spider.py-DEBUG-Rule at line 33 without any user agent to enforce it on.
+2023-08-12 12:09:34,535-url_check_spider.py-DEBUG-Rule at line 35 without any user agent to enforce it on.
+2023-08-12 12:09:34,535-url_check_spider.py-DEBUG-Rule at line 36 without any user agent to enforce it on.
+2023-08-12 12:09:34,535-url_check_spider.py-DEBUG-Rule at line 37 without any user agent to enforce it on.
+2023-08-12 12:09:34,535-url_check_spider.py-DEBUG-Rule at line 40 without any user agent to enforce it on.
+2023-08-12 12:09:34,535-url_check_spider.py-DEBUG-Rule at line 44 without any user agent to enforce it on.
+2023-08-12 12:09:34,535-url_check_spider.py-DEBUG-Rule at line 49 without any user agent to enforce it on.
+2023-08-12 12:09:34,535-url_check_spider.py-DEBUG-Rule at line 55 without any user agent to enforce it on.
+2023-08-12 12:09:34,535-url_check_spider.py-DEBUG-Rule at line 58 without any user agent to enforce it on.
+2023-08-12 12:09:34,535-url_check_spider.py-DEBUG-Rule at line 68 without any user agent to enforce it on.
+2023-08-12 12:09:34,535-url_check_spider.py-DEBUG-Rule at line 69 without any user agent to enforce it on.
+2023-08-12 12:09:34,536-url_check_spider.py-DEBUG-Rule at line 70 without any user agent to enforce it on.
+2023-08-12 12:09:34,536-url_check_spider.py-DEBUG-Rule at line 71 without any user agent to enforce it on.
+2023-08-12 12:09:34,536-url_check_spider.py-DEBUG-Rule at line 72 without any user agent to enforce it on.
+2023-08-12 12:09:34,536-url_check_spider.py-DEBUG-Rule at line 73 without any user agent to enforce it on.
+2023-08-12 12:09:34,536-url_check_spider.py-DEBUG-Rule at line 74 without any user agent to enforce it on.
+2023-08-12 12:09:34,536-url_check_spider.py-DEBUG-Rule at line 75 without any user agent to enforce it on.
+2023-08-12 12:09:34,536-url_check_spider.py-DEBUG-Rule at line 76 without any user agent to enforce it on.
+2023-08-12 12:09:34,536-url_check_spider.py-DEBUG-Rule at line 81 without any user agent to enforce it on.
+2023-08-12 12:09:34,536-url_check_spider.py-DEBUG-Rule at line 82 without any user agent to enforce it on.
+2023-08-12 12:09:34,536-url_check_spider.py-DEBUG-Rule at line 88 without any user agent to enforce it on.
+2023-08-12 12:09:34,536-url_check_spider.py-DEBUG-Rule at line 89 without any user agent to enforce it on.
+2023-08-12 12:09:34,536-url_check_spider.py-DEBUG-Rule at line 90 without any user agent to enforce it on.
+2023-08-12 12:09:34,537-url_check_spider.py-DEBUG-Rule at line 91 without any user agent to enforce it on.
+2023-08-12 12:09:34,537-url_check_spider.py-DEBUG-Rule at line 92 without any user agent to enforce it on.
+2023-08-12 12:09:34,537-url_check_spider.py-DEBUG-Rule at line 93 without any user agent to enforce it on.
+2023-08-12 12:09:34,537-url_check_spider.py-DEBUG-Rule at line 94 without any user agent to enforce it on.
+2023-08-12 12:09:34,537-url_check_spider.py-DEBUG-Rule at line 95 without any user agent to enforce it on.
+2023-08-12 12:09:34,537-url_check_spider.py-DEBUG-Rule at line 96 without any user agent to enforce it on.
+2023-08-12 12:09:34,537-url_check_spider.py-DEBUG-Rule at line 99 without any user agent to enforce it on.
+2023-08-12 12:09:34,537-url_check_spider.py-DEBUG-Rule at line 100 without any user agent to enforce it on.
+2023-08-12 12:09:34,537-url_check_spider.py-DEBUG-Rule at line 101 without any user agent to enforce it on.
+2023-08-12 12:09:34,537-url_check_spider.py-DEBUG-Rule at line 102 without any user agent to enforce it on.
+2023-08-12 12:09:34,537-url_check_spider.py-DEBUG-Rule at line 106 without any user agent to enforce it on.
+2023-08-12 12:09:34,537-url_check_spider.py-DEBUG-Rule at line 107 without any user agent to enforce it on.
+2023-08-12 12:09:34,538-url_check_spider.py-DEBUG-Rule at line 111 without any user agent to enforce it on.
+2023-08-12 12:09:34,538-url_check_spider.py-DEBUG-Rule at line 112 without any user agent to enforce it on.
+2023-08-12 12:09:34,538-url_check_spider.py-DEBUG-Rule at line 117 without any user agent to enforce it on.
+2023-08-12 12:09:34,538-url_check_spider.py-DEBUG-Rule at line 118 without any user agent to enforce it on.
+2023-08-12 12:09:34,538-url_check_spider.py-DEBUG-Rule at line 119 without any user agent to enforce it on.
+2023-08-12 12:09:34,538-url_check_spider.py-DEBUG-Rule at line 120 without any user agent to enforce it on.
+2023-08-12 12:09:34,538-url_check_spider.py-DEBUG-Rule at line 123 without any user agent to enforce it on.
+2023-08-12 12:09:34,538-url_check_spider.py-DEBUG-Rule at line 124 without any user agent to enforce it on.
+2023-08-12 12:09:34,538-url_check_spider.py-DEBUG-Rule at line 125 without any user agent to enforce it on.
+2023-08-12 12:09:34,538-url_check_spider.py-DEBUG-Rule at line 127 without any user agent to enforce it on.
+2023-08-12 12:09:34,538-url_check_spider.py-DEBUG-Rule at line 128 without any user agent to enforce it on.
+2023-08-12 12:09:34,539-url_check_spider.py-DEBUG-Rule at line 135 without any user agent to enforce it on.
+2023-08-12 12:09:34,539-url_check_spider.py-DEBUG-Rule at line 136 without any user agent to enforce it on.
+2023-08-12 12:09:34,539-url_check_spider.py-DEBUG-Rule at line 137 without any user agent to enforce it on.
+2023-08-12 12:09:34,539-url_check_spider.py-DEBUG-Rule at line 139 without any user agent to enforce it on.
+2023-08-12 12:09:34,539-url_check_spider.py-DEBUG-Rule at line 140 without any user agent to enforce it on.
+2023-08-12 12:09:34,539-url_check_spider.py-DEBUG-Rule at line 146 without any user agent to enforce it on.
+2023-08-12 12:09:34,539-url_check_spider.py-DEBUG-Rule at line 147 without any user agent to enforce it on.
+2023-08-12 12:09:34,539-url_check_spider.py-DEBUG-Rule at line 149 without any user agent to enforce it on.
+2023-08-12 12:09:34,539-url_check_spider.py-DEBUG-Rule at line 151 without any user agent to enforce it on.
+2023-08-12 12:09:34,539-url_check_spider.py-DEBUG-Rule at line 153 without any user agent to enforce it on.
+2023-08-12 12:09:34,540-url_check_spider.py-DEBUG-Rule at line 155 without any user agent to enforce it on.
+2023-08-12 12:09:34,540-url_check_spider.py-DEBUG-Rule at line 157 without any user agent to enforce it on.
+2023-08-12 12:09:34,540-url_check_spider.py-DEBUG-Rule at line 159 without any user agent to enforce it on.
+2023-08-12 12:09:34,540-url_check_spider.py-DEBUG-Rule at line 161 without any user agent to enforce it on.
+2023-08-12 12:09:34,540-url_check_spider.py-DEBUG-Rule at line 163 without any user agent to enforce it on.
+2023-08-12 12:09:34,540-url_check_spider.py-DEBUG-Rule at line 165 without any user agent to enforce it on.
+2023-08-12 12:09:34,540-url_check_spider.py-DEBUG-Rule at line 168 without any user agent to enforce it on.
+2023-08-12 12:09:34,540-url_check_spider.py-DEBUG-Rule at line 175 without any user agent to enforce it on.
+2023-08-12 12:09:34,541-url_check_spider.py-DEBUG-Rule at line 180 without any user agent to enforce it on.
+2023-08-12 12:09:34,541-url_check_spider.py-DEBUG-Rule at line 181 without any user agent to enforce it on.
+2023-08-12 12:09:34,541-url_check_spider.py-DEBUG-Rule at line 183 without any user agent to enforce it on.
+2023-08-12 12:09:34,541-url_check_spider.py-DEBUG-Rule at line 186 without any user agent to enforce it on.
+2023-08-12 12:09:34,541-url_check_spider.py-DEBUG-Rule at line 188 without any user agent to enforce it on.
+2023-08-12 12:09:34,541-url_check_spider.py-DEBUG-Rule at line 189 without any user agent to enforce it on.
+2023-08-12 12:09:34,541-url_check_spider.py-DEBUG-Rule at line 191 without any user agent to enforce it on.
+2023-08-12 12:09:34,541-url_check_spider.py-DEBUG-Rule at line 194 without any user agent to enforce it on.
+2023-08-12 12:09:34,541-url_check_spider.py-DEBUG-Rule at line 196 without any user agent to enforce it on.
+2023-08-12 12:09:34,542-url_check_spider.py-DEBUG-Rule at line 197 without any user agent to enforce it on.
+2023-08-12 12:09:34,542-url_check_spider.py-DEBUG-Rule at line 199 without any user agent to enforce it on.
+2023-08-12 12:09:34,542-url_check_spider.py-DEBUG-Rule at line 202 without any user agent to enforce it on.
+2023-08-12 12:09:34,543-url_check_spider.py-DEBUG-Rule at line 204 without any user agent to enforce it on.
+2023-08-12 12:09:34,543-url_check_spider.py-DEBUG-Rule at line 205 without any user agent to enforce it on.
+2023-08-12 12:09:34,543-url_check_spider.py-DEBUG-Rule at line 207 without any user agent to enforce it on.
+2023-08-12 12:09:34,543-url_check_spider.py-DEBUG-Rule at line 210 without any user agent to enforce it on.
+2023-08-12 12:09:34,543-url_check_spider.py-DEBUG-Rule at line 212 without any user agent to enforce it on.
+2023-08-12 12:09:34,543-url_check_spider.py-DEBUG-Rule at line 213 without any user agent to enforce it on.
+2023-08-12 12:09:34,543-url_check_spider.py-DEBUG-Rule at line 215 without any user agent to enforce it on.
+2023-08-12 12:09:34,543-url_check_spider.py-DEBUG-Rule at line 218 without any user agent to enforce it on.
+2023-08-12 12:09:34,544-url_check_spider.py-DEBUG-Rule at line 220 without any user agent to enforce it on.
+2023-08-12 12:09:34,544-url_check_spider.py-DEBUG-Rule at line 221 without any user agent to enforce it on.
+2023-08-12 12:09:34,544-url_check_spider.py-DEBUG-Rule at line 224 without any user agent to enforce it on.
+2023-08-12 12:09:34,544-url_check_spider.py-DEBUG-Rule at line 225 without any user agent to enforce it on.
+2023-08-12 12:09:34,544-url_check_spider.py-DEBUG-Rule at line 228 without any user agent to enforce it on.
+2023-08-12 12:09:34,544-url_check_spider.py-DEBUG-Rule at line 229 without any user agent to enforce it on.
+2023-08-12 12:09:34,544-url_check_spider.py-DEBUG-Rule at line 232 without any user agent to enforce it on.
+2023-08-12 12:09:34,544-url_check_spider.py-DEBUG-Rule at line 235 without any user agent to enforce it on.
+2023-08-12 12:09:34,547-url_check_spider.py-DEBUG-Rule at line 239 without any user agent to enforce it on.
+2023-08-12 12:09:34,547-url_check_spider.py-DEBUG-Rule at line 240 without any user agent to enforce it on.
+2023-08-12 12:09:34,547-url_check_spider.py-DEBUG-Rule at line 242 without any user agent to enforce it on.
+2023-08-12 12:09:34,547-url_check_spider.py-DEBUG-Rule at line 248 without any user agent to enforce it on.
+2023-08-12 12:09:34,547-url_check_spider.py-DEBUG-Rule at line 255 without any user agent to enforce it on.
+2023-08-12 12:09:34,548-url_check_spider.py-DEBUG-Rule at line 256 without any user agent to enforce it on.
+2023-08-12 12:09:34,548-url_check_spider.py-DEBUG-Rule at line 260 without any user agent to enforce it on.
+2023-08-12 12:09:34,548-url_check_spider.py-DEBUG-Rule at line 262 without any user agent to enforce it on.
+2023-08-12 12:09:34,548-url_check_spider.py-DEBUG-Rule at line 265 without any user agent to enforce it on.
+2023-08-12 12:09:34,548-url_check_spider.py-DEBUG-Rule at line 268 without any user agent to enforce it on.
+2023-08-12 12:09:34,548-url_check_spider.py-DEBUG-Rule at line 271 without any user agent to enforce it on.
+2023-08-12 12:09:34,548-url_check_spider.py-DEBUG-Rule at line 272 without any user agent to enforce it on.
+2023-08-12 12:09:34,548-url_check_spider.py-DEBUG-Rule at line 273 without any user agent to enforce it on.
+2023-08-12 12:09:34,548-url_check_spider.py-DEBUG-Rule at line 274 without any user agent to enforce it on.
+2023-08-12 12:09:34,549-url_check_spider.py-DEBUG-Rule at line 275 without any user agent to enforce it on.
+2023-08-12 12:09:34,549-url_check_spider.py-DEBUG-Rule at line 277 without any user agent to enforce it on.
+2023-08-12 12:09:34,549-url_check_spider.py-DEBUG-Rule at line 278 without any user agent to enforce it on.
+2023-08-12 12:09:34,549-url_check_spider.py-DEBUG-Rule at line 281 without any user agent to enforce it on.
+2023-08-12 12:09:34,549-url_check_spider.py-DEBUG-Rule at line 282 without any user agent to enforce it on.
+2023-08-12 12:09:34,549-url_check_spider.py-DEBUG-Rule at line 283 without any user agent to enforce it on.
+2023-08-12 12:09:34,549-url_check_spider.py-DEBUG-Rule at line 284 without any user agent to enforce it on.
+2023-08-12 12:09:34,549-url_check_spider.py-DEBUG-Rule at line 288 without any user agent to enforce it on.
+2023-08-12 12:09:34,549-url_check_spider.py-DEBUG-Rule at line 289 without any user agent to enforce it on.
+2023-08-12 12:09:34,549-url_check_spider.py-DEBUG-Rule at line 294 without any user agent to enforce it on.
+2023-08-12 12:09:34,550-url_check_spider.py-DEBUG-Rule at line 295 without any user agent to enforce it on.
+2023-08-12 12:09:34,550-url_check_spider.py-DEBUG-Rule at line 296 without any user agent to enforce it on.
+2023-08-12 12:09:34,550-url_check_spider.py-DEBUG-Rule at line 297 without any user agent to enforce it on.
+2023-08-12 12:09:34,550-url_check_spider.py-DEBUG-Rule at line 299 without any user agent to enforce it on.
+2023-08-12 12:09:34,550-url_check_spider.py-DEBUG-Rule at line 300 without any user agent to enforce it on.
+2023-08-12 12:09:34,550-url_check_spider.py-DEBUG-Rule at line 308 without any user agent to enforce it on.
+2023-08-12 12:09:34,550-url_check_spider.py-DEBUG-Rule at line 309 without any user agent to enforce it on.
+2023-08-12 12:09:34,550-url_check_spider.py-DEBUG-Rule at line 310 without any user agent to enforce it on.
+2023-08-12 12:09:34,550-url_check_spider.py-DEBUG-Rule at line 311 without any user agent to enforce it on.
+2023-08-12 12:09:34,550-url_check_spider.py-DEBUG-Rule at line 312 without any user agent to enforce it on.
+2023-08-12 12:09:34,551-url_check_spider.py-DEBUG-Rule at line 314 without any user agent to enforce it on.
+2023-08-12 12:09:34,551-url_check_spider.py-DEBUG-Rule at line 366 without any user agent to enforce it on.
+2023-08-12 12:09:34,551-url_check_spider.py-DEBUG-Rule at line 367 without any user agent to enforce it on.
+2023-08-12 12:09:34,551-url_check_spider.py-DEBUG-Rule at line 368 without any user agent to enforce it on.
+2023-08-12 12:09:34,551-url_check_spider.py-DEBUG-Rule at line 370 without any user agent to enforce it on.
+2023-08-12 12:09:34,551-url_check_spider.py-DEBUG-Rule at line 373 without any user agent to enforce it on.
+2023-08-12 12:09:34,551-url_check_spider.py-DEBUG-Rule at line 374 without any user agent to enforce it on.
+2023-08-12 12:09:34,552-url_check_spider.py-DEBUG-Rule at line 375 without any user agent to enforce it on.
+2023-08-12 12:09:34,552-url_check_spider.py-DEBUG-Rule at line 376 without any user agent to enforce it on.
+2023-08-12 12:09:34,552-url_check_spider.py-DEBUG-Rule at line 377 without any user agent to enforce it on.
+2023-08-12 12:09:34,552-url_check_spider.py-DEBUG-Rule at line 378 without any user agent to enforce it on.
+2023-08-12 12:09:34,552-url_check_spider.py-DEBUG-Rule at line 379 without any user agent to enforce it on.
+2023-08-12 12:09:34,560-url_check_spider.py-DEBUG-Crawled (200) <GET https://www.ellitoral.com/> (referer: None)
+2023-08-12 12:09:34,569-url_check_spider.py-DEBUG-Redirecting (301) to <GET https://www.diariolaventana.com.ar/> from <GET http://www.diariolaventana.com.ar>
+2023-08-12 12:09:34,575-url_check_spider.py-DEBUG-Crawled (200) <GET https://www.lavoz.com.ar/> (referer: None)
+2023-08-12 12:09:34,578-url_check_spider.py-INFO-Got response from https://www.pagina12.com.ar/ with status 200
+2023-08-12 12:09:34,593-url_check_spider.py-INFO-Got response from https://www.lavoz.com.ar/ with status 200
+2023-08-12 12:09:34,660-url_check_spider.py-INFO-Got response from https://www.ellitoral.com/ with status 200
+2023-08-12 12:09:34,677-url_check_spider.py-INFO-Got response from https://www.lavoz.com.ar/ with status 200
+2023-08-12 12:09:34,825-url_check_spider.py-DEBUG-Crawled (200) <GET https://www.diariopopular.com.ar/> (referer: None)
+2023-08-12 12:09:34,837-url_check_spider.py-DEBUG-Crawled (200) <GET https://www.perfil.com/robots.txt> (referer: None)
+2023-08-12 12:09:34,925-url_check_spider.py-INFO-Got response from https://www.diariopopular.com.ar/ with status 200
+2023-08-12 12:09:34,935-url_check_spider.py-DEBUG-Crawled (200) <GET https://www.losandes.com.ar/> (referer: None)
+2023-08-12 12:09:34,938-url_check_spider.py-DEBUG-Redirecting (301) to <GET https://viapais.com.ar/cordoba/> from <GET https://diaadia.com.ar/robots.txt>
+2023-08-12 12:09:34,942-url_check_spider.py-DEBUG-Crawled (200) <GET https://www.eldiariodecarlospaz.com.ar/robots.txt> (referer: None)
+2023-08-12 12:09:34,986-url_check_spider.py-DEBUG-Crawled (200) <GET https://vocesyapuntes.com/robots.txt> (referer: None)
+2023-08-12 12:09:35,035-url_check_spider.py-DEBUG-Crawled (200) <GET https://www.lagaceta.com.ar/> (referer: None)
+2023-08-12 12:09:35,037-url_check_spider.py-INFO-Got response from https://www.losandes.com.ar/ with status 200
+2023-08-12 12:09:35,137-url_check_spider.py-INFO-Got response from https://www.lagaceta.com.ar/ with status 200
+2023-08-12 12:09:35,186-url_check_spider.py-DEBUG-Crawled (200) <GET https://www.eldiariodecarlospaz.com.ar/> (referer: None)
+2023-08-12 12:09:35,287-url_check_spider.py-INFO-Got response from https://www.eldiariodecarlospaz.com.ar/ with status 200
+2023-08-12 12:09:35,394-url_check_spider.py-DEBUG-Crawled (200) <GET https://www.infobae.com/> (referer: None)
+2023-08-12 12:09:35,400-url_check_spider.py-DEBUG-Crawled (200) <GET https://www.perfil.com/> (referer: None)
+2023-08-12 12:09:35,404-url_check_spider.py-DEBUG-Crawled (200) <GET https://www.eldiaonline.com/robots.txt> (referer: None)
+2023-08-12 12:09:35,480-url_check_spider.py-DEBUG-Redirecting (301) to <GET https://diariolaventana.com.ar/> from <GET https://www.diariolaventana.com.ar/>
+2023-08-12 12:09:35,495-url_check_spider.py-INFO-Got response from https://www.infobae.com/ with status 200
+2023-08-12 12:09:35,508-url_check_spider.py-DEBUG-Crawled (200) <GET https://www.eldiaonline.com/> (referer: None)
+2023-08-12 12:09:35,508-url_check_spider.py-INFO-Got response from https://www.perfil.com/ with status 200
+2023-08-12 12:09:35,524-url_check_spider.py-DEBUG-Crawled (200) <GET https://www.elsol.com.ar/robots.txt> (referer: None)
+2023-08-12 12:09:35,533-url_check_spider.py-DEBUG-Crawled (200) <GET https://www.lacapital.com.ar/> (referer: None)
+2023-08-12 12:09:35,578-url_check_spider.py-DEBUG-Crawled (200) <GET https://www.rosario3.com/robots.txt> (referer: None)
+2023-08-12 12:09:35,605-url_check_spider.py-DEBUG-Crawled (200) <GET https://viapais.com.ar/cordoba/> (referer: None)
+2023-08-12 12:09:35,613-url_check_spider.py-DEBUG-Rule at line 1 without any user agent to enforce it on.
+2023-08-12 12:09:35,613-url_check_spider.py-DEBUG-Rule at line 2 without any user agent to enforce it on.
+2023-08-12 12:09:35,613-url_check_spider.py-DEBUG-Rule at line 3 without any user agent to enforce it on.
+2023-08-12 12:09:35,613-url_check_spider.py-DEBUG-Rule at line 4 without any user agent to enforce it on.
+2023-08-12 12:09:35,613-url_check_spider.py-DEBUG-Rule at line 5 without any user agent to enforce it on.
+2023-08-12 12:09:35,613-url_check_spider.py-DEBUG-Rule at line 8 without any user agent to enforce it on.
+2023-08-12 12:09:35,613-url_check_spider.py-DEBUG-Rule at line 9 without any user agent to enforce it on.
+2023-08-12 12:09:35,614-url_check_spider.py-DEBUG-Rule at line 10 without any user agent to enforce it on.
+2023-08-12 12:09:35,614-url_check_spider.py-DEBUG-Rule at line 11 without any user agent to enforce it on.
+2023-08-12 12:09:35,614-url_check_spider.py-DEBUG-Rule at line 12 without any user agent to enforce it on.
+2023-08-12 12:09:35,614-url_check_spider.py-DEBUG-Rule at line 13 without any user agent to enforce it on.
+2023-08-12 12:09:35,614-url_check_spider.py-DEBUG-Rule at line 19 without any user agent to enforce it on.
+2023-08-12 12:09:35,614-url_check_spider.py-DEBUG-Rule at line 21 without any user agent to enforce it on.
+2023-08-12 12:09:35,614-url_check_spider.py-DEBUG-Rule at line 22 without any user agent to enforce it on.
+2023-08-12 12:09:35,614-url_check_spider.py-DEBUG-Rule at line 25 without any user agent to enforce it on.
+2023-08-12 12:09:35,614-url_check_spider.py-DEBUG-Rule at line 26 without any user agent to enforce it on.
+2023-08-12 12:09:35,614-url_check_spider.py-DEBUG-Rule at line 27 without any user agent to enforce it on.
+2023-08-12 12:09:35,614-url_check_spider.py-DEBUG-Rule at line 28 without any user agent to enforce it on.
+2023-08-12 12:09:35,614-url_check_spider.py-DEBUG-Rule at line 29 without any user agent to enforce it on.
+2023-08-12 12:09:35,615-url_check_spider.py-DEBUG-Rule at line 30 without any user agent to enforce it on.
+2023-08-12 12:09:35,615-url_check_spider.py-DEBUG-Rule at line 31 without any user agent to enforce it on.
+2023-08-12 12:09:35,615-url_check_spider.py-DEBUG-Rule at line 32 without any user agent to enforce it on.
+2023-08-12 12:09:35,615-url_check_spider.py-DEBUG-Rule at line 33 without any user agent to enforce it on.
+2023-08-12 12:09:35,615-url_check_spider.py-DEBUG-Rule at line 34 without any user agent to enforce it on.
+2023-08-12 12:09:35,615-url_check_spider.py-DEBUG-Rule at line 35 without any user agent to enforce it on.
+2023-08-12 12:09:35,615-url_check_spider.py-DEBUG-Rule at line 36 without any user agent to enforce it on.
+2023-08-12 12:09:35,615-url_check_spider.py-DEBUG-Rule at line 37 without any user agent to enforce it on.
+2023-08-12 12:09:35,615-url_check_spider.py-DEBUG-Rule at line 38 without any user agent to enforce it on.
+2023-08-12 12:09:35,615-url_check_spider.py-DEBUG-Rule at line 42 without any user agent to enforce it on.
+2023-08-12 12:09:35,615-url_check_spider.py-DEBUG-Rule at line 43 without any user agent to enforce it on.
+2023-08-12 12:09:35,615-url_check_spider.py-DEBUG-Rule at line 44 without any user agent to enforce it on.
+2023-08-12 12:09:35,615-url_check_spider.py-DEBUG-Rule at line 46 without any user agent to enforce it on.
+2023-08-12 12:09:35,615-url_check_spider.py-DEBUG-Rule at line 47 without any user agent to enforce it on.
+2023-08-12 12:09:35,616-url_check_spider.py-DEBUG-Rule at line 48 without any user agent to enforce it on.
+2023-08-12 12:09:35,616-url_check_spider.py-DEBUG-Rule at line 105 without any user agent to enforce it on.
+2023-08-12 12:09:35,616-url_check_spider.py-DEBUG-Rule at line 106 without any user agent to enforce it on.
+2023-08-12 12:09:35,616-url_check_spider.py-DEBUG-Rule at line 107 without any user agent to enforce it on.
+2023-08-12 12:09:35,616-url_check_spider.py-DEBUG-Rule at line 153 without any user agent to enforce it on.
+2023-08-12 12:09:35,616-url_check_spider.py-DEBUG-Rule at line 154 without any user agent to enforce it on.
+2023-08-12 12:09:35,616-url_check_spider.py-DEBUG-Rule at line 155 without any user agent to enforce it on.
+2023-08-12 12:09:35,616-url_check_spider.py-DEBUG-Rule at line 156 without any user agent to enforce it on.
+2023-08-12 12:09:35,616-url_check_spider.py-DEBUG-Rule at line 157 without any user agent to enforce it on.
+2023-08-12 12:09:35,617-url_check_spider.py-DEBUG-Rule at line 162 without any user agent to enforce it on.
+2023-08-12 12:09:35,617-url_check_spider.py-DEBUG-Rule at line 163 without any user agent to enforce it on.
+2023-08-12 12:09:35,617-url_check_spider.py-DEBUG-Rule at line 164 without any user agent to enforce it on.
+2023-08-12 12:09:35,617-url_check_spider.py-DEBUG-Rule at line 165 without any user agent to enforce it on.
+2023-08-12 12:09:35,617-url_check_spider.py-DEBUG-Rule at line 166 without any user agent to enforce it on.
+2023-08-12 12:09:35,617-url_check_spider.py-DEBUG-Rule at line 170 without any user agent to enforce it on.
+2023-08-12 12:09:35,617-url_check_spider.py-DEBUG-Rule at line 173 without any user agent to enforce it on.
+2023-08-12 12:09:35,617-url_check_spider.py-DEBUG-Rule at line 174 without any user agent to enforce it on.
+2023-08-12 12:09:35,617-url_check_spider.py-DEBUG-Rule at line 175 without any user agent to enforce it on.
+2023-08-12 12:09:35,617-url_check_spider.py-DEBUG-Rule at line 176 without any user agent to enforce it on.
+2023-08-12 12:09:35,617-url_check_spider.py-DEBUG-Rule at line 177 without any user agent to enforce it on.
+2023-08-12 12:09:35,617-url_check_spider.py-DEBUG-Rule at line 178 without any user agent to enforce it on.
+2023-08-12 12:09:35,617-url_check_spider.py-DEBUG-Rule at line 179 without any user agent to enforce it on.
+2023-08-12 12:09:35,618-url_check_spider.py-DEBUG-Rule at line 180 without any user agent to enforce it on.
+2023-08-12 12:09:35,627-url_check_spider.py-DEBUG-Rule at line 182 without any user agent to enforce it on.
+2023-08-12 12:09:35,636-url_check_spider.py-INFO-Got response from https://www.eldiaonline.com/ with status 200
+2023-08-12 12:09:35,637-url_check_spider.py-INFO-Got response from https://www.lacapital.com.ar/ with status 200
+2023-08-12 12:09:35,647-url_check_spider.py-DEBUG-Crawled (200) <GET https://www.lagaceta.com.ar/> (referer: None)
+2023-08-12 12:09:35,748-url_check_spider.py-INFO-Got response from https://www.lagaceta.com.ar/ with status 200
+2023-08-12 12:09:35,769-url_check_spider.py-DEBUG-Retrying <GET https://www.elsol.com.ar/> (failed 1 times): 429 Unknown Status
+2023-08-12 12:09:35,795-url_check_spider.py-DEBUG-Redirecting (301) to <GET https://viapais.com.ar/cordoba/> from <GET https://diaadia.com.ar/>
+2023-08-12 12:09:35,801-url_check_spider.py-DEBUG-Crawled (200) <GET https://www.eltucumano.com/robots.txt> (referer: None)
+2023-08-12 12:09:35,841-url_check_spider.py-DEBUG-Crawled (200) <GET https://www.rosario3.com/> (referer: None)
+2023-08-12 12:09:35,942-url_check_spider.py-INFO-Got response from https://www.rosario3.com/ with status 200
+2023-08-12 12:09:35,998-url_check_spider.py-DEBUG-Retrying <GET https://www.elsol.com.ar/> (failed 2 times): 429 Unknown Status
+2023-08-12 12:09:36,068-url_check_spider.py-DEBUG-Crawled (200) <GET https://viapais.com.ar/robots.txt> (referer: None)
+2023-08-12 12:09:36,183-url_check_spider.py-DEBUG-Crawled (403) <GET https://www.elentrerios.com/robots.txt> (referer: None)
+2023-08-12 12:09:36,210-url_check_spider.py-DEBUG-Crawled (200) <GET https://www.diarionorte.com/> (referer: None)
+2023-08-12 12:09:36,228-url_check_spider.py-ERROR-Gave up retrying <GET https://www.elsol.com.ar/> (failed 3 times): 429 Unknown Status
+2023-08-12 12:09:36,229-url_check_spider.py-DEBUG-Crawled (429) <GET https://www.elsol.com.ar/> (referer: None)
+2023-08-12 12:09:36,245-url_check_spider.py-DEBUG-Crawled (200) <GET https://www.analisisdigital.com.ar/robots.txt> (referer: None)
+2023-08-12 12:09:36,314-url_check_spider.py-DEBUG-Crawled (200) <GET https://viapais.com.ar/cordoba/> (referer: None)
+2023-08-12 12:09:36,315-url_check_spider.py-INFO-Got response from https://www.diarionorte.com/ with status 200
+2023-08-12 12:09:36,329-url_check_spider.py-INFO-Ignoring response <429 https://www.elsol.com.ar/>: HTTP status code is not handled or not allowed
+2023-08-12 12:09:36,364-url_check_spider.py-DEBUG-Crawled (403) <GET https://www.elentrerios.com/> (referer: None)
+2023-08-12 12:09:36,366-url_check_spider.py-DEBUG-Crawled (200) <GET https://diariolaventana.com.ar/robots.txt> (referer: None)
+2023-08-12 12:09:36,396-url_check_spider.py-DEBUG-Crawled (200) <GET https://www.ellitoral.com.ar/> (referer: None)
+2023-08-12 12:09:36,415-url_check_spider.py-INFO-Got response from https://viapais.com.ar/cordoba/ with status 200
+2023-08-12 12:09:36,471-url_check_spider.py-INFO-Ignoring response <403 https://www.elentrerios.com/>: HTTP status code is not handled or not allowed
+2023-08-12 12:09:36,498-url_check_spider.py-INFO-Got response from https://www.ellitoral.com.ar/ with status 200
+2023-08-12 12:09:36,572-url_check_spider.py-DEBUG-Crawled (200) <GET https://www.diarioepoca.com/robots.txt> (referer: None)
+2023-08-12 12:09:36,600-url_check_spider.py-DEBUG-Crawled (200) <GET https://www.analisisdigital.com.ar/> (referer: None)
+2023-08-12 12:09:36,702-url_check_spider.py-INFO-Got response from https://www.analisisdigital.com.ar/ with status 200
+2023-08-12 12:09:36,722-url_check_spider.py-DEBUG-Crawled (200) <GET https://www.lmneuquen.com/> (referer: None)
+2023-08-12 12:09:36,824-url_check_spider.py-INFO-Got response from https://www.lmneuquen.com/ with status 200
+2023-08-12 12:09:36,854-url_check_spider.py-DEBUG-Crawled (200) <GET https://www.eltucumano.com/> (referer: None)
+2023-08-12 12:09:36,866-url_check_spider.py-DEBUG-Crawled (200) <GET https://www.lmneuquen.com/> (referer: None)
+2023-08-12 12:09:36,919-url_check_spider.py-DEBUG-Crawled (200) <GET https://www.chacodiapordia.com/robots.txt> (referer: None)
+2023-08-12 12:09:36,958-url_check_spider.py-INFO-Got response from https://www.eltucumano.com/ with status 200
+2023-08-12 12:09:36,967-url_check_spider.py-INFO-Got response from https://www.lmneuquen.com/ with status 200
+2023-08-12 12:09:37,193-url_check_spider.py-DEBUG-Crawled (200) <GET https://www.diarioepoca.com/> (referer: None)
+2023-08-12 12:09:37,295-url_check_spider.py-INFO-Got response from https://www.diarioepoca.com/ with status 200
+2023-08-12 12:09:37,403-url_check_spider.py-DEBUG-Crawled (200) <GET https://diariolaventana.com.ar/> (referer: None)
+2023-08-12 12:09:37,505-url_check_spider.py-INFO-Got response from https://diariolaventana.com.ar/ with status 200
+2023-08-12 12:09:37,805-url_check_spider.py-DEBUG-Crawled (200) <GET https://www.rionegro.com.ar/robots.txt> (referer: None)
+2023-08-12 12:09:37,959-url_check_spider.py-DEBUG-Crawled (200) <GET https://www.rionegro.com.ar/> (referer: None)
+2023-08-12 12:09:38,061-url_check_spider.py-INFO-Got response from https://www.rionegro.com.ar/ with status 200
+2023-08-12 12:09:38,279-url_check_spider.py-DEBUG-Crawled (200) <GET https://www.chacodiapordia.com/> (referer: None)
+2023-08-12 12:09:38,381-url_check_spider.py-INFO-Got response from https://www.chacodiapordia.com/ with status 200
+2023-08-12 12:09:38,569-url_check_spider.py-DEBUG-Crawled (200) <GET https://www.tucumanoticias.com.ar/> (referer: None)
+2023-08-12 12:09:38,672-url_check_spider.py-INFO-Got response from https://www.tucumanoticias.com.ar/ with status 200
+2023-08-12 12:09:39,632-url_check_spider.py-DEBUG-Crawled (200) <GET https://vocesyapuntes.com/v6/> (referer: None)
+2023-08-12 12:09:39,738-url_check_spider.py-INFO-Got response from https://vocesyapuntes.com/v6/ with status 200
+2023-08-12 12:09:39,744-url_check_spider.py-INFO-Closing spider (finished)
+2023-08-12 12:09:39,762-url_check_spider.py-INFO-Dumping Scrapy stats:
+{'downloader/exception_count': 12,
+ 'downloader/exception_type_count/twisted.internet.error.DNSLookupError': 12,
+ 'downloader/request_bytes': 37853,
+ 'downloader/request_count': 162,
+ 'downloader/request_method_count/GET': 162,
+ 'downloader/response_bytes': 3978742,
+ 'downloader/response_count': 150,
+ 'downloader/response_status_count/200': 122,
+ 'downloader/response_status_count/301': 12,
+ 'downloader/response_status_count/302': 2,
+ 'downloader/response_status_count/403': 4,
+ 'downloader/response_status_count/404': 6,
+ 'downloader/response_status_count/429': 4,
+ 'elapsed_time_seconds': 11.531826,
+ 'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2023, 8, 12, 15, 9, 39, 745580),
+ 'httpcompression/response_bytes': 23583650,
+ 'httpcompression/response_count': 107,
+ 'httperror/response_ignored_count': 4,
+ 'httperror/response_ignored_status_count/403': 2,
+ 'httperror/response_ignored_status_count/404': 1,
+ 'httperror/response_ignored_status_count/429': 1,
+ 'log_count/DEBUG': 379,
+ 'log_count/ERROR': 9,
+ 'log_count/INFO': 79,
+ 'log_count/WARNING': 1,
+ 'memusage/max': 90128384,
+ 'memusage/startup': 90128384,
+ 'response_received_count': 132,
+ 'retry/count': 11,
+ 'retry/max_reached': 5,
+ 'retry/reason_count/429 Unknown Status': 3,
+ 'retry/reason_count/twisted.internet.error.DNSLookupError': 8,
+ "robotstxt/exception_count/<class 'twisted.internet.error.DNSLookupError'>": 2,
+ 'robotstxt/request_count': 65,
+ 'robotstxt/response_count': 63,
+ 'robotstxt/response_status_count/200': 56,
+ 'robotstxt/response_status_count/403': 2,
+ 'robotstxt/response_status_count/404': 5,
+ 'scheduler/dequeued': 89,
+ 'scheduler/dequeued/memory': 89,
+ 'scheduler/enqueued': 89,
+ 'scheduler/enqueued/memory': 89,
+ 'start_time': datetime.datetime(2023, 8, 12, 15, 9, 28, 213754)}
+2023-08-12 12:09:39,763-url_check_spider.py-INFO-Spider closed (finished)

@@ -3,15 +3,25 @@ import os
 import configparser
 import polars as pl
 import logging
+import time
 
 config = configparser.ConfigParser()
-config.read("config.ini")
-#home_dir = config["main"]["HOME_DIR"]
-#os.chdir(home_dir)
-
+config.read("/home/sebacastillo/willow/config.ini")
+home_dir = config["main"]["HOME_DIR"]
+os.chdir(home_dir)
+filename = os.path.basename(__file__)
 
 # Fix path
-urls = pl.read_csv("/home/sebacastillo/willow/data/portals.csv")['newsportalurl'].to_list()
+urls = pl.read_csv("data/portals.csv")['newsportalurl'].to_list()
+
+# logging
+start_time = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
+name_log = "logs/urlchecker" + start_time + ".log"
+logging.basicConfig(
+        filename=name_log,
+        level=logging.INFO,
+        format=f"%(asctime)s-{filename}-%(levelname)s-%(message)s",
+    )
 
 class URLCheckSpider(scrapy.Spider):
 
