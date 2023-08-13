@@ -32,3 +32,4 @@ spacy
 #bertopic # downgrade numpy give crash other script!
 #numpy==1.21.4 # this downgrade was do to need of bertopic-numba
 #numba==0.53
+dash
