@@ -13,7 +13,7 @@ if news:
                         }
                         )
 
-    main_table = data[['state', 'city', 'date_article', 'sumary', 'link', 'index' ]]
+    main_table = data[['state', 'city', 'date_article', 'sumary', 'link' ]]
     df = main_table.to_pandas()
     df['id'] = df['link']
     df.set_index('id', inplace=True, drop=False)
