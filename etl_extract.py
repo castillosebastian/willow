@@ -115,6 +115,8 @@ def main(
     contents = []
     links = []
     authors = []
+    titles = []
+    keywords = []
 
     # Your main loop starts here
     for url, state, city in tqdm(zip(urls, states, cities), total=len(urls), desc="Processing URLs"):
@@ -155,12 +157,14 @@ def main(
 
             # Go through each articles of the urls with double match (REGEX + SIMILARITY)
             for u in urls_second_match:
-                date, content, link, author = download_and_parse_article(u)
+                date, content, link, author, title, keyword = download_and_parse_article(u)
 
                 dates.append(date)
                 contents.append(content)
                 links.append(link)
                 authors.append(author)
+                titles.append(title)
+                keywords.append(keyword)
                 state_list.append(state)
                 cities_list.append(city)
                 time.sleep(int(sleep_time))
@@ -189,7 +193,9 @@ def main(
                 )
 
                 # Create a Polars DataFrame with the data
-                outputlists = [dates, contents, links, authors, state_list, cities_list]
+                outputlists = [dates, contents, links, authors, 
+                               titles, state_list, cities_list,
+                               keywords]
                 for lst in outputlists:
                     if not lst:
                         lst.append("No news")               
@@ -201,12 +207,20 @@ def main(
                         "topic": topic,
                         "content": contents,
                         "link": links,
+                        "titles": titles,
+                        "keywords": keywords,
                         "authors": authors,
                         "portal": url,
                         "state": state_list,
                         "city": cities_list
                     }
-                )               
+                )
+                # Add content hash and exclude duplicated articles
+                news_topic_related = (
+                    news_topic_related.with_columns(
+                    pl.col("content").hash().alias("content_hash"),
+                    )
+                ).unique(subset=['content_hash'])             
 
             except Exception:
                 logging.exception(f"An error occurred while generating dataframes")
@@ -264,8 +278,8 @@ if __name__ == "__main__":
     start_time = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
     log_messages = [f"-START:{start_time}"]
 
-    info_source_bd = load_bd_source(topic=topic)
-    #info_source_bd = load_bd_source(topic=topic, state = 'Mendoza')
+    #info_source_bd = load_bd_source(topic=topic)
+    info_source_bd = load_bd_source(topic=topic, state = 'CABA')
     
     stat_etl_topic_related, news_topic_related = main(info_source_bd=info_source_bd)
     

@@ -74,9 +74,11 @@ def download_and_parse_article(url):
         # Store the article's publication date, text, and URL
         date = article.publish_date if article.publish_date else datetime.datetime.now()
         author = article.authors if article.authors else 'na'
+        title = article.title if article.title else 'na'
+        keywords = article.keywords if article.keywords else 'na'
         str_list = [str(item) for item in author]
         author = '-'.join(str_list)        
         link = article.url if article.url else url
         content = text if len(text) > 0 else None
 
-    return date, content, link, author
+    return date, content, link, author, title, keywords
