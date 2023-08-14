@@ -116,7 +116,7 @@ def main(
     links = []
     authors = []
     titles = []
-    keywords = []
+    sumaries = []
 
     # Your main loop starts here
     for url, state, city in tqdm(zip(urls, states, cities), total=len(urls), desc="Processing URLs"):
@@ -137,14 +137,14 @@ def main(
 
             # Total Articles
             total_articles = source.size()
-
+            
             # First match processing with REGEX
             urls_matches = extract_articles_with_regex(
                 source,
                 keywords,
                 evaluate_mode_for_matches,
                 evaluate_mode_for_matches_term,
-            )
+            )         
 
             match1_regex += len(urls_matches)
 
@@ -153,21 +153,23 @@ def main(
                 urls_matches, topic, word_vectors, similarity_threshold
             )
 
-            match2_similarity += len(urls_second_match)
+            match2_similarity += len(urls_second_match)            
 
             # Go through each articles of the urls with double match (REGEX + SIMILARITY)
             for u in urls_second_match:
-                date, content, link, author, title, keyword = download_and_parse_article(u)
+                date, content, link, author, title, summary = download_and_parse_article(u)
+
+                len_text_topic_related = len(content)                
 
                 dates.append(date)
                 contents.append(content)
                 links.append(link)
                 authors.append(author)
                 titles.append(title)
-                keywords.append(keyword)
+                sumaries.append(summary)
                 state_list.append(state)
                 cities_list.append(city)
-                time.sleep(int(sleep_time))
+                time.sleep(int(sleep_time))            
 
             # Store results
             url_list.append(url)            
@@ -175,7 +177,7 @@ def main(
             total_articles_list.append(total_articles)
             match1_regex_list.append(match1_regex)
             match2_similarity_list.append(match2_similarity)
-            total_text_topic_related_list.append(total_text_topic_related)          
+            total_text_topic_related_list.append(len_text_topic_related)          
 
             try:
                 # Create a DataFrame
@@ -195,7 +197,7 @@ def main(
                 # Create a Polars DataFrame with the data
                 outputlists = [dates, contents, links, authors, 
                                titles, state_list, cities_list,
-                               keywords]
+                               sumaries]
                 for lst in outputlists:
                     if not lst:
                         lst.append("No news")               
@@ -208,7 +210,7 @@ def main(
                         "content": contents,
                         "link": links,
                         "titles": titles,
-                        "keywords": keywords,
+                        "sumaries": sumaries,
                         "authors": authors,
                         "portal": url,
                         "state": state_list,
@@ -278,8 +280,8 @@ if __name__ == "__main__":
     start_time = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
     log_messages = [f"-START:{start_time}"]
 
-    #info_source_bd = load_bd_source(topic=topic)
-    info_source_bd = load_bd_source(topic=topic, state = 'Buenos Aires')
+    info_source_bd = load_bd_source(topic=topic)
+    #info_source_bd = load_bd_source(topic=topic, state = 'Mendoza')
     
     stat_etl_topic_related, news_topic_related = main(info_source_bd=info_source_bd)
     
