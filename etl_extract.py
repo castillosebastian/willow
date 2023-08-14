@@ -139,7 +139,7 @@ def main(
             total_articles = source.size()
 
             # First match processing with REGEX
-            urls_matches, found_matches = extract_articles_with_regex(
+            urls_matches = extract_articles_with_regex(
                 source,
                 keywords,
                 evaluate_mode_for_matches,
@@ -279,7 +279,7 @@ if __name__ == "__main__":
     log_messages = [f"-START:{start_time}"]
 
     #info_source_bd = load_bd_source(topic=topic)
-    info_source_bd = load_bd_source(topic=topic, state = 'CABA')
+    info_source_bd = load_bd_source(topic=topic, state = 'Buenos Aires')
     
     stat_etl_topic_related, news_topic_related = main(info_source_bd=info_source_bd)
     

@@ -28,8 +28,7 @@ def extract_articles_with_regex(
     source, keywords, evaluate_mode_for_matches, evaluate_mode_for_matches_term
 ):
     urls_matches = []
-    found_matches = []
-
+    
     for article in source.articles:
         urlm = article.url
         match_score, found_match = evaluate_matches(urlm, keywords)
@@ -41,9 +40,8 @@ def extract_articles_with_regex(
 
         if match_score > 0:
             urls_matches.append(urlm)
-            found_matches.append(found_match)
-
-    return urls_matches, found_matches
+            
+    return urls_matches
 
 
 def filter_articles_with_similarity(

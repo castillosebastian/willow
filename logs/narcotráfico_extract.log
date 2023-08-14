@@ -1789,3 +1789,106 @@ Traceback (most recent call last):
     raise ArticleException('Article `download()` failed with %s on URL %s' %
 newspaper.article.ArticleException: Article `download()` failed with HTTPSConnectionPool(host='www.diarioepoca.com', port=443): Read timed out. (read timeout=7) on URL https://www.diarioepoca.com/1294094-ladron-preso-y-recupero-de-monto-millonario-de-dinero
 2023-08-13 20:01:02,705-etl_extract.py-INFO--START:2023-08-13 19:49:15 - END:2023-08-13 20:01:02
+2023-08-14 09:53:55,210-etl_extract.py-INFO-loading projection weights from models/wiki.es.vec
+2023-08-14 09:54:07,825-etl_extract.py-INFO-KeyedVectors lifecycle event {'msg': 'loaded (100000, 300) matrix of type float32 from models/wiki.es.vec', 'binary': False, 'encoding': 'utf8', 'datetime': '2023-08-14T09:54:07.810144', 'gensim': '4.3.1', 'python': '3.9.13 (main, Aug 25 2022, 23:26:10) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-78-generic-x86_64-with-glibc2.35', 'event': 'load_word2vec_format'}
+2023-08-14 09:54:09,973-etl_extract.py-ERROR-An error occurred while processing https://www.losandes.com.ar/
+Traceback (most recent call last):
+  File "/home/sebacastillo/willow/etl_extract.py", line 159, in main
+    date, content, link, author, title = download_and_parse_article(u)
+ValueError: not enough values to unpack (expected 5, got 4)
+2023-08-14 09:54:11,371-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://diariosanrafael.com.ar/
+2023-08-14 09:54:11,380-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://diariosanrafael.com.ar/
+2023-08-14 09:54:12,902-etl_extract.py-ERROR-An error occurred while processing https://www.losandes.com.ar/
+Traceback (most recent call last):
+  File "/home/sebacastillo/willow/etl_extract.py", line 159, in main
+    date, content, link, author, title = download_and_parse_article(u)
+ValueError: not enough values to unpack (expected 5, got 4)
+2023-08-14 09:54:17,730-etl_extract.py-ERROR-An error occurred while processing https://www.elsol.com.ar/
+Traceback (most recent call last):
+  File "/home/sebacastillo/willow/etl_extract.py", line 159, in main
+    date, content, link, author, title = download_and_parse_article(u)
+ValueError: not enough values to unpack (expected 5, got 4)
+2023-08-14 09:54:17,759-etl_extract.py-INFO--START:2023-08-14 09:53:55 - END:2023-08-14 09:54:17
+2023-08-14 09:57:11,167-etl_extract.py-INFO-loading projection weights from models/wiki.es.vec
+2023-08-14 09:57:23,802-etl_extract.py-INFO-KeyedVectors lifecycle event {'msg': 'loaded (100000, 300) matrix of type float32 from models/wiki.es.vec', 'binary': False, 'encoding': 'utf8', 'datetime': '2023-08-14T09:57:23.786822', 'gensim': '4.3.1', 'python': '3.9.13 (main, Aug 25 2022, 23:26:10) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-78-generic-x86_64-with-glibc2.35', 'event': 'load_word2vec_format'}
+2023-08-14 09:57:25,134-etl_extract.py-CRITICAL-[REQUEST FAILED] ('Connection aborted.', OSError(107, 'Transport endpoint is not connected'))
+2023-08-14 09:57:29,450-etl_extract.py-WARNING-Deleting category https://recetas.clarin.com from source https://www.clarin.com/ due to download error
+2023-08-14 09:57:30,581-etl_extract.py-ERROR-An error occurred while processing https://www.clarin.com/
+Traceback (most recent call last):
+  File "/home/sebacastillo/willow/etl_extract.py", line 159, in main
+    date, content, link, author, title = download_and_parse_article(u)
+ValueError: not enough values to unpack (expected 5, got 4)
+2023-08-14 09:58:32,536-etl_extract.py-INFO-loading projection weights from models/wiki.es.vec
+2023-08-14 09:58:45,351-etl_extract.py-INFO-KeyedVectors lifecycle event {'msg': 'loaded (100000, 300) matrix of type float32 from models/wiki.es.vec', 'binary': False, 'encoding': 'utf8', 'datetime': '2023-08-14T09:58:45.335937', 'gensim': '4.3.1', 'python': '3.9.13 (main, Aug 25 2022, 23:26:10) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-78-generic-x86_64-with-glibc2.35', 'event': 'load_word2vec_format'}
+2023-08-14 09:58:45,707-etl_extract.py-CRITICAL-[REQUEST FAILED] ('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))
+2023-08-14 09:58:48,584-etl_extract.py-WARNING-Deleting category https://recetas.clarin.com from source https://www.clarin.com/ due to download error
+2023-08-14 09:58:59,990-etl_extract.py-INFO--START:2023-08-14 09:58:32 - END:2023-08-14 09:58:59
+2023-08-14 10:27:27,658-etl_extract.py-INFO-loading projection weights from models/wiki.es.vec
+2023-08-14 10:27:41,065-etl_extract.py-INFO-KeyedVectors lifecycle event {'msg': 'loaded (100000, 300) matrix of type float32 from models/wiki.es.vec', 'binary': False, 'encoding': 'utf8', 'datetime': '2023-08-14T10:27:41.048057', 'gensim': '4.3.1', 'python': '3.9.13 (main, Aug 25 2022, 23:26:10) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-78-generic-x86_64-with-glibc2.35', 'event': 'load_word2vec_format'}
+2023-08-14 10:27:45,216-etl_extract.py-ERROR-An error occurred while generating dataframes
+Traceback (most recent call last):
+  File "/home/sebacastillo/willow/etl_extract.py", line 201, in main
+    news_topic_related = pl.DataFrame(
+  File "/home/sebacastillo/.willow/lib/python3.9/site-packages/polars/dataframe/frame.py", line 361, in __init__
+    self._df = dict_to_pydf(
+  File "/home/sebacastillo/.willow/lib/python3.9/site-packages/polars/utils/_construction.py", line 826, in dict_to_pydf
+    pydf = PyDataFrame(data_series)
+exceptions.ShapeError: could not create a new dataframe: series "date_extract" has length 1 while series "keywords" has length 0
+2023-08-14 10:29:07,790-etl_extract.py-INFO-loading projection weights from models/wiki.es.vec
+2023-08-14 10:29:20,422-etl_extract.py-INFO-KeyedVectors lifecycle event {'msg': 'loaded (100000, 300) matrix of type float32 from models/wiki.es.vec', 'binary': False, 'encoding': 'utf8', 'datetime': '2023-08-14T10:29:20.407109', 'gensim': '4.3.1', 'python': '3.9.13 (main, Aug 25 2022, 23:26:10) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-78-generic-x86_64-with-glibc2.35', 'event': 'load_word2vec_format'}
+2023-08-14 10:29:25,118-etl_extract.py-INFO--START:2023-08-14 10:29:07 - END:2023-08-14 10:29:25
+2023-08-14 10:49:20,958-etl_extract.py-INFO-loading projection weights from models/wiki.es.vec
+2023-08-14 10:49:34,624-etl_extract.py-INFO-KeyedVectors lifecycle event {'msg': 'loaded (100000, 300) matrix of type float32 from models/wiki.es.vec', 'binary': False, 'encoding': 'utf8', 'datetime': '2023-08-14T10:49:34.609367', 'gensim': '4.3.1', 'python': '3.9.13 (main, Aug 25 2022, 23:26:10) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-78-generic-x86_64-with-glibc2.35', 'event': 'load_word2vec_format'}
+2023-08-14 10:49:40,012-etl_extract.py-INFO--START:2023-08-14 10:49:20 - END:2023-08-14 10:49:40
+2023-08-14 10:51:50,863-etl_extract.py-INFO-loading projection weights from models/wiki.es.vec
+2023-08-14 10:52:04,507-etl_extract.py-INFO-KeyedVectors lifecycle event {'msg': 'loaded (100000, 300) matrix of type float32 from models/wiki.es.vec', 'binary': False, 'encoding': 'utf8', 'datetime': '2023-08-14T10:52:04.491373', 'gensim': '4.3.1', 'python': '3.9.13 (main, Aug 25 2022, 23:26:10) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-78-generic-x86_64-with-glibc2.35', 'event': 'load_word2vec_format'}
+2023-08-14 10:52:15,787-etl_extract.py-CRITICAL-[REQUEST FAILED] HTTPConnectionPool(host='clasificados.eldia.com', port=80): Read timed out. (read timeout=7)
+2023-08-14 10:52:15,796-etl_extract.py-WARNING-Deleting category http://clasificados.eldia.com from source https://www.eldia.com/ due to download error
+2023-08-14 10:52:47,840-etl_extract.py-CRITICAL-[REQUEST FAILED] 403 Client Error: Forbidden for url: http://hombre.perfil.com/
+2023-08-14 10:52:55,041-etl_extract.py-CRITICAL-[REQUEST FAILED] HTTPSConnectionPool(host='www.perfil.com', port=443): Read timed out. (read timeout=7)
+2023-08-14 10:52:56,194-etl_extract.py-WARNING-Deleting category https://www.perfil.com/canal-e from source https://www.perfil.com/ due to download error
+2023-08-14 10:52:57,768-etl_extract.py-CRITICAL-[REQUEST FAILED] 404 Client Error: Not Found for url: https://www.diariopopular.com.ar/%7B%5B%20link%20%5D%7D
+2023-08-14 10:53:00,521-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.lavoz.com.ar/sucesos
+2023-08-14 10:53:00,548-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.lavoz.com.ar/viral
+2023-08-14 10:53:00,568-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.lavoz.com.ar/especiales
+2023-08-14 10:53:00,591-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.lavoz.com.ar/numero-cero
+2023-08-14 10:53:00,870-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.lavoz.com.ar/lo-ultimo
+2023-08-14 10:53:00,880-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.lavoz.com.ar/negocios
+2023-08-14 10:53:01,000-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.lavoz.com.ar/deportes
+2023-08-14 10:53:01,007-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.lavoz.com.ar/clima
+2023-08-14 10:53:01,548-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.lavoz.com.ar/galerias
+2023-08-14 10:53:02,398-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.lavoz.com.ar:443/
+2023-08-14 10:53:04,148-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.lavoz.com.ar/
+2023-08-14 10:53:15,341-etl_extract.py-CRITICAL-[REQUEST FAILED] 403 Client Error: Forbidden for url: https://soporte.lagaceta.com.ar/hc/es
+2023-08-14 10:53:15,500-etl_extract.py-INFO--START:2023-08-14 10:51:50 - END:2023-08-14 10:53:15
+2023-08-14 11:11:47,572-etl_extract.py-INFO-loading projection weights from models/wiki.es.vec
+2023-08-14 11:12:01,434-etl_extract.py-INFO-KeyedVectors lifecycle event {'msg': 'loaded (100000, 300) matrix of type float32 from models/wiki.es.vec', 'binary': False, 'encoding': 'utf8', 'datetime': '2023-08-14T11:12:01.417885', 'gensim': '4.3.1', 'python': '3.9.13 (main, Aug 25 2022, 23:26:10) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-78-generic-x86_64-with-glibc2.35', 'event': 'load_word2vec_format'}
+2023-08-14 11:12:05,201-etl_extract.py-CRITICAL-[REQUEST FAILED] ('Connection aborted.', OSError(107, 'Transport endpoint is not connected'))
+2023-08-14 11:12:08,367-etl_extract.py-WARNING-Deleting category https://recetas.clarin.com from source https://www.clarin.com/ due to download error
+2023-08-14 11:12:08,658-etl_extract.py-INFO--START:2023-08-14 11:11:47 - END:2023-08-14 11:12:08
+2023-08-14 11:20:17,560-etl_extract.py-INFO-loading projection weights from models/wiki.es.vec
+2023-08-14 11:20:32,835-etl_extract.py-INFO-KeyedVectors lifecycle event {'msg': 'loaded (100000, 300) matrix of type float32 from models/wiki.es.vec', 'binary': False, 'encoding': 'utf8', 'datetime': '2023-08-14T11:20:32.820203', 'gensim': '4.3.1', 'python': '3.9.13 (main, Aug 25 2022, 23:26:10) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-78-generic-x86_64-with-glibc2.35', 'event': 'load_word2vec_format'}
+2023-08-14 11:20:37,791-etl_extract.py-INFO--START:2023-08-14 11:20:17 - END:2023-08-14 11:20:37
+2023-08-14 11:29:04,111-etl_extract.py-INFO-loading projection weights from models/wiki.es.vec
+2023-08-14 11:29:18,984-etl_extract.py-INFO-KeyedVectors lifecycle event {'msg': 'loaded (100000, 300) matrix of type float32 from models/wiki.es.vec', 'binary': False, 'encoding': 'utf8', 'datetime': '2023-08-14T11:29:18.965147', 'gensim': '4.3.1', 'python': '3.9.13 (main, Aug 25 2022, 23:26:10) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-78-generic-x86_64-with-glibc2.35', 'event': 'load_word2vec_format'}
+2023-08-14 11:29:19,555-etl_extract.py-CRITICAL-[REQUEST FAILED] ('Connection aborted.', OSError(107, 'Transport endpoint is not connected'))
+2023-08-14 11:29:26,568-etl_extract.py-WARNING-Deleting category https://recetas.clarin.com from source https://www.clarin.com/ due to download error
+2023-08-14 11:29:26,776-etl_extract.py-INFO--START:2023-08-14 11:29:04 - END:2023-08-14 11:29:26
+2023-08-14 11:30:10,074-etl_extract.py-INFO-loading projection weights from models/wiki.es.vec
+2023-08-14 11:30:22,757-etl_extract.py-INFO-KeyedVectors lifecycle event {'msg': 'loaded (100000, 300) matrix of type float32 from models/wiki.es.vec', 'binary': False, 'encoding': 'utf8', 'datetime': '2023-08-14T11:30:22.742362', 'gensim': '4.3.1', 'python': '3.9.13 (main, Aug 25 2022, 23:26:10) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-78-generic-x86_64-with-glibc2.35', 'event': 'load_word2vec_format'}
+2023-08-14 11:30:33,730-etl_extract.py-CRITICAL-[REQUEST FAILED] HTTPConnectionPool(host='clasificados.eldia.com', port=80): Read timed out. (read timeout=7)
+2023-08-14 11:30:33,747-etl_extract.py-WARNING-Deleting category http://clasificados.eldia.com from source https://www.eldia.com/ due to download error
+2023-08-14 11:30:59,714-etl_extract.py-CRITICAL-[REQUEST FAILED] 403 Client Error: Forbidden for url: http://hombre.perfil.com/
+2023-08-14 11:31:07,372-etl_extract.py-CRITICAL-[REQUEST FAILED] HTTPSConnectionPool(host='www.perfil.com', port=443): Read timed out. (read timeout=7)
+2023-08-14 11:31:07,376-etl_extract.py-WARNING-Deleting category https://www.perfil.com/reperfilar from source https://www.perfil.com/ due to download error
+2023-08-14 11:31:08,962-etl_extract.py-CRITICAL-[REQUEST FAILED] 404 Client Error: Not Found for url: https://www.diariopopular.com.ar/%7B%5B%20link%20%5D%7D
+2023-08-14 11:31:17,124-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.lavoz.com.ar/lo-ultimo
+2023-08-14 11:31:17,126-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.lavoz.com.ar/negocios/
+2023-08-14 11:31:17,725-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.lavoz.com.ar/vos
+2023-08-14 11:31:17,741-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.lavoz.com.ar/mundo
+2023-08-14 11:31:17,756-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.lavoz.com.ar/deportes
+2023-08-14 11:31:19,866-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.lavoz.com.ar:443/
+2023-08-14 11:31:24,189-etl_extract.py-CRITICAL-[REQUEST FAILED] HTTPSConnectionPool(host='clasificados.lavoz.com.ar', port=443): Read timed out. (read timeout=7)
+2023-08-14 11:31:24,209-etl_extract.py-WARNING-Deleting category https://clasificados.lavoz.com.ar from source https://www.lavoz.com.ar/ due to download error
+2023-08-14 11:31:32,022-etl_extract.py-CRITICAL-[REQUEST FAILED] 403 Client Error: Forbidden for url: https://soporte.lagaceta.com.ar/hc/es
+2023-08-14 11:31:32,162-etl_extract.py-INFO--START:2023-08-14 11:30:10 - END:2023-08-14 11:31:32

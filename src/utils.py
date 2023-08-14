@@ -133,13 +133,12 @@ def compute_max_similarity(url, topic_word, wordvec):
 
     # Compute cosine similarity scores
     scores = []
-    for word in url_words:
-        if word in wordvec:
-            v_url_word = wordvec[word]
-            v_topic = wordvec[topic_word]
-            similarity = wordvec.similarity(word, topic_word)
+        
+    for word in url_words:        
+        if word in wordvec:                     
+            similarity = wordvec.similarity(word, topic_word)            
             scores.append(similarity)
-
+            
     # Return median score
     return np.max(scores) if scores else 0.0
 
