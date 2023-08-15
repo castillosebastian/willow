@@ -109,8 +109,7 @@ def main(
     fail_build_source_list = []
     total_articles_list = []
     match1_regex_list = []
-    match2_similarity_list = []
-    total_text_topic_related_list = []
+    match2_similarity_list = []    
     dates = []
     contents = []
     links = []
@@ -122,8 +121,7 @@ def main(
     for url, state, city in tqdm(zip(urls, states, cities), total=len(urls), desc="Processing URLs"):
         try:
             # Initialize the counters            
-            total_articles = 0
-            total_text_topic_related = 0
+            total_articles = 0            
             match1_regex = 0
             match2_similarity = 0
             fail_build_source = False
@@ -157,9 +155,7 @@ def main(
 
             # Go through each articles of the urls with double match (REGEX + SIMILARITY)
             for u in urls_second_match:
-                date, content, link, author, title, summary = download_and_parse_article(u)
-
-                len_text_topic_related = len(content)                
+                date, content, link, author, title, summary = download_and_parse_article(u)                            
 
                 dates.append(date)
                 contents.append(content)
@@ -176,8 +172,7 @@ def main(
             fail_build_source_list.append(fail_build_source)
             total_articles_list.append(total_articles)
             match1_regex_list.append(match1_regex)
-            match2_similarity_list.append(match2_similarity)
-            total_text_topic_related_list.append(len_text_topic_related)          
+            match2_similarity_list.append(match2_similarity)                     
 
             try:
                 # Create a DataFrame
@@ -189,8 +184,7 @@ def main(
                         "fail_build": fail_build_source_list,
                         "total_articles": total_articles_list,
                         "match1_url": match1_regex_list,
-                        "match2_url_topic_related": match2_similarity_list,
-                        "total_text_topic_related": total_text_topic_related_list,
+                        "match2_url_topic_related": match2_similarity_list                        
                     }
                 )
 

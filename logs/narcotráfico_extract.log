@@ -2758,3 +2758,899 @@ newspaper.article.ArticleException: Article `download()` failed with 404 Client 
 2023-08-14 15:22:13,869-etl_extract.py-WARNING-Deleting category https://www.diarioepoca.com/ from source https://www.diarioepoca.com/ due to download error
 2023-08-14 15:22:13,869-etl_extract.py-WARNING-Deleting category https://www.diarioepoca.com/obituarios from source https://www.diarioepoca.com/ due to download error
 2023-08-14 15:22:28,831-etl_extract.py-INFO--START:2023-08-14 15:09:01 - END:2023-08-14 15:22:28
+2023-08-15 17:17:15,717-etl_extract.py-INFO-loading projection weights from models/wiki.es.vec
+2023-08-15 17:17:28,511-etl_extract.py-INFO-KeyedVectors lifecycle event {'msg': 'loaded (100000, 300) matrix of type float32 from models/wiki.es.vec', 'binary': False, 'encoding': 'utf8', 'datetime': '2023-08-15T17:17:28.494794', 'gensim': '4.3.1', 'python': '3.9.13 (main, Aug 25 2022, 23:26:10) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-78-generic-x86_64-with-glibc2.35', 'event': 'load_word2vec_format'}
+2023-08-15 17:17:35,886-etl_extract.py-ERROR-An error occurred while processing https://www.eldia.com/
+Traceback (most recent call last):
+  File "/home/sebacastillo/willow/etl_extract.py", line 180, in main
+    total_text_topic_related_list.append(len_text_topic_related)
+UnboundLocalError: local variable 'len_text_topic_related' referenced before assignment
+2023-08-15 17:17:43,997-etl_extract.py-ERROR-An error occurred while processing https://www.lacapitalmdp.com/
+Traceback (most recent call last):
+  File "/home/sebacastillo/willow/etl_extract.py", line 180, in main
+    total_text_topic_related_list.append(len_text_topic_related)
+UnboundLocalError: local variable 'len_text_topic_related' referenced before assignment
+2023-08-15 17:17:44,296-etl_extract.py-CRITICAL-[REQUEST FAILED] ('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))
+2023-08-15 17:17:46,305-etl_extract.py-WARNING-Deleting category https://recetas.clarin.com from source https://www.clarin.com/ due to download error
+2023-08-15 17:17:55,693-etl_extract.py-ERROR-An error occurred while processing https://www.clarin.com/
+Traceback (most recent call last):
+  File "/home/sebacastillo/willow/etl_extract.py", line 160, in main
+    date, content, link, author, title, summary = download_and_parse_article(u)
+  File "/home/sebacastillo/willow/src/extraction.py", line 64, in download_and_parse_article
+    article.parse()
+  File "/home/sebacastillo/.willow/lib/python3.9/site-packages/newspaper/article.py", line 191, in parse
+    self.throw_if_not_downloaded_verbose()
+  File "/home/sebacastillo/.willow/lib/python3.9/site-packages/newspaper/article.py", line 531, in throw_if_not_downloaded_verbose
+    raise ArticleException('Article `download()` failed with %s on URL %s' %
+newspaper.article.ArticleException: Article `download()` failed with HTTPConnectionPool(host='www.clarin.com', port=80): Read timed out. (read timeout=7) on URL http://www.clarin.com/mundo/unidos-usan-ley-juzgar-mafia-procesar-cuarta-vez-donald-trump_0_mIQ8NJwgSl.html
+2023-08-15 17:18:15,717-etl_extract.py-WARNING-fromstring() returned an invalid string: ...
+2023-08-15 17:18:15,718-etl_extract.py-WARNING-Source https://www.diarionorte.com/ parse error.
+2023-08-15 17:18:15,718-etl_extract.py-CRITICAL-Must extract urls from either html, text or doc!
+2023-08-15 17:18:35,748-etl_extract.py-CRITICAL-[REQUEST FAILED] HTTPSConnectionPool(host='www.diarionorte.com', port=443): Max retries exceeded with url: / (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7fb3eb10aaf0>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution'))
+2023-08-15 17:18:35,748-etl_extract.py-WARNING-Deleting category https://www.diarionorte.com/ from source https://www.diarionorte.com/ due to download error
+2023-08-15 17:18:36,718-etl_extract.py-ERROR-An error occurred while generating dataframes
+Traceback (most recent call last):
+  File "/home/sebacastillo/willow/etl_extract.py", line 184, in main
+    stat_etl_topic_related = pl.DataFrame(
+  File "/home/sebacastillo/.willow/lib/python3.9/site-packages/polars/dataframe/frame.py", line 361, in __init__
+    self._df = dict_to_pydf(
+  File "/home/sebacastillo/.willow/lib/python3.9/site-packages/polars/utils/_construction.py", line 826, in dict_to_pydf
+    pydf = PyDataFrame(data_series)
+exceptions.ShapeError: could not create a new dataframe: series "date_extract" has length 3 while series "total_text_topic_related" has length 1
+2023-08-15 17:18:44,181-etl_extract.py-ERROR-An error occurred while generating dataframes
+Traceback (most recent call last):
+  File "/home/sebacastillo/willow/etl_extract.py", line 184, in main
+    stat_etl_topic_related = pl.DataFrame(
+  File "/home/sebacastillo/.willow/lib/python3.9/site-packages/polars/dataframe/frame.py", line 361, in __init__
+    self._df = dict_to_pydf(
+  File "/home/sebacastillo/.willow/lib/python3.9/site-packages/polars/utils/_construction.py", line 826, in dict_to_pydf
+    pydf = PyDataFrame(data_series)
+exceptions.ShapeError: could not create a new dataframe: series "date_extract" has length 4 while series "total_text_topic_related" has length 2
+2023-08-15 17:18:47,212-etl_extract.py-CRITICAL-[REQUEST FAILED] 404 Client Error: Not Found for url: http://pxb.cdn.elchubut.com.ar/
+2023-08-15 17:18:49,881-etl_extract.py-ERROR-An error occurred while generating dataframes
+Traceback (most recent call last):
+  File "/home/sebacastillo/willow/etl_extract.py", line 184, in main
+    stat_etl_topic_related = pl.DataFrame(
+  File "/home/sebacastillo/.willow/lib/python3.9/site-packages/polars/dataframe/frame.py", line 361, in __init__
+    self._df = dict_to_pydf(
+  File "/home/sebacastillo/.willow/lib/python3.9/site-packages/polars/utils/_construction.py", line 826, in dict_to_pydf
+    pydf = PyDataFrame(data_series)
+exceptions.ShapeError: could not create a new dataframe: series "date_extract" has length 5 while series "total_text_topic_related" has length 3
+2023-08-15 17:18:50,532-etl_extract.py-WARNING-fromstring() returned an invalid string: ...
+2023-08-15 17:18:50,533-etl_extract.py-WARNING-Source https://www.cronica.com.ar/ parse error.
+2023-08-15 17:18:50,534-etl_extract.py-CRITICAL-Must extract urls from either html, text or doc!
+2023-08-15 17:18:51,139-etl_extract.py-CRITICAL-[REQUEST FAILED] 403 Client Error: Forbidden for url: https://www.cronica.com.ar/
+2023-08-15 17:18:51,175-etl_extract.py-ERROR-An error occurred while generating dataframes
+Traceback (most recent call last):
+  File "/home/sebacastillo/willow/etl_extract.py", line 184, in main
+    stat_etl_topic_related = pl.DataFrame(
+  File "/home/sebacastillo/.willow/lib/python3.9/site-packages/polars/dataframe/frame.py", line 361, in __init__
+    self._df = dict_to_pydf(
+  File "/home/sebacastillo/.willow/lib/python3.9/site-packages/polars/utils/_construction.py", line 826, in dict_to_pydf
+    pydf = PyDataFrame(data_series)
+exceptions.ShapeError: could not create a new dataframe: series "date_extract" has length 6 while series "total_text_topic_related" has length 4
+2023-08-15 17:18:52,383-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.lavoz.com.ar/tendencias
+2023-08-15 17:18:52,400-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.lavoz.com.ar:443/
+2023-08-15 17:18:52,419-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.lavoz.com.ar/vos/
+2023-08-15 17:18:52,503-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.lavoz.com.ar/agro/
+2023-08-15 17:18:52,534-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.lavoz.com.ar/especiales
+2023-08-15 17:18:52,576-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.lavoz.com.ar/galerias/
+2023-08-15 17:18:52,640-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.lavoz.com.ar/opinion
+2023-08-15 17:18:53,022-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.lavoz.com.ar/quienes-somos/
+2023-08-15 17:18:53,092-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.lavoz.com.ar/politica
+2023-08-15 17:18:53,109-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.lavoz.com.ar/numero-cero/
+2023-08-15 17:18:53,121-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.lavoz.com.ar/deportes
+2023-08-15 17:18:53,236-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.lavoz.com.ar/servicios
+2023-08-15 17:18:53,240-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.lavoz.com.ar/lo-ultimo
+2023-08-15 17:18:53,354-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.lavoz.com.ar/viral
+2023-08-15 17:18:53,518-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.lavoz.com.ar/clima/
+2023-08-15 17:18:59,072-etl_extract.py-CRITICAL-[REQUEST FAILED] HTTPSConnectionPool(host='clasificados.lavoz.com.ar', port=443): Read timed out. (read timeout=7)
+2023-08-15 17:18:59,080-etl_extract.py-WARNING-Deleting category https://clasificados.lavoz.com.ar from source https://www.lavoz.com.ar/ due to download error
+2023-08-15 17:19:00,416-etl_extract.py-ERROR-An error occurred while processing https://www.lavoz.com.ar/
+Traceback (most recent call last):
+  File "/home/sebacastillo/willow/etl_extract.py", line 160, in main
+    date, content, link, author, title, summary = download_and_parse_article(u)
+  File "/home/sebacastillo/willow/src/extraction.py", line 64, in download_and_parse_article
+    article.parse()
+  File "/home/sebacastillo/.willow/lib/python3.9/site-packages/newspaper/article.py", line 191, in parse
+    self.throw_if_not_downloaded_verbose()
+  File "/home/sebacastillo/.willow/lib/python3.9/site-packages/newspaper/article.py", line 531, in throw_if_not_downloaded_verbose
+    raise ArticleException('Article `download()` failed with %s on URL %s' %
+newspaper.article.ArticleException: Article `download()` failed with 429 Client Error: Too Many Requests for url: https://www.lavoz.com.ar/sucesos/condenan-a-15-anos-de-prision-al-autor-de-un-homicidio-en-ocasion-de-robo-en-santa-cruz-del-lago/ on URL https://www.lavoz.com.ar/sucesos/condenan-a-15-anos-de-prision-al-autor-de-un-homicidio-en-ocasion-de-robo-en-santa-cruz-del-lago/
+2023-08-15 17:19:02,877-etl_extract.py-ERROR-An error occurred while generating dataframes
+Traceback (most recent call last):
+  File "/home/sebacastillo/willow/etl_extract.py", line 184, in main
+    stat_etl_topic_related = pl.DataFrame(
+  File "/home/sebacastillo/.willow/lib/python3.9/site-packages/polars/dataframe/frame.py", line 361, in __init__
+    self._df = dict_to_pydf(
+  File "/home/sebacastillo/.willow/lib/python3.9/site-packages/polars/utils/_construction.py", line 826, in dict_to_pydf
+    pydf = PyDataFrame(data_series)
+exceptions.ShapeError: could not create a new dataframe: series "date_extract" has length 7 while series "total_text_topic_related" has length 5
+2023-08-15 17:19:15,915-etl_extract.py-CRITICAL-[REQUEST FAILED] HTTPSConnectionPool(host='www.ellitoral.com.ar', port=443): Read timed out.
+2023-08-15 17:19:16,941-etl_extract.py-CRITICAL-[REQUEST FAILED] HTTPSConnectionPool(host='www.ellitoral.com.ar', port=443): Read timed out.
+2023-08-15 17:19:16,949-etl_extract.py-WARNING-Deleting category https://www.ellitoral.com.ar/servicios from source https://www.ellitoral.com.ar/corrientes/ due to download error
+2023-08-15 17:19:16,950-etl_extract.py-WARNING-Deleting category https://www.ellitoral.com.ar/cultura from source https://www.ellitoral.com.ar/corrientes/ due to download error
+2023-08-15 17:19:24,310-etl_extract.py-ERROR-An error occurred while generating dataframes
+Traceback (most recent call last):
+  File "/home/sebacastillo/willow/etl_extract.py", line 184, in main
+    stat_etl_topic_related = pl.DataFrame(
+  File "/home/sebacastillo/.willow/lib/python3.9/site-packages/polars/dataframe/frame.py", line 361, in __init__
+    self._df = dict_to_pydf(
+  File "/home/sebacastillo/.willow/lib/python3.9/site-packages/polars/utils/_construction.py", line 826, in dict_to_pydf
+    pydf = PyDataFrame(data_series)
+exceptions.ShapeError: could not create a new dataframe: series "date_extract" has length 8 while series "total_text_topic_related" has length 6
+2023-08-15 17:19:25,449-etl_extract.py-WARNING-fromstring() returned an invalid string: ...
+2023-08-15 17:19:25,449-etl_extract.py-WARNING-Source https://www.goyaennoticias.com.ar/ parse error.
+2023-08-15 17:19:25,449-etl_extract.py-CRITICAL-Must extract urls from either html, text or doc!
+2023-08-15 17:19:30,872-etl_extract.py-CRITICAL-[REQUEST FAILED] HTTPSConnectionPool(host='www.goyaennoticias.com.ar', port=443): Max retries exceeded with url: / (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate has expired (_ssl.c:1129)')))
+2023-08-15 17:19:30,874-etl_extract.py-WARNING-Deleting category https://www.goyaennoticias.com.ar/ from source https://www.goyaennoticias.com.ar/ due to download error
+2023-08-15 17:19:30,906-etl_extract.py-ERROR-An error occurred while generating dataframes
+Traceback (most recent call last):
+  File "/home/sebacastillo/willow/etl_extract.py", line 184, in main
+    stat_etl_topic_related = pl.DataFrame(
+  File "/home/sebacastillo/.willow/lib/python3.9/site-packages/polars/dataframe/frame.py", line 361, in __init__
+    self._df = dict_to_pydf(
+  File "/home/sebacastillo/.willow/lib/python3.9/site-packages/polars/utils/_construction.py", line 826, in dict_to_pydf
+    pydf = PyDataFrame(data_series)
+exceptions.ShapeError: could not create a new dataframe: series "date_extract" has length 9 while series "total_text_topic_related" has length 7
+2023-08-15 17:19:33,216-etl_extract.py-CRITICAL-[REQUEST FAILED] 404 Client Error: Not Found for url: https://servicios.elcomercial.com.ar/
+2023-08-15 17:19:35,545-etl_extract.py-ERROR-An error occurred while generating dataframes
+Traceback (most recent call last):
+  File "/home/sebacastillo/willow/etl_extract.py", line 184, in main
+    stat_etl_topic_related = pl.DataFrame(
+  File "/home/sebacastillo/.willow/lib/python3.9/site-packages/polars/dataframe/frame.py", line 361, in __init__
+    self._df = dict_to_pydf(
+  File "/home/sebacastillo/.willow/lib/python3.9/site-packages/polars/utils/_construction.py", line 826, in dict_to_pydf
+    pydf = PyDataFrame(data_series)
+exceptions.ShapeError: could not create a new dataframe: series "date_extract" has length 10 while series "total_text_topic_related" has length 8
+2023-08-15 17:19:38,684-etl_extract.py-ERROR-An error occurred while generating dataframes
+Traceback (most recent call last):
+  File "/home/sebacastillo/willow/etl_extract.py", line 184, in main
+    stat_etl_topic_related = pl.DataFrame(
+  File "/home/sebacastillo/.willow/lib/python3.9/site-packages/polars/dataframe/frame.py", line 361, in __init__
+    self._df = dict_to_pydf(
+  File "/home/sebacastillo/.willow/lib/python3.9/site-packages/polars/utils/_construction.py", line 826, in dict_to_pydf
+    pydf = PyDataFrame(data_series)
+exceptions.ShapeError: could not create a new dataframe: series "date_extract" has length 11 while series "total_text_topic_related" has length 9
+2023-08-15 17:20:09,177-etl_extract.py-ERROR-An error occurred while processing https://www.eltribuno.com/jujuy/
+Traceback (most recent call last):
+  File "/home/sebacastillo/willow/etl_extract.py", line 160, in main
+    date, content, link, author, title, summary = download_and_parse_article(u)
+  File "/home/sebacastillo/willow/src/extraction.py", line 64, in download_and_parse_article
+    article.parse()
+  File "/home/sebacastillo/.willow/lib/python3.9/site-packages/newspaper/article.py", line 191, in parse
+    self.throw_if_not_downloaded_verbose()
+  File "/home/sebacastillo/.willow/lib/python3.9/site-packages/newspaper/article.py", line 531, in throw_if_not_downloaded_verbose
+    raise ArticleException('Article `download()` failed with %s on URL %s' %
+newspaper.article.ArticleException: Article `download()` failed with HTTPSConnectionPool(host='www.eltribuno.com', port=443): Max retries exceeded with url: /salta/nota/2023-8-15-11-2-0-intento-de-secuestro-en-aguaray-buscan-la-camioneta-que-se-uso-para-llevarse-ninos (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7fb3eadfddf0>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution')) on URL https://www.eltribuno.com/salta/nota/2023-8-15-11-2-0-intento-de-secuestro-en-aguaray-buscan-la-camioneta-que-se-uso-para-llevarse-ninos
+2023-08-15 17:20:22,678-etl_extract.py-CRITICAL-[REQUEST FAILED] HTTPSConnectionPool(host='www.jujuyalmomento.com', port=443): Read timed out. (read timeout=7)
+2023-08-15 17:20:22,680-etl_extract.py-CRITICAL-[REQUEST FAILED] HTTPSConnectionPool(host='www.jujuyalmomento.com', port=443): Read timed out. (read timeout=7)
+2023-08-15 17:20:22,681-etl_extract.py-WARNING-Deleting category https://www.jujuyalmomento.com/ from source https://www.jujuyalmomento.com/ due to download error
+2023-08-15 17:20:22,681-etl_extract.py-WARNING-Deleting category https://www.jujuyalmomento.com from source https://www.jujuyalmomento.com/ due to download error
+2023-08-15 17:20:22,702-etl_extract.py-ERROR-An error occurred while generating dataframes
+Traceback (most recent call last):
+  File "/home/sebacastillo/willow/etl_extract.py", line 184, in main
+    stat_etl_topic_related = pl.DataFrame(
+  File "/home/sebacastillo/.willow/lib/python3.9/site-packages/polars/dataframe/frame.py", line 361, in __init__
+    self._df = dict_to_pydf(
+  File "/home/sebacastillo/.willow/lib/python3.9/site-packages/polars/utils/_construction.py", line 826, in dict_to_pydf
+    pydf = PyDataFrame(data_series)
+exceptions.ShapeError: could not create a new dataframe: series "date_extract" has length 12 while series "total_text_topic_related" has length 10
+2023-08-15 17:20:36,144-etl_extract.py-ERROR-An error occurred while generating dataframes
+Traceback (most recent call last):
+  File "/home/sebacastillo/willow/etl_extract.py", line 184, in main
+    stat_etl_topic_related = pl.DataFrame(
+  File "/home/sebacastillo/.willow/lib/python3.9/site-packages/polars/dataframe/frame.py", line 361, in __init__
+    self._df = dict_to_pydf(
+  File "/home/sebacastillo/.willow/lib/python3.9/site-packages/polars/utils/_construction.py", line 826, in dict_to_pydf
+    pydf = PyDataFrame(data_series)
+exceptions.ShapeError: could not create a new dataframe: series "date_extract" has length 13 while series "total_text_topic_related" has length 11
+2023-08-15 17:20:59,818-etl_extract.py-ERROR-An error occurred while processing https://www.infopico.com/
+Traceback (most recent call last):
+  File "/home/sebacastillo/willow/etl_extract.py", line 160, in main
+    date, content, link, author, title, summary = download_and_parse_article(u)
+  File "/home/sebacastillo/willow/src/extraction.py", line 64, in download_and_parse_article
+    article.parse()
+  File "/home/sebacastillo/.willow/lib/python3.9/site-packages/newspaper/article.py", line 191, in parse
+    self.throw_if_not_downloaded_verbose()
+  File "/home/sebacastillo/.willow/lib/python3.9/site-packages/newspaper/article.py", line 531, in throw_if_not_downloaded_verbose
+    raise ArticleException('Article `download()` failed with %s on URL %s' %
+newspaper.article.ArticleException: Article `download()` failed with HTTPSConnectionPool(host='www.infopico.com', port=443): Max retries exceeded with url: /2023/08/15/desarticulan-tres-redes-de-narcotrafico-en-operativos-provinciales-estupefacientes-dinero-y-armas-incautadas/ (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7fb3eae9fbe0>: Failed to establish a new connection: [Errno 101] Network is unreachable')) on URL https://www.infopico.com/2023/08/15/desarticulan-tres-redes-de-narcotrafico-en-operativos-provinciales-estupefacientes-dinero-y-armas-incautadas/
+2023-08-15 17:21:14,803-etl_extract.py-ERROR-An error occurred while generating dataframes
+Traceback (most recent call last):
+  File "/home/sebacastillo/willow/etl_extract.py", line 184, in main
+    stat_etl_topic_related = pl.DataFrame(
+  File "/home/sebacastillo/.willow/lib/python3.9/site-packages/polars/dataframe/frame.py", line 361, in __init__
+    self._df = dict_to_pydf(
+  File "/home/sebacastillo/.willow/lib/python3.9/site-packages/polars/utils/_construction.py", line 826, in dict_to_pydf
+    pydf = PyDataFrame(data_series)
+exceptions.ShapeError: could not create a new dataframe: series "date_extract" has length 14 while series "total_text_topic_related" has length 12
+2023-08-15 17:21:16,001-etl_extract.py-WARNING-fromstring() returned an invalid string: ...
+2023-08-15 17:21:16,001-etl_extract.py-WARNING-Source https://elindependiente.com.ar/secciones/chilecito/ parse error.
+2023-08-15 17:21:16,001-etl_extract.py-CRITICAL-Must extract urls from either html, text or doc!
+2023-08-15 17:21:16,185-etl_extract.py-CRITICAL-[REQUEST FAILED] 404 Client Error: Not Found for url: https://elindependiente.com.ar/secciones/chilecito/
+2023-08-15 17:21:16,209-etl_extract.py-ERROR-An error occurred while generating dataframes
+Traceback (most recent call last):
+  File "/home/sebacastillo/willow/etl_extract.py", line 184, in main
+    stat_etl_topic_related = pl.DataFrame(
+  File "/home/sebacastillo/.willow/lib/python3.9/site-packages/polars/dataframe/frame.py", line 361, in __init__
+    self._df = dict_to_pydf(
+  File "/home/sebacastillo/.willow/lib/python3.9/site-packages/polars/utils/_construction.py", line 826, in dict_to_pydf
+    pydf = PyDataFrame(data_series)
+exceptions.ShapeError: could not create a new dataframe: series "date_extract" has length 15 while series "total_text_topic_related" has length 13
+2023-08-15 17:21:16,358-etl_extract.py-WARNING-fromstring() returned an invalid string: ...
+2023-08-15 17:21:16,358-etl_extract.py-WARNING-Source https://www.losandes.com.ar/ parse error.
+2023-08-15 17:21:16,358-etl_extract.py-CRITICAL-Must extract urls from either html, text or doc!
+2023-08-15 17:21:16,587-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.losandes.com.ar/
+2023-08-15 17:21:16,591-etl_extract.py-ERROR-An error occurred while generating dataframes
+Traceback (most recent call last):
+  File "/home/sebacastillo/willow/etl_extract.py", line 184, in main
+    stat_etl_topic_related = pl.DataFrame(
+  File "/home/sebacastillo/.willow/lib/python3.9/site-packages/polars/dataframe/frame.py", line 361, in __init__
+    self._df = dict_to_pydf(
+  File "/home/sebacastillo/.willow/lib/python3.9/site-packages/polars/utils/_construction.py", line 826, in dict_to_pydf
+    pydf = PyDataFrame(data_series)
+exceptions.ShapeError: could not create a new dataframe: series "date_extract" has length 16 while series "total_text_topic_related" has length 14
+2023-08-15 17:21:19,978-etl_extract.py-ERROR-An error occurred while generating dataframes
+Traceback (most recent call last):
+  File "/home/sebacastillo/willow/etl_extract.py", line 184, in main
+    stat_etl_topic_related = pl.DataFrame(
+  File "/home/sebacastillo/.willow/lib/python3.9/site-packages/polars/dataframe/frame.py", line 361, in __init__
+    self._df = dict_to_pydf(
+  File "/home/sebacastillo/.willow/lib/python3.9/site-packages/polars/utils/_construction.py", line 826, in dict_to_pydf
+    pydf = PyDataFrame(data_series)
+exceptions.ShapeError: could not create a new dataframe: series "date_extract" has length 17 while series "total_text_topic_related" has length 15
+2023-08-15 17:21:27,433-etl_extract.py-WARNING-fromstring() returned an invalid string: ...
+2023-08-15 17:21:27,433-etl_extract.py-WARNING-Source https://www.primeraedicion.com.ar/ parse error.
+2023-08-15 17:21:27,434-etl_extract.py-CRITICAL-Must extract urls from either html, text or doc!
+2023-08-15 17:21:48,468-etl_extract.py-CRITICAL-[REQUEST FAILED] HTTPSConnectionPool(host='www.primeraedicion.com.ar', port=443): Max retries exceeded with url: / (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7fb3eae6a040>: Failed to establish a new connection: [Errno 101] Network is unreachable'))
+2023-08-15 17:21:48,469-etl_extract.py-WARNING-Deleting category https://www.primeraedicion.com.ar/ from source https://www.primeraedicion.com.ar/ due to download error
+2023-08-15 17:21:48,477-etl_extract.py-ERROR-An error occurred while generating dataframes
+Traceback (most recent call last):
+  File "/home/sebacastillo/willow/etl_extract.py", line 184, in main
+    stat_etl_topic_related = pl.DataFrame(
+  File "/home/sebacastillo/.willow/lib/python3.9/site-packages/polars/dataframe/frame.py", line 361, in __init__
+    self._df = dict_to_pydf(
+  File "/home/sebacastillo/.willow/lib/python3.9/site-packages/polars/utils/_construction.py", line 826, in dict_to_pydf
+    pydf = PyDataFrame(data_series)
+exceptions.ShapeError: could not create a new dataframe: series "date_extract" has length 18 while series "total_text_topic_related" has length 16
+2023-08-15 17:22:12,106-etl_extract.py-WARNING-fromstring() returned an invalid string: ...
+2023-08-15 17:22:12,106-etl_extract.py-WARNING-Source https://www.elterritorio.com.ar/ parse error.
+2023-08-15 17:22:12,107-etl_extract.py-CRITICAL-Must extract urls from either html, text or doc!
+2023-08-15 17:22:36,413-etl_extract.py-CRITICAL-[REQUEST FAILED] HTTPSConnectionPool(host='www.elterritorio.com.ar', port=443): Max retries exceeded with url: / (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7fb3eae19700>: Failed to establish a new connection: [Errno 101] Network is unreachable'))
+2023-08-15 17:22:36,413-etl_extract.py-WARNING-Deleting category https://www.elterritorio.com.ar/ from source https://www.elterritorio.com.ar/ due to download error
+2023-08-15 17:22:36,416-etl_extract.py-ERROR-An error occurred while generating dataframes
+Traceback (most recent call last):
+  File "/home/sebacastillo/willow/etl_extract.py", line 184, in main
+    stat_etl_topic_related = pl.DataFrame(
+  File "/home/sebacastillo/.willow/lib/python3.9/site-packages/polars/dataframe/frame.py", line 361, in __init__
+    self._df = dict_to_pydf(
+  File "/home/sebacastillo/.willow/lib/python3.9/site-packages/polars/utils/_construction.py", line 826, in dict_to_pydf
+    pydf = PyDataFrame(data_series)
+exceptions.ShapeError: could not create a new dataframe: series "date_extract" has length 19 while series "total_text_topic_related" has length 17
+2023-08-15 17:22:50,646-etl_extract.py-ERROR-An error occurred while generating dataframes
+Traceback (most recent call last):
+  File "/home/sebacastillo/willow/etl_extract.py", line 184, in main
+    stat_etl_topic_related = pl.DataFrame(
+  File "/home/sebacastillo/.willow/lib/python3.9/site-packages/polars/dataframe/frame.py", line 361, in __init__
+    self._df = dict_to_pydf(
+  File "/home/sebacastillo/.willow/lib/python3.9/site-packages/polars/utils/_construction.py", line 826, in dict_to_pydf
+    pydf = PyDataFrame(data_series)
+exceptions.ShapeError: could not create a new dataframe: series "date_extract" has length 20 while series "total_text_topic_related" has length 18
+2023-08-15 17:22:52,489-etl_extract.py-CRITICAL-[REQUEST FAILED] 404 Client Error: Not Found for url: https://www.minutoneuquen.com/archivo
+2023-08-15 17:22:54,087-etl_extract.py-ERROR-An error occurred while generating dataframes
+Traceback (most recent call last):
+  File "/home/sebacastillo/willow/etl_extract.py", line 184, in main
+    stat_etl_topic_related = pl.DataFrame(
+  File "/home/sebacastillo/.willow/lib/python3.9/site-packages/polars/dataframe/frame.py", line 361, in __init__
+    self._df = dict_to_pydf(
+  File "/home/sebacastillo/.willow/lib/python3.9/site-packages/polars/utils/_construction.py", line 826, in dict_to_pydf
+    pydf = PyDataFrame(data_series)
+exceptions.ShapeError: could not create a new dataframe: series "date_extract" has length 21 while series "total_text_topic_related" has length 19
+2023-08-15 17:22:55,411-etl_extract.py-ERROR-An error occurred while generating dataframes
+Traceback (most recent call last):
+  File "/home/sebacastillo/willow/etl_extract.py", line 184, in main
+    stat_etl_topic_related = pl.DataFrame(
+  File "/home/sebacastillo/.willow/lib/python3.9/site-packages/polars/dataframe/frame.py", line 361, in __init__
+    self._df = dict_to_pydf(
+  File "/home/sebacastillo/.willow/lib/python3.9/site-packages/polars/utils/_construction.py", line 826, in dict_to_pydf
+    pydf = PyDataFrame(data_series)
+exceptions.ShapeError: could not create a new dataframe: series "date_extract" has length 22 while series "total_text_topic_related" has length 20
+2023-08-15 17:22:58,670-etl_extract.py-CRITICAL-[REQUEST FAILED] HTTPSConnectionPool(host='front.elcordillerano.com.ar', port=443): Max retries exceeded with url: / (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7fb3dfa8b5e0>: Failed to establish a new connection: [Errno -2] Name or service not known'))
+2023-08-15 17:23:00,399-etl_extract.py-WARNING-Deleting category https://front.elcordillerano.com.ar from source https://www.elcordillerano.com.ar/ due to download error
+2023-08-15 17:23:19,897-etl_extract.py-ERROR-An error occurred while processing https://www.elcordillerano.com.ar/
+Traceback (most recent call last):
+  File "/home/sebacastillo/willow/etl_extract.py", line 160, in main
+    date, content, link, author, title, summary = download_and_parse_article(u)
+  File "/home/sebacastillo/willow/src/extraction.py", line 64, in download_and_parse_article
+    article.parse()
+  File "/home/sebacastillo/.willow/lib/python3.9/site-packages/newspaper/article.py", line 191, in parse
+    self.throw_if_not_downloaded_verbose()
+  File "/home/sebacastillo/.willow/lib/python3.9/site-packages/newspaper/article.py", line 531, in throw_if_not_downloaded_verbose
+    raise ArticleException('Article `download()` failed with %s on URL %s' %
+newspaper.article.ArticleException: Article `download()` failed with HTTPSConnectionPool(host='www.elcordillerano.com.ar', port=443): Read timed out. (read timeout=7) on URL https://www.elcordillerano.com.ar/noticias/2023/08/15/168196-imputaron-por-doble-tentativa-de-homicidio-al-hombre-que-apunalo-a-dos-jovenes/
+2023-08-15 17:24:20,411-etl_extract.py-ERROR-An error occurred while processing https://www.eltribuno.com/salta/
+Traceback (most recent call last):
+  File "/home/sebacastillo/willow/etl_extract.py", line 160, in main
+    date, content, link, author, title, summary = download_and_parse_article(u)
+  File "/home/sebacastillo/willow/src/extraction.py", line 64, in download_and_parse_article
+    article.parse()
+  File "/home/sebacastillo/.willow/lib/python3.9/site-packages/newspaper/article.py", line 191, in parse
+    self.throw_if_not_downloaded_verbose()
+  File "/home/sebacastillo/.willow/lib/python3.9/site-packages/newspaper/article.py", line 531, in throw_if_not_downloaded_verbose
+    raise ArticleException('Article `download()` failed with %s on URL %s' %
+newspaper.article.ArticleException: Article `download()` failed with HTTPSConnectionPool(host='nota', port=443): Max retries exceeded with url: /2023-8-13-0-0-0-hechos-de-inseguridad-prenden-luces-sobre-el-consumo-de-drogas (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7fb3eabf2c70>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution')) on URL https://nota/2023-8-13-0-0-0-hechos-de-inseguridad-prenden-luces-sobre-el-consumo-de-drogas
+2023-08-15 17:24:38,529-etl_extract.py-WARNING-fromstring() returned an invalid string: ...
+2023-08-15 17:24:38,529-etl_extract.py-WARNING-Source http://www.diarioeloranense.com.ar/ parse error.
+2023-08-15 17:24:38,529-etl_extract.py-CRITICAL-Must extract urls from either html, text or doc!
+2023-08-15 17:24:58,557-etl_extract.py-CRITICAL-[REQUEST FAILED] HTTPConnectionPool(host='www.diarioeloranense.com.ar', port=80): Max retries exceeded with url: / (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7fb3eabe2190>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution'))
+2023-08-15 17:24:58,558-etl_extract.py-WARNING-Deleting category http://www.diarioeloranense.com.ar/ from source http://www.diarioeloranense.com.ar/ due to download error
+2023-08-15 17:24:58,571-etl_extract.py-ERROR-An error occurred while generating dataframes
+Traceback (most recent call last):
+  File "/home/sebacastillo/willow/etl_extract.py", line 184, in main
+    stat_etl_topic_related = pl.DataFrame(
+  File "/home/sebacastillo/.willow/lib/python3.9/site-packages/polars/dataframe/frame.py", line 361, in __init__
+    self._df = dict_to_pydf(
+  File "/home/sebacastillo/.willow/lib/python3.9/site-packages/polars/utils/_construction.py", line 826, in dict_to_pydf
+    pydf = PyDataFrame(data_series)
+exceptions.ShapeError: could not create a new dataframe: series "date_extract" has length 23 while series "total_text_topic_related" has length 21
+2023-08-15 17:25:18,594-etl_extract.py-WARNING-fromstring() returned an invalid string: ...
+2023-08-15 17:25:18,595-etl_extract.py-WARNING-Source https://www.diariodecuyo.com.ar/ parse error.
+2023-08-15 17:25:18,595-etl_extract.py-CRITICAL-Must extract urls from either html, text or doc!
+2023-08-15 17:25:27,962-etl_extract.py-ERROR-An error occurred while generating dataframes
+Traceback (most recent call last):
+  File "/home/sebacastillo/willow/etl_extract.py", line 184, in main
+    stat_etl_topic_related = pl.DataFrame(
+  File "/home/sebacastillo/.willow/lib/python3.9/site-packages/polars/dataframe/frame.py", line 361, in __init__
+    self._df = dict_to_pydf(
+  File "/home/sebacastillo/.willow/lib/python3.9/site-packages/polars/utils/_construction.py", line 826, in dict_to_pydf
+    pydf = PyDataFrame(data_series)
+exceptions.ShapeError: could not create a new dataframe: series "date_extract" has length 24 while series "total_text_topic_related" has length 22
+2023-08-15 17:25:49,569-etl_extract.py-ERROR-An error occurred while generating dataframes
+Traceback (most recent call last):
+  File "/home/sebacastillo/willow/etl_extract.py", line 184, in main
+    stat_etl_topic_related = pl.DataFrame(
+  File "/home/sebacastillo/.willow/lib/python3.9/site-packages/polars/dataframe/frame.py", line 361, in __init__
+    self._df = dict_to_pydf(
+  File "/home/sebacastillo/.willow/lib/python3.9/site-packages/polars/utils/_construction.py", line 826, in dict_to_pydf
+    pydf = PyDataFrame(data_series)
+exceptions.ShapeError: could not create a new dataframe: series "date_extract" has length 25 while series "total_text_topic_related" has length 23
+2023-08-15 17:26:00,974-etl_extract.py-CRITICAL-[REQUEST FAILED] HTTPSConnectionPool(host='www.eldiariodelarepublica.com', port=443): Read timed out. (read timeout=7)
+2023-08-15 17:26:01,191-etl_extract.py-CRITICAL-[REQUEST FAILED] 404 Client Error: Not Found for url: https://pxb.cdn.eldiariodelarepublica.com/
+2023-08-15 17:26:02,151-etl_extract.py-WARNING-Deleting category https://www.eldiariodelarepublica.com/revista from source https://www.eldiariodelarepublica.com/ due to download error
+2023-08-15 17:26:02,363-etl_extract.py-ERROR-An error occurred while generating dataframes
+Traceback (most recent call last):
+  File "/home/sebacastillo/willow/etl_extract.py", line 184, in main
+    stat_etl_topic_related = pl.DataFrame(
+  File "/home/sebacastillo/.willow/lib/python3.9/site-packages/polars/dataframe/frame.py", line 361, in __init__
+    self._df = dict_to_pydf(
+  File "/home/sebacastillo/.willow/lib/python3.9/site-packages/polars/utils/_construction.py", line 826, in dict_to_pydf
+    pydf = PyDataFrame(data_series)
+exceptions.ShapeError: could not create a new dataframe: series "date_extract" has length 26 while series "total_text_topic_related" has length 24
+2023-08-15 17:26:04,626-etl_extract.py-ERROR-An error occurred while generating dataframes
+Traceback (most recent call last):
+  File "/home/sebacastillo/willow/etl_extract.py", line 184, in main
+    stat_etl_topic_related = pl.DataFrame(
+  File "/home/sebacastillo/.willow/lib/python3.9/site-packages/polars/dataframe/frame.py", line 361, in __init__
+    self._df = dict_to_pydf(
+  File "/home/sebacastillo/.willow/lib/python3.9/site-packages/polars/utils/_construction.py", line 826, in dict_to_pydf
+    pydf = PyDataFrame(data_series)
+exceptions.ShapeError: could not create a new dataframe: series "date_extract" has length 27 while series "total_text_topic_related" has length 25
+2023-08-15 17:26:08,334-etl_extract.py-ERROR-An error occurred while generating dataframes
+Traceback (most recent call last):
+  File "/home/sebacastillo/willow/etl_extract.py", line 184, in main
+    stat_etl_topic_related = pl.DataFrame(
+  File "/home/sebacastillo/.willow/lib/python3.9/site-packages/polars/dataframe/frame.py", line 361, in __init__
+    self._df = dict_to_pydf(
+  File "/home/sebacastillo/.willow/lib/python3.9/site-packages/polars/utils/_construction.py", line 826, in dict_to_pydf
+    pydf = PyDataFrame(data_series)
+exceptions.ShapeError: could not create a new dataframe: series "date_extract" has length 28 while series "total_text_topic_related" has length 26
+2023-08-15 17:26:19,496-etl_extract.py-WARNING-fromstring() returned an invalid string: ...
+2023-08-15 17:26:19,497-etl_extract.py-WARNING-Source http://www.vocesyapuntes.com/ parse error.
+2023-08-15 17:26:19,497-etl_extract.py-CRITICAL-Must extract urls from either html, text or doc!
+2023-08-15 17:26:27,280-etl_extract.py-CRITICAL-[REQUEST FAILED] HTTPConnectionPool(host='www.vocesyapuntes.com', port=80): Max retries exceeded with url: / (Caused by ConnectTimeoutError(<urllib3.connection.HTTPConnection object at 0x7fb3eb070ac0>, 'Connection to www.vocesyapuntes.com timed out. (connect timeout=7)'))
+2023-08-15 17:26:27,280-etl_extract.py-WARNING-Deleting category http://www.vocesyapuntes.com/ from source http://www.vocesyapuntes.com/ due to download error
+2023-08-15 17:26:27,283-etl_extract.py-ERROR-An error occurred while generating dataframes
+Traceback (most recent call last):
+  File "/home/sebacastillo/willow/etl_extract.py", line 184, in main
+    stat_etl_topic_related = pl.DataFrame(
+  File "/home/sebacastillo/.willow/lib/python3.9/site-packages/polars/dataframe/frame.py", line 361, in __init__
+    self._df = dict_to_pydf(
+  File "/home/sebacastillo/.willow/lib/python3.9/site-packages/polars/utils/_construction.py", line 826, in dict_to_pydf
+    pydf = PyDataFrame(data_series)
+exceptions.ShapeError: could not create a new dataframe: series "date_extract" has length 29 while series "total_text_topic_related" has length 27
+2023-08-15 17:27:03,221-etl_extract.py-CRITICAL-[REQUEST FAILED] HTTPSConnectionPool(host='stories.ellitoral.com', port=443): Read timed out. (read timeout=7)
+2023-08-15 17:27:09,436-etl_extract.py-WARNING-Deleting category https://stories.ellitoral.com from source https://www.ellitoral.com/ due to download error
+2023-08-15 17:27:23,722-etl_extract.py-ERROR-An error occurred while processing https://www.ellitoral.com/
+Traceback (most recent call last):
+  File "/home/sebacastillo/willow/etl_extract.py", line 160, in main
+    date, content, link, author, title, summary = download_and_parse_article(u)
+  File "/home/sebacastillo/willow/src/extraction.py", line 64, in download_and_parse_article
+    article.parse()
+  File "/home/sebacastillo/.willow/lib/python3.9/site-packages/newspaper/article.py", line 191, in parse
+    self.throw_if_not_downloaded_verbose()
+  File "/home/sebacastillo/.willow/lib/python3.9/site-packages/newspaper/article.py", line 531, in throw_if_not_downloaded_verbose
+    raise ArticleException('Article `download()` failed with %s on URL %s' %
+newspaper.article.ArticleException: Article `download()` failed with HTTPSConnectionPool(host='www.ellitoral.com', port=443): Max retries exceeded with url: /sucesos/vuelco-circunvalacion-accidento-subjefe-policia-provincia-santa-fe-recreo-ciudad-capital-ahora-hoy-martes-choque-transito_0_7TGIgxhOst.html (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7fb3ead04640>: Failed to establish a new connection: [Errno 101] Network is unreachable')) on URL https://www.ellitoral.com/sucesos/vuelco-circunvalacion-accidento-subjefe-policia-provincia-santa-fe-recreo-ciudad-capital-ahora-hoy-martes-choque-transito_0_7TGIgxhOst.html
+2023-08-15 17:27:43,744-etl_extract.py-WARNING-fromstring() returned an invalid string: ...
+2023-08-15 17:27:43,745-etl_extract.py-WARNING-Source https://www.lacapital.com.ar/ parse error.
+2023-08-15 17:27:43,745-etl_extract.py-CRITICAL-Must extract urls from either html, text or doc!
+2023-08-15 17:27:56,889-etl_extract.py-ERROR-An error occurred while generating dataframes
+Traceback (most recent call last):
+  File "/home/sebacastillo/willow/etl_extract.py", line 184, in main
+    stat_etl_topic_related = pl.DataFrame(
+  File "/home/sebacastillo/.willow/lib/python3.9/site-packages/polars/dataframe/frame.py", line 361, in __init__
+    self._df = dict_to_pydf(
+  File "/home/sebacastillo/.willow/lib/python3.9/site-packages/polars/utils/_construction.py", line 826, in dict_to_pydf
+    pydf = PyDataFrame(data_series)
+exceptions.ShapeError: could not create a new dataframe: series "date_extract" has length 30 while series "total_text_topic_related" has length 28
+2023-08-15 17:28:02,491-etl_extract.py-ERROR-An error occurred while generating dataframes
+Traceback (most recent call last):
+  File "/home/sebacastillo/willow/etl_extract.py", line 184, in main
+    stat_etl_topic_related = pl.DataFrame(
+  File "/home/sebacastillo/.willow/lib/python3.9/site-packages/polars/dataframe/frame.py", line 361, in __init__
+    self._df = dict_to_pydf(
+  File "/home/sebacastillo/.willow/lib/python3.9/site-packages/polars/utils/_construction.py", line 826, in dict_to_pydf
+    pydf = PyDataFrame(data_series)
+exceptions.ShapeError: could not create a new dataframe: series "date_extract" has length 31 while series "total_text_topic_related" has length 29
+2023-08-15 17:28:13,198-etl_extract.py-ERROR-An error occurred while generating dataframes
+Traceback (most recent call last):
+  File "/home/sebacastillo/willow/etl_extract.py", line 184, in main
+    stat_etl_topic_related = pl.DataFrame(
+  File "/home/sebacastillo/.willow/lib/python3.9/site-packages/polars/dataframe/frame.py", line 361, in __init__
+    self._df = dict_to_pydf(
+  File "/home/sebacastillo/.willow/lib/python3.9/site-packages/polars/utils/_construction.py", line 826, in dict_to_pydf
+    pydf = PyDataFrame(data_series)
+exceptions.ShapeError: could not create a new dataframe: series "date_extract" has length 32 while series "total_text_topic_related" has length 30
+2023-08-15 17:28:28,263-etl_extract.py-CRITICAL-[REQUEST FAILED] HTTPSConnectionPool(host='www.eldiariodelfindelmundo.com', port=443): Read timed out. (read timeout=7)
+2023-08-15 17:28:28,264-etl_extract.py-CRITICAL-[REQUEST FAILED] HTTPSConnectionPool(host='www.eldiariodelfindelmundo.com', port=443): Read timed out. (read timeout=7)
+2023-08-15 17:28:30,121-etl_extract.py-CRITICAL-[REQUEST FAILED] HTTPSConnectionPool(host='www.eldiariodelfindelmundo.com', port=443): Read timed out. (read timeout=7)
+2023-08-15 17:28:30,192-etl_extract.py-CRITICAL-[REQUEST FAILED] HTTPSConnectionPool(host='www.eldiariodelfindelmundo.com', port=443): Read timed out. (read timeout=7)
+2023-08-15 17:28:31,917-etl_extract.py-CRITICAL-[REQUEST FAILED] HTTPSConnectionPool(host='www.eldiariodelfindelmundo.com', port=443): Read timed out. (read timeout=7)
+2023-08-15 17:28:32,737-etl_extract.py-CRITICAL-[REQUEST FAILED] HTTPSConnectionPool(host='www.eldiariodelfindelmundo.com', port=443): Read timed out. (read timeout=7)
+2023-08-15 17:28:36,010-etl_extract.py-CRITICAL-[REQUEST FAILED] HTTPSConnectionPool(host='www.eldiariodelfindelmundo.com', port=443): Max retries exceeded with url: /solicitada (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7fb3eaaa6ac0>: Failed to establish a new connection: [Errno 101] Network is unreachable'))
+2023-08-15 17:28:36,288-etl_extract.py-CRITICAL-[REQUEST FAILED] HTTPSConnectionPool(host='www.eldiariodelfindelmundo.com', port=443): Max retries exceeded with url: /municipales (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7fb3eaaa00d0>: Failed to establish a new connection: [Errno 101] Network is unreachable'))
+2023-08-15 17:28:36,289-etl_extract.py-WARNING-Deleting category https://www.eldiariodelfindelmundo.com/rss from source https://www.eldiariodelfindelmundo.com/ due to download error
+2023-08-15 17:28:36,289-etl_extract.py-WARNING-Deleting category https://www.eldiariodelfindelmundo.com/mas from source https://www.eldiariodelfindelmundo.com/ due to download error
+2023-08-15 17:28:36,289-etl_extract.py-WARNING-Deleting category https://www.eldiariodelfindelmundo.com/deportes from source https://www.eldiariodelfindelmundo.com/ due to download error
+2023-08-15 17:28:36,289-etl_extract.py-WARNING-Deleting category https://www.eldiariodelfindelmundo.com/politica from source https://www.eldiariodelfindelmundo.com/ due to download error
+2023-08-15 17:28:36,289-etl_extract.py-WARNING-Deleting category https://www.eldiariodelfindelmundo.com/solicitada from source https://www.eldiariodelfindelmundo.com/ due to download error
+2023-08-15 17:28:36,289-etl_extract.py-WARNING-Deleting category https://www.eldiariodelfindelmundo.com/municipales from source https://www.eldiariodelfindelmundo.com/ due to download error
+2023-08-15 17:28:36,289-etl_extract.py-WARNING-Deleting category https://www.eldiariodelfindelmundo.com/provinciales from source https://www.eldiariodelfindelmundo.com/ due to download error
+2023-08-15 17:28:36,289-etl_extract.py-WARNING-Deleting category https://www.eldiariodelfindelmundo.com/cultura from source https://www.eldiariodelfindelmundo.com/ due to download error
+2023-08-15 17:28:36,443-etl_extract.py-ERROR-An error occurred while generating dataframes
+Traceback (most recent call last):
+  File "/home/sebacastillo/willow/etl_extract.py", line 184, in main
+    stat_etl_topic_related = pl.DataFrame(
+  File "/home/sebacastillo/.willow/lib/python3.9/site-packages/polars/dataframe/frame.py", line 361, in __init__
+    self._df = dict_to_pydf(
+  File "/home/sebacastillo/.willow/lib/python3.9/site-packages/polars/utils/_construction.py", line 826, in dict_to_pydf
+    pydf = PyDataFrame(data_series)
+exceptions.ShapeError: could not create a new dataframe: series "date_extract" has length 33 while series "total_text_topic_related" has length 31
+2023-08-15 17:28:38,210-etl_extract.py-ERROR-An error occurred while generating dataframes
+Traceback (most recent call last):
+  File "/home/sebacastillo/willow/etl_extract.py", line 184, in main
+    stat_etl_topic_related = pl.DataFrame(
+  File "/home/sebacastillo/.willow/lib/python3.9/site-packages/polars/dataframe/frame.py", line 361, in __init__
+    self._df = dict_to_pydf(
+  File "/home/sebacastillo/.willow/lib/python3.9/site-packages/polars/utils/_construction.py", line 826, in dict_to_pydf
+    pydf = PyDataFrame(data_series)
+exceptions.ShapeError: could not create a new dataframe: series "date_extract" has length 34 while series "total_text_topic_related" has length 32
+2023-08-15 17:28:40,061-etl_extract.py-CRITICAL-[REQUEST FAILED] 403 Client Error: Forbidden for url: https://soporte.lagaceta.com.ar/hc/es
+2023-08-15 17:28:40,445-etl_extract.py-ERROR-An error occurred while generating dataframes
+Traceback (most recent call last):
+  File "/home/sebacastillo/willow/etl_extract.py", line 184, in main
+    stat_etl_topic_related = pl.DataFrame(
+  File "/home/sebacastillo/.willow/lib/python3.9/site-packages/polars/dataframe/frame.py", line 361, in __init__
+    self._df = dict_to_pydf(
+  File "/home/sebacastillo/.willow/lib/python3.9/site-packages/polars/utils/_construction.py", line 826, in dict_to_pydf
+    pydf = PyDataFrame(data_series)
+exceptions.ShapeError: could not create a new dataframe: series "date_extract" has length 35 while series "total_text_topic_related" has length 33
+2023-08-15 17:29:00,374-etl_extract.py-CRITICAL-[REQUEST FAILED] HTTPSConnectionPool(host='www.tucumanoticias.com.ar', port=443): Read timed out. (read timeout=7)
+2023-08-15 17:29:00,374-etl_extract.py-WARNING-Deleting category https://www.tucumanoticias.com.ar/ from source https://www.tucumanoticias.com.ar/ due to download error
+2023-08-15 17:29:00,384-etl_extract.py-ERROR-An error occurred while generating dataframes
+Traceback (most recent call last):
+  File "/home/sebacastillo/willow/etl_extract.py", line 184, in main
+    stat_etl_topic_related = pl.DataFrame(
+  File "/home/sebacastillo/.willow/lib/python3.9/site-packages/polars/dataframe/frame.py", line 361, in __init__
+    self._df = dict_to_pydf(
+  File "/home/sebacastillo/.willow/lib/python3.9/site-packages/polars/utils/_construction.py", line 826, in dict_to_pydf
+    pydf = PyDataFrame(data_series)
+exceptions.ShapeError: could not create a new dataframe: series "date_extract" has length 36 while series "total_text_topic_related" has length 34
+2023-08-15 17:29:10,176-etl_extract.py-ERROR-An error occurred while generating dataframes
+Traceback (most recent call last):
+  File "/home/sebacastillo/willow/etl_extract.py", line 184, in main
+    stat_etl_topic_related = pl.DataFrame(
+  File "/home/sebacastillo/.willow/lib/python3.9/site-packages/polars/dataframe/frame.py", line 361, in __init__
+    self._df = dict_to_pydf(
+  File "/home/sebacastillo/.willow/lib/python3.9/site-packages/polars/utils/_construction.py", line 826, in dict_to_pydf
+    pydf = PyDataFrame(data_series)
+exceptions.ShapeError: could not create a new dataframe: series "date_extract" has length 37 while series "total_text_topic_related" has length 35
+2023-08-15 17:29:14,352-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.lanacion.com.ar/autos/
+2023-08-15 17:29:16,420-etl_extract.py-ERROR-An error occurred while generating dataframes
+Traceback (most recent call last):
+  File "/home/sebacastillo/willow/etl_extract.py", line 184, in main
+    stat_etl_topic_related = pl.DataFrame(
+  File "/home/sebacastillo/.willow/lib/python3.9/site-packages/polars/dataframe/frame.py", line 361, in __init__
+    self._df = dict_to_pydf(
+  File "/home/sebacastillo/.willow/lib/python3.9/site-packages/polars/utils/_construction.py", line 826, in dict_to_pydf
+    pydf = PyDataFrame(data_series)
+exceptions.ShapeError: could not create a new dataframe: series "date_extract" has length 38 while series "total_text_topic_related" has length 36
+2023-08-15 17:29:24,703-etl_extract.py-ERROR-An error occurred while generating dataframes
+Traceback (most recent call last):
+  File "/home/sebacastillo/willow/etl_extract.py", line 184, in main
+    stat_etl_topic_related = pl.DataFrame(
+  File "/home/sebacastillo/.willow/lib/python3.9/site-packages/polars/dataframe/frame.py", line 361, in __init__
+    self._df = dict_to_pydf(
+  File "/home/sebacastillo/.willow/lib/python3.9/site-packages/polars/utils/_construction.py", line 826, in dict_to_pydf
+    pydf = PyDataFrame(data_series)
+exceptions.ShapeError: could not create a new dataframe: series "date_extract" has length 39 while series "total_text_topic_related" has length 37
+2023-08-15 17:29:28,253-etl_extract.py-ERROR-An error occurred while generating dataframes
+Traceback (most recent call last):
+  File "/home/sebacastillo/willow/etl_extract.py", line 184, in main
+    stat_etl_topic_related = pl.DataFrame(
+  File "/home/sebacastillo/.willow/lib/python3.9/site-packages/polars/dataframe/frame.py", line 361, in __init__
+    self._df = dict_to_pydf(
+  File "/home/sebacastillo/.willow/lib/python3.9/site-packages/polars/utils/_construction.py", line 826, in dict_to_pydf
+    pydf = PyDataFrame(data_series)
+exceptions.ShapeError: could not create a new dataframe: series "date_extract" has length 40 while series "total_text_topic_related" has length 38
+2023-08-15 17:29:45,933-etl_extract.py-WARNING-fromstring() returned an invalid string: ...
+2023-08-15 17:29:45,933-etl_extract.py-WARNING-Source https://www.perfil.com/ parse error.
+2023-08-15 17:29:45,934-etl_extract.py-CRITICAL-Must extract urls from either html, text or doc!
+2023-08-15 17:29:57,095-etl_extract.py-ERROR-An error occurred while generating dataframes
+Traceback (most recent call last):
+  File "/home/sebacastillo/willow/etl_extract.py", line 184, in main
+    stat_etl_topic_related = pl.DataFrame(
+  File "/home/sebacastillo/.willow/lib/python3.9/site-packages/polars/dataframe/frame.py", line 361, in __init__
+    self._df = dict_to_pydf(
+  File "/home/sebacastillo/.willow/lib/python3.9/site-packages/polars/utils/_construction.py", line 826, in dict_to_pydf
+    pydf = PyDataFrame(data_series)
+exceptions.ShapeError: could not create a new dataframe: series "date_extract" has length 41 while series "total_text_topic_related" has length 39
+2023-08-15 17:29:58,089-etl_extract.py-CRITICAL-[REQUEST FAILED] 404 Client Error: Not Found for url: https://www.diariopopular.com.ar/%7B%5B%20link%20%5D%7D
+2023-08-15 17:30:02,639-etl_extract.py-ERROR-An error occurred while generating dataframes
+Traceback (most recent call last):
+  File "/home/sebacastillo/willow/etl_extract.py", line 184, in main
+    stat_etl_topic_related = pl.DataFrame(
+  File "/home/sebacastillo/.willow/lib/python3.9/site-packages/polars/dataframe/frame.py", line 361, in __init__
+    self._df = dict_to_pydf(
+  File "/home/sebacastillo/.willow/lib/python3.9/site-packages/polars/utils/_construction.py", line 826, in dict_to_pydf
+    pydf = PyDataFrame(data_series)
+exceptions.ShapeError: could not create a new dataframe: series "date_extract" has length 42 while series "total_text_topic_related" has length 40
+2023-08-15 17:30:04,166-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.lavoz.com.ar/tendencias
+2023-08-15 17:30:04,196-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.lavoz.com.ar/galerias/
+2023-08-15 17:30:04,256-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.lavoz.com.ar/quienes-somos
+2023-08-15 17:30:04,291-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.lavoz.com.ar/especiales
+2023-08-15 17:30:04,300-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.lavoz.com.ar/videos
+2023-08-15 17:30:04,347-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.lavoz.com.ar/numero-cero
+2023-08-15 17:30:04,389-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.lavoz.com.ar/opinion
+2023-08-15 17:30:04,392-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.lavoz.com.ar/clima
+2023-08-15 17:30:04,419-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.lavoz.com.ar/mundo/
+2023-08-15 17:30:04,440-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.lavoz.com.ar/politica
+2023-08-15 17:30:04,958-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.lavoz.com.ar/tecnologia/
+2023-08-15 17:30:05,019-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.lavoz.com.ar/deportes
+2023-08-15 17:30:05,047-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.lavoz.com.ar/servicios
+2023-08-15 17:30:05,056-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.lavoz.com.ar/lo-ultimo
+2023-08-15 17:30:05,150-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.lavoz.com.ar/viral
+2023-08-15 17:30:11,181-etl_extract.py-ERROR-An error occurred while processing https://www.lavoz.com.ar/
+Traceback (most recent call last):
+  File "/home/sebacastillo/willow/etl_extract.py", line 160, in main
+    date, content, link, author, title, summary = download_and_parse_article(u)
+  File "/home/sebacastillo/willow/src/extraction.py", line 64, in download_and_parse_article
+    article.parse()
+  File "/home/sebacastillo/.willow/lib/python3.9/site-packages/newspaper/article.py", line 191, in parse
+    self.throw_if_not_downloaded_verbose()
+  File "/home/sebacastillo/.willow/lib/python3.9/site-packages/newspaper/article.py", line 531, in throw_if_not_downloaded_verbose
+    raise ArticleException('Article `download()` failed with %s on URL %s' %
+newspaper.article.ArticleException: Article `download()` failed with 429 Client Error: Too Many Requests for url: https://www.lavoz.com.ar/sucesos/condenan-a-15-anos-de-prision-al-autor-de-un-homicidio-en-ocasion-de-robo-en-santa-cruz-del-lago/ on URL https://www.lavoz.com.ar/sucesos/condenan-a-15-anos-de-prision-al-autor-de-un-homicidio-en-ocasion-de-robo-en-santa-cruz-del-lago/
+2023-08-15 17:30:13,144-etl_extract.py-CRITICAL-[REQUEST FAILED] 403 Client Error: Forbidden for url: https://soporte.lagaceta.com.ar/hc/es
+2023-08-15 17:30:13,750-etl_extract.py-ERROR-An error occurred while generating dataframes
+Traceback (most recent call last):
+  File "/home/sebacastillo/willow/etl_extract.py", line 184, in main
+    stat_etl_topic_related = pl.DataFrame(
+  File "/home/sebacastillo/.willow/lib/python3.9/site-packages/polars/dataframe/frame.py", line 361, in __init__
+    self._df = dict_to_pydf(
+  File "/home/sebacastillo/.willow/lib/python3.9/site-packages/polars/utils/_construction.py", line 826, in dict_to_pydf
+    pydf = PyDataFrame(data_series)
+exceptions.ShapeError: could not create a new dataframe: series "date_extract" has length 43 while series "total_text_topic_related" has length 41
+2023-08-15 17:30:13,870-etl_extract.py-WARNING-fromstring() returned an invalid string: ...
+2023-08-15 17:30:13,871-etl_extract.py-WARNING-Source https://www.lavoz.com.ar/ parse error.
+2023-08-15 17:30:14,024-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.lavoz.com.ar/
+2023-08-15 17:30:14,028-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.lavoz.com.ar/sucesos
+2023-08-15 17:30:14,037-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.lavoz.com.ar/vos
+2023-08-15 17:30:14,080-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.lavoz.com.ar/salud
+2023-08-15 17:30:14,116-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.lavoz.com.ar/ciudadanos
+2023-08-15 17:30:14,275-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.lavoz.com.ar/mundo
+2023-08-15 17:30:14,299-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.lavoz.com.ar/negocios
+2023-08-15 17:30:14,330-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.lavoz.com.ar/galerias
+2023-08-15 17:30:14,356-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.lavoz.com.ar/agro
+2023-08-15 17:30:14,374-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.lavoz.com.ar/tendencias
+2023-08-15 17:30:14,453-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.lavoz.com.ar/tecnologia
+2023-08-15 17:30:14,477-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.lavoz.com.ar/quienes-somos
+2023-08-15 17:30:14,488-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.lavoz.com.ar/
+2023-08-15 17:30:14,545-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.lavoz.com.ar/videos
+2023-08-15 17:30:14,577-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.lavoz.com.ar/especiales
+2023-08-15 17:30:14,591-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.lavoz.com.ar/numero-cero
+2023-08-15 17:30:14,601-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.lavoz.com.ar/
+2023-08-15 17:30:14,603-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.lavoz.com.ar/opinion
+2023-08-15 17:30:14,665-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.lavoz.com.ar/clima
+2023-08-15 17:30:14,743-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.lavoz.com.ar/deportes
+2023-08-15 17:30:14,762-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.lavoz.com.ar/politica
+2023-08-15 17:30:14,770-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.lavoz.com.ar/lo-ultimo
+2023-08-15 17:30:15,058-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.lavoz.com.ar/servicios
+2023-08-15 17:30:15,089-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.lavoz.com.ar:443/
+2023-08-15 17:30:15,902-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.lavoz.com.ar/viral
+2023-08-15 17:30:29,803-etl_extract.py-ERROR-An error occurred while generating dataframes
+Traceback (most recent call last):
+  File "/home/sebacastillo/willow/etl_extract.py", line 184, in main
+    stat_etl_topic_related = pl.DataFrame(
+  File "/home/sebacastillo/.willow/lib/python3.9/site-packages/polars/dataframe/frame.py", line 361, in __init__
+    self._df = dict_to_pydf(
+  File "/home/sebacastillo/.willow/lib/python3.9/site-packages/polars/utils/_construction.py", line 826, in dict_to_pydf
+    pydf = PyDataFrame(data_series)
+exceptions.ShapeError: could not create a new dataframe: series "date_extract" has length 44 while series "total_text_topic_related" has length 42
+2023-08-15 17:30:34,684-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://viapais.com.ar/cordoba/
+2023-08-15 17:30:34,819-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://viapais.com.ar/cordoba/
+2023-08-15 17:30:35,281-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://viapais.com.ar/cordoba/
+2023-08-15 17:30:35,325-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://viapais.com.ar/cordoba/
+2023-08-15 17:30:35,578-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://viapais.com.ar/cordoba/
+2023-08-15 17:30:35,586-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://viapais.com.ar/cordoba/
+2023-08-15 17:30:35,625-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://viapais.com.ar/cordoba/
+2023-08-15 17:30:35,637-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://viapais.com.ar/cordoba/
+2023-08-15 17:30:35,745-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://viapais.com.ar/cordoba/
+2023-08-15 17:30:35,756-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://viapais.com.ar/cordoba/
+2023-08-15 17:30:35,766-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://viapais.com.ar/cordoba/
+2023-08-15 17:30:35,779-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://viapais.com.ar/cordoba/
+2023-08-15 17:30:36,174-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://viapais.com.ar/cordoba/
+2023-08-15 17:30:36,256-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://viapais.com.ar/cordoba/
+2023-08-15 17:30:36,445-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://viapais.com.ar/cordoba/
+2023-08-15 17:30:36,459-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://viapais.com.ar/cordoba/
+2023-08-15 17:30:36,472-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://viapais.com.ar/cordoba/
+2023-08-15 17:30:36,476-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://viapais.com.ar/cordoba/
+2023-08-15 17:30:36,534-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://viapais.com.ar/cordoba/
+2023-08-15 17:30:36,551-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://viapais.com.ar/cordoba/
+2023-08-15 17:30:36,638-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://viapais.com.ar/cordoba/
+2023-08-15 17:30:36,641-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://viapais.com.ar/cordoba/
+2023-08-15 17:30:36,953-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://viapais.com.ar/cordoba/
+2023-08-15 17:30:36,978-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://viapais.com.ar/cordoba/
+2023-08-15 17:30:37,229-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://viapais.com.ar/cordoba/
+2023-08-15 17:30:37,236-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://viapais.com.ar/cordoba/
+2023-08-15 17:30:37,237-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://viapais.com.ar/cordoba/
+2023-08-15 17:30:37,300-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://viapais.com.ar/cordoba/
+2023-08-15 17:30:37,313-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://viapais.com.ar/cordoba/
+2023-08-15 17:30:37,316-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://viapais.com.ar/cordoba/
+2023-08-15 17:30:37,429-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://viapais.com.ar/cordoba/
+2023-08-15 17:30:37,432-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://viapais.com.ar/cordoba/
+2023-08-15 17:30:37,686-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://viapais.com.ar/cordoba/
+2023-08-15 17:30:37,689-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://viapais.com.ar/cordoba/
+2023-08-15 17:30:38,065-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://viapais.com.ar/cordoba/
+2023-08-15 17:30:38,068-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://viapais.com.ar/cordoba/
+2023-08-15 17:30:38,069-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://viapais.com.ar/cordoba/
+2023-08-15 17:30:38,070-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://viapais.com.ar/cordoba/
+2023-08-15 17:30:38,140-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://viapais.com.ar/cordoba/
+2023-08-15 17:30:43,349-etl_extract.py-CRITICAL-[REQUEST FAILED] ('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))
+2023-08-15 17:30:43,350-etl_extract.py-CRITICAL-[REQUEST FAILED] ('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))
+2023-08-15 17:30:45,009-etl_extract.py-CRITICAL-[REQUEST FAILED] HTTPSConnectionPool(host='viapais.com.ar', port=443): Read timed out. (read timeout=7)
+2023-08-15 17:30:45,013-etl_extract.py-CRITICAL-[REQUEST FAILED] HTTPSConnectionPool(host='viapais.com.ar', port=443): Read timed out. (read timeout=7)
+2023-08-15 17:30:45,124-etl_extract.py-CRITICAL-[REQUEST FAILED] HTTPSConnectionPool(host='viapais.com.ar', port=443): Read timed out. (read timeout=7)
+2023-08-15 17:30:48,473-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://viapais.com.ar/cordoba/
+2023-08-15 17:30:48,516-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://viapais.com.ar/cordoba/
+2023-08-15 17:30:48,636-etl_extract.py-WARNING-Deleting category https://diaadia.com.ar/politica from source https://diaadia.com.ar/ due to download error
+2023-08-15 17:30:48,636-etl_extract.py-WARNING-Deleting category https://diaadia.com.ar/concordia from source https://diaadia.com.ar/ due to download error
+2023-08-15 17:30:48,637-etl_extract.py-WARNING-Deleting category https://diaadia.com.ar/malvinas from source https://diaadia.com.ar/ due to download error
+2023-08-15 17:30:48,637-etl_extract.py-WARNING-Deleting category https://diaadia.com.ar/san-francisco from source https://diaadia.com.ar/ due to download error
+2023-08-15 17:30:48,637-etl_extract.py-WARNING-Deleting category https://diaadia.com.ar/santa-cruz from source https://diaadia.com.ar/ due to download error
+2023-08-15 17:30:57,970-etl_extract.py-ERROR-An error occurred while processing https://diaadia.com.ar/
+Traceback (most recent call last):
+  File "/home/sebacastillo/willow/etl_extract.py", line 160, in main
+    date, content, link, author, title, summary = download_and_parse_article(u)
+  File "/home/sebacastillo/willow/src/extraction.py", line 64, in download_and_parse_article
+    article.parse()
+  File "/home/sebacastillo/.willow/lib/python3.9/site-packages/newspaper/article.py", line 191, in parse
+    self.throw_if_not_downloaded_verbose()
+  File "/home/sebacastillo/.willow/lib/python3.9/site-packages/newspaper/article.py", line 531, in throw_if_not_downloaded_verbose
+    raise ArticleException('Article `download()` failed with %s on URL %s' %
+newspaper.article.ArticleException: Article `download()` failed with 429 Client Error: Too Many Requests for url: https://viapais.com.ar/cordoba/ on URL https://diaadia.com.ar/cordoba/una-mujer-embarazada-intento-ingresar-marihuana-y-cocaina-a-la-carcel-de-cruz-del-eje/
+2023-08-15 17:31:00,212-etl_extract.py-CRITICAL-[REQUEST FAILED] 403 Client Error: Forbidden for url: https://www.eldiariodecarlospaz.com.ar/tiempo
+2023-08-15 17:31:00,221-etl_extract.py-CRITICAL-[REQUEST FAILED] 404 Client Error: Not Found for url: https://www.eldiariodecarlospaz.com.ar/archivo
+2023-08-15 17:31:13,397-etl_extract.py-ERROR-An error occurred while processing https://www.eldiariodecarlospaz.com.ar/
+Traceback (most recent call last):
+  File "/home/sebacastillo/willow/etl_extract.py", line 160, in main
+    date, content, link, author, title, summary = download_and_parse_article(u)
+  File "/home/sebacastillo/willow/src/extraction.py", line 64, in download_and_parse_article
+    article.parse()
+  File "/home/sebacastillo/.willow/lib/python3.9/site-packages/newspaper/article.py", line 191, in parse
+    self.throw_if_not_downloaded_verbose()
+  File "/home/sebacastillo/.willow/lib/python3.9/site-packages/newspaper/article.py", line 531, in throw_if_not_downloaded_verbose
+    raise ArticleException('Article `download()` failed with %s on URL %s' %
+newspaper.article.ArticleException: Article `download()` failed with HTTPSConnectionPool(host='www.eldiariodecarlospaz.com.ar', port=443): Read timed out. (read timeout=7) on URL https://www.eldiariodecarlospaz.com.ar/sucesos/2023/8/15/embarazada-intento-ingresar-drogas-en-la-carcel-de-cruz-del-eje-180763.html
+2023-08-15 17:31:17,600-etl_extract.py-ERROR-An error occurred while generating dataframes
+Traceback (most recent call last):
+  File "/home/sebacastillo/willow/etl_extract.py", line 184, in main
+    stat_etl_topic_related = pl.DataFrame(
+  File "/home/sebacastillo/.willow/lib/python3.9/site-packages/polars/dataframe/frame.py", line 361, in __init__
+    self._df = dict_to_pydf(
+  File "/home/sebacastillo/.willow/lib/python3.9/site-packages/polars/utils/_construction.py", line 826, in dict_to_pydf
+    pydf = PyDataFrame(data_series)
+exceptions.ShapeError: could not create a new dataframe: series "date_extract" has length 45 while series "total_text_topic_related" has length 43
+2023-08-15 17:31:24,667-etl_extract.py-ERROR-An error occurred while generating dataframes
+Traceback (most recent call last):
+  File "/home/sebacastillo/willow/etl_extract.py", line 184, in main
+    stat_etl_topic_related = pl.DataFrame(
+  File "/home/sebacastillo/.willow/lib/python3.9/site-packages/polars/dataframe/frame.py", line 361, in __init__
+    self._df = dict_to_pydf(
+  File "/home/sebacastillo/.willow/lib/python3.9/site-packages/polars/utils/_construction.py", line 826, in dict_to_pydf
+    pydf = PyDataFrame(data_series)
+exceptions.ShapeError: could not create a new dataframe: series "date_extract" has length 46 while series "total_text_topic_related" has length 44
+2023-08-15 17:31:31,254-etl_extract.py-ERROR-An error occurred while generating dataframes
+Traceback (most recent call last):
+  File "/home/sebacastillo/willow/etl_extract.py", line 184, in main
+    stat_etl_topic_related = pl.DataFrame(
+  File "/home/sebacastillo/.willow/lib/python3.9/site-packages/polars/dataframe/frame.py", line 361, in __init__
+    self._df = dict_to_pydf(
+  File "/home/sebacastillo/.willow/lib/python3.9/site-packages/polars/utils/_construction.py", line 826, in dict_to_pydf
+    pydf = PyDataFrame(data_series)
+exceptions.ShapeError: could not create a new dataframe: series "date_extract" has length 47 while series "total_text_topic_related" has length 45
+2023-08-15 17:31:31,799-etl_extract.py-WARNING-fromstring() returned an invalid string: ...
+2023-08-15 17:31:31,800-etl_extract.py-WARNING-Source https://www.losandes.com.ar/ parse error.
+2023-08-15 17:31:32,102-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.losandes.com.ar/
+2023-08-15 17:31:32,119-etl_extract.py-ERROR-An error occurred while generating dataframes
+Traceback (most recent call last):
+  File "/home/sebacastillo/willow/etl_extract.py", line 184, in main
+    stat_etl_topic_related = pl.DataFrame(
+  File "/home/sebacastillo/.willow/lib/python3.9/site-packages/polars/dataframe/frame.py", line 361, in __init__
+    self._df = dict_to_pydf(
+  File "/home/sebacastillo/.willow/lib/python3.9/site-packages/polars/utils/_construction.py", line 826, in dict_to_pydf
+    pydf = PyDataFrame(data_series)
+exceptions.ShapeError: could not create a new dataframe: series "date_extract" has length 48 while series "total_text_topic_related" has length 46
+2023-08-15 17:31:45,969-etl_extract.py-CRITICAL-[REQUEST FAILED] HTTPSConnectionPool(host='www.elsol.com.ar', port=443): Read timed out. (read timeout=7)
+2023-08-15 17:31:45,969-etl_extract.py-WARNING-Deleting category https://www.elsol.com.ar/ from source https://www.elsol.com.ar/ due to download error
+2023-08-15 17:31:46,124-etl_extract.py-ERROR-An error occurred while generating dataframes
+Traceback (most recent call last):
+  File "/home/sebacastillo/willow/etl_extract.py", line 184, in main
+    stat_etl_topic_related = pl.DataFrame(
+  File "/home/sebacastillo/.willow/lib/python3.9/site-packages/polars/dataframe/frame.py", line 361, in __init__
+    self._df = dict_to_pydf(
+  File "/home/sebacastillo/.willow/lib/python3.9/site-packages/polars/utils/_construction.py", line 826, in dict_to_pydf
+    pydf = PyDataFrame(data_series)
+exceptions.ShapeError: could not create a new dataframe: series "date_extract" has length 49 while series "total_text_topic_related" has length 47
+2023-08-15 17:32:06,142-etl_extract.py-WARNING-fromstring() returned an invalid string: ...
+2023-08-15 17:32:06,142-etl_extract.py-WARNING-Source https://www.lagaceta.com.ar/ parse error.
+2023-08-15 17:32:26,173-etl_extract.py-CRITICAL-[REQUEST FAILED] HTTPSConnectionPool(host='clasificados.lagaceta.com.ar', port=443): Max retries exceeded with url: / (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7fb3dfa8b730>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution'))
+2023-08-15 17:32:26,174-etl_extract.py-CRITICAL-[REQUEST FAILED] HTTPSConnectionPool(host='cuenta.lagaceta.com.ar', port=443): Max retries exceeded with url: / (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7fb3eacc1f40>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution'))
+2023-08-15 17:32:26,181-etl_extract.py-CRITICAL-[REQUEST FAILED] HTTPSConnectionPool(host='soporte.lagaceta.com.ar', port=443): Max retries exceeded with url: / (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7fb3eabfa0d0>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution'))
+2023-08-15 17:32:26,193-etl_extract.py-CRITICAL-[REQUEST FAILED] HTTPSConnectionPool(host='www.lagaceta.com.ar', port=443): Max retries exceeded with url: / (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7fb3eabfa400>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution'))
+2023-08-15 17:32:26,197-etl_extract.py-CRITICAL-[REQUEST FAILED] HTTPSConnectionPool(host='e-edition.lagaceta.com.ar', port=443): Max retries exceeded with url: / (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7fb3eabfa640>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution'))
+2023-08-15 17:32:26,201-etl_extract.py-CRITICAL-[REQUEST FAILED] HTTPSConnectionPool(host='marketing.lagaceta.com.ar', port=443): Max retries exceeded with url: / (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7fb3eabfa8b0>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution'))
+2023-08-15 17:32:26,205-etl_extract.py-CRITICAL-[REQUEST FAILED] HTTPSConnectionPool(host='www.lagaceta.com.ar', port=443): Max retries exceeded with url: / (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7fb3eabfac70>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution'))
+2023-08-15 17:32:26,206-etl_extract.py-CRITICAL-[REQUEST FAILED] HTTPSConnectionPool(host='club.lagaceta.com', port=443): Max retries exceeded with url: / (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7fb3eabe60a0>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution'))
+2023-08-15 17:32:26,209-etl_extract.py-CRITICAL-[REQUEST FAILED] HTTPSConnectionPool(host='funebres.lagaceta.com.ar', port=443): Max retries exceeded with url: / (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7fb3eabe6250>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution'))
+2023-08-15 17:32:26,209-etl_extract.py-WARNING-Deleting category https://www.lagaceta.com.ar/ from source https://www.lagaceta.com.ar/ due to download error
+2023-08-15 17:32:26,210-etl_extract.py-WARNING-Deleting category https://cuenta.lagaceta.com.ar from source https://www.lagaceta.com.ar/ due to download error
+2023-08-15 17:32:26,210-etl_extract.py-WARNING-Deleting category https://clasificados.lagaceta.com.ar from source https://www.lagaceta.com.ar/ due to download error
+2023-08-15 17:32:26,210-etl_extract.py-WARNING-Deleting category https://marketing.lagaceta.com.ar from source https://www.lagaceta.com.ar/ due to download error
+2023-08-15 17:32:26,210-etl_extract.py-WARNING-Deleting category https://www.lagaceta.com.ar from source https://www.lagaceta.com.ar/ due to download error
+2023-08-15 17:32:26,210-etl_extract.py-WARNING-Deleting category https://funebres.lagaceta.com.ar from source https://www.lagaceta.com.ar/ due to download error
+2023-08-15 17:32:26,211-etl_extract.py-WARNING-Deleting category https://e-edition.lagaceta.com.ar from source https://www.lagaceta.com.ar/ due to download error
+2023-08-15 17:32:26,211-etl_extract.py-WARNING-Deleting category https://soporte.lagaceta.com.ar from source https://www.lagaceta.com.ar/ due to download error
+2023-08-15 17:32:26,211-etl_extract.py-WARNING-Deleting category https://club.lagaceta.com from source https://www.lagaceta.com.ar/ due to download error
+2023-08-15 17:32:26,218-etl_extract.py-ERROR-An error occurred while generating dataframes
+Traceback (most recent call last):
+  File "/home/sebacastillo/willow/etl_extract.py", line 184, in main
+    stat_etl_topic_related = pl.DataFrame(
+  File "/home/sebacastillo/.willow/lib/python3.9/site-packages/polars/dataframe/frame.py", line 361, in __init__
+    self._df = dict_to_pydf(
+  File "/home/sebacastillo/.willow/lib/python3.9/site-packages/polars/utils/_construction.py", line 826, in dict_to_pydf
+    pydf = PyDataFrame(data_series)
+exceptions.ShapeError: could not create a new dataframe: series "date_extract" has length 50 while series "total_text_topic_related" has length 48
+2023-08-15 17:32:38,989-etl_extract.py-ERROR-An error occurred while generating dataframes
+Traceback (most recent call last):
+  File "/home/sebacastillo/willow/etl_extract.py", line 184, in main
+    stat_etl_topic_related = pl.DataFrame(
+  File "/home/sebacastillo/.willow/lib/python3.9/site-packages/polars/dataframe/frame.py", line 361, in __init__
+    self._df = dict_to_pydf(
+  File "/home/sebacastillo/.willow/lib/python3.9/site-packages/polars/utils/_construction.py", line 826, in dict_to_pydf
+    pydf = PyDataFrame(data_series)
+exceptions.ShapeError: could not create a new dataframe: series "date_extract" has length 51 while series "total_text_topic_related" has length 49
+2023-08-15 17:32:41,943-etl_extract.py-ERROR-An error occurred while generating dataframes
+Traceback (most recent call last):
+  File "/home/sebacastillo/willow/etl_extract.py", line 184, in main
+    stat_etl_topic_related = pl.DataFrame(
+  File "/home/sebacastillo/.willow/lib/python3.9/site-packages/polars/dataframe/frame.py", line 361, in __init__
+    self._df = dict_to_pydf(
+  File "/home/sebacastillo/.willow/lib/python3.9/site-packages/polars/utils/_construction.py", line 826, in dict_to_pydf
+    pydf = PyDataFrame(data_series)
+exceptions.ShapeError: could not create a new dataframe: series "date_extract" has length 52 while series "total_text_topic_related" has length 50
+2023-08-15 17:32:44,978-etl_extract.py-ERROR-An error occurred while generating dataframes
+Traceback (most recent call last):
+  File "/home/sebacastillo/willow/etl_extract.py", line 184, in main
+    stat_etl_topic_related = pl.DataFrame(
+  File "/home/sebacastillo/.willow/lib/python3.9/site-packages/polars/dataframe/frame.py", line 361, in __init__
+    self._df = dict_to_pydf(
+  File "/home/sebacastillo/.willow/lib/python3.9/site-packages/polars/utils/_construction.py", line 826, in dict_to_pydf
+    pydf = PyDataFrame(data_series)
+exceptions.ShapeError: could not create a new dataframe: series "date_extract" has length 53 while series "total_text_topic_related" has length 51
+2023-08-15 17:33:11,881-etl_extract.py-ERROR-An error occurred while processing https://www.analisisdigital.com.ar/
+Traceback (most recent call last):
+  File "/home/sebacastillo/willow/etl_extract.py", line 160, in main
+    date, content, link, author, title, summary = download_and_parse_article(u)
+  File "/home/sebacastillo/willow/src/extraction.py", line 64, in download_and_parse_article
+    article.parse()
+  File "/home/sebacastillo/.willow/lib/python3.9/site-packages/newspaper/article.py", line 191, in parse
+    self.throw_if_not_downloaded_verbose()
+  File "/home/sebacastillo/.willow/lib/python3.9/site-packages/newspaper/article.py", line 531, in throw_if_not_downloaded_verbose
+    raise ArticleException('Article `download()` failed with %s on URL %s' %
+newspaper.article.ArticleException: Article `download()` failed with HTTPSConnectionPool(host='www.analisisdigital.com.ar', port=443): Read timed out. on URL https://www.analisisdigital.com.ar/policiales/2023/08/11/desbarataron-kiosco-donde-se-fiaba-cocaina-y-marihuana-y-detuvieron-una-mujer
+2023-08-15 17:33:31,905-etl_extract.py-WARNING-fromstring() returned an invalid string: ...
+2023-08-15 17:33:31,905-etl_extract.py-WARNING-Source https://www.diarionorte.com/ parse error.
+2023-08-15 17:33:38,719-etl_extract.py-ERROR-An error occurred while generating dataframes
+Traceback (most recent call last):
+  File "/home/sebacastillo/willow/etl_extract.py", line 184, in main
+    stat_etl_topic_related = pl.DataFrame(
+  File "/home/sebacastillo/.willow/lib/python3.9/site-packages/polars/dataframe/frame.py", line 361, in __init__
+    self._df = dict_to_pydf(
+  File "/home/sebacastillo/.willow/lib/python3.9/site-packages/polars/utils/_construction.py", line 826, in dict_to_pydf
+    pydf = PyDataFrame(data_series)
+exceptions.ShapeError: could not create a new dataframe: series "date_extract" has length 54 while series "total_text_topic_related" has length 52
+2023-08-15 17:33:43,872-etl_extract.py-ERROR-An error occurred while generating dataframes
+Traceback (most recent call last):
+  File "/home/sebacastillo/willow/etl_extract.py", line 184, in main
+    stat_etl_topic_related = pl.DataFrame(
+  File "/home/sebacastillo/.willow/lib/python3.9/site-packages/polars/dataframe/frame.py", line 361, in __init__
+    self._df = dict_to_pydf(
+  File "/home/sebacastillo/.willow/lib/python3.9/site-packages/polars/utils/_construction.py", line 826, in dict_to_pydf
+    pydf = PyDataFrame(data_series)
+exceptions.ShapeError: could not create a new dataframe: series "date_extract" has length 55 while series "total_text_topic_related" has length 53
+2023-08-15 17:33:51,817-etl_extract.py-ERROR-An error occurred while generating dataframes
+Traceback (most recent call last):
+  File "/home/sebacastillo/willow/etl_extract.py", line 184, in main
+    stat_etl_topic_related = pl.DataFrame(
+  File "/home/sebacastillo/.willow/lib/python3.9/site-packages/polars/dataframe/frame.py", line 361, in __init__
+    self._df = dict_to_pydf(
+  File "/home/sebacastillo/.willow/lib/python3.9/site-packages/polars/utils/_construction.py", line 826, in dict_to_pydf
+    pydf = PyDataFrame(data_series)
+exceptions.ShapeError: could not create a new dataframe: series "date_extract" has length 56 while series "total_text_topic_related" has length 54
+2023-08-15 17:33:55,355-etl_extract.py-ERROR-An error occurred while generating dataframes
+Traceback (most recent call last):
+  File "/home/sebacastillo/willow/etl_extract.py", line 184, in main
+    stat_etl_topic_related = pl.DataFrame(
+  File "/home/sebacastillo/.willow/lib/python3.9/site-packages/polars/dataframe/frame.py", line 361, in __init__
+    self._df = dict_to_pydf(
+  File "/home/sebacastillo/.willow/lib/python3.9/site-packages/polars/utils/_construction.py", line 826, in dict_to_pydf
+    pydf = PyDataFrame(data_series)
+exceptions.ShapeError: could not create a new dataframe: series "date_extract" has length 57 while series "total_text_topic_related" has length 55
+2023-08-15 17:33:59,163-etl_extract.py-ERROR-An error occurred while generating dataframes
+Traceback (most recent call last):
+  File "/home/sebacastillo/willow/etl_extract.py", line 184, in main
+    stat_etl_topic_related = pl.DataFrame(
+  File "/home/sebacastillo/.willow/lib/python3.9/site-packages/polars/dataframe/frame.py", line 361, in __init__
+    self._df = dict_to_pydf(
+  File "/home/sebacastillo/.willow/lib/python3.9/site-packages/polars/utils/_construction.py", line 826, in dict_to_pydf
+    pydf = PyDataFrame(data_series)
+exceptions.ShapeError: could not create a new dataframe: series "date_extract" has length 58 while series "total_text_topic_related" has length 56
+2023-08-15 17:34:01,031-etl_extract.py-ERROR-An error occurred while generating dataframes
+Traceback (most recent call last):
+  File "/home/sebacastillo/willow/etl_extract.py", line 184, in main
+    stat_etl_topic_related = pl.DataFrame(
+  File "/home/sebacastillo/.willow/lib/python3.9/site-packages/polars/dataframe/frame.py", line 361, in __init__
+    self._df = dict_to_pydf(
+  File "/home/sebacastillo/.willow/lib/python3.9/site-packages/polars/utils/_construction.py", line 826, in dict_to_pydf
+    pydf = PyDataFrame(data_series)
+exceptions.ShapeError: could not create a new dataframe: series "date_extract" has length 59 while series "total_text_topic_related" has length 57
+2023-08-15 17:34:03,790-etl_extract.py-ERROR-An error occurred while generating dataframes
+Traceback (most recent call last):
+  File "/home/sebacastillo/willow/etl_extract.py", line 184, in main
+    stat_etl_topic_related = pl.DataFrame(
+  File "/home/sebacastillo/.willow/lib/python3.9/site-packages/polars/dataframe/frame.py", line 361, in __init__
+    self._df = dict_to_pydf(
+  File "/home/sebacastillo/.willow/lib/python3.9/site-packages/polars/utils/_construction.py", line 826, in dict_to_pydf
+    pydf = PyDataFrame(data_series)
+exceptions.ShapeError: could not create a new dataframe: series "date_extract" has length 60 while series "total_text_topic_related" has length 58
+2023-08-15 17:34:53,374-etl_extract.py-ERROR-An error occurred while generating dataframes
+Traceback (most recent call last):
+  File "/home/sebacastillo/willow/etl_extract.py", line 184, in main
+    stat_etl_topic_related = pl.DataFrame(
+  File "/home/sebacastillo/.willow/lib/python3.9/site-packages/polars/dataframe/frame.py", line 361, in __init__
+    self._df = dict_to_pydf(
+  File "/home/sebacastillo/.willow/lib/python3.9/site-packages/polars/utils/_construction.py", line 826, in dict_to_pydf
+    pydf = PyDataFrame(data_series)
+exceptions.ShapeError: could not create a new dataframe: series "date_extract" has length 61 while series "total_text_topic_related" has length 59

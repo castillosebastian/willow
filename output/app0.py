@@ -5,7 +5,7 @@ import json
 news = True
 
 if news:
-    data = pl.read_csv('news_clean.csv', 
+    data = pl.read_csv('/home/sebacastillo/willow/output/news_narcotráfico_related_2023-08-14_1522.csv', 
                     dtypes={
                             "content_hash": pl.UInt64,
                             "date_extract": pl.Date,
@@ -13,8 +13,8 @@ if news:
                         }
                         )
 
-    main_table = data[['state', 'city', 'date_article', 'sumary', 'link' ]]
-    df = main_table.to_pandas()
+    #main_table = data[['state', 'city', 'date_article', 'sumary', 'link' ]]
+    df = data.to_pandas()
     df['id'] = df['link']
     df.set_index('id', inplace=True, drop=False)
 else:
