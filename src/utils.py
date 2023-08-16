@@ -47,7 +47,7 @@ def load_bd_source(topic="narcotráfico", state=None):
     return df
 
 
-def load_embeddings(path="models/wiki.es.vec", limit=100000):
+def load_embeddings(path="models/wiki.es.vec", limit=200000):
     """
     Load the word embeddings from the specified path.
     Args:
@@ -117,30 +117,33 @@ def evaluate_matches(urlshort, keywords):
     return score, matches
 
 
-def compute_max_similarity(url, topic_word, wordvec):
+def compute_similarity(string, keywords, wordvec):
     """
-    Compute the median similarity score between a topic word and all words in a URL.
+    Compute the average similarity score between a list of topic words and all words in a string.
     Returns:
-    - float: The median similarity score.
+    - float: The average similarity score.
     """
-    text = url.lower()
+    text = string.lower()
     text = re.sub(r"https?://", "", text)  # remove http/https
-    text = re.sub(
-        r"[\W_]+", " ", text
-    )  # replace non-alphanumeric characters with space
+    text = re.sub(r"[\W_]+", " ", text)  # replace non-alphanumeric characters with space
     text = re.sub(r"[0-9]", " ", text)  # replace numeric characters with space
-    url_words = [word for word in text.split() if word not in spanish_stopwords_spacy]
+    string_words = [word for word in text.split() if word not in spanish_stopwords_spacy]
 
-    # Compute cosine similarity scores
-    scores = []
-        
-    for word in url_words:        
-        if word in wordvec:                     
-            similarity = wordvec.similarity(word, topic_word)            
-            scores.append(similarity)
-            
-    # Return median score
-    return np.max(scores) if scores else 0.0
+    total_scores = []
+    for keyword in keywords:
+        # Compute cosine similarity scores
+        scores = []
+        for word in string_words:
+            if word in wordvec:
+                similarity = wordvec.similarity(word, keyword)
+                scores.append(similarity)
+
+        max_scores = np.max(scores) if scores else 0.0
+        total_scores.append(max_scores)
+
+    # Return average score
+    return sum(total_scores) / len(total_scores) if total_scores else 0.0
+
 
 
 # Function to extract text from HTML using BeautifulSoup

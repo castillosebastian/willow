@@ -22,7 +22,7 @@ filename = os.path.basename(__file__)
 
 def main(
     topic="narcotráfico",
-    similarity_threshold=0.4,
+    similarity_threshold=0.45, 
     info_source_bd= None,
     sleep_time=1,
     evaluate_mode_for_matches=False,
@@ -41,8 +41,8 @@ def main(
 
     similarity_threshold : float
         A threshold for the cosine similarity between word vectors of the
-        topic and content in the articles. Articles exceeding this threshold
-        are considered relevant. Default is 0.4.
+        topics keyword and string been considered, in this case: url. Articles exceeding this threshold
+        are considered relevant. Default is 0.45, value that what testing: dev/test_wordvec_similarity.ipynb
 
     info_source_bd : pl.DataFrame with 'topic' and 'newsportalurl' or list of urls
         (news websites) from which articles are to be scraped.
@@ -99,7 +99,7 @@ def main(
     config_news_extractor.request_timeout = request_timeout
 
     # Models
-    word_vectors = load_embeddings(path="models/wiki.es.vec", limit=100000)
+    word_vectors = load_embeddings(path="models/wiki.es.vec", limit=200000)
 
 
     # Initialize the lists for the DataFrame
@@ -113,6 +113,7 @@ def main(
     dates = []
     contents = []
     links = []
+    similarities = []
     authors = []
     titles = []
     sumaries = []
@@ -147,19 +148,20 @@ def main(
             match1_regex += len(urls_matches)
 
             # Second match processing with SIMILARITY
-            urls_second_match = filter_articles_with_similarity(
-                urls_matches, topic, word_vectors, similarity_threshold
+            urls_second_match, urls_second_match_score = string_with_similarity(
+                urls_matches, keywords, word_vectors, similarity_threshold
             )
 
             match2_similarity += len(urls_second_match)            
 
             # Go through each articles of the urls with double match (REGEX + SIMILARITY)
-            for u in urls_second_match:
+            for u, s in zip(urls_second_match, urls_second_match_score):
                 date, content, link, author, title, summary = download_and_parse_article(u)                            
 
                 dates.append(date)
                 contents.append(content)
                 links.append(link)
+                similarities.append(s)
                 authors.append(author)
                 titles.append(title)
                 sumaries.append(summary)
@@ -191,7 +193,7 @@ def main(
                 # Create a Polars DataFrame with the data
                 outputlists = [dates, contents, links, authors, 
                                titles, state_list, cities_list,
-                               sumaries]
+                               sumaries, similarities]
                 for lst in outputlists:
                     if not lst:
                         lst.append("No news")               
@@ -203,8 +205,9 @@ def main(
                         "topic": topic,
                         "content": contents,
                         "link": links,
-                        "titles": titles,
-                        "sumaries": sumaries,
+                        "link_sim_score": similarities,
+                        "title": titles,
+                        "summary": sumaries,
                         "authors": authors,
                         "portal": url,
                         "state": state_list,
@@ -215,8 +218,13 @@ def main(
                 news_topic_related = (
                     news_topic_related.with_columns(
                     pl.col("content").hash().alias("content_hash"),
+                    pl.col("content").str.n_chars().alias("content_nchar"),
                     )
-                ).unique(subset=['content_hash'])             
+                ).unique(
+                    subset=['content_hash']
+                ).filter(
+                    pl.col('content_nchar') > 400
+                )            
 
             except Exception:
                 logging.exception(f"An error occurred while generating dataframes")

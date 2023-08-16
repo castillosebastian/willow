@@ -3654,3 +3654,549 @@ Traceback (most recent call last):
   File "/home/sebacastillo/.willow/lib/python3.9/site-packages/polars/utils/_construction.py", line 826, in dict_to_pydf
     pydf = PyDataFrame(data_series)
 exceptions.ShapeError: could not create a new dataframe: series "date_extract" has length 61 while series "total_text_topic_related" has length 59
+2023-08-15 17:40:52,335-etl_extract.py-INFO-loading projection weights from models/wiki.es.vec
+2023-08-15 17:41:05,156-etl_extract.py-INFO-KeyedVectors lifecycle event {'msg': 'loaded (100000, 300) matrix of type float32 from models/wiki.es.vec', 'binary': False, 'encoding': 'utf8', 'datetime': '2023-08-15T17:41:05.140738', 'gensim': '4.3.1', 'python': '3.9.13 (main, Aug 25 2022, 23:26:10) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-78-generic-x86_64-with-glibc2.35', 'event': 'load_word2vec_format'}
+2023-08-15 17:41:19,537-etl_extract.py-CRITICAL-[REQUEST FAILED] HTTPConnectionPool(host='viviendas.eldia.com.ar', port=80): Read timed out. (read timeout=7)
+2023-08-15 17:41:19,820-etl_extract.py-CRITICAL-[REQUEST FAILED] HTTPSConnectionPool(host='www.eldia.com', port=443): Read timed out. (read timeout=7)
+2023-08-15 17:41:19,821-etl_extract.py-CRITICAL-[REQUEST FAILED] HTTPSConnectionPool(host='www.eldia.com', port=443): Read timed out. (read timeout=7)
+2023-08-15 17:41:19,828-etl_extract.py-CRITICAL-[REQUEST FAILED] HTTPSConnectionPool(host='www.eldia.com', port=443): Read timed out. (read timeout=7)
+2023-08-15 17:41:19,927-etl_extract.py-CRITICAL-[REQUEST FAILED] HTTPSConnectionPool(host='www.eldia.com', port=443): Read timed out. (read timeout=7)
+2023-08-15 17:41:20,661-etl_extract.py-CRITICAL-[REQUEST FAILED] HTTPConnectionPool(host='clasificados.eldia.com', port=80): Read timed out. (read timeout=7)
+2023-08-15 17:41:21,192-etl_extract.py-CRITICAL-[REQUEST FAILED] HTTPSConnectionPool(host='www.eldia.com', port=443): Read timed out.
+2023-08-15 17:41:21,485-etl_extract.py-CRITICAL-[REQUEST FAILED] HTTPSConnectionPool(host='www.eldia.com', port=443): Read timed out.
+2023-08-15 17:41:29,706-etl_extract.py-WARNING-Deleting category https://www.eldia.com/titulos from source https://www.eldia.com/ due to download error
+2023-08-15 17:41:29,706-etl_extract.py-WARNING-Deleting category http://viviendas.eldia.com.ar from source https://www.eldia.com/ due to download error
+2023-08-15 17:41:29,709-etl_extract.py-WARNING-Deleting category https://www.eldia.com/whatsapp from source https://www.eldia.com/ due to download error
+2023-08-15 17:41:29,709-etl_extract.py-WARNING-Deleting category https://www.eldia.com/blogs from source https://www.eldia.com/ due to download error
+2023-08-15 17:41:29,710-etl_extract.py-WARNING-Deleting category https://www.eldia.com/.rss from source https://www.eldia.com/ due to download error
+2023-08-15 17:41:29,710-etl_extract.py-WARNING-Deleting category https://www.eldia.com from source https://www.eldia.com/ due to download error
+2023-08-15 17:41:29,711-etl_extract.py-WARNING-Deleting category https://www.eldia.com/condiciones from source https://www.eldia.com/ due to download error
+2023-08-15 17:41:29,711-etl_extract.py-WARNING-Deleting category http://clasificados.eldia.com from source https://www.eldia.com/ due to download error
+2023-08-15 17:41:33,539-etl_extract.py-CRITICAL-[REQUEST FAILED] ('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))
+2023-08-15 17:41:35,477-etl_extract.py-WARNING-Deleting category https://recetas.clarin.com from source https://www.clarin.com/ due to download error
+2023-08-15 17:41:50,945-etl_extract.py-WARNING-fromstring() returned an invalid string: ...
+2023-08-15 17:41:50,946-etl_extract.py-WARNING-Source https://www.diarionorte.com/ parse error.
+2023-08-15 17:42:09,412-etl_extract.py-CRITICAL-[REQUEST FAILED] 404 Client Error: Not Found for url: http://pxb.cdn.elchubut.com.ar/
+2023-08-15 17:42:29,460-etl_extract.py-WARNING-fromstring() returned an invalid string: ...
+2023-08-15 17:42:29,460-etl_extract.py-WARNING-Source https://www.cronica.com.ar/ parse error.
+2023-08-15 17:42:35,078-etl_extract.py-CRITICAL-[REQUEST FAILED] 403 Client Error: Forbidden for url: https://www.cronica.com.ar/
+2023-08-15 17:42:36,251-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.lavoz.com.ar/tecnologia
+2023-08-15 17:42:36,357-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.lavoz.com.ar/quienes-somos
+2023-08-15 17:42:36,374-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.lavoz.com.ar/agro/
+2023-08-15 17:42:36,377-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.lavoz.com.ar/vos/
+2023-08-15 17:42:36,499-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.lavoz.com.ar:443/
+2023-08-15 17:42:36,502-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.lavoz.com.ar/videos
+2023-08-15 17:42:36,521-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.lavoz.com.ar/galerias/
+2023-08-15 17:42:36,555-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.lavoz.com.ar/opinion
+2023-08-15 17:42:36,703-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.lavoz.com.ar/deportes
+2023-08-15 17:42:36,733-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.lavoz.com.ar/tendencias/
+2023-08-15 17:42:36,811-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.lavoz.com.ar/lo-ultimo
+2023-08-15 17:42:36,866-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.lavoz.com.ar/mundo/
+2023-08-15 17:42:37,046-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.lavoz.com.ar/numero-cero/
+2023-08-15 17:42:37,266-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.lavoz.com.ar/politica/
+2023-08-15 17:42:37,285-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.lavoz.com.ar/clima/
+2023-08-15 17:42:37,588-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.lavoz.com.ar/viral/
+2023-08-15 17:42:37,601-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.lavoz.com.ar/servicios/
+2023-08-15 17:42:38,610-etl_extract.py-ERROR-An error occurred while processing https://www.lavoz.com.ar/
+Traceback (most recent call last):
+  File "/home/sebacastillo/willow/etl_extract.py", line 158, in main
+    date, content, link, author, title, summary = download_and_parse_article(u)
+  File "/home/sebacastillo/willow/src/extraction.py", line 64, in download_and_parse_article
+    article.parse()
+  File "/home/sebacastillo/.willow/lib/python3.9/site-packages/newspaper/article.py", line 191, in parse
+    self.throw_if_not_downloaded_verbose()
+  File "/home/sebacastillo/.willow/lib/python3.9/site-packages/newspaper/article.py", line 531, in throw_if_not_downloaded_verbose
+    raise ArticleException('Article `download()` failed with %s on URL %s' %
+newspaper.article.ArticleException: Article `download()` failed with 429 Client Error: Too Many Requests for url: https://www.lavoz.com.ar/sucesos/cordoba-una-mujer-embarazada-fue-detenida-tras-intentar-ingresar-droga-para-su-padre-en-la-carcel/ on URL https://www.lavoz.com.ar/sucesos/cordoba-una-mujer-embarazada-fue-detenida-tras-intentar-ingresar-droga-para-su-padre-en-la-carcel/
+2023-08-15 17:42:57,467-etl_extract.py-WARNING-fromstring() returned an invalid string: ...
+2023-08-15 17:42:57,468-etl_extract.py-WARNING-Source https://www.goyaennoticias.com.ar/ parse error.
+2023-08-15 17:43:09,992-etl_extract.py-CRITICAL-[REQUEST FAILED] HTTPSConnectionPool(host='www.goyaennoticias.com.ar', port=443): Max retries exceeded with url: / (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x7f7279938130>, 'Connection to www.goyaennoticias.com.ar timed out. (connect timeout=7)'))
+2023-08-15 17:43:09,993-etl_extract.py-WARNING-Deleting category https://www.goyaennoticias.com.ar/ from source https://www.goyaennoticias.com.ar/ due to download error
+2023-08-15 17:43:30,037-etl_extract.py-WARNING-fromstring() returned an invalid string: ...
+2023-08-15 17:43:30,038-etl_extract.py-WARNING-Source https://www.elcomercial.com.ar/ parse error.
+2023-08-15 17:43:52,655-etl_extract.py-CRITICAL-[REQUEST FAILED] 404 Client Error: Not Found for url: https://servicios.elcomercial.com.ar/
+2023-08-15 17:44:03,243-etl_extract.py-WARNING-fromstring() returned an invalid string: ...
+2023-08-15 17:44:03,243-etl_extract.py-WARNING-Source https://www.expresdiario.com.ar/ parse error.
+2023-08-15 17:44:21,093-etl_extract.py-WARNING-fromstring() returned an invalid string: ...
+2023-08-15 17:44:21,094-etl_extract.py-WARNING-Source https://www.eltribuno.com/jujuy/ parse error.
+2023-08-15 17:45:20,161-etl_extract.py-ERROR-An error occurred while processing https://www.eltribuno.com/jujuy/
+Traceback (most recent call last):
+  File "/home/sebacastillo/willow/etl_extract.py", line 158, in main
+    date, content, link, author, title, summary = download_and_parse_article(u)
+  File "/home/sebacastillo/willow/src/extraction.py", line 64, in download_and_parse_article
+    article.parse()
+  File "/home/sebacastillo/.willow/lib/python3.9/site-packages/newspaper/article.py", line 191, in parse
+    self.throw_if_not_downloaded_verbose()
+  File "/home/sebacastillo/.willow/lib/python3.9/site-packages/newspaper/article.py", line 531, in throw_if_not_downloaded_verbose
+    raise ArticleException('Article `download()` failed with %s on URL %s' %
+newspaper.article.ArticleException: Article `download()` failed with HTTPSConnectionPool(host='www.eltribuno.com', port=443): Max retries exceeded with url: /salta/nota/2023-8-14-0-0-0-semaglutida-la-droga-de-los-famosos-para-adelgazar-nada-milagrosa (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7f72845f1070>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution')) on URL https://www.eltribuno.com/salta/nota/2023-8-14-0-0-0-semaglutida-la-droga-de-los-famosos-para-adelgazar-nada-milagrosa
+2023-08-15 17:45:53,382-etl_extract.py-CRITICAL-[REQUEST FAILED] 502 Server Error: Bad Gateway for url: https://www.infopico.com/
+2023-08-15 17:45:53,387-etl_extract.py-CRITICAL-[REQUEST FAILED] 502 Server Error: Bad Gateway for url: https://www.infopico.com/mascotas
+2023-08-15 17:46:12,945-etl_extract.py-WARNING-fromstring() returned an invalid string: ...
+2023-08-15 17:46:12,945-etl_extract.py-WARNING-Source https://www.elindependiente.com.ar/ parse error.
+2023-08-15 17:46:25,171-etl_extract.py-CRITICAL-[REQUEST FAILED] HTTPSConnectionPool(host='elindependiente.com.ar', port=443): Max retries exceeded with url: / (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x7f7284597f10>, 'Connection to elindependiente.com.ar timed out. (connect timeout=7)'))
+2023-08-15 17:46:32,985-etl_extract.py-CRITICAL-[REQUEST FAILED] HTTPSConnectionPool(host='www.elindependiente.com.ar', port=443): Max retries exceeded with url: /seccion.php (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7f7284586820>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution'))
+2023-08-15 17:46:32,986-etl_extract.py-CRITICAL-[REQUEST FAILED] HTTPSConnectionPool(host='www.elindependiente.com.ar', port=443): Max retries exceeded with url: / (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7f72845970a0>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution'))
+2023-08-15 17:46:32,993-etl_extract.py-CRITICAL-[REQUEST FAILED] HTTPSConnectionPool(host='www.elindependiente.com.ar', port=443): Max retries exceeded with url: /index.php (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7f7284597d30>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution'))
+2023-08-15 17:46:32,993-etl_extract.py-CRITICAL-[REQUEST FAILED] HTTPSConnectionPool(host='www.elindependiente.com.ar', port=443): Max retries exceeded with url: /pagina.php (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7f7284597b80>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution'))
+2023-08-15 17:46:32,996-etl_extract.py-CRITICAL-[REQUEST FAILED] HTTPSConnectionPool(host='www.elindependiente.com.ar', port=443): Max retries exceeded with url: / (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7f72845a02b0>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution'))
+2023-08-15 17:46:32,997-etl_extract.py-WARNING-Deleting category https://www.elindependiente.com.ar/ from source https://www.elindependiente.com.ar/ due to download error
+2023-08-15 17:46:32,997-etl_extract.py-WARNING-Deleting category https://www.elindependiente.com.ar/pagina.php from source https://www.elindependiente.com.ar/ due to download error
+2023-08-15 17:46:32,997-etl_extract.py-WARNING-Deleting category https://elindependiente.com.ar from source https://www.elindependiente.com.ar/ due to download error
+2023-08-15 17:46:32,997-etl_extract.py-WARNING-Deleting category https://www.elindependiente.com.ar/seccion.php from source https://www.elindependiente.com.ar/ due to download error
+2023-08-15 17:46:32,997-etl_extract.py-WARNING-Deleting category https://www.elindependiente.com.ar from source https://www.elindependiente.com.ar/ due to download error
+2023-08-15 17:46:32,997-etl_extract.py-WARNING-Deleting category https://www.elindependiente.com.ar/index.php from source https://www.elindependiente.com.ar/ due to download error
+2023-08-15 17:46:55,023-etl_extract.py-WARNING-fromstring() returned an invalid string: ...
+2023-08-15 17:46:55,023-etl_extract.py-WARNING-Source https://elindependiente.com.ar/secciones/chilecito/ parse error.
+2023-08-15 17:47:15,045-etl_extract.py-CRITICAL-[REQUEST FAILED] HTTPSConnectionPool(host='elindependiente.com.ar', port=443): Max retries exceeded with url: /secciones/chilecito/ (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7f728468d8b0>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution'))
+2023-08-15 17:47:15,045-etl_extract.py-WARNING-Deleting category https://elindependiente.com.ar/secciones/chilecito/ from source https://elindependiente.com.ar/secciones/chilecito/ due to download error
+2023-08-15 17:47:20,192-etl_extract.py-WARNING-fromstring() returned an invalid string: ...
+2023-08-15 17:47:20,192-etl_extract.py-WARNING-Source https://www.losandes.com.ar/ parse error.
+2023-08-15 17:47:20,413-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.losandes.com.ar/
+2023-08-15 17:47:41,623-etl_extract.py-CRITICAL-[REQUEST FAILED] 404 Client Error: Not Found for url: https://www.minutoneuquen.com/archivo
+2023-08-15 17:47:54,391-etl_extract.py-CRITICAL-[REQUEST FAILED] HTTPSConnectionPool(host='www.elcordillerano.com.ar', port=443): Read timed out. (read timeout=7)
+2023-08-15 17:47:55,393-etl_extract.py-CRITICAL-[REQUEST FAILED] HTTPSConnectionPool(host='www.elcordillerano.com.ar', port=443): Read timed out. (read timeout=7)
+2023-08-15 17:47:56,129-etl_extract.py-CRITICAL-[REQUEST FAILED] HTTPSConnectionPool(host='www.elcordillerano.com.ar', port=443): Read timed out. (read timeout=7)
+2023-08-15 17:47:57,414-etl_extract.py-CRITICAL-[REQUEST FAILED] HTTPSConnectionPool(host='www.elcordillerano.com.ar', port=443): Read timed out. (read timeout=7)
+2023-08-15 17:47:57,955-etl_extract.py-CRITICAL-[REQUEST FAILED] HTTPSConnectionPool(host='www.elcordillerano.com.ar', port=443): Read timed out. (read timeout=7)
+2023-08-15 17:47:57,956-etl_extract.py-CRITICAL-[REQUEST FAILED] HTTPSConnectionPool(host='www.elcordillerano.com.ar', port=443): Read timed out. (read timeout=7)
+2023-08-15 17:47:57,957-etl_extract.py-CRITICAL-[REQUEST FAILED] HTTPSConnectionPool(host='www.elcordillerano.com.ar', port=443): Read timed out. (read timeout=7)
+2023-08-15 17:48:01,032-etl_extract.py-CRITICAL-[REQUEST FAILED] HTTPSConnectionPool(host='www.elcordillerano.com.ar', port=443): Max retries exceeded with url: /mundo (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7f7279922280>: Failed to establish a new connection: [Errno 101] Network is unreachable'))
+2023-08-15 17:48:01,165-etl_extract.py-CRITICAL-[REQUEST FAILED] HTTPSConnectionPool(host='www.elcordillerano.com.ar', port=443): Max retries exceeded with url: /farandula (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7f7283f0a7c0>: Failed to establish a new connection: [Errno 101] Network is unreachable'))
+2023-08-15 17:48:01,169-etl_extract.py-CRITICAL-[REQUEST FAILED] HTTPSConnectionPool(host='www.elcordillerano.com.ar', port=443): Max retries exceeded with url: /politica (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7f7283f0a2b0>: Failed to establish a new connection: [Errno 101] Network is unreachable'))
+2023-08-15 17:48:09,404-etl_extract.py-CRITICAL-[REQUEST FAILED] HTTPSConnectionPool(host='www.elcordillerano.com.ar', port=443): Max retries exceeded with url: /cultura (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7f7283fa1ee0>: Failed to establish a new connection: [Errno 101] Network is unreachable'))
+2023-08-15 17:48:14,413-etl_extract.py-CRITICAL-[REQUEST FAILED] HTTPSConnectionPool(host='front.elcordillerano.com.ar', port=443): Max retries exceeded with url: / (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7f727990a8e0>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution'))
+2023-08-15 17:48:14,419-etl_extract.py-WARNING-Deleting category https://www.elcordillerano.com.ar/archivo from source https://www.elcordillerano.com.ar/ due to download error
+2023-08-15 17:48:14,419-etl_extract.py-WARNING-Deleting category https://www.elcordillerano.com.ar/policiales from source https://www.elcordillerano.com.ar/ due to download error
+2023-08-15 17:48:14,419-etl_extract.py-WARNING-Deleting category https://www.elcordillerano.com.ar/mundo from source https://www.elcordillerano.com.ar/ due to download error
+2023-08-15 17:48:14,419-etl_extract.py-WARNING-Deleting category https://www.elcordillerano.com.ar/economia from source https://www.elcordillerano.com.ar/ due to download error
+2023-08-15 17:48:14,419-etl_extract.py-WARNING-Deleting category https://www.elcordillerano.com.ar/judiciales from source https://www.elcordillerano.com.ar/ due to download error
+2023-08-15 17:48:14,420-etl_extract.py-WARNING-Deleting category https://www.elcordillerano.com.ar/rss from source https://www.elcordillerano.com.ar/ due to download error
+2023-08-15 17:48:14,420-etl_extract.py-WARNING-Deleting category https://www.elcordillerano.com.ar/clima from source https://www.elcordillerano.com.ar/ due to download error
+2023-08-15 17:48:14,420-etl_extract.py-WARNING-Deleting category https://www.elcordillerano.com.ar/farandula from source https://www.elcordillerano.com.ar/ due to download error
+2023-08-15 17:48:14,420-etl_extract.py-WARNING-Deleting category https://www.elcordillerano.com.ar/politica from source https://www.elcordillerano.com.ar/ due to download error
+2023-08-15 17:48:14,420-etl_extract.py-WARNING-Deleting category https://www.elcordillerano.com.ar/deportes from source https://www.elcordillerano.com.ar/ due to download error
+2023-08-15 17:48:14,420-etl_extract.py-WARNING-Deleting category https://front.elcordillerano.com.ar from source https://www.elcordillerano.com.ar/ due to download error
+2023-08-15 17:48:14,420-etl_extract.py-WARNING-Deleting category https://www.elcordillerano.com.ar/cultura from source https://www.elcordillerano.com.ar/ due to download error
+2023-08-15 17:48:35,421-etl_extract.py-ERROR-An error occurred while processing https://www.elcordillerano.com.ar/
+Traceback (most recent call last):
+  File "/home/sebacastillo/willow/etl_extract.py", line 158, in main
+    date, content, link, author, title, summary = download_and_parse_article(u)
+  File "/home/sebacastillo/willow/src/extraction.py", line 64, in download_and_parse_article
+    article.parse()
+  File "/home/sebacastillo/.willow/lib/python3.9/site-packages/newspaper/article.py", line 191, in parse
+    self.throw_if_not_downloaded_verbose()
+  File "/home/sebacastillo/.willow/lib/python3.9/site-packages/newspaper/article.py", line 531, in throw_if_not_downloaded_verbose
+    raise ArticleException('Article `download()` failed with %s on URL %s' %
+newspaper.article.ArticleException: Article `download()` failed with HTTPSConnectionPool(host='www.elcordillerano.com.ar', port=443): Max retries exceeded with url: /noticias/2023/07/01/164852-mataron-a-un-conocido-narcotraficante-y-a-su-pareja (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7f7284564640>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution')) on URL https://www.elcordillerano.com.ar/noticias/2023/07/01/164852-mataron-a-un-conocido-narcotraficante-y-a-su-pareja
+2023-08-15 17:48:55,442-etl_extract.py-WARNING-fromstring() returned an invalid string: ...
+2023-08-15 17:48:55,442-etl_extract.py-WARNING-Source https://www.eltribuno.com/salta/ parse error.
+2023-08-15 17:49:30,801-etl_extract.py-ERROR-An error occurred while processing https://www.eltribuno.com/salta/
+Traceback (most recent call last):
+  File "/home/sebacastillo/willow/etl_extract.py", line 158, in main
+    date, content, link, author, title, summary = download_and_parse_article(u)
+  File "/home/sebacastillo/willow/src/extraction.py", line 64, in download_and_parse_article
+    article.parse()
+  File "/home/sebacastillo/.willow/lib/python3.9/site-packages/newspaper/article.py", line 191, in parse
+    self.throw_if_not_downloaded_verbose()
+  File "/home/sebacastillo/.willow/lib/python3.9/site-packages/newspaper/article.py", line 531, in throw_if_not_downloaded_verbose
+    raise ArticleException('Article `download()` failed with %s on URL %s' %
+newspaper.article.ArticleException: Article `download()` failed with HTTPSConnectionPool(host='nota', port=443): Max retries exceeded with url: /2023-8-13-0-0-0-hechos-de-inseguridad-prenden-luces-sobre-el-consumo-de-drogas (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7f7284319550>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution')) on URL https://nota/2023-8-13-0-0-0-hechos-de-inseguridad-prenden-luces-sobre-el-consumo-de-drogas
+2023-08-15 17:49:44,409-etl_extract.py-WARNING-fromstring() returned an invalid string: ...
+2023-08-15 17:49:44,409-etl_extract.py-WARNING-Source http://www.diarioeloranense.com.ar/ parse error.
+2023-08-15 17:50:23,153-etl_extract.py-ERROR-An error occurred while processing http://www.diarioeloranense.com.ar/
+Traceback (most recent call last):
+  File "/home/sebacastillo/willow/etl_extract.py", line 158, in main
+    date, content, link, author, title, summary = download_and_parse_article(u)
+  File "/home/sebacastillo/willow/src/extraction.py", line 64, in download_and_parse_article
+    article.parse()
+  File "/home/sebacastillo/.willow/lib/python3.9/site-packages/newspaper/article.py", line 191, in parse
+    self.throw_if_not_downloaded_verbose()
+  File "/home/sebacastillo/.willow/lib/python3.9/site-packages/newspaper/article.py", line 531, in throw_if_not_downloaded_verbose
+    raise ArticleException('Article `download()` failed with %s on URL %s' %
+newspaper.article.ArticleException: Article `download()` failed with HTTPConnectionPool(host='www.diarioeloranense.com.ar', port=80): Read timed out. on URL http://www.diarioeloranense.com.ar/index.php/regional/aguas-blancas/3547-joven-detenido-con-flor-de-marihuana
+2023-08-15 17:50:38,822-etl_extract.py-WARNING-fromstring() returned an invalid string: ...
+2023-08-15 17:50:38,822-etl_extract.py-WARNING-Source https://www.diariodecuyo.com.ar/ parse error.
+2023-08-15 17:51:21,583-etl_extract.py-CRITICAL-[REQUEST FAILED] 404 Client Error: Not Found for url: https://pxb.cdn.eldiariodelarepublica.com/
+2023-08-15 17:51:32,681-etl_extract.py-CRITICAL-[REQUEST FAILED] HTTPSConnectionPool(host='www.diariolaventana.com', port=443): Read timed out. (read timeout=7)
+2023-08-15 17:51:32,681-etl_extract.py-WARNING-Deleting category https://www.diariolaventana.com/ from source https://www.diariolaventana.com/ due to download error
+2023-08-15 17:51:58,716-etl_extract.py-WARNING-fromstring() returned an invalid string: ...
+2023-08-15 17:51:58,717-etl_extract.py-WARNING-Source https://www.tiemposur.com.ar/ parse error.
+2023-08-15 17:52:23,748-etl_extract.py-CRITICAL-[REQUEST FAILED] HTTPSConnectionPool(host='www.tiemposur.com.ar', port=443): Max retries exceeded with url: / (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7f7278f6ee80>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution'))
+2023-08-15 17:52:23,749-etl_extract.py-CRITICAL-[REQUEST FAILED] HTTPSConnectionPool(host='www.tiemposur.com.ar', port=443): Max retries exceeded with url: / (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7f7278f6e5e0>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution'))
+2023-08-15 17:52:23,749-etl_extract.py-WARNING-Deleting category https://www.tiemposur.com.ar from source https://www.tiemposur.com.ar/ due to download error
+2023-08-15 17:52:23,749-etl_extract.py-WARNING-Deleting category https://www.tiemposur.com.ar/ from source https://www.tiemposur.com.ar/ due to download error
+2023-08-15 17:54:05,449-etl_extract.py-CRITICAL-[REQUEST FAILED] HTTPSConnectionPool(host='www.eldiariodelfindelmundo.com', port=443): Read timed out. (read timeout=7)
+2023-08-15 17:54:05,451-etl_extract.py-CRITICAL-[REQUEST FAILED] HTTPSConnectionPool(host='www.eldiariodelfindelmundo.com', port=443): Read timed out. (read timeout=7)
+2023-08-15 17:54:05,781-etl_extract.py-CRITICAL-[REQUEST FAILED] HTTPSConnectionPool(host='www.eldiariodelfindelmundo.com', port=443): Read timed out. (read timeout=7)
+2023-08-15 17:54:05,849-etl_extract.py-CRITICAL-[REQUEST FAILED] HTTPSConnectionPool(host='www.eldiariodelfindelmundo.com', port=443): Read timed out. (read timeout=7)
+2023-08-15 17:54:06,090-etl_extract.py-CRITICAL-[REQUEST FAILED] HTTPSConnectionPool(host='www.eldiariodelfindelmundo.com', port=443): Read timed out. (read timeout=7)
+2023-08-15 17:54:06,093-etl_extract.py-CRITICAL-[REQUEST FAILED] HTTPSConnectionPool(host='www.eldiariodelfindelmundo.com', port=443): Read timed out. (read timeout=7)
+2023-08-15 17:54:06,097-etl_extract.py-CRITICAL-[REQUEST FAILED] HTTPSConnectionPool(host='www.eldiariodelfindelmundo.com', port=443): Read timed out. (read timeout=7)
+2023-08-15 17:54:06,097-etl_extract.py-CRITICAL-[REQUEST FAILED] HTTPSConnectionPool(host='www.eldiariodelfindelmundo.com', port=443): Read timed out. (read timeout=7)
+2023-08-15 17:54:06,739-etl_extract.py-CRITICAL-[REQUEST FAILED] HTTPSConnectionPool(host='www.eldiariodelfindelmundo.com', port=443): Read timed out.
+2023-08-15 17:54:13,053-etl_extract.py-CRITICAL-[REQUEST FAILED] HTTPSConnectionPool(host='www.eldiariodelfindelmundo.com', port=443): Max retries exceeded with url: /solicitada (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7f7284094880>: Failed to establish a new connection: [Errno 101] Network is unreachable'))
+2023-08-15 17:54:19,479-etl_extract.py-CRITICAL-[REQUEST FAILED] HTTPSConnectionPool(host='www.eldiariodelfindelmundo.com', port=443): Max retries exceeded with url: /municipales (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7f72840990a0>: Failed to establish a new connection: [Errno 101] Network is unreachable'))
+2023-08-15 17:54:19,481-etl_extract.py-CRITICAL-[REQUEST FAILED] HTTPSConnectionPool(host='www.eldiariodelfindelmundo.com', port=443): Max retries exceeded with url: /provinciales (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7f728409cd30>: Failed to establish a new connection: [Errno 101] Network is unreachable'))
+2023-08-15 17:54:25,808-etl_extract.py-CRITICAL-[REQUEST FAILED] HTTPSConnectionPool(host='www.eldiariodelfindelmundo.com', port=443): Max retries exceeded with url: /cultura (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7f7284099a30>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution'))
+2023-08-15 17:54:25,809-etl_extract.py-WARNING-Deleting category https://www.eldiariodelfindelmundo.com/editorial from source https://www.eldiariodelfindelmundo.com/ due to download error
+2023-08-15 17:54:25,809-etl_extract.py-WARNING-Deleting category https://www.eldiariodelfindelmundo.com/policiales from source https://www.eldiariodelfindelmundo.com/ due to download error
+2023-08-15 17:54:25,809-etl_extract.py-WARNING-Deleting category https://www.eldiariodelfindelmundo.com/educacion from source https://www.eldiariodelfindelmundo.com/ due to download error
+2023-08-15 17:54:25,810-etl_extract.py-WARNING-Deleting category https://www.eldiariodelfindelmundo.com/judiciales from source https://www.eldiariodelfindelmundo.com/ due to download error
+2023-08-15 17:54:25,810-etl_extract.py-WARNING-Deleting category https://www.eldiariodelfindelmundo.com/gremiales from source https://www.eldiariodelfindelmundo.com/ due to download error
+2023-08-15 17:54:25,810-etl_extract.py-WARNING-Deleting category https://www.eldiariodelfindelmundo.com/rss from source https://www.eldiariodelfindelmundo.com/ due to download error
+2023-08-15 17:54:25,810-etl_extract.py-WARNING-Deleting category https://www.eldiariodelfindelmundo.com/mas from source https://www.eldiariodelfindelmundo.com/ due to download error
+2023-08-15 17:54:25,810-etl_extract.py-WARNING-Deleting category https://www.eldiariodelfindelmundo.com/deportes from source https://www.eldiariodelfindelmundo.com/ due to download error
+2023-08-15 17:54:25,810-etl_extract.py-WARNING-Deleting category https://www.eldiariodelfindelmundo.com/politica from source https://www.eldiariodelfindelmundo.com/ due to download error
+2023-08-15 17:54:25,811-etl_extract.py-WARNING-Deleting category https://www.eldiariodelfindelmundo.com/solicitada from source https://www.eldiariodelfindelmundo.com/ due to download error
+2023-08-15 17:54:25,811-etl_extract.py-WARNING-Deleting category https://www.eldiariodelfindelmundo.com/municipales from source https://www.eldiariodelfindelmundo.com/ due to download error
+2023-08-15 17:54:25,811-etl_extract.py-WARNING-Deleting category https://www.eldiariodelfindelmundo.com/provinciales from source https://www.eldiariodelfindelmundo.com/ due to download error
+2023-08-15 17:54:25,811-etl_extract.py-WARNING-Deleting category https://www.eldiariodelfindelmundo.com/cultura from source https://www.eldiariodelfindelmundo.com/ due to download error
+2023-08-15 17:54:45,921-etl_extract.py-WARNING-fromstring() returned an invalid string: ...
+2023-08-15 17:54:45,921-etl_extract.py-WARNING-Source https://www.surenio.com.ar/ parse error.
+2023-08-15 17:54:54,608-etl_extract.py-CRITICAL-[REQUEST FAILED] 403 Client Error: Forbidden for url: https://soporte.lagaceta.com.ar/hc/es
+2023-08-15 17:55:31,905-etl_extract.py-CRITICAL-[REQUEST FAILED] HTTPSConnectionPool(host='www.tucumanoticias.com.ar', port=443): Max retries exceeded with url: / (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7f72842e0220>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution'))
+2023-08-15 17:55:31,906-etl_extract.py-WARNING-Deleting category https://www.tucumanoticias.com.ar/ from source https://www.tucumanoticias.com.ar/ due to download error
+2023-08-15 17:55:51,957-etl_extract.py-WARNING-fromstring() returned an invalid string: ...
+2023-08-15 17:55:51,958-etl_extract.py-WARNING-Source https://www.infobae.com/ parse error.
+2023-08-15 17:56:11,993-etl_extract.py-CRITICAL-[REQUEST FAILED] HTTPSConnectionPool(host='www.infobae.com', port=443): Max retries exceeded with url: / (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7f7284777fa0>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution'))
+2023-08-15 17:56:12,001-etl_extract.py-CRITICAL-[REQUEST FAILED] HTTPSConnectionPool(host='www.infobae.com', port=443): Max retries exceeded with url: / (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7f7278fd5e20>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution'))
+2023-08-15 17:56:12,002-etl_extract.py-CRITICAL-[REQUEST FAILED] HTTPSConnectionPool(host='mediakit.infobae.com', port=443): Max retries exceeded with url: / (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7f7278fd51f0>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution'))
+2023-08-15 17:56:12,003-etl_extract.py-WARNING-Deleting category https://www.infobae.com/ from source https://www.infobae.com/ due to download error
+2023-08-15 17:56:12,003-etl_extract.py-WARNING-Deleting category https://mediakit.infobae.com from source https://www.infobae.com/ due to download error
+2023-08-15 17:56:12,003-etl_extract.py-WARNING-Deleting category https://www.infobae.com from source https://www.infobae.com/ due to download error
+2023-08-15 17:56:32,033-etl_extract.py-WARNING-fromstring() returned an invalid string: ...
+2023-08-15 17:56:32,033-etl_extract.py-WARNING-Source https://www.lanacion.com.ar/ parse error.
+2023-08-15 17:57:17,069-etl_extract.py-WARNING-fromstring() returned an invalid string: ...
+2023-08-15 17:57:17,070-etl_extract.py-WARNING-Source https://www.perfil.com/ parse error.
+2023-08-15 17:57:44,838-etl_extract.py-CRITICAL-[REQUEST FAILED] 404 Client Error: Not Found for url: https://www.diariopopular.com.ar/%7B%5B%20link%20%5D%7D
+2023-08-15 17:57:50,070-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.lavoz.com.ar/quienes-somos
+2023-08-15 17:57:50,172-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.lavoz.com.ar/galerias/
+2023-08-15 17:57:50,255-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.lavoz.com.ar/videos
+2023-08-15 17:57:50,266-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.lavoz.com.ar/numero-cero
+2023-08-15 17:57:50,275-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.lavoz.com.ar/especiales
+2023-08-15 17:57:50,337-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.lavoz.com.ar/opinion
+2023-08-15 17:57:50,362-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.lavoz.com.ar/clima
+2023-08-15 17:57:50,376-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.lavoz.com.ar/mundo/
+2023-08-15 17:57:50,413-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.lavoz.com.ar/tendencias/
+2023-08-15 17:57:50,457-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.lavoz.com.ar/politica
+2023-08-15 17:57:50,464-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.lavoz.com.ar/deportes
+2023-08-15 17:57:50,498-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.lavoz.com.ar/lo-ultimo
+2023-08-15 17:57:50,562-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.lavoz.com.ar/servicios
+2023-08-15 17:57:50,583-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.lavoz.com.ar/viral
+2023-08-15 17:57:50,744-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.lavoz.com.ar/tecnologia/
+2023-08-15 17:57:52,937-etl_extract.py-ERROR-An error occurred while processing https://www.lavoz.com.ar/
+Traceback (most recent call last):
+  File "/home/sebacastillo/willow/etl_extract.py", line 158, in main
+    date, content, link, author, title, summary = download_and_parse_article(u)
+  File "/home/sebacastillo/willow/src/extraction.py", line 64, in download_and_parse_article
+    article.parse()
+  File "/home/sebacastillo/.willow/lib/python3.9/site-packages/newspaper/article.py", line 191, in parse
+    self.throw_if_not_downloaded_verbose()
+  File "/home/sebacastillo/.willow/lib/python3.9/site-packages/newspaper/article.py", line 531, in throw_if_not_downloaded_verbose
+    raise ArticleException('Article `download()` failed with %s on URL %s' %
+newspaper.article.ArticleException: Article `download()` failed with 429 Client Error: Too Many Requests for url: https://www.lavoz.com.ar/sucesos/cordoba-una-mujer-embarazada-fue-detenida-tras-intentar-ingresar-droga-para-su-padre-en-la-carcel/ on URL https://www.lavoz.com.ar/sucesos/cordoba-una-mujer-embarazada-fue-detenida-tras-intentar-ingresar-droga-para-su-padre-en-la-carcel/
+2023-08-15 17:57:54,865-etl_extract.py-CRITICAL-[REQUEST FAILED] 403 Client Error: Forbidden for url: https://soporte.lagaceta.com.ar/hc/es
+2023-08-15 17:57:55,835-etl_extract.py-WARNING-fromstring() returned an invalid string: ...
+2023-08-15 17:57:55,835-etl_extract.py-WARNING-Source https://www.lavoz.com.ar/ parse error.
+2023-08-15 17:57:55,971-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.lavoz.com.ar/
+2023-08-15 17:57:55,974-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.lavoz.com.ar/vos
+2023-08-15 17:57:55,977-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.lavoz.com.ar/agro
+2023-08-15 17:57:55,978-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.lavoz.com.ar/negocios
+2023-08-15 17:57:55,978-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.lavoz.com.ar/sucesos
+2023-08-15 17:57:55,980-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.lavoz.com.ar/ciudadanos
+2023-08-15 17:57:55,981-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.lavoz.com.ar/salud
+2023-08-15 17:57:56,101-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.lavoz.com.ar/tecnologia
+2023-08-15 17:57:56,103-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.lavoz.com.ar/galerias
+2023-08-15 17:57:56,113-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.lavoz.com.ar/
+2023-08-15 17:57:56,114-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.lavoz.com.ar/mundo
+2023-08-15 17:57:56,118-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.lavoz.com.ar/quienes-somos
+2023-08-15 17:57:56,155-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.lavoz.com.ar/tendencias
+2023-08-15 17:57:56,161-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.lavoz.com.ar/
+2023-08-15 17:57:56,240-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.lavoz.com.ar/videos
+2023-08-15 17:57:56,250-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.lavoz.com.ar/especiales
+2023-08-15 17:57:56,255-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.lavoz.com.ar/opinion
+2023-08-15 17:57:56,259-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.lavoz.com.ar/numero-cero
+2023-08-15 17:57:56,319-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.lavoz.com.ar/clima
+2023-08-15 17:57:56,353-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.lavoz.com.ar/politica
+2023-08-15 17:57:56,356-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.lavoz.com.ar/deportes
+2023-08-15 17:57:56,357-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.lavoz.com.ar/lo-ultimo
+2023-08-15 17:57:56,468-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.lavoz.com.ar/servicios
+2023-08-15 17:57:56,493-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.lavoz.com.ar/viral
+2023-08-15 17:57:56,693-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.lavoz.com.ar:443/
+2023-08-15 17:58:03,152-etl_extract.py-CRITICAL-[REQUEST FAILED] HTTPSConnectionPool(host='clasificados.lavoz.com.ar', port=443): Read timed out. (read timeout=7)
+2023-08-15 17:58:03,156-etl_extract.py-WARNING-Deleting category https://clasificados.lavoz.com.ar from source https://www.lavoz.com.ar/ due to download error
+2023-08-15 17:58:06,907-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://viapais.com.ar/cordoba/
+2023-08-15 17:58:06,915-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://viapais.com.ar/cordoba/
+2023-08-15 17:58:07,316-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://viapais.com.ar/cordoba/
+2023-08-15 17:58:07,399-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://viapais.com.ar/cordoba/
+2023-08-15 17:58:07,418-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://viapais.com.ar/cordoba/
+2023-08-15 17:58:07,424-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://viapais.com.ar/cordoba/
+2023-08-15 17:58:07,557-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://viapais.com.ar/cordoba/
+2023-08-15 17:58:07,568-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://viapais.com.ar/cordoba/
+2023-08-15 17:58:07,591-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://viapais.com.ar/cordoba/
+2023-08-15 17:58:07,867-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://viapais.com.ar/cordoba/
+2023-08-15 17:58:07,953-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://viapais.com.ar/cordoba/
+2023-08-15 17:58:08,042-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://viapais.com.ar/cordoba/
+2023-08-15 17:58:08,050-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://viapais.com.ar/cordoba/
+2023-08-15 17:58:08,074-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://viapais.com.ar/cordoba/
+2023-08-15 17:58:08,144-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://viapais.com.ar/cordoba/
+2023-08-15 17:58:08,171-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://viapais.com.ar/cordoba/
+2023-08-15 17:58:08,233-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://viapais.com.ar/cordoba/
+2023-08-15 17:58:08,508-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://viapais.com.ar/cordoba/
+2023-08-15 17:58:08,545-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://viapais.com.ar/cordoba/
+2023-08-15 17:58:08,594-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://viapais.com.ar/cordoba/
+2023-08-15 17:58:08,659-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://viapais.com.ar/cordoba/
+2023-08-15 17:58:08,674-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://viapais.com.ar/cordoba/
+2023-08-15 17:58:08,688-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://viapais.com.ar/cordoba/
+2023-08-15 17:58:08,812-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://viapais.com.ar/cordoba/
+2023-08-15 17:58:08,889-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://viapais.com.ar/cordoba/
+2023-08-15 17:58:08,905-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://viapais.com.ar/cordoba/
+2023-08-15 17:58:09,072-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://viapais.com.ar/cordoba/
+2023-08-15 17:58:09,169-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://viapais.com.ar/cordoba/
+2023-08-15 17:58:09,230-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://viapais.com.ar/cordoba/
+2023-08-15 17:58:09,251-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://viapais.com.ar/cordoba/
+2023-08-15 17:58:09,449-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://viapais.com.ar/cordoba/
+2023-08-15 17:58:09,476-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://viapais.com.ar/cordoba/
+2023-08-15 17:58:09,489-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://viapais.com.ar/cordoba/
+2023-08-15 17:58:09,521-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://viapais.com.ar/cordoba/
+2023-08-15 17:58:09,534-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://viapais.com.ar/cordoba/
+2023-08-15 17:58:09,566-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://viapais.com.ar/cordoba/
+2023-08-15 17:58:09,703-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://viapais.com.ar/cordoba/
+2023-08-15 17:58:09,858-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://viapais.com.ar/cordoba/
+2023-08-15 17:58:09,864-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://viapais.com.ar/cordoba/
+2023-08-15 17:58:09,886-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://viapais.com.ar/cordoba/
+2023-08-15 17:58:10,093-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://viapais.com.ar/cordoba/
+2023-08-15 17:58:10,094-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://viapais.com.ar/cordoba/
+2023-08-15 17:58:10,117-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://viapais.com.ar/cordoba/
+2023-08-15 17:58:10,118-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://viapais.com.ar/cordoba/
+2023-08-15 17:58:10,121-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://viapais.com.ar/cordoba/
+2023-08-15 17:58:10,173-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://viapais.com.ar/cordoba/
+2023-08-15 17:58:10,299-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://viapais.com.ar/cordoba/
+2023-08-15 17:58:10,493-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://viapais.com.ar/cordoba/
+2023-08-15 17:58:10,525-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://viapais.com.ar/cordoba/
+2023-08-15 17:58:10,531-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://viapais.com.ar/cordoba/
+2023-08-15 17:58:10,749-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://viapais.com.ar/cordoba/
+2023-08-15 17:58:20,817-etl_extract.py-ERROR-An error occurred while processing https://diaadia.com.ar/
+Traceback (most recent call last):
+  File "/home/sebacastillo/willow/etl_extract.py", line 158, in main
+    date, content, link, author, title, summary = download_and_parse_article(u)
+  File "/home/sebacastillo/willow/src/extraction.py", line 64, in download_and_parse_article
+    article.parse()
+  File "/home/sebacastillo/.willow/lib/python3.9/site-packages/newspaper/article.py", line 191, in parse
+    self.throw_if_not_downloaded_verbose()
+  File "/home/sebacastillo/.willow/lib/python3.9/site-packages/newspaper/article.py", line 531, in throw_if_not_downloaded_verbose
+    raise ArticleException('Article `download()` failed with %s on URL %s' %
+newspaper.article.ArticleException: Article `download()` failed with 429 Client Error: Too Many Requests for url: https://viapais.com.ar/cordoba/ on URL https://diaadia.com.ar/cordoba/una-mujer-embarazada-intento-ingresar-marihuana-y-cocaina-a-la-carcel-de-cruz-del-eje/
+2023-08-15 17:58:25,759-etl_extract.py-CRITICAL-[REQUEST FAILED] 403 Client Error: Forbidden for url: https://www.eldiariodecarlospaz.com.ar/tiempo
+2023-08-15 17:58:25,785-etl_extract.py-CRITICAL-[REQUEST FAILED] 404 Client Error: Not Found for url: https://www.eldiariodecarlospaz.com.ar/archivo
+2023-08-15 17:59:01,693-etl_extract.py-WARNING-fromstring() returned an invalid string: ...
+2023-08-15 17:59:01,693-etl_extract.py-WARNING-Source https://www.lacapital.com.ar/ parse error.
+2023-08-15 17:59:10,204-etl_extract.py-WARNING-fromstring() returned an invalid string: ...
+2023-08-15 17:59:10,204-etl_extract.py-WARNING-Source https://www.losandes.com.ar/ parse error.
+2023-08-15 17:59:10,329-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.losandes.com.ar/
+2023-08-15 17:59:15,404-etl_extract.py-CRITICAL-[REQUEST FAILED] 403 Client Error: Forbidden for url: https://soporte.lagaceta.com.ar/hc/es
+2023-08-15 18:00:08,739-etl_extract.py-CRITICAL-[REQUEST FAILED] HTTPSConnectionPool(host='www.diarioepoca.com', port=443): Read timed out. (read timeout=7)
+2023-08-15 18:00:08,740-etl_extract.py-WARNING-Deleting category https://www.diarioepoca.com/sociales from source https://www.diarioepoca.com/ due to download error
+2023-08-15 18:00:29,054-etl_extract.py-WARNING-fromstring() returned an invalid string: ...
+2023-08-15 18:00:29,055-etl_extract.py-WARNING-Source https://www.lmneuquen.com/ parse error.
+2023-08-15 18:00:42,577-etl_extract.py-CRITICAL-[REQUEST FAILED] HTTPSConnectionPool(host='masp.lmneuquen.com', port=443): Max retries exceeded with url: / (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x7f72847ef790>, 'Connection to masp.lmneuquen.com timed out. (connect timeout=7)'))
+2023-08-15 18:00:45,549-etl_extract.py-WARNING-Deleting category https://masp.lmneuquen.com from source https://www.lmneuquen.com/ due to download error
+2023-08-15 18:00:56,019-etl_extract.py-INFO--START:2023-08-15 17:40:52 - END:2023-08-15 18:00:56
+2023-08-16 13:46:03,508-etl_extract.py-INFO-loading projection weights from models/wiki.es.vec
+2023-08-16 13:46:31,243-etl_extract.py-INFO-KeyedVectors lifecycle event {'msg': 'loaded (200000, 300) matrix of type float32 from models/wiki.es.vec', 'binary': False, 'encoding': 'utf8', 'datetime': '2023-08-16T13:46:31.223840', 'gensim': '4.3.1', 'python': '3.9.13 (main, Aug 25 2022, 23:26:10) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-78-generic-x86_64-with-glibc2.35', 'event': 'load_word2vec_format'}
+2023-08-16 13:46:40,307-etl_extract.py-CRITICAL-[REQUEST FAILED] HTTPConnectionPool(host='clasificados.eldia.com', port=80): Read timed out. (read timeout=7)
+2023-08-16 13:46:40,318-etl_extract.py-WARNING-Deleting category http://clasificados.eldia.com from source https://www.eldia.com/ due to download error
+2023-08-16 13:46:46,901-etl_extract.py-CRITICAL-[REQUEST FAILED] ('Connection aborted.', OSError(107, 'Transport endpoint is not connected'))
+2023-08-16 13:46:48,934-etl_extract.py-WARNING-Deleting category https://recetas.clarin.com from source https://www.clarin.com/ due to download error
+2023-08-16 13:46:50,809-etl_extract.py-CRITICAL-[REQUEST FAILED] HTTPSConnectionPool(host='mediakit.diarionorte.com', port=443): Max retries exceeded with url: / (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7f757f2d9730>: Failed to establish a new connection: [Errno -2] Name or service not known'))
+2023-08-16 13:46:57,630-etl_extract.py-CRITICAL-[REQUEST FAILED] HTTPSConnectionPool(host='pagos.diarionorte.com', port=443): Max retries exceeded with url: / (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x7f757f2e6820>, 'Connection to pagos.diarionorte.com timed out. (connect timeout=7)'))
+2023-08-16 13:46:57,631-etl_extract.py-WARNING-Deleting category https://mediakit.diarionorte.com from source https://www.diarionorte.com/ due to download error
+2023-08-16 13:46:57,632-etl_extract.py-WARNING-Deleting category https://pagos.diarionorte.com from source https://www.diarionorte.com/ due to download error
+2023-08-16 13:47:10,450-etl_extract.py-CRITICAL-[REQUEST FAILED] 404 Client Error: Not Found for url: http://pxb.cdn.elchubut.com.ar/
+2023-08-16 13:47:13,149-etl_extract.py-WARNING-fromstring() returned an invalid string: ...
+2023-08-16 13:47:13,150-etl_extract.py-WARNING-Source https://www.cronica.com.ar/ parse error.
+2023-08-16 13:47:13,150-etl_extract.py-CRITICAL-Must extract urls from either html, text or doc!
+2023-08-16 13:47:13,668-etl_extract.py-CRITICAL-[REQUEST FAILED] 403 Client Error: Forbidden for url: https://www.cronica.com.ar/
+2023-08-16 13:47:14,918-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.lavoz.com.ar/deportes/
+2023-08-16 13:47:15,015-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.lavoz.com.ar/numero-cero/
+2023-08-16 13:47:15,072-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.lavoz.com.ar/tendencias
+2023-08-16 13:47:15,247-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.lavoz.com.ar/servicios
+2023-08-16 13:47:15,367-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.lavoz.com.ar/negocios/
+2023-08-16 13:47:15,441-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.lavoz.com.ar/sucesos/
+2023-08-16 13:47:15,525-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.lavoz.com.ar/videos
+2023-08-16 13:47:15,565-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.lavoz.com.ar/lo-ultimo
+2023-08-16 13:47:15,631-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.lavoz.com.ar/especiales
+2023-08-16 13:47:15,647-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.lavoz.com.ar/opinion
+2023-08-16 13:47:15,699-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.lavoz.com.ar/mundo
+2023-08-16 13:47:15,764-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.lavoz.com.ar/salud
+2023-08-16 13:47:15,767-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.lavoz.com.ar/politica
+2023-08-16 13:47:15,862-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.lavoz.com.ar/quienes-somos/
+2023-08-16 13:47:15,862-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.lavoz.com.ar/
+2023-08-16 13:47:16,023-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.lavoz.com.ar/viral/
+2023-08-16 13:47:16,339-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.lavoz.com.ar:443/
+2023-08-16 13:47:32,368-etl_extract.py-WARNING-fromstring() returned an invalid string: ...
+2023-08-16 13:47:32,368-etl_extract.py-WARNING-Source https://www.goyaennoticias.com.ar/ parse error.
+2023-08-16 13:47:32,369-etl_extract.py-CRITICAL-Must extract urls from either html, text or doc!
+2023-08-16 13:47:32,571-etl_extract.py-CRITICAL-[REQUEST FAILED] HTTPSConnectionPool(host='www.goyaennoticias.com.ar', port=443): Max retries exceeded with url: / (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate has expired (_ssl.c:1129)')))
+2023-08-16 13:47:32,573-etl_extract.py-WARNING-Deleting category https://www.goyaennoticias.com.ar/ from source https://www.goyaennoticias.com.ar/ due to download error
+2023-08-16 13:47:35,868-etl_extract.py-CRITICAL-[REQUEST FAILED] 404 Client Error: Not Found for url: https://servicios.elcomercial.com.ar/
+2023-08-16 13:47:45,367-etl_extract.py-CRITICAL-[REQUEST FAILED] HTTPSConnectionPool(host='www.expresdiario.com.ar', port=443): Max retries exceeded with url: / (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x7f757f2e6a30>, 'Connection to www.expresdiario.com.ar timed out. (connect timeout=7)'))
+2023-08-16 13:47:45,369-etl_extract.py-CRITICAL-[REQUEST FAILED] HTTPSConnectionPool(host='www.expresdiario.com.ar', port=443): Max retries exceeded with url: / (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x7f757f2e6a90>, 'Connection to www.expresdiario.com.ar timed out. (connect timeout=7)'))
+2023-08-16 13:47:45,369-etl_extract.py-WARNING-Deleting category https://www.expresdiario.com.ar/ from source https://www.expresdiario.com.ar/ due to download error
+2023-08-16 13:47:45,370-etl_extract.py-WARNING-Deleting category https://www.expresdiario.com.ar from source https://www.expresdiario.com.ar/ due to download error
+2023-08-16 13:48:07,711-etl_extract.py-ERROR-An error occurred while processing https://www.eltribuno.com/jujuy/
+Traceback (most recent call last):
+  File "/home/sebacastillo/willow/etl_extract.py", line 159, in main
+    date, content, link, author, title, summary = download_and_parse_article(u)
+  File "/home/sebacastillo/willow/src/extraction.py", line 67, in download_and_parse_article
+    article.parse()
+  File "/home/sebacastillo/.willow/lib/python3.9/site-packages/newspaper/article.py", line 191, in parse
+    self.throw_if_not_downloaded_verbose()
+  File "/home/sebacastillo/.willow/lib/python3.9/site-packages/newspaper/article.py", line 531, in throw_if_not_downloaded_verbose
+    raise ArticleException('Article `download()` failed with %s on URL %s' %
+newspaper.article.ArticleException: Article `download()` failed with HTTPSConnectionPool(host='nota', port=443): Max retries exceeded with url: /2023-8-15-0-0-0-campo-quijano-entre-el-flagelo-de-las-drogas-y-la-delincuencia (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7f757f28ad90>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution')) on URL https://nota/2023-8-15-0-0-0-campo-quijano-entre-el-flagelo-de-las-drogas-y-la-delincuencia
+2023-08-16 13:48:23,421-etl_extract.py-WARNING-fromstring() returned an invalid string: ...
+2023-08-16 13:48:23,422-etl_extract.py-WARNING-Source https://elindependiente.com.ar/secciones/chilecito/ parse error.
+2023-08-16 13:48:23,422-etl_extract.py-CRITICAL-Must extract urls from either html, text or doc!
+2023-08-16 13:48:23,656-etl_extract.py-CRITICAL-[REQUEST FAILED] 404 Client Error: Not Found for url: https://elindependiente.com.ar/secciones/chilecito/
+2023-08-16 13:48:23,843-etl_extract.py-WARNING-fromstring() returned an invalid string: ...
+2023-08-16 13:48:23,843-etl_extract.py-WARNING-Source https://www.losandes.com.ar/ parse error.
+2023-08-16 13:48:23,844-etl_extract.py-CRITICAL-Must extract urls from either html, text or doc!
+2023-08-16 13:48:36,427-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://diariosanrafael.com.ar/
+2023-08-16 13:49:12,331-etl_extract.py-CRITICAL-[REQUEST FAILED] 404 Client Error: Not Found for url: https://www.minutoneuquen.com/archivo
+2023-08-16 13:49:20,780-etl_extract.py-CRITICAL-[REQUEST FAILED] HTTPSConnectionPool(host='front.elcordillerano.com.ar', port=443): Max retries exceeded with url: / (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7f757f408fd0>: Failed to establish a new connection: [Errno -2] Name or service not known'))
+2023-08-16 13:49:21,609-etl_extract.py-WARNING-Deleting category https://front.elcordillerano.com.ar from source https://www.elcordillerano.com.ar/ due to download error
+2023-08-16 13:49:48,151-etl_extract.py-ERROR-An error occurred while processing https://www.eltribuno.com/salta/
+Traceback (most recent call last):
+  File "/home/sebacastillo/willow/etl_extract.py", line 159, in main
+    date, content, link, author, title, summary = download_and_parse_article(u)
+  File "/home/sebacastillo/willow/src/extraction.py", line 67, in download_and_parse_article
+    article.parse()
+  File "/home/sebacastillo/.willow/lib/python3.9/site-packages/newspaper/article.py", line 191, in parse
+    self.throw_if_not_downloaded_verbose()
+  File "/home/sebacastillo/.willow/lib/python3.9/site-packages/newspaper/article.py", line 531, in throw_if_not_downloaded_verbose
+    raise ArticleException('Article `download()` failed with %s on URL %s' %
+newspaper.article.ArticleException: Article `download()` failed with HTTPSConnectionPool(host='nota', port=443): Max retries exceeded with url: /2023-8-15-0-0-0-campo-quijano-entre-el-flagelo-de-las-drogas-y-la-delincuencia (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7f75737e2700>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution')) on URL https://nota/2023-8-15-0-0-0-campo-quijano-entre-el-flagelo-de-las-drogas-y-la-delincuencia
+2023-08-16 13:49:55,491-etl_extract.py-WARNING-fromstring() returned an invalid string: ...
+2023-08-16 13:49:55,492-etl_extract.py-WARNING-Source http://www.diarioeloranense.com.ar/ parse error.
+2023-08-16 13:49:55,492-etl_extract.py-CRITICAL-Must extract urls from either html, text or doc!
+2023-08-16 13:52:00,672-etl_extract.py-CRITICAL-[REQUEST FAILED] 404 Client Error: Not Found for url: https://pxb.cdn.eldiariodelarepublica.com/
+2023-08-16 13:52:41,022-etl_extract.py-CRITICAL-[REQUEST FAILED] 403 Client Error: Forbidden for url: https://soporte.lagaceta.com.ar/hc/es
+2023-08-16 13:53:03,614-etl_extract.py-CRITICAL-[REQUEST FAILED] HTTPSConnectionPool(host='suscripciones.lanacion.com.ar', port=443): Max retries exceeded with url: / (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x7f7574027460>, 'Connection to suscripciones.lanacion.com.ar timed out. (connect timeout=7)'))
+2023-08-16 13:53:03,627-etl_extract.py-WARNING-Deleting category https://suscripciones.lanacion.com.ar from source https://www.lanacion.com.ar/ due to download error
+2023-08-16 13:53:17,452-etl_extract.py-CRITICAL-[REQUEST FAILED] HTTPSConnectionPool(host='www.perfil.com', port=443): Read timed out. (read timeout=7)
+2023-08-16 13:53:17,456-etl_extract.py-WARNING-Deleting category https://www.perfil.com/reperfilar from source https://www.perfil.com/ due to download error
+2023-08-16 13:53:20,831-etl_extract.py-CRITICAL-[REQUEST FAILED] 404 Client Error: Not Found for url: https://www.diariopopular.com.ar/%7B%5B%20link%20%5D%7D
+2023-08-16 13:53:22,471-etl_extract.py-WARNING-fromstring() returned an invalid string: ...
+2023-08-16 13:53:22,471-etl_extract.py-WARNING-Source https://www.lavoz.com.ar/ parse error.
+2023-08-16 13:53:22,651-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.lavoz.com.ar/ciudadanos
+2023-08-16 13:53:22,652-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.lavoz.com.ar/clima
+2023-08-16 13:53:22,680-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.lavoz.com.ar/deportes
+2023-08-16 13:53:22,891-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.lavoz.com.ar/agro
+2023-08-16 13:53:22,962-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.lavoz.com.ar/tendencias
+2023-08-16 13:53:23,035-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.lavoz.com.ar/
+2023-08-16 13:53:23,052-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.lavoz.com.ar/servicios
+2023-08-16 13:53:23,176-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.lavoz.com.ar/quienes-somos
+2023-08-16 13:53:23,185-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.lavoz.com.ar/viral
+2023-08-16 13:53:23,286-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.lavoz.com.ar/videos
+2023-08-16 13:53:23,322-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.lavoz.com.ar/lo-ultimo
+2023-08-16 13:53:23,333-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.lavoz.com.ar/numero-cero/
+2023-08-16 13:53:23,363-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.lavoz.com.ar/galerias/
+2023-08-16 13:53:23,425-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.lavoz.com.ar/opinion
+2023-08-16 13:53:23,428-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.lavoz.com.ar/especiales
+2023-08-16 13:53:23,460-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.lavoz.com.ar/negocios/
+2023-08-16 13:53:23,505-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.lavoz.com.ar/politica
+2023-08-16 13:53:23,513-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.lavoz.com.ar/mundo
+2023-08-16 13:53:23,558-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.lavoz.com.ar/salud
+2023-08-16 13:53:23,632-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.lavoz.com.ar/
+2023-08-16 13:53:24,032-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.lavoz.com.ar:443/
+2023-08-16 13:53:26,027-etl_extract.py-CRITICAL-[REQUEST FAILED] 403 Client Error: Forbidden for url: https://soporte.lagaceta.com.ar/hc/es
+2023-08-16 13:53:26,528-etl_extract.py-WARNING-fromstring() returned an invalid string: ...
+2023-08-16 13:53:26,529-etl_extract.py-WARNING-Source https://www.lavoz.com.ar/ parse error.
+2023-08-16 13:53:26,684-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.lavoz.com.ar/
+2023-08-16 13:53:26,693-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.lavoz.com.ar/clima
+2023-08-16 13:53:26,697-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.lavoz.com.ar/deportes
+2023-08-16 13:53:26,702-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.lavoz.com.ar/ciudadanos
+2023-08-16 13:53:26,706-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.lavoz.com.ar/vos
+2023-08-16 13:53:26,707-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.lavoz.com.ar/galerias
+2023-08-16 13:53:26,804-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.lavoz.com.ar/tecnologia
+2023-08-16 13:53:26,818-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.lavoz.com.ar/numero-cero
+2023-08-16 13:53:26,823-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.lavoz.com.ar/agro
+2023-08-16 13:53:26,825-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.lavoz.com.ar/negocios
+2023-08-16 13:53:26,830-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.lavoz.com.ar/sucesos
+2023-08-16 13:53:26,859-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.lavoz.com.ar/tendencias
+2023-08-16 13:53:26,943-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.lavoz.com.ar/
+2023-08-16 13:53:26,947-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.lavoz.com.ar/servicios
+2023-08-16 13:53:26,969-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.lavoz.com.ar/videos
+2023-08-16 13:53:26,972-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.lavoz.com.ar/quienes-somos
+2023-08-16 13:53:26,973-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.lavoz.com.ar/viral
+2023-08-16 13:53:26,992-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.lavoz.com.ar/lo-ultimo
+2023-08-16 13:53:27,079-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.lavoz.com.ar/opinion
+2023-08-16 13:53:27,080-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.lavoz.com.ar/especiales
+2023-08-16 13:53:27,086-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.lavoz.com.ar/mundo
+2023-08-16 13:53:27,103-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.lavoz.com.ar/politica
+2023-08-16 13:53:27,109-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.lavoz.com.ar/salud
+2023-08-16 13:53:27,297-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.lavoz.com.ar/
+2023-08-16 13:53:27,759-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.lavoz.com.ar:443/
+2023-08-16 13:53:32,634-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://viapais.com.ar/cordoba/
+2023-08-16 13:53:32,796-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://viapais.com.ar/cordoba/
+2023-08-16 13:53:32,916-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://viapais.com.ar/cordoba/
+2023-08-16 13:53:33,277-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://viapais.com.ar/cordoba/
+2023-08-16 13:53:33,321-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://viapais.com.ar/cordoba/
+2023-08-16 13:53:33,324-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://viapais.com.ar/cordoba/
+2023-08-16 13:53:33,458-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://viapais.com.ar/cordoba/
+2023-08-16 13:53:33,485-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://viapais.com.ar/cordoba/
+2023-08-16 13:53:33,489-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://viapais.com.ar/cordoba/
+2023-08-16 13:53:33,514-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://viapais.com.ar/cordoba/
+2023-08-16 13:53:33,863-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://viapais.com.ar/cordoba/
+2023-08-16 13:53:33,939-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://viapais.com.ar/cordoba/
+2023-08-16 13:53:33,952-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://viapais.com.ar/cordoba/
+2023-08-16 13:53:34,079-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://viapais.com.ar/cordoba/
+2023-08-16 13:53:34,093-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://viapais.com.ar/cordoba/
+2023-08-16 13:53:34,096-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://viapais.com.ar/cordoba/
+2023-08-16 13:53:34,225-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://viapais.com.ar/cordoba/
+2023-08-16 13:53:34,226-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://viapais.com.ar/cordoba/
+2023-08-16 13:53:34,528-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://viapais.com.ar/cordoba/
+2023-08-16 13:53:34,605-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://viapais.com.ar/cordoba/
+2023-08-16 13:53:34,616-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://viapais.com.ar/cordoba/
+2023-08-16 13:53:34,747-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://viapais.com.ar/cordoba/
+2023-08-16 13:53:34,776-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://viapais.com.ar/cordoba/
+2023-08-16 13:53:34,777-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://viapais.com.ar/cordoba/
+2023-08-16 13:53:34,851-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://viapais.com.ar/cordoba/
+2023-08-16 13:53:34,857-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://viapais.com.ar/cordoba/
+2023-08-16 13:53:35,188-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://viapais.com.ar/cordoba/
+2023-08-16 13:53:35,189-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://viapais.com.ar/cordoba/
+2023-08-16 13:53:35,196-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://viapais.com.ar/cordoba/
+2023-08-16 13:53:35,263-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://viapais.com.ar/cordoba/
+2023-08-16 13:53:35,266-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://viapais.com.ar/cordoba/
+2023-08-16 13:53:35,389-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://viapais.com.ar/cordoba/
+2023-08-16 13:53:35,422-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://viapais.com.ar/cordoba/
+2023-08-16 13:53:35,435-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://viapais.com.ar/cordoba/
+2023-08-16 13:53:35,547-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://viapais.com.ar/cordoba/
+2023-08-16 13:53:35,549-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://viapais.com.ar/cordoba/
+2023-08-16 13:53:35,946-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://viapais.com.ar/cordoba/
+2023-08-16 13:53:36,510-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://viapais.com.ar/cordoba/
+2023-08-16 13:53:36,585-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://viapais.com.ar/cordoba/
+2023-08-16 13:53:36,843-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://viapais.com.ar/cordoba/
+2023-08-16 13:53:37,256-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://viapais.com.ar/cordoba/
+2023-08-16 13:53:38,058-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://viapais.com.ar/cordoba/
+2023-08-16 13:53:38,318-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://viapais.com.ar/cordoba/
+2023-08-16 13:53:38,686-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://viapais.com.ar/cordoba/
+2023-08-16 13:53:38,949-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://viapais.com.ar/cordoba/
+2023-08-16 13:53:39,096-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://viapais.com.ar/cordoba/
+2023-08-16 13:53:40,972-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://viapais.com.ar/cordoba/
+2023-08-16 13:53:41,079-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://viapais.com.ar/cordoba/
+2023-08-16 13:53:43,648-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://viapais.com.ar/cordoba/
+2023-08-16 13:53:43,818-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://viapais.com.ar/cordoba/
+2023-08-16 13:53:46,299-etl_extract.py-CRITICAL-[REQUEST FAILED] 403 Client Error: Forbidden for url: https://www.eldiariodecarlospaz.com.ar/tiempo
+2023-08-16 13:53:46,311-etl_extract.py-CRITICAL-[REQUEST FAILED] 404 Client Error: Not Found for url: https://www.eldiariodecarlospaz.com.ar/archivo
+2023-08-16 13:54:04,019-etl_extract.py-WARNING-fromstring() returned an invalid string: ...
+2023-08-16 13:54:04,019-etl_extract.py-WARNING-Source https://www.losandes.com.ar/ parse error.
+2023-08-16 13:54:04,141-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.losandes.com.ar/
+2023-08-16 13:54:08,996-etl_extract.py-CRITICAL-[REQUEST FAILED] 403 Client Error: Forbidden for url: https://soporte.lagaceta.com.ar/hc/es
+2023-08-16 13:54:35,590-etl_extract.py-CRITICAL-[REQUEST FAILED] HTTPSConnectionPool(host='mediakit.diarionorte.com', port=443): Max retries exceeded with url: / (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7f75736d2dc0>: Failed to establish a new connection: [Errno -2] Name or service not known'))
+2023-08-16 13:54:42,546-etl_extract.py-CRITICAL-[REQUEST FAILED] HTTPSConnectionPool(host='pagos.diarionorte.com', port=443): Max retries exceeded with url: / (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x7f75736d2160>, 'Connection to pagos.diarionorte.com timed out. (connect timeout=7)'))
+2023-08-16 13:54:42,546-etl_extract.py-WARNING-Deleting category https://mediakit.diarionorte.com from source https://www.diarionorte.com/ due to download error
+2023-08-16 13:54:42,547-etl_extract.py-WARNING-Deleting category https://pagos.diarionorte.com from source https://www.diarionorte.com/ due to download error
+2023-08-16 13:55:23,007-etl_extract.py-INFO--START:2023-08-16 13:46:02 - END:2023-08-16 13:55:23

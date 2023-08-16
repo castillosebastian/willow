@@ -44,19 +44,22 @@ def extract_articles_with_regex(
     return urls_matches
 
 
-def filter_articles_with_similarity(
-    urls_matches, topic, wordvectors, similarity_treshold
+def string_with_similarity(
+    strings, keywords, wordvectors, similarity_treshold
 ):
-    max_similarity_scores = []
-    urls_second_match = []
+    
+    s_second_match = []
+    s_second_match_score = []
 
-    for url_match in urls_matches:
-        max_similarity_score = compute_max_similarity(url_match, topic, wordvectors)
-        max_similarity_scores.append(max_similarity_score)
-        if max_similarity_score > similarity_treshold:
-            urls_second_match.append(url_match)
+    for string in strings:
 
-    return urls_second_match
+        similarity_score = compute_similarity(string, keywords, wordvectors)
+        
+        if similarity_score > similarity_treshold:
+            s_second_match.append(string)
+            s_second_match_score.append(similarity_score)
+
+    return s_second_match, s_second_match_score
 
 def download_and_parse_article(url):
     article = Article(url=url)
