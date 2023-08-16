@@ -1,4 +1,2 @@
-- time to script
-- track progress
-- logging
 - datetime start/end
+- extract_international: newsapy

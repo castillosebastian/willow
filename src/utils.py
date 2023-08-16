@@ -142,7 +142,9 @@ def compute_similarity(string, keywords, wordvec):
         total_scores.append(max_scores)
 
     # Return average score
-    return sum(total_scores) / len(total_scores) if total_scores else 0.0
+    average_score = sum(total_scores) / len(total_scores)
+    rounded_average_score = round(average_score, 4)
+    return  rounded_average_score if total_scores else 0.0
 
 
 

@@ -34,3 +34,4 @@ spacy
 #numba==0.53
 dash
 pymongo
+newsapi-python
