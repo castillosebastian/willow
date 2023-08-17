@@ -112,7 +112,9 @@ def langchain_chunk_text(text):
 
 
 
-def ner_on_large_document(text, model="mrm8488/bert-spanish-cased-finetuned-ner", aggregation_strategy="max"):
+def ner_on_large_document(text, 
+                          model="mrm8488/bert-spanish-cased-finetuned-ner", 
+                          aggregation_strategy="max"):
     try:
         nlp_ner = pipeline(
             "ner",
