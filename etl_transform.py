@@ -13,18 +13,30 @@ def load_data():
     # Replace with your code to load the DataFrame
     return pl.DataFrame(your_data_here)
 
-def main():
-    # Define parameters
-    summary_length = 400
+word_vectors = load_embeddings(path="models/wiki.es.vec", limit=200000)
+keywords = load_keywords(topic='narcotráfico')
 
+def main(        
+        summary_length = 400,
+        wordvector = word_vectors,
+        keywords = keywords
+        ):
+    # Define parameters       
+    
     # 1. Read the input DataFrame
     df = load_data()
 
     # 2. Clean the DataFrame
     df_clean = clean_dataframe(df, replace_white_lines=True)
 
-    # 3. Summarize the articles
-    df_clean = summarize_articles(df_clean, summary_model_str, summary_length)
+    # 3.1 Summarize the articles
+    df_clean = summarize_articles(df_clean, summary_model_str,summary_length)
+    # 3.1 Compute similarity btwen summary and keywords
+    df_clean = compute_similarity(df_clean, keywords=keywords, word_vectors=wordvector)
+
+    # 3.1. delete model
+    del wordvector
+    gc.collect()
 
     # 4. Perform NER calculation
     ner_function = lambda text: ner_on_large_document(text, model=ner_model) # Customize as needed
@@ -33,8 +45,11 @@ def main():
     # 5. Arrange both datasets
     news_df, ner_df = arrange_datasets(df_clean, ner_news_df)
 
-    news_df.write_csv('news_df.csv')
-    ner_df.write_csv('ner_df.csv')
+    # 6. Add vector
+    # concat summary_llm, PER, LOC, ORG > 0.98, DATES
+
+    news_df.write_csv('news.csv')
+    ner_df.write_csv('news_ner.csv')
 
     # 6. Store in MongoDB or perform other desired actions
     # (Add your MongoDB connection and storage code here)

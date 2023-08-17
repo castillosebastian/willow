@@ -15,4 +15,6 @@
     - news_text_embeddings
     - NER_concaten_embeddings
 # save_load 
+- [start_mongod] mongod --dbpath /home/sebacastillo/willow/mongodb
+- [stop_mongod] mongo admin --eval "db.shutdownServer()"
 - mongodb

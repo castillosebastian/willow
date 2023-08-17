@@ -3,6 +3,9 @@ from transformers import AutoModelForSeq2SeqLM, AutoTokenizer
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 from transformers import pipeline
 import gc
+from src.extraction import *
+from src.utils import *
+from tqdm import tqdm
 
 def clean_dataframe(df, replace_white_lines=True):
     try:
@@ -11,7 +14,7 @@ def clean_dataframe(df, replace_white_lines=True):
                 pl.col("content")
                 .str.replace_all(r"[\n\t]+", " ")
                 .str.replace_all(r"\s{2,}", " ")
-                .str.trim()
+                .str.strip()
                 .alias("content")
             )
         else:
@@ -19,8 +22,8 @@ def clean_dataframe(df, replace_white_lines=True):
 
         df_clean = (
             df.with_columns([
-                pl.col('date_extract').str.strptime(pl.Date32, format='%Y-%m-%d %H:%M:%S', strict=True),  # Fixed format
-                pl.col('date_article').str.slice(0, 10).str.strptime(pl.Date32, format='%Y-%m-%d'),
+                pl.col('date_extract').str.strptime(pl.Date, format='%Y-%m-%d %H:%M:%S', strict=True),  # Fixed format
+                pl.col('date_article').str.slice(0, 10).str.strptime(pl.Date, format='%Y-%m-%d'),
                 content_replace_step
             ])
         )
@@ -34,7 +37,7 @@ def clean_dataframe(df, replace_white_lines=True):
         return df
 
 
-def summarize_articles(df_clean, model_str, summary_lenght = 400):
+def summarize_articles(df_clean, model_str, summary_length = 400):
     try:
         # 1
         articles = df_clean['content'].to_list()
@@ -49,16 +52,18 @@ def summarize_articles(df_clean, model_str, summary_lenght = 400):
         articles_summaries = []
         for article in articles:
             input_ids = tokenizer(article, return_tensors="pt").input_ids    
-            output_ids = model.generate(input_ids, max_length=summary_lenght, num_beams=4)[0]  # Adjusted parameters
+            output_ids = model.generate(input_ids, max_length=summary_length, num_beams=4)[0]  # Adjusted parameters
             summary = tokenizer.decode(output_ids, skip_special_tokens=True)
             articles_summaries.append(summary)
         
         del tokenizer
         del model        
         gc.collect()
-
+       
         # 4 Add summary for each article
-        df_clean = df_clean.with_columns(pl.Series("summary_llm", articles_summaries))
+        df_clean = df_clean.with_columns(
+            pl.Series("summary_llm", articles_summaries)
+        )
 
         return df_clean
 
@@ -68,6 +73,20 @@ def summarize_articles(df_clean, model_str, summary_lenght = 400):
         # You can return the original dataframe or handle the error in other ways
         return df_clean
 
+
+def compute_similarity(df, column_to_eval, keywords, word_vectors):
+    try:
+        # 1
+        articles_summaries = df[column_to_eval].to_list()
+        _, sim_score = string_with_similarity(articles_summaries, keywords, word_vectors, 0.0)
+        # 2 Add summary for each article
+        df = df.with_columns(pl.Series("summary_sim_score", sim_score))
+
+        return df
+
+    except Exception as e:
+        print(f"An error occurred during similarity computation: {e}")
+        return df
 
 def langchain_chunk_text(text):
     try:
@@ -93,11 +112,11 @@ def langchain_chunk_text(text):
 
 
 
-def ner_on_large_document(text, model_name="mrm8488/bert-spanish-cased-finetuned-ner", aggregation_strategy="max"):
+def ner_on_large_document(text, model="mrm8488/bert-spanish-cased-finetuned-ner", aggregation_strategy="max"):
     try:
         nlp_ner = pipeline(
             "ner",
-            model=model_name,
+            model=model,
             aggregation_strategy=aggregation_strategy # Adjust as needed
         )
 
@@ -143,10 +162,10 @@ def arrange_datasets(news_df, ner_news_df):
 
         ner_news_df = ner_news_df.join(news_df[['link', 'content_hash', 'index']], on='index', how='left')
 
-        arranged_news_df = ner_news_df.select([
+        arranged_news_df = news_df.select([
             'index', 'topic', 'date_extract', 'date_article', 'content', 'portal', 'link',
-            'link_sim_score', 'title', 'summary', 'summary_llm', 'authors', 'state', 'city',
-            'content_hash', 'content_nchar'
+            'link_sim_score', 'title', 'summary', 'summary_llm',"summary_sim_score", 'authors',
+            'state', 'city','content_hash', 'content_nchar'
         ])
 
         arranged_ner_df = ner_news_df.select(
