@@ -13,9 +13,22 @@ news = pl.read_csv('/home/sebacastillo/willow/output/news.csv',
                     dtypes={"content_hash": pl.UInt64} )
 newsner = pl.read_csv('/home/sebacastillo/willow/output/newsner.csv',
                     dtypes={"content_hash": pl.UInt64} )
+
+# Convert content_hash to str
+news = (
+    news.with_columns([
+        pl.col("content_hash").cast(pl.Utf8)
+    ])    
+)
+
+newsner = (
+    newsner.with_columns([
+        pl.col("content_hash").cast(pl.Utf8)
+    ])    
+)
 # drop hash
-news = news.drop('content_hash')
-newsner = newsner.drop('content_hash')
+#news = news.drop('content_hash')
+#newsner = newsner.drop('content_hash')
 # Convert to pandas
 newsp = news.to_pandas()
 newsnerp = newsner.to_pandas()
