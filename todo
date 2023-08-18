@@ -1,2 +1,2 @@
-- datetime start/end
-- extract_international: newsapy
+- newsAPI
+- state-city-title-summary embeddings
