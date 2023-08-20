@@ -181,3 +181,15 @@ def arrange_datasets(news_df, ner_news_df):
         print(f"An error occurred during dataset arrangement: {e}")
         return None, None
 
+def load_data():
+    # Step 1: Get the list of all files with the specific pattern
+    files = glob.glob('output/news_narcotráfico_related_*.csv')
+
+    # Step 2: Extract dates and sort them
+    files_sorted = sorted(files, key=lambda x: datetime.strptime(x.split('_')[-2] + '_' + x.split('_')[-1][:-4], '%Y-%m-%d_%H%M'))
+
+    # Step 3: Read the latest file
+    latest_file = files_sorted[0]
+    df = pl.read_csv(latest_file, dtypes={'content_hash': pl.UInt64})
+
+    return df

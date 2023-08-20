@@ -151,7 +151,7 @@ def main(
             urls_second_match, urls_second_match_score = string_with_similarity(
                 urls_matches, keywords, word_vectors, similarity_threshold
             )
-
+            
             match2_similarity += len(urls_second_match)            
 
             # Go through each articles of the urls with double match (REGEX + SIMILARITY)
@@ -167,8 +167,8 @@ def main(
                 sumaries.append(summary)
                 state_list.append(state)
                 cities_list.append(city)
-                time.sleep(int(sleep_time))            
-
+                time.sleep(int(sleep_time)) 
+            
             # Store results
             url_list.append(url)            
             fail_build_source_list.append(fail_build_source)
@@ -194,9 +194,10 @@ def main(
                 outputlists = [dates, contents, links, authors, 
                                titles, state_list, cities_list,
                                sumaries, similarities]
+                
                 for lst in outputlists:
                     if not lst:
-                        lst.append("No news")               
+                        lst.append(None)               
 
                 news_topic_related = pl.DataFrame(
                     {
@@ -226,48 +227,15 @@ def main(
                     pl.col('content_nchar') > 400
                 )            
 
+                
+
             except Exception:
                 logging.exception(f"An error occurred while generating dataframes")
 
         except Exception:
             logging.exception(f"An error occurred while processing {url}")
-
+    
     return stat_etl_topic_related, news_topic_related
-
-
-def save_dataframes(stat_df, news_df, config, topic=None, mode="local", db_params=None):
-    # For local saving
-    if mode == "local":
-        # Generate the filename
-        news_outputfilename = "news_" + topic + "_related_"
-        stat_outputfilename = "stat_" + topic + "_related_"
-
-        filename_news_topic_related = os.path.join(
-            config.get("main", "output_dir"),
-            news_outputfilename
-            + datetime.datetime.now().strftime("%Y-%m-%d_%H%M")
-            + ".csv",
-        )
-        filename_stat_etl_topic_related = os.path.join(
-            config.get("main", "output_dir"),
-            stat_outputfilename
-            + datetime.datetime.now().strftime("%Y-%m-%d_%H%M")
-            + ".csv",
-        )
-        # Save the DataFrame to a file
-        news_df.write_csv(filename_news_topic_related)
-        stat_df.write_csv(filename_stat_etl_topic_related)
-
-    # For database saving (you can expand this with your database logic)
-    elif mode == "database" and db_params:
-        # Save to database logic here
-        pass  # replace with actual database-saving logic
-
-    else:
-        raise ValueError(
-            "Invalid mode provided or missing db_params for database mode."
-        )
-
 
 if __name__ == "__main__":
     topic = "narcotráfico"
@@ -283,7 +251,7 @@ if __name__ == "__main__":
     log_messages = [f"-START:{start_time}"]
 
     info_source_bd = load_bd_source(topic=topic)
-    #info_source_bd = load_bd_source(topic=topic, state = 'Mendoza')
+    #info_source_bd = load_bd_source(topic=topic, state = 'Buenos Aires')
     
     stat_etl_topic_related, news_topic_related = main(info_source_bd=info_source_bd)
     

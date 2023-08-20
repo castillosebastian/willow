@@ -83,3 +83,36 @@ def download_and_parse_article(url):
         content = text if len(text) > 0 else None
 
     return date, content, link, author, title, summary
+
+def save_dataframes(stat_df, news_df, config, topic=None, mode="local", db_params=None):
+    # For local saving
+    if mode == "local":
+        # Generate the filename
+        news_outputfilename = "news_" + topic + "_related_"
+        stat_outputfilename = "stat_" + topic + "_related_"
+
+        filename_news_topic_related = os.path.join(
+            config.get("main", "output_dir"),
+            news_outputfilename
+            + datetime.datetime.now().strftime("%Y-%m-%d_%H%M")
+            + ".csv",
+        )
+        filename_stat_etl_topic_related = os.path.join(
+            config.get("main", "output_dir"),
+            stat_outputfilename
+            + datetime.datetime.now().strftime("%Y-%m-%d_%H%M")
+            + ".csv",
+        )
+        # Save the DataFrame to a file
+        news_df.write_csv(filename_news_topic_related)
+        stat_df.write_csv(filename_stat_etl_topic_related)
+
+    # For database saving (you can expand this with your database logic)
+    elif mode == "database" and db_params:
+        # Save to database logic here
+        pass  # replace with actual database-saving logic
+
+    else:
+        raise ValueError(
+            "Invalid mode provided or missing db_params for database mode."
+        )

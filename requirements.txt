@@ -35,4 +35,4 @@ spacy
 dash
 pymongo
 newsapi-python
-pymongoarrow
+glob2
