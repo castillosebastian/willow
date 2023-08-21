@@ -59,7 +59,9 @@ def main(
     newsner = ner_df.to_pandas()
     newsner.reset_index(inplace=True)
     newsner = newsner.to_dict("records") # Change to dict
-    collection_ner = db['newsner']
+    collection_ner = get_collection(host='mongodb://localhost:27017/',
+                                     db_name='wdocuments', 
+                                     collection_name='newsner')    
     collection_ner.insert_many(newsner)
 
     # 6. Add vector embedings
