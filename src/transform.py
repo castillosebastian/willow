@@ -1,11 +1,32 @@
 import polars as pl
+import glob
+from tqdm import tqdm
+from pymongo import MongoClient
+from sentence_transformers import SentenceTransformer
 from transformers import AutoModelForSeq2SeqLM, AutoTokenizer
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 from transformers import pipeline
 import gc
 from src.extraction import *
 from src.utils import *
-from tqdm import tqdm
+
+def load_rawdata(topic = 'narcotráfico'):
+   
+    # Step o
+    dir = 'output/news_' + topic + '_related_*.csv'
+    
+    # Step 1: Get the list of all files with the specific pattern
+    files = glob.glob(dir)
+
+    # Step 2: Extract dates and sort them
+    files_sorted = sorted(files, key=lambda x: datetime.datetime.strptime(x.split('_')[-2] + '_' + x.split('_')[-1][:-4], '%Y-%m-%d_%H%M'))
+
+    # Step 3: Read the latest file
+    oldest_file = files_sorted[0]
+
+    df = pl.read_csv(oldest_file, dtypes={"content_hash": pl.UInt64})
+
+    return df
 
 def clean_dataframe(df, replace_white_lines=True):
     try:
@@ -82,6 +103,11 @@ def compute_similarity(df, column_to_eval, keywords, word_vectors):
         # 2 Add summary for each article
         df = df.with_columns(pl.Series("summary_sim_score", sim_score))
 
+        # 3.1. delete model
+        del word_vectors
+        del keywords
+        gc.collect()
+
         return df
 
     except Exception as e:
@@ -137,9 +163,9 @@ def ner_on_large_document(text,
         return []
 
 
-def calculate_ner(news_df, ner_function):
+def calculate_ner(news_df, max_index, ner_function):
     try:
-        index = list(range(1, news_df.shape[0] + 1))
+        index = list(range(max_index + 1, max_index + 1 + news_df.shape[0]))
         articles = news_df['content'].to_list()
 
         ner_news_df = pl.DataFrame()
@@ -157,9 +183,11 @@ def calculate_ner(news_df, ner_function):
         print(f"An error occurred during NER calculation: {e}")
         return None
 
-def arrange_datasets(news_df, ner_news_df):
+
+def arrange_datasets(max_index, news_df, ner_news_df):
+    # Refactor this function
     try:
-        index = list(range(1, news_df.shape[0] + 1))
+        index = list(range(max_index + 1, max_index + 1 + news_df.shape[0]))
         news_df = news_df.with_columns(pl.Series("index", index))
 
         ner_news_df = ner_news_df.join(news_df[['link', 'content_hash', 'index']], on='index', how='left')
@@ -170,10 +198,33 @@ def arrange_datasets(news_df, ner_news_df):
             'state', 'city','content_hash', 'content_nchar'
         ])
 
+        arranged_news_df = (
+            arranged_news_df.with_columns([
+                pl.col("content_hash").cast(pl.Utf8), 
+                pl.col("date_extract").cast(pl.Utf8), 
+                pl.col("date_article").cast(pl.Utf8), 
+                pl.concat_str(
+                    [
+                        pl.col('state'),
+                        pl.col('city'),
+                        pl.col("title"),
+                        pl.col("summary_llm"),
+                    ],
+                    separator=" ",
+                ).alias("tit_summary"),
+            ])    
+        )
+
         arranged_ner_df = ner_news_df.select(
             [
                 'index', 'link', 'content_hash', 'entity_group', 'score', 'word', 'start', 'end'
             ]
+        )
+
+        arranged_ner_df = (
+            arranged_ner_df.with_columns([
+                pl.col("content_hash").cast(pl.Utf8)
+            ])    
         )
 
         return arranged_news_df, arranged_ner_df
@@ -181,15 +232,35 @@ def arrange_datasets(news_df, ner_news_df):
         print(f"An error occurred during dataset arrangement: {e}")
         return None, None
 
-def load_data():
-    # Step 1: Get the list of all files with the specific pattern
-    files = glob.glob('output/news_narcotráfico_related_*.csv')
+def compute_embeddings(text, model):
+    try:
+        from sentence_transformers import SentenceTransformer
+        model = SentenceTransformer('sentence-transformers/all-MiniLM-L6-v2')
+        return model.encode(text)
+    except Exception as e:
+        print(f"An error occurred while computing embeddings: {e}")
+        return None
 
-    # Step 2: Extract dates and sort them
-    files_sorted = sorted(files, key=lambda x: datetime.strptime(x.split('_')[-2] + '_' + x.split('_')[-1][:-4], '%Y-%m-%d_%H%M'))
+def process_documents(collection,  model):
+    try:
+        
+        # Query to find documents without the 'embeddings' field
+        query = {'embeddings': {'$exists': False}}
 
-    # Step 3: Read the latest file
-    latest_file = files_sorted[0]
-    df = pl.read_csv(latest_file, dtypes={'content_hash': pl.UInt64})
+        # Find the documents without the 'embeddings' field
+        documents = collection.find(query)
 
-    return df
+        for document in documents:
+            # Extract the text you want to embed
+            text = document['tit_summary']
+
+            # Compute the embeddings
+            embeddings = compute_embeddings(text, model)
+
+            if embeddings is not None:
+                # Update the document with the embeddings
+                update_query = {'_id': document['_id']}
+                new_values = {'$set': {'embeddings': embeddings.tolist()}}
+                collection.update_one(update_query, new_values)
+    except Exception as e:
+        print(f"An error occurred while processing documents: {e}")
