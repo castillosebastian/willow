@@ -1,6 +1,7 @@
 import polars as pl
 import glob
 from tqdm import tqdm
+from datetime import datetime
 from pymongo import MongoClient
 from sentence_transformers import SentenceTransformer
 from transformers import AutoModelForSeq2SeqLM, AutoTokenizer
@@ -26,7 +27,23 @@ def load_rawdata(topic = 'narcotráfico'):
 
     df = pl.read_csv(oldest_file, dtypes={"content_hash": pl.UInt64})
 
-    return df
+    return df, oldest_file
+
+def list_rawdata(topic = 'narcotráfico'):
+   
+    # Step o
+    dir = 'output/news_' + topic + '_related_*.csv'
+    
+    # Step 1: Get the list of all files with the specific pattern
+    files = glob.glob(dir)
+
+    # Step 2: Extract dates and sort them
+    files_sorted = sorted(files, key=lambda x: datetime.datetime.strptime(x.split('_')[-2] + '_' + x.split('_')[-1][:-4], '%Y-%m-%d_%H%M'))
+
+    return files_sorted
+
+def load_file(filepath):   
+    return pl.read_csv(filepath, dtypes={"content_hash": pl.UInt64})
 
 def clean_dataframe(df, replace_white_lines=True):
     try:

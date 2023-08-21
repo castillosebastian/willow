@@ -1,6 +1,8 @@
 import polars as pl
 import numpy as np
 import re
+import shutil
+import os
 from nltk.stem.snowball import SnowballStemmer
 from gensim.models.keyedvectors import KeyedVectors
 from bs4 import BeautifulSoup
@@ -157,3 +159,25 @@ def extract_text(html):
 
 def view_string(long_string, chunk_size=100):     
     return [long_string[i:i+chunk_size] for i in range(0, len(long_string), chunk_size)]
+
+
+
+def move_to_archive(filename):
+    source_path = os.path.join('output', filename)
+    destination_path = os.path.join('archive', filename)
+
+    try:
+        # Create the 'archive' directory if it doesn't exist
+        os.makedirs('archive', exist_ok=True)
+
+        # Move the file
+        shutil.move(source_path, destination_path)
+        print(f"File {filename} moved to archive successfully!")
+    except FileNotFoundError:
+        print(f"File {filename} not found in the output directory.")
+    except PermissionError:
+        print(f"Permission denied while moving the file {filename}.")
+    except Exception as e:
+        print(f"An unexpected error occurred while moving the file {filename}: {e}")
+
+
