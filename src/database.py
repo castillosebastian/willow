@@ -16,7 +16,7 @@ def get_max_index(collection):
     return max_index
 
 
-def format_data(df):
+def format_news(df):
     try:
         # Transform 'date_extract' to Date type
         df = df.with_columns(pl.col('date_extract').str.strptime(pl.Date, format='%Y-%m-%d'))
@@ -63,7 +63,7 @@ def get_news(collection, start_date, end_date, topic=None, embed=False):
     try:
         result = list(collection.find(query, projection))
         result = pl.DataFrame(result)
-        return format_data(result) # Assuming format_data is a function that formats the result
+        return format_news(result) # Assuming format_data is a function that formats the result
     except Exception as e:
         print("An error occurred while querying the documents:", str(e))
         return None
@@ -94,7 +94,7 @@ def get_news_byindex(collection, index_start, index_end, topic=None, embed=False
     try:
         result = list(collection.find(query, projection))
         result = pl.DataFrame(result)
-        return format_data(result)
+        return format_news(result)
     except Exception as e:
         print("An error occurred while querying the documents:", str(e))
         return None
