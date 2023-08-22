@@ -161,9 +161,9 @@ def view_string(long_string, chunk_size=100):
     return [long_string[i:i+chunk_size] for i in range(0, len(long_string), chunk_size)]
 
 
-
 def move_to_archive(filename):
-    source_path = os.path.join('output', filename)
+    filename = filename[7:]
+    source_path = os.path.join('output', filename)    
     destination_path = os.path.join('archive', filename)
 
     try:
@@ -179,5 +179,3 @@ def move_to_archive(filename):
         print(f"Permission denied while moving the file {filename}.")
     except Exception as e:
         print(f"An unexpected error occurred while moving the file {filename}: {e}")
-
-
