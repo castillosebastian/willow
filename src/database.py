@@ -41,12 +41,18 @@ def format_data(df):
     return df
 
 
-def get_docs(collection, topic, start_date, end_date, embed=False):
+def get_news(collection, start_date, end_date, topic=None, embed=False):
+    
     # Construct the query
-    query = {
-        "topic": {'$regex': topic, '$options': 'i'},
-        "date_extract": {'$gte': start_date, '$lt': end_date}
-    }
+    if topic:
+        query = {
+            "topic": {'$regex': topic, '$options': 'i'},
+            "date_extract": {'$gte': start_date, '$lt': end_date}
+        }
+    else: 
+        query = {           
+            "date_extract": {'$gte': start_date, '$lt': end_date}
+        }
 
     # Construct the projection to exclude '_id', and optionally 'embeddings'
     projection = {'_id': 0, 'level_0': 0}
@@ -62,17 +68,22 @@ def get_docs(collection, topic, start_date, end_date, embed=False):
         print("An error occurred while querying the documents:", str(e))
         return None
 
-def get_docs_byindex(collection, topic, index_start, index_end, embed=False):
+def get_news_byindex(collection, index_start, index_end, topic=None, embed=False):
     
     # Convert the date strings to datetime objects
     #start_date = datetime.strptime(start_date, "%Y-%m-%d")
     #end_date = datetime.strptime(end_date, "%Y-%m-%d")
 
     # Construct the query
-    query = {
-        "topic": {'$regex': topic, '$options': 'i'},
-        "index": {'$gte': index_start, '$lte': index_end}
-    }
+    if topic:
+        query = {
+            "topic": {'$regex': topic, '$options': 'i'},
+            "index": {'$gte': index_start, '$lte': index_end}
+        }
+    else: 
+        query = {           
+            "index": {'$gte': index_start, '$lte': index_end}
+        }
 
     # Construct the projection to exclude '_id', and optionally 'embeddings'
     projection = {'_id': 0, 'level_0': 0}
@@ -84,6 +95,25 @@ def get_docs_byindex(collection, topic, index_start, index_end, embed=False):
         result = list(collection.find(query, projection))
         result = pl.DataFrame(result)
         return format_data(result)
+    except Exception as e:
+        print("An error occurred while querying the documents:", str(e))
+        return None
+
+def get_ner_byindex(collection, df):
+    # Extract 'index' values from polars 'df' to query collection
+    index_values = df['index'].to_list()
+    
+    # Construct the query using the 'index' values
+    query = {"index": {'$in': index_values}}
+
+    # Projection can be adjusted as needed, for now, excluding '_id'
+    projection = {'_id': 0, 'level_0': 0}
+
+    # Execute the query
+    try:
+        result = list(collection.find(query, projection))
+        result = pl.DataFrame(result)
+        return result
     except Exception as e:
         print("An error occurred while querying the documents:", str(e))
         return None
