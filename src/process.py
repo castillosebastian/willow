@@ -1,6 +1,7 @@
 import polars as pl
 import pandas as pd
 import numpy as np
+import matplotlib.pyplot as plt
 import sys
 from IPython.display import Markdown
 from tabulate import tabulate
@@ -60,8 +61,24 @@ def get_news_stat(news, newsner):
 
     try:
         # Step 4: Combine the dataframes
-        newstat = noticias_xprov.join(pivot_result, on='state', how='left')
+        newstat = noticias_xprov.join(pivot_result, on='state', how='left')     
+        newstat = newstat.select(
+            [
+                'state', 'cantidad_noticias', 'personas', 'lugares',
+                'organizaciones', 'varios'
+            ]
+        ).rename({'state': 'provincia'})
+        
     except Exception as e:
         raise Exception(f"Error in Step 4: {str(e)}")
     
     return news, newsner, newstat
+
+def plot_dataframe(df, x_col, y_col, x_label, y_label, title, color='skyblue', figsize=[10,6]):
+    plt.figure(figsize=figsize)
+    plt.barh(df[y_col].to_list(), df[x_col].to_list(), color=color)
+    plt.title(title)
+    plt.ylabel(y_label)
+    plt.xlabel(x_label)
+    plt.tight_layout()
+    plt.show()

@@ -1,5 +1,5 @@
 ---
-title: "Análisis de la cobertura en medios digitales del tema: Narcotráfico'"
+title: "Análisis de la cobertura en medios digitales del tema: 'Narcotráfico'"
 author:
 - familyname: Castillo
   othernames: Diego F
@@ -24,12 +24,13 @@ execute:
   warning: false
   message: false
 ---
-
 ```{python}
 #| tags: [parameters]
 start_date = "2023-08-17"
 end_date = "2023-09-01"
 topic = "narcotráfico"
+n_medios = 72
+
 ```
 
 ```{python}
@@ -40,26 +41,55 @@ from database import *
 from process import *
 ```
 
-
 ```{python}
 collection_news = get_collection(host='mongodb://localhost:27017/', db_name='wdocuments', collection_name='news')
 news = get_news(collection_news, start_date, end_date, topic, embed=False)
 
 collection_newsner = get_collection(host='mongodb://localhost:27017/', db_name='wdocuments', collection_name='newsner')
 newsner = get_ner_byindex(collection_newsner, news)
+# Processing
+news = consolidate_news(news)
+newsp, newsnerp, newstat = get_news_stat(news, newsner)
+# Tables
+stat_xprovincia = newstat.to_pandas()
+stat_xprovincia.index = np.arange(1, len(stat_xprovincia) + 1)
+```
+
+```{python} 
 
 ```
 
-# Prueba de Concepto: listado de noticias
+# Intoducción
 
-<!-- In a famous paper, @BC64 introduced a family of transformations \dots -->
+En este documento presentamos un análisis de la cobertura realizada sobre el tema **narcotráfico** en los últimos 15 días por medios digitales. Los 72 medios incluidos en nuestra base de seguimiento incluyen portales de noticias de todas las provincias, permitiendo una cobertura nacional al estudio. Dicho listado se puede ampliar o reconfigurar a demanda según necesidades particulares de nuestros clientes.
+
+En lo que respecta a metodología empleamos *búsqueda semántica* y *algoritmos inteligentes* para el procesamiento de información. El resultado del documento debe brindar una conocimiento sistemático y actualizado del tópico en estudio, con acceso a datos desagregados sobre eventos, personas, lugares y organizaciones asociadas al tema {topico}. En esta versión inicial de nuestro análisis nos concentramos en la presentación de los datos recuperados, dejando para las próximas entregas estudios más avanzados sobre modelos, patrones y proyecciones. 
 
 ```{python}
-df_table = news.select(['index', 'title']).to_pandas()
+#| label: graph-stat
+#| fig-cap: "Cantidad de noticias por Provincia"
 
+plot_dataframe(newstat, 
+               x_col="cantidad_noticias", 
+               y_col="provincia", 
+               x_label="Cantidad de Noticias", 
+               y_label="Provincias", 
+               title="Cantidad de Noticias por Provincia")
+```
+
+
+# Estadística de Noticias por Provincia
+
+En esta tabla presentamos un listado ordenado de la cantidad de noticias recuperadas por provincia. Agregamos también la cantidad de entidades obtenidas en el *etiquetado* de los artículos, clasificadas como *personas*, *lugares*, *organizaciones* y *varios*. Estos elementos permiten identificar y eventualmente recuperar entidades reiteradas. Resaltamos que las entidades fueron clasificadas utilizando estrictamente sus características linguísticas, y muchas de ellas tienen un alto grado de certeza. Sin perjuicio dello, para poder relacionar de forma indubitable estas entidades con entidades físicas es preciso cruzar los datos textuales con otros datos. Tarea que reservamos para estudios particulares.   
+
+```{python}
 Markdown(tabulate(
-  df_table, 
-  headers=["Astronomical object","mass (kg)"]
+  stat_xprovincia,
+  headers=["provincia","cantidad_noticias", "personas", "lugares", "organizaciones", "varios"]
 ))
 
 ```
+
+
+
+<!-- In a famous paper, @BC64 introduced a family of transformations \dots -->
