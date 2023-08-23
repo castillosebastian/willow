@@ -1,0 +1,52 @@
+---
+title: "Seguimiento de noticias vinculadas a 'Narcotráfico'"
+author:
+- familyname: Castillo
+  othernames: Diego F
+  qualifications: Inteligencia Estratégica
+- familyname: Castillo
+  othernames: Claudio S
+  qualifications: Investigación y Desarrollo
+email: castilloclaudiosebastian@gmail.com
+phone: (54) 9-11-26794601
+department: Consulting
+organization: Willow - Semantic Technologies
+number-sections: true
+fig-height: 5
+fig-width: 8
+cite-method: biblatex
+bibliography: references.bib
+biblio-style: authoryear-comp
+linestretch: 1.5
+format: report-pdf
+execute:
+  echo: false
+  warning: false
+  message: false
+---
+```{python}
+import sys
+from IPython.display import Markdown
+from tabulate import tabulate
+import pandas as pd
+import polars as pl
+sys.path.append('../src')
+from database import *
+news = get_collection(host='mongodb://localhost:27017/', db_name='wdocuments', collection_name='news')
+
+```
+
+# Prueba de Concepto: listado de noticias
+
+<!-- In a famous paper, @BC64 introduced a family of transformations \dots -->
+
+```{python}
+df = get_news(news, "2023-08-16", "2023-08-22", 'narcotráfico', embed=False)
+df_table = df.select(['index', 'title']).to_pandas()
+
+Markdown(tabulate(
+  df_table, 
+  headers=["Astronomical object","mass (kg)"]
+))
+
+```

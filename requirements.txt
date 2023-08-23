@@ -36,3 +36,7 @@ dash
 pymongo
 newsapi-python
 glob2
+nbformat
+nbclient
+tabulate
+ipython
