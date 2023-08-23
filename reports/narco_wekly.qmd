@@ -50,9 +50,14 @@ newsner = get_ner_byindex(collection_newsner, news)
 # Processing
 news = consolidate_news(news)
 newsp, newsnerp, newstat = get_news_stat(news, newsner)
-# Tables
+# Tabla de Estadística por Provincia
 stat_xprovincia = newstat.to_pandas()
 stat_xprovincia.index = np.arange(1, len(stat_xprovincia) + 1)
+#sum_row = stat_xprovincia.select_dtypes(include=['number']).sum()
+#stat_xprovincia = stat_xprovincia.append(sum_row, ignore_index=True)
+#stat_xprovincia.fillna("", inplace=True)
+
+
 ```
 
 ```{python} 
@@ -61,9 +66,9 @@ stat_xprovincia.index = np.arange(1, len(stat_xprovincia) + 1)
 
 # Intoducción
 
-En este documento presentamos un análisis de la cobertura realizada sobre el tema **narcotráfico** en los últimos 15 días por medios digitales. Los 72 medios incluidos en nuestra base de seguimiento incluyen portales de noticias de todas las provincias, permitiendo una cobertura nacional al estudio. Dicho listado se puede ampliar o reconfigurar a demanda según necesidades particulares de nuestros clientes.
+En este documento presentamos un análisis de la cobertura realizada sobre el tema **narcotráfico** en los últimos 15 días por medios digitales. Los 72 medios incluidos en nuestra base de seguimiento incluyen portales de noticias de todas las provincias, dando cobertura nacional al estudio. Dicho listado se puede ampliar o reconfigurar a demanda según necesidades particulares de nuestros clientes.
 
-En lo que respecta a metodología empleamos *búsqueda semántica* y *algoritmos inteligentes* para el procesamiento de información. El resultado del documento debe brindar una conocimiento sistemático y actualizado del tópico en estudio, con acceso a datos desagregados sobre eventos, personas, lugares y organizaciones asociadas al tema {topico}. En esta versión inicial de nuestro análisis nos concentramos en la presentación de los datos recuperados, dejando para las próximas entregas estudios más avanzados sobre modelos, patrones y proyecciones. 
+En lo que respecta a metodología empleamos *búsqueda semántica* y *algoritmos inteligentes* para el procesamiento de información. El resultado del documento debe brindar un conocimiento sistemático y actualizado del tópico en estudio bajo el **enfoque de los medios de comunicación**, con acceso a datos desagregados sobre eventos, personas, lugares y organizaciones asociadas al tema. En esta versión inicial de nuestro análisis nos concentramos en la presentación de los datos recuperados, dejando para solicitudes particulares estudios más avanzados sobre modelos, patrones y proyecciones. 
 
 ```{python}
 #| label: graph-stat

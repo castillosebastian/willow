@@ -69,6 +69,7 @@ def get_news_stat(news, newsner):
             ]
         ).rename({'state': 'provincia'})
         
+                
     except Exception as e:
         raise Exception(f"Error in Step 4: {str(e)}")
     
