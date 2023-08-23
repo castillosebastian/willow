@@ -1,5 +1,5 @@
 ---
-title: "Seguimiento de noticias vinculadas a 'Narcotráfico'"
+title: "Análisis de la cobertura en medios digitales del tema: Narcotráfico'"
 author:
 - familyname: Castillo
   othernames: Diego F
@@ -24,15 +24,29 @@ execute:
   warning: false
   message: false
 ---
+
+```{python}
+#| tags: [parameters]
+start_date = "2023-08-17"
+end_date = "2023-09-01"
+topic = "narcotráfico"
+```
+
 ```{python}
 import sys
-from IPython.display import Markdown
-from tabulate import tabulate
-import pandas as pd
-import polars as pl
 sys.path.append('../src')
+from process import *
 from database import *
-news = get_collection(host='mongodb://localhost:27017/', db_name='wdocuments', collection_name='news')
+from process import *
+```
+
+
+```{python}
+collection_news = get_collection(host='mongodb://localhost:27017/', db_name='wdocuments', collection_name='news')
+news = get_news(collection_news, start_date, end_date, topic, embed=False)
+
+collection_newsner = get_collection(host='mongodb://localhost:27017/', db_name='wdocuments', collection_name='newsner')
+newsner = get_ner_byindex(collection_newsner, news)
 
 ```
 
@@ -41,8 +55,7 @@ news = get_collection(host='mongodb://localhost:27017/', db_name='wdocuments', c
 <!-- In a famous paper, @BC64 introduced a family of transformations \dots -->
 
 ```{python}
-df = get_news(news, "2023-08-16", "2023-08-22", 'narcotráfico', embed=False)
-df_table = df.select(['index', 'title']).to_pandas()
+df_table = news.select(['index', 'title']).to_pandas()
 
 Markdown(tabulate(
   df_table, 

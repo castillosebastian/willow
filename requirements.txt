@@ -40,3 +40,5 @@ nbformat
 nbclient
 tabulate
 ipython
+geopandas
+gmplot
