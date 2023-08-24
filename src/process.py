@@ -84,7 +84,7 @@ def get_news_stat(news, newsner):
 
 def plot_dataframe(df, x_col, y_col, x_label, y_label, title, color='skyblue', figsize=[10,6]):
     # Filtering out rows where 'provincia' is 'Total'    
-    df = df[df['provincia'].str.contains('Total', case=False)]
+    df = df[~df['provincia'].str.contains('Total', case=False)]
 
     plt.figure(figsize=figsize)
     plt.barh(df[y_col], df[x_col], color=color)
