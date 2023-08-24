@@ -49,14 +49,10 @@ collection_newsner = get_collection(host='mongodb://localhost:27017/', db_name='
 newsner = get_ner_byindex(collection_newsner, news)
 # Processing
 news = consolidate_news(news)
-newsp, newsnerp, newstat = get_news_stat(news, newsner)
 # Tabla de Estadística por Provincia
-stat_xprovincia = newstat.to_pandas()
-stat_xprovincia.index = np.arange(1, len(stat_xprovincia) + 1)
-#sum_row = stat_xprovincia.select_dtypes(include=['number']).sum()
-#stat_xprovincia = stat_xprovincia.append(sum_row, ignore_index=True)
-#stat_xprovincia.fillna("", inplace=True)
-
+newstat = get_news_stat(news, newsner)
+# Tabla de noticas
+table_news = table_news(news, type='abstract')
 
 ```
 
@@ -89,12 +85,21 @@ En esta tabla presentamos un listado ordenado de la cantidad de noticias recuper
 
 ```{python}
 Markdown(tabulate(
-  stat_xprovincia,
+  newstat,
   headers=["provincia","cantidad_noticias", "personas", "lugares", "organizaciones", "varios"]
 ))
 
 ```
 
+# Table de Noticias
+
+```{python}
+Markdown(tabulate(
+  table_news,
+  headers=['Ref.Art.','Pcia_Estado','fecha_art','portal','autores','titular','resumen']
+))
+
+```
 
 
 <!-- In a famous paper, @BC64 introduced a family of transformations \dots -->

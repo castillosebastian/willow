@@ -210,7 +210,7 @@ def main(
                         "title": titles,
                         "summary": sumaries,
                         "authors": authors,
-                        "portal": url,
+                        "portal": links, # extract portal of links
                         "state": state_list,
                         "city": cities_list
                     }
