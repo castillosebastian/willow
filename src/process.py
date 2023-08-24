@@ -150,5 +150,6 @@ def table_news(news, type = 'abstract'):
             raise Exception(f"Error in table news abstract: {str(e)}")
     
     table = table.to_pandas()    
+    table['fecha_art'] = table['fecha_art'].dt.strftime('%Y-%m-%d')
 
     return table.reset_index(drop=True)

@@ -17,7 +17,7 @@ fig-width: 8
 cite-method: biblatex
 bibliography: references.bib
 biblio-style: authoryear-comp
-linestretch: 1.5
+linestretch: 1 # alternative 1.5
 format: report-pdf
 execute:
   echo: false
@@ -95,7 +95,7 @@ Markdown(tabulate(
 
 ```{python}
 Markdown(tabulate(
-  table_news,
+  table_news.reset_index(drop=True),
   headers=['Ref.Art.','Pcia_Estado','fecha_art','portal','autores','titular','resumen']
 ))
 
@@ -103,3 +103,4 @@ Markdown(tabulate(
 
 
 <!-- In a famous paper, @BC64 introduced a family of transformations \dots -->
+<!-- : Manually changed {tbl-colwidths="[50,50]"} -->
