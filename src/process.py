@@ -122,7 +122,7 @@ def table_news(news, type = 'abstract'):
             table = (
                 table.with_columns(
                     pl.when(pl.col("portal") == 'argentina')
-                    .then(pl.lit('Gendarmería Nacional'))
+                    .then(pl.lit('Gendarmería'))
                     .otherwise(pl.col("portal"))
                     .alias("portal"),           
                 )
