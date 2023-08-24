@@ -48,6 +48,7 @@ collection_newsner = get_collection(host='mongodb://localhost:27017/', db_name='
 newsner = get_ner_byindex(collection_newsner, news)
 # Processing
 news = consolidate_news(news)
+newsner = consolidate_ner(newsner)
 # Tabla de Estadística por Provincia
 newstat = get_news_stat(news, newsner)
 # Tabla de noticas
@@ -107,9 +108,11 @@ Markdown(tabulate(
 
 # Resumen de noticias por ubicación y fecha de publicación
 
+La siguiente tabla presenta las noticias: su ubicación (generalmente provincia desde donde se publica), fecha, titular con el que se publicó en el portal y resumen del artículo (producido por nosotros). El número que aparece en la columna **Ref.Art** es el número de referencia para individualizar el artículo a lo largo de este documento (y en nuestra base de datos).   
+
 ```{python}
-#| label: table-news
-#| fig-cap: "Noticias"
+#| label: tbl-news
+#| tbl-cap: Noticias
 Markdown(tabulate(
   table_news.reset_index(drop=True),
   headers=['Ref.Art.','Pcia/ot','fecha_art','titular','resumen'],  

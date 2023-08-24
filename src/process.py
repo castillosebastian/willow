@@ -16,6 +16,21 @@ def consolidate_news(news):
     
     return news
 
+def consolidate_ner(newsner):
+    try:        
+        newsner = (
+            newsner.with_columns(
+                pl.col('word').str.replace_all(r'[^\w\s]', ' ').str.strip().alias('word')
+            )
+        )
+        newsner = (
+            newsner
+            .filter((pl.col('word') != ''))                    
+        )
+    except Exception as e:
+        raise Exception(f"Error in consolidation step: {str(e)}")    
+    return newsner
+
 def get_news_stat(news, newsner):
     try:
         # Step 1: Transformation on 'news' dataframe
@@ -31,6 +46,7 @@ def get_news_stat(news, newsner):
     try:
         # Step 2: Transformation on 'newsner' dataframe
         newsner = newsner.join(news.select(['index', 'state']), on='index', how='left')
+        
         result = (
             newsner
             .filter((pl.col("state").is_not_null()) & (pl.col("state") != "Argentina"))
