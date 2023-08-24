@@ -169,3 +169,41 @@ def table_news(news, type = 'abstract'):
     table['fecha_art'] = table['fecha_art'].dt.strftime('%Y-%m-%d')
 
     return table.reset_index(drop=True)
+
+
+def table_ner(newsner):
+
+    try:
+        newsner = newsner.to_pandas()
+
+        newsner = (
+            newsner.groupby(['index', 'entity_group'])['word']
+            .apply(lambda x: '; '.join(x))
+            .reset_index()
+        )
+
+        newsner = newsner.pivot(index='index', 
+                                columns='entity_group', 
+                                values='word').reset_index()
+        
+         # Drop the 'entity_group' column
+        #newsner = newsner.drop(columns=['entity_group'])
+
+        # Rename the columns
+        newsner = newsner.rename(columns={
+            'index': 'Ref.art',
+            'LOC': 'lugares',
+            'MISC': 'varios',
+            'ORG': 'organizaciones',
+            'PER': 'personas'
+        })
+
+        # Reorder the columns
+        newsner = newsner[['Ref.art', 'personas', 'lugares', 'organizaciones', 'varios']]
+
+    except Exception as e:
+            raise Exception(f"Error in table  ner: {str(e)}")
+    
+    #newsner = newsner.drop(columns=['entity_group'])
+    
+    return newsner

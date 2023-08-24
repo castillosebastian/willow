@@ -54,6 +54,12 @@ newstat = get_news_stat(news, newsner)
 # Tabla de noticas
 table_news = table_news(news, type='abstract')
 table_news.drop(columns=['autores', 'portal'], inplace=True)
+# Tabla ner
+table_ner = table_ner(newsner)
+table_ner = table_ner.drop(columns=['varios'])
+table_ner_personas = table_ner[['Ref.art','personas']]
+table_ner_lugares = table_ner[['Ref.art','lugares']]
+table_ner_organizaciones = table_ner[['Ref.art','organizaciones']]
 
 ```
 
@@ -121,6 +127,54 @@ Markdown(tabulate(
 ))
 
 ```
+
+# Extracción de personas por noticia
+
+La próxima tabla muestra las entidades compatibles con **personas**. El número que aparece en la columna **Ref.Art** es el número de referencia para individualizar el artículo cuyo contendio detallamos en la tabla 2.   
+
+```{python}
+#| label: tbl-ner-personas
+#| tbl-cap: Entidades-Personas
+Markdown(tabulate(
+  table_ner_personas.reset_index(drop=True),
+  headers=['Ref.Art.','personas'],  
+  showindex=False,
+  maxcolwidths=[1, 80],
+))
+```
+
+# Extracción de lugares por noticia
+
+La próxima tabla muestra las entidades compatibles con **lugares**. El número que aparece en la columna **Ref.Art** es el número de referencia para individualizar el artículo cuyo contendio detallamos en la tabla 2.   
+
+```{python}
+#| label: tbl-ner-lugares
+#| tbl-cap: Entidades-Lugares
+Markdown(tabulate(
+  table_ner_lugares.reset_index(drop=True),
+  headers=['Ref.Art.','lugares'],  
+  showindex=False,
+  maxcolwidths=[1, 80],
+))
+```
+
+
+# Extracción de organizaciones por noticia
+
+La próxima tabla muestra las entidades compatibles con **organizaciones**. El número que aparece en la columna **Ref.Art** es el número de referencia para individualizar el artículo cuyo contendio detallamos en la tabla 2.   
+
+```{python}
+#| label: tbl-ner-organizaciones
+#| tbl-cap: Entidades-Organizaciones
+Markdown(tabulate(
+  table_ner_organizaciones.reset_index(drop=True),
+  headers=['Ref.Art.','organizaciones'],  
+  showindex=False,
+  maxcolwidths=[1, 80],
+))
+```
+
+
 
 ```{python} 
 
