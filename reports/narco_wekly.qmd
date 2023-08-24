@@ -76,7 +76,7 @@ En este documento presentamos un análisis de la cobertura realizada sobre el te
 ))
 ```
 
-En lo que respecta a metodología empleamos *búsqueda semántica* y *algoritmos inteligentes* para el procesamiento de información. El resultado del documento debe brindar un conocimiento sistemático y actualizado del tópico en estudio bajo el **enfoque de los medios de comunicación**, con acceso a datos desagregados sobre eventos, personas, lugares y organizaciones asociadas al tema. En esta versión inicial de nuestro análisis nos concentramos en la presentación de los datos recuperados, dejando para solicitudes particulares estudios más avanzados sobre modelos, patrones y proyecciones. 
+En lo que respecta a metodología empleamos *búsqueda semántica* y *algoritmos inteligentes* para el procesamiento de información. El resultado del documento debe brindar un conocimiento sistemático y actualizado del tópico en estudio bajo el **enfoque de los medios de comunicación**, con acceso a datos desagregados sobre eventos, personas, lugares y organizaciones asociadas al tema. En esta versión inicial de nuestro análisis nos concentramos en la presentación de los datos recuperados (ver: @tbl-news), dejando para solicitudes particulares estudios más avanzados sobre modelos, patrones y proyecciones. 
 
 ```{python}
 #| label: graph-stat
@@ -102,7 +102,7 @@ En esta tabla presentamos un listado ordenado de la cantidad de noticias recuper
 ))
 ```
 
-Agregamos también la cantidad de entidades obtenidas en el *etiquetado* de los artículos, clasificadas como *personas*, *lugares*, *organizaciones* y *varios*. Estos elementos permiten identificar y eventualmente recuperar entidades reiteradas. Resaltamos que las entidades fueron clasificadas utilizando estrictamente sus características linguísticas, y muchas de ellas tienen un alto grado de certeza. Sin perjuicio dello, para poder relacionar de forma indubitable estas entidades con entidades físicas es preciso cruzar los datos textuales con otros datos. Tarea que reservamos para estudios particulares.   
+Agregamos también la cantidad de entidades obtenidas en el *etiquetado* de los artículos, clasificadas como *personas* (@tbl-ner-personas), *lugares* (@tbl-ner-lugares), *organizaciones* (@tbl-ner-organizaciones). Otras entidades pueden extraerse bajo procesamientos específicos. Todas estas entidades permiten identificar y eventualmente recuperar entidades reiteradas. Resaltamos que las entidades fueron clasificadas utilizando estrictamente sus características linguísticas, y muchas de ellas tienen un alto grado de certeza. Sin perjuicio dello, para poder relacionar de forma indubitable estas entidades con entidades físicas es preciso cruzar los datos textuales con otros datos. Tarea que reservamos para estudios particulares.   
 
 ```{python}
 #| label: tbl-newstat
