@@ -128,7 +128,7 @@ def table_news(news, type = 'abstract'):
             table = (
                 table.select(
                 [
-                    'index', 'state', 'date_article', 'portal', 'authors', 'title', 'summary_llm'
+                    'index', 'state', 'date_article', 'portal', 'authors', 'title', 'summary_llm', 'link'
                 ]
                 )
                 .sort(["state", "date_article"])
@@ -167,7 +167,8 @@ def table_news(news, type = 'abstract'):
     
     table = table.to_pandas()    
     table['fecha_art'] = table['fecha_art'].dt.strftime('%Y-%m-%d')
-
+    table['hyperlink'] = table['link'].apply(lambda x: f'\\href{{{x}}}{{link}}') 
+    
     return table.reset_index(drop=True)
 
 

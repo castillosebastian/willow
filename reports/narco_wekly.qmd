@@ -53,7 +53,7 @@ newsner = consolidate_ner(newsner)
 newstat = get_news_stat(news, newsner)
 # Tabla de noticas
 table_news = table_news(news, type='abstract')
-table_news.drop(columns=['autores', 'portal'], inplace=True)
+table_news.drop(columns=['autores', 'portal', 'link'], inplace=True)
 # Tabla ner
 table_ner = table_ner(newsner)
 table_ner = table_ner.drop(columns=['varios'])
@@ -105,6 +105,8 @@ En esta tabla presentamos un listado ordenado de la cantidad de noticias recuper
 Agregamos también la cantidad de entidades obtenidas en el *etiquetado* de los artículos, clasificadas como *personas*, *lugares*, *organizaciones* y *varios*. Estos elementos permiten identificar y eventualmente recuperar entidades reiteradas. Resaltamos que las entidades fueron clasificadas utilizando estrictamente sus características linguísticas, y muchas de ellas tienen un alto grado de certeza. Sin perjuicio dello, para poder relacionar de forma indubitable estas entidades con entidades físicas es preciso cruzar los datos textuales con otros datos. Tarea que reservamos para estudios particulares.   
 
 ```{python}
+#| label: tbl-newstat
+#| tbl-cap: Resumen_Extracción
 Markdown(tabulate(
   newstat,
   headers=["provincia","cantidad_noticias", "personas", "lugares", "organizaciones", "varios"]
@@ -114,16 +116,16 @@ Markdown(tabulate(
 
 # Resumen de noticias por ubicación y fecha de publicación
 
-La siguiente tabla presenta las noticias: su ubicación (generalmente provincia desde donde se publica), fecha, titular con el que se publicó en el portal y resumen del artículo (producido por nosotros). El número que aparece en la columna **Ref.Art** es el número de referencia para individualizar el artículo a lo largo de este documento (y en nuestra base de datos).   
+La siguiente tabla presenta las noticias: su ubicación (generalmente provincia desde donde se publica), fecha, titular con el que se publicó en el portal y resumen del artículo (producido por nosotros). El número que aparece en la columna **Ref.Art** es el número de referencia para individualizar el artículo a lo largo de este documento (y en nuestra base de datos) y el **link** es el enlace al artículo del que se extrajo la información (si permanece en línea).
 
 ```{python}
 #| label: tbl-news
 #| tbl-cap: Noticias
 Markdown(tabulate(
   table_news.reset_index(drop=True),
-  headers=['Ref.Art.','Pcia/ot','fecha_art','titular','resumen'],  
+  headers=['Ref.Art.','Pcia/ot','fecha_art','titular','resumen', 'link'],  
   showindex=False,
-  maxcolwidths=[1, 10, None, 17, 38],
+  maxcolwidths=[1, 10, None, 15, 30, None],
 ))
 
 ```
