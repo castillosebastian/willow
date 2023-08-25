@@ -117,3 +117,38 @@ def get_ner_byindex(collection, df):
     except Exception as e:
         print("An error occurred while querying the documents:", str(e))
         return None
+    
+def delete_many(collection, index_start, index_end, topic=None):
+    # Construct the query
+    if topic:
+        query = {
+            "topic": {'$regex': topic, '$options': 'i'},
+            "index": {'$gte': index_start, '$lte': index_end}
+        }
+    else: 
+        query = {
+            "index": {'$gte': index_start, '$lte': index_end}
+        }
+
+    # Execute the delete query
+    try:
+        result = collection.delete_many(query)
+        print(f"{result.deleted_count} documents were deleted.")
+    except Exception as e:
+        print("An error occurred while deleting the documents:", str(e))
+
+def delete_one(collection, index):
+    # Construct the query
+    query = {
+        "index": index
+    }
+
+    # Execute the delete query
+    try:
+        result = collection.delete_one(query)
+        if result.deleted_count == 1:
+            print(f"One document was deleted with index {index}.")
+        else:
+            print(f"No documents were found with index {index}.")
+    except Exception as e:
+        print("An error occurred while deleting the document:", str(e))

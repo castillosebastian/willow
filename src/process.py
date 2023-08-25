@@ -13,6 +13,7 @@ def consolidate_news(news):
     try:
         # Removing duplicates based on 'content_hash'
         news = news.unique(subset=['content_hash'])
+        news = news.unique(subset=['link'])
     except Exception as e:
         raise Exception(f"Error in consolidation step: {str(e)}")
     

@@ -7850,3 +7850,281 @@ UnboundLocalError: local variable 'date' referenced before assignment
 2023-08-23 14:21:12,110-etl_transform.py-INFO-Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
 2023-08-23 14:21:12,329-etl_transform.py-INFO-Use pytorch device: cpu
 2023-08-23 14:21:12,438-etl_transform.py-INFO--START:2023-08-23 14:07:36 - END:2023-08-23 14:21:12
+2023-08-24 17:42:56,254-etl_extract.py-INFO-loading projection weights from models/wiki.es.vec
+2023-08-24 17:43:23,111-etl_extract.py-INFO-KeyedVectors lifecycle event {'msg': 'loaded (200000, 300) matrix of type float32 from models/wiki.es.vec', 'binary': False, 'encoding': 'utf8', 'datetime': '2023-08-24T17:43:23.091988', 'gensim': '4.3.1', 'python': '3.9.13 (main, Aug 25 2022, 23:26:10) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-79-generic-x86_64-with-glibc2.35', 'event': 'load_word2vec_format'}
+2023-08-24 17:43:33,459-etl_extract.py-ERROR-An error occurred while generating dataframes
+Traceback (most recent call last):
+  File "/home/sebacastillo/willow/etl_extract.py", line 220, in main
+    news_topic_related.with_columns(
+  File "/home/sebacastillo/.willow/lib/python3.9/site-packages/polars/dataframe/frame.py", line 7490, in with_columns
+    self.lazy()
+  File "/home/sebacastillo/.willow/lib/python3.9/site-packages/polars/utils/deprecation.py", line 93, in wrapper
+    return function(*args, **kwargs)
+  File "/home/sebacastillo/.willow/lib/python3.9/site-packages/polars/lazyframe/frame.py", line 1600, in collect
+    return wrap_df(ldf.collect())
+exceptions.SchemaError: invalid series dtype: expected `Utf8`, got `f32`
+2023-08-24 17:43:38,445-etl_extract.py-CRITICAL-[REQUEST FAILED] ('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))
+2023-08-24 17:43:40,278-etl_extract.py-WARNING-Deleting category https://recetas.clarin.com from source https://www.clarin.com/ due to download error
+2023-08-24 17:43:47,669-etl_extract.py-CRITICAL-[REQUEST FAILED] HTTPSConnectionPool(host='mediakit.diarionorte.com', port=443): Max retries exceeded with url: / (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7f610df67220>: Failed to establish a new connection: [Errno -2] Name or service not known'))
+2023-08-24 17:43:54,628-etl_extract.py-CRITICAL-[REQUEST FAILED] HTTPSConnectionPool(host='pagos.diarionorte.com', port=443): Max retries exceeded with url: / (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x7f610df548e0>, 'Connection to pagos.diarionorte.com timed out. (connect timeout=7)'))
+2023-08-24 17:43:54,630-etl_extract.py-WARNING-Deleting category https://pagos.diarionorte.com from source https://www.diarionorte.com/ due to download error
+2023-08-24 17:43:54,630-etl_extract.py-WARNING-Deleting category https://mediakit.diarionorte.com from source https://www.diarionorte.com/ due to download error
+2023-08-24 17:44:04,207-etl_extract.py-CRITICAL-[REQUEST FAILED] 404 Client Error: Not Found for url: http://pxb.cdn.elchubut.com.ar/
+2023-08-24 17:44:07,905-etl_extract.py-WARNING-fromstring() returned an invalid string: ...
+2023-08-24 17:44:07,906-etl_extract.py-WARNING-Source https://www.cronica.com.ar/ parse error.
+2023-08-24 17:44:07,906-etl_extract.py-CRITICAL-Must extract urls from either html, text or doc!
+2023-08-24 17:44:10,249-etl_extract.py-CRITICAL-[REQUEST FAILED] 403 Client Error: Forbidden for url: https://www.cronica.com.ar/
+2023-08-24 17:44:11,291-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.lavoz.com.ar/tendencias/
+2023-08-24 17:44:11,292-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.lavoz.com.ar/vos/
+2023-08-24 17:44:11,422-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.lavoz.com.ar/servicios/
+2023-08-24 17:44:11,443-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.lavoz.com.ar/opinion/
+2023-08-24 17:44:11,525-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.lavoz.com.ar/politica
+2023-08-24 17:44:11,554-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.lavoz.com.ar/deportes
+2023-08-24 17:44:11,632-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.lavoz.com.ar/sucesos
+2023-08-24 17:44:11,635-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.lavoz.com.ar/numero-cero
+2023-08-24 17:44:11,659-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.lavoz.com.ar/lo-ultimo
+2023-08-24 17:44:11,800-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.lavoz.com.ar/negocios
+2023-08-24 17:44:11,989-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.lavoz.com.ar/
+2023-08-24 17:44:12,271-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.lavoz.com.ar/ciudadanos
+2023-08-24 17:44:12,382-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.lavoz.com.ar/quienes-somos
+2023-08-24 17:44:12,405-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.lavoz.com.ar/galerias
+2023-08-24 17:44:12,632-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.lavoz.com.ar/videos/
+2023-08-24 17:44:12,792-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.lavoz.com.ar/especiales/
+2023-08-24 17:44:12,899-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.lavoz.com.ar/agro/
+2023-08-24 17:44:13,052-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.lavoz.com.ar:443/
+2023-08-24 17:44:23,597-etl_extract.py-WARNING-Certificate did not match expected hostname: www.goyaennoticias.com.ar. Certificate: {'subject': ((('commonName', 'goyaennoticias.com.ar'),),), 'issuer': ((('countryName', 'US'),), (('organizationName', "Let's Encrypt"),), (('commonName', 'R3'),)), 'version': 3, 'serialNumber': '0363F38CB9A82366F330C6AD5268821D5CBD', 'notBefore': 'Aug 20 16:51:28 2023 GMT', 'notAfter': 'Nov 18 16:51:27 2023 GMT', 'subjectAltName': (('DNS', 'goyaennoticias.com.ar'),), 'OCSP': ('http://r3.o.lencr.org',), 'caIssuers': ('http://r3.i.lencr.org/',)}
+2023-08-24 17:44:23,607-etl_extract.py-WARNING-fromstring() returned an invalid string: ...
+2023-08-24 17:44:23,608-etl_extract.py-WARNING-Source https://www.goyaennoticias.com.ar/ parse error.
+2023-08-24 17:44:23,608-etl_extract.py-CRITICAL-Must extract urls from either html, text or doc!
+2023-08-24 17:44:23,871-etl_extract.py-WARNING-Certificate did not match expected hostname: www.goyaennoticias.com.ar. Certificate: {'subject': ((('commonName', 'goyaennoticias.com.ar'),),), 'issuer': ((('countryName', 'US'),), (('organizationName', "Let's Encrypt"),), (('commonName', 'R3'),)), 'version': 3, 'serialNumber': '0363F38CB9A82366F330C6AD5268821D5CBD', 'notBefore': 'Aug 20 16:51:28 2023 GMT', 'notAfter': 'Nov 18 16:51:27 2023 GMT', 'subjectAltName': (('DNS', 'goyaennoticias.com.ar'),), 'OCSP': ('http://r3.o.lencr.org',), 'caIssuers': ('http://r3.i.lencr.org/',)}
+2023-08-24 17:44:23,872-etl_extract.py-CRITICAL-[REQUEST FAILED] HTTPSConnectionPool(host='www.goyaennoticias.com.ar', port=443): Max retries exceeded with url: / (Caused by SSLError(CertificateError("hostname 'www.goyaennoticias.com.ar' doesn't match 'goyaennoticias.com.ar'")))
+2023-08-24 17:44:23,875-etl_extract.py-WARNING-Deleting category https://www.goyaennoticias.com.ar/ from source https://www.goyaennoticias.com.ar/ due to download error
+2023-08-24 17:44:25,808-etl_extract.py-CRITICAL-[REQUEST FAILED] 404 Client Error: Not Found for url: https://servicios.elcomercial.com.ar/
+2023-08-24 17:44:49,339-etl_extract.py-WARNING-fromstring() returned an invalid string: ...
+2023-08-24 17:44:49,339-etl_extract.py-WARNING-Source https://elindependiente.com.ar/secciones/chilecito/ parse error.
+2023-08-24 17:44:49,340-etl_extract.py-CRITICAL-Must extract urls from either html, text or doc!
+2023-08-24 17:44:49,830-etl_extract.py-CRITICAL-[REQUEST FAILED] 404 Client Error: Not Found for url: https://elindependiente.com.ar/secciones/chilecito/
+2023-08-24 17:44:50,192-etl_extract.py-WARNING-fromstring() returned an invalid string: ...
+2023-08-24 17:44:50,192-etl_extract.py-WARNING-Source https://www.losandes.com.ar/ parse error.
+2023-08-24 17:44:50,192-etl_extract.py-CRITICAL-Must extract urls from either html, text or doc!
+2023-08-24 17:44:50,344-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.losandes.com.ar/
+2023-08-24 17:45:28,483-etl_extract.py-CRITICAL-[REQUEST FAILED] 404 Client Error: Not Found for url: https://www.minutoneuquen.com/archivo
+2023-08-24 17:45:35,702-etl_extract.py-CRITICAL-[REQUEST FAILED] HTTPSConnectionPool(host='front.elcordillerano.com.ar', port=443): Max retries exceeded with url: / (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7f610345c040>: Failed to establish a new connection: [Errno -2] Name or service not known'))
+2023-08-24 17:45:36,635-etl_extract.py-WARNING-Deleting category https://front.elcordillerano.com.ar from source https://www.elcordillerano.com.ar/ due to download error
+2023-08-24 17:46:03,209-etl_extract.py-WARNING-fromstring() returned an invalid string: ...
+2023-08-24 17:46:03,209-etl_extract.py-WARNING-Source http://www.diarioeloranense.com.ar/ parse error.
+2023-08-24 17:46:03,209-etl_extract.py-CRITICAL-Must extract urls from either html, text or doc!
+2023-08-24 17:47:43,857-etl_extract.py-CRITICAL-[REQUEST FAILED] 404 Client Error: Not Found for url: https://pxb.cdn.eldiariodelarepublica.com/
+2023-08-24 17:48:36,756-etl_extract.py-CRITICAL-[REQUEST FAILED] 403 Client Error: Forbidden for url: https://soporte.lagaceta.com.ar/hc/es
+2023-08-24 17:48:44,172-etl_extract.py-WARNING-fromstring() returned an invalid string: ...
+2023-08-24 17:48:44,172-etl_extract.py-WARNING-Source https://www.tucumanoticias.com.ar/ parse error.
+2023-08-24 17:48:44,173-etl_extract.py-CRITICAL-Must extract urls from either html, text or doc!
+2023-08-24 17:48:56,982-etl_extract.py-WARNING-fromstring() returned an invalid string: ...
+2023-08-24 17:48:56,982-etl_extract.py-WARNING-Source https://www.lanacion.com.ar/ parse error.
+2023-08-24 17:48:56,983-etl_extract.py-CRITICAL-Must extract urls from either html, text or doc!
+2023-08-24 17:48:57,613-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.lanacion.com.ar/
+2023-08-24 17:49:13,050-etl_extract.py-CRITICAL-[REQUEST FAILED] 404 Client Error: Not Found for url: https://www.diariopopular.com.ar/%7B%5B%20link%20%5D%7D
+2023-08-24 17:49:13,421-etl_extract.py-WARNING-fromstring() returned an invalid string: ...
+2023-08-24 17:49:13,422-etl_extract.py-WARNING-Source https://www.lavoz.com.ar/ parse error.
+2023-08-24 17:49:13,574-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.lavoz.com.ar/vos
+2023-08-24 17:49:13,581-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.lavoz.com.ar/servicios
+2023-08-24 17:49:13,583-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.lavoz.com.ar/tendencias
+2023-08-24 17:49:13,586-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.lavoz.com.ar/mundo
+2023-08-24 17:49:13,592-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.lavoz.com.ar/arquitectura
+2023-08-24 17:49:13,602-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.lavoz.com.ar/
+2023-08-24 17:49:13,604-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.lavoz.com.ar/tecnologia
+2023-08-24 17:49:13,605-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.lavoz.com.ar/
+2023-08-24 17:49:13,688-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.lavoz.com.ar/opinion
+2023-08-24 17:49:13,694-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.lavoz.com.ar/salud
+2023-08-24 17:49:13,695-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.lavoz.com.ar/viral
+2023-08-24 17:49:13,699-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.lavoz.com.ar/sucesos
+2023-08-24 17:49:13,714-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.lavoz.com.ar/politica
+2023-08-24 17:49:13,717-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.lavoz.com.ar/numero-cero
+2023-08-24 17:49:13,725-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.lavoz.com.ar/deportes
+2023-08-24 17:49:13,806-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.lavoz.com.ar/lo-ultimo
+2023-08-24 17:49:13,820-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.lavoz.com.ar/negocios
+2023-08-24 17:49:13,835-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.lavoz.com.ar/clima
+2023-08-24 17:49:13,837-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.lavoz.com.ar/videos
+2023-08-24 17:49:13,918-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.lavoz.com.ar/especiales
+2023-08-24 17:49:13,930-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.lavoz.com.ar/ciudadanos
+2023-08-24 17:49:13,933-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.lavoz.com.ar/agro
+2023-08-24 17:49:13,956-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.lavoz.com.ar/quienes-somos
+2023-08-24 17:49:13,974-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.lavoz.com.ar/
+2023-08-24 17:49:14,028-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.lavoz.com.ar/galerias
+2023-08-24 17:49:14,640-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.lavoz.com.ar:443/
+2023-08-24 17:49:16,735-etl_extract.py-CRITICAL-[REQUEST FAILED] 403 Client Error: Forbidden for url: https://soporte.lagaceta.com.ar/hc/es
+2023-08-24 17:49:17,541-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.lavoz.com.ar/
+2023-08-24 17:49:17,542-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.lavoz.com.ar/tecnologia
+2023-08-24 17:49:17,547-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.lavoz.com.ar/vos
+2023-08-24 17:49:17,552-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.lavoz.com.ar/tendencias
+2023-08-24 17:49:17,571-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.lavoz.com.ar/servicios
+2023-08-24 17:49:17,572-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.lavoz.com.ar/mundo
+2023-08-24 17:49:17,661-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.lavoz.com.ar/viral
+2023-08-24 17:49:17,665-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.lavoz.com.ar/salud
+2023-08-24 17:49:17,674-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.lavoz.com.ar/sucesos
+2023-08-24 17:49:17,760-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.lavoz.com.ar/deportes
+2023-08-24 17:49:17,928-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.lavoz.com.ar/negocios
+2023-08-24 17:49:18,046-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.lavoz.com.ar/clima
+2023-08-24 17:49:18,056-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.lavoz.com.ar/
+2023-08-24 17:49:18,059-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.lavoz.com.ar/videos
+2023-08-24 17:49:18,166-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.lavoz.com.ar/especiales
+2023-08-24 17:49:18,193-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.lavoz.com.ar/agro
+2023-08-24 17:49:18,201-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.lavoz.com.ar/quienes-somos
+2023-08-24 17:49:18,202-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.lavoz.com.ar/ciudadanos
+2023-08-24 17:49:18,256-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.lavoz.com.ar/numero-cero/
+2023-08-24 17:49:18,273-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.lavoz.com.ar/galerias
+2023-08-24 17:49:18,334-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.lavoz.com.ar/lo-ultimo/
+2023-08-24 17:49:18,922-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.lavoz.com.ar:443/
+2023-08-24 17:49:22,109-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://viapais.com.ar/cordoba/
+2023-08-24 17:49:22,556-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://viapais.com.ar/cordoba/
+2023-08-24 17:49:22,638-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://viapais.com.ar/cordoba/
+2023-08-24 17:49:22,730-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://viapais.com.ar/cordoba/
+2023-08-24 17:49:22,732-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://viapais.com.ar/cordoba/
+2023-08-24 17:49:22,751-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://viapais.com.ar/cordoba/
+2023-08-24 17:49:22,760-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://viapais.com.ar/cordoba/
+2023-08-24 17:49:22,922-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://viapais.com.ar/cordoba/
+2023-08-24 17:49:23,012-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://viapais.com.ar/cordoba/
+2023-08-24 17:49:23,124-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://viapais.com.ar/cordoba/
+2023-08-24 17:49:23,267-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://viapais.com.ar/cordoba/
+2023-08-24 17:49:23,276-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://viapais.com.ar/cordoba/
+2023-08-24 17:49:23,289-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://viapais.com.ar/cordoba/
+2023-08-24 17:49:23,295-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://viapais.com.ar/cordoba/
+2023-08-24 17:49:23,303-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://viapais.com.ar/cordoba/
+2023-08-24 17:49:23,318-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://viapais.com.ar/cordoba/
+2023-08-24 17:49:23,541-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://viapais.com.ar/cordoba/
+2023-08-24 17:49:23,557-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://viapais.com.ar/cordoba/
+2023-08-24 17:49:23,627-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://viapais.com.ar/cordoba/
+2023-08-24 17:49:23,722-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://viapais.com.ar/cordoba/
+2023-08-24 17:49:23,969-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://viapais.com.ar/cordoba/
+2023-08-24 17:49:23,970-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://viapais.com.ar/cordoba/
+2023-08-24 17:49:23,971-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://viapais.com.ar/cordoba/
+2023-08-24 17:49:23,971-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://viapais.com.ar/cordoba/
+2023-08-24 17:49:23,972-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://viapais.com.ar/cordoba/
+2023-08-24 17:49:23,974-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://viapais.com.ar/cordoba/
+2023-08-24 17:49:24,156-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://viapais.com.ar/cordoba/
+2023-08-24 17:49:24,172-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://viapais.com.ar/cordoba/
+2023-08-24 17:49:24,300-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://viapais.com.ar/cordoba/
+2023-08-24 17:49:24,325-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://viapais.com.ar/cordoba/
+2023-08-24 17:49:24,651-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://viapais.com.ar/cordoba/
+2023-08-24 17:49:24,684-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://viapais.com.ar/cordoba/
+2023-08-24 17:49:24,737-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://viapais.com.ar/cordoba/
+2023-08-24 17:49:24,739-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://viapais.com.ar/cordoba/
+2023-08-24 17:49:24,741-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://viapais.com.ar/cordoba/
+2023-08-24 17:49:24,759-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://viapais.com.ar/cordoba/
+2023-08-24 17:49:24,832-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://viapais.com.ar/cordoba/
+2023-08-24 17:49:24,859-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://viapais.com.ar/cordoba/
+2023-08-24 17:49:24,900-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://viapais.com.ar/cordoba/
+2023-08-24 17:49:24,927-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://viapais.com.ar/cordoba/
+2023-08-24 17:49:25,263-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://viapais.com.ar/cordoba/
+2023-08-24 17:49:25,267-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://viapais.com.ar/cordoba/
+2023-08-24 17:49:25,308-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://viapais.com.ar/cordoba/
+2023-08-24 17:49:25,313-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://viapais.com.ar/cordoba/
+2023-08-24 17:49:25,320-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://viapais.com.ar/cordoba/
+2023-08-24 17:49:25,324-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://viapais.com.ar/cordoba/
+2023-08-24 17:49:25,448-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://viapais.com.ar/cordoba/
+2023-08-24 17:49:25,454-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://viapais.com.ar/cordoba/
+2023-08-24 17:49:25,491-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://viapais.com.ar/cordoba/
+2023-08-24 17:49:25,493-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://viapais.com.ar/cordoba/
+2023-08-24 17:49:25,867-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://viapais.com.ar/cordoba/
+2023-08-24 17:49:28,105-etl_extract.py-CRITICAL-[REQUEST FAILED] 403 Client Error: Forbidden for url: https://www.eldiariodecarlospaz.com.ar/tiempo
+2023-08-24 17:49:28,743-etl_extract.py-CRITICAL-[REQUEST FAILED] 404 Client Error: Not Found for url: https://www.eldiariodecarlospaz.com.ar/archivo
+2023-08-24 17:49:46,847-etl_extract.py-WARNING-fromstring() returned an invalid string: ...
+2023-08-24 17:49:46,847-etl_extract.py-WARNING-Source https://www.losandes.com.ar/ parse error.
+2023-08-24 17:49:47,071-etl_extract.py-CRITICAL-[REQUEST FAILED] 429 Client Error: Too Many Requests for url: https://www.losandes.com.ar/
+2023-08-24 17:49:52,115-etl_extract.py-CRITICAL-[REQUEST FAILED] 403 Client Error: Forbidden for url: https://soporte.lagaceta.com.ar/hc/es
+2023-08-24 17:50:13,508-etl_extract.py-CRITICAL-[REQUEST FAILED] HTTPSConnectionPool(host='mediakit.diarionorte.com', port=443): Max retries exceeded with url: / (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7f610dac1bb0>: Failed to establish a new connection: [Errno -2] Name or service not known'))
+2023-08-24 17:50:20,780-etl_extract.py-CRITICAL-[REQUEST FAILED] HTTPSConnectionPool(host='pagos.diarionorte.com', port=443): Max retries exceeded with url: / (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x7f610dab3100>, 'Connection to pagos.diarionorte.com timed out. (connect timeout=7)'))
+2023-08-24 17:50:20,782-etl_extract.py-WARNING-Deleting category https://pagos.diarionorte.com from source https://www.diarionorte.com/ due to download error
+2023-08-24 17:50:20,782-etl_extract.py-WARNING-Deleting category https://mediakit.diarionorte.com from source https://www.diarionorte.com/ due to download error
+2023-08-24 17:50:56,485-etl_extract.py-INFO--START:2023-08-24 17:42:56 - END:2023-08-24 17:50:56
+2023-08-24 21:07:43,289-etl_transform.py-INFO-loading projection weights from models/wiki.es.vec
+2023-08-24 21:08:10,564-etl_transform.py-INFO-KeyedVectors lifecycle event {'msg': 'loaded (200000, 300) matrix of type float32 from models/wiki.es.vec', 'binary': False, 'encoding': 'utf8', 'datetime': '2023-08-24T21:08:10.526210', 'gensim': '4.3.1', 'python': '3.9.13 (main, Aug 25 2022, 23:26:10) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-79-generic-x86_64-with-glibc2.35', 'event': 'load_word2vec_format'}
+2023-08-24 21:22:17,965-etl_transform.py-INFO-Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2023-08-24 21:22:20,537-etl_transform.py-INFO-Use pytorch device: cpu
+2023-08-24 21:24:58,812-etl_transform.py-INFO-Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2023-08-24 21:24:59,043-etl_transform.py-INFO-Use pytorch device: cpu
+2023-08-24 21:24:59,170-etl_transform.py-INFO-Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2023-08-24 21:24:59,390-etl_transform.py-INFO-Use pytorch device: cpu
+2023-08-24 21:24:59,427-etl_transform.py-INFO-Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2023-08-24 21:24:59,640-etl_transform.py-INFO-Use pytorch device: cpu
+2023-08-24 21:24:59,684-etl_transform.py-INFO-Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2023-08-24 21:24:59,893-etl_transform.py-INFO-Use pytorch device: cpu
+2023-08-24 21:24:59,931-etl_transform.py-INFO-Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2023-08-24 21:25:00,140-etl_transform.py-INFO-Use pytorch device: cpu
+2023-08-24 21:25:00,180-etl_transform.py-INFO-Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2023-08-24 21:25:00,390-etl_transform.py-INFO-Use pytorch device: cpu
+2023-08-24 21:25:00,428-etl_transform.py-INFO-Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2023-08-24 21:25:00,633-etl_transform.py-INFO-Use pytorch device: cpu
+2023-08-24 21:25:00,676-etl_transform.py-INFO-Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2023-08-24 21:25:00,883-etl_transform.py-INFO-Use pytorch device: cpu
+2023-08-24 21:25:00,916-etl_transform.py-INFO-Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2023-08-24 21:25:01,123-etl_transform.py-INFO-Use pytorch device: cpu
+2023-08-24 21:25:01,156-etl_transform.py-INFO-Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2023-08-24 21:25:01,375-etl_transform.py-INFO-Use pytorch device: cpu
+2023-08-24 21:25:01,423-etl_transform.py-INFO-Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2023-08-24 21:25:01,640-etl_transform.py-INFO-Use pytorch device: cpu
+2023-08-24 21:25:01,679-etl_transform.py-INFO-Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2023-08-24 21:25:01,893-etl_transform.py-INFO-Use pytorch device: cpu
+2023-08-24 21:25:01,933-etl_transform.py-INFO-Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2023-08-24 21:25:02,140-etl_transform.py-INFO-Use pytorch device: cpu
+2023-08-24 21:25:02,178-etl_transform.py-INFO-Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2023-08-24 21:25:02,387-etl_transform.py-INFO-Use pytorch device: cpu
+2023-08-24 21:25:02,422-etl_transform.py-INFO-Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2023-08-24 21:25:02,631-etl_transform.py-INFO-Use pytorch device: cpu
+2023-08-24 21:25:02,665-etl_transform.py-INFO-Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2023-08-24 21:25:02,874-etl_transform.py-INFO-Use pytorch device: cpu
+2023-08-24 21:25:02,908-etl_transform.py-INFO-Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2023-08-24 21:25:03,123-etl_transform.py-INFO-Use pytorch device: cpu
+2023-08-24 21:25:03,165-etl_transform.py-INFO-Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2023-08-24 21:25:03,374-etl_transform.py-INFO-Use pytorch device: cpu
+2023-08-24 21:25:03,412-etl_transform.py-INFO-Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2023-08-24 21:25:03,618-etl_transform.py-INFO-Use pytorch device: cpu
+2023-08-24 21:25:03,654-etl_transform.py-INFO-Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2023-08-24 21:25:03,859-etl_transform.py-INFO-Use pytorch device: cpu
+2023-08-24 21:25:03,895-etl_transform.py-INFO-Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2023-08-24 21:25:04,105-etl_transform.py-INFO-Use pytorch device: cpu
+2023-08-24 21:25:04,138-etl_transform.py-INFO-Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2023-08-24 21:25:04,347-etl_transform.py-INFO-Use pytorch device: cpu
+2023-08-24 21:25:04,387-etl_transform.py-INFO-Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2023-08-24 21:25:04,597-etl_transform.py-INFO-Use pytorch device: cpu
+2023-08-24 21:25:04,633-etl_transform.py-INFO-Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2023-08-24 21:25:04,843-etl_transform.py-INFO-Use pytorch device: cpu
+2023-08-24 21:25:04,875-etl_transform.py-INFO-Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2023-08-24 21:25:05,081-etl_transform.py-INFO-Use pytorch device: cpu
+2023-08-24 21:25:05,124-etl_transform.py-INFO-Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2023-08-24 21:25:05,333-etl_transform.py-INFO-Use pytorch device: cpu
+2023-08-24 21:25:05,378-etl_transform.py-INFO-Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2023-08-24 21:25:05,622-etl_transform.py-INFO-Use pytorch device: cpu
+2023-08-24 21:25:05,664-etl_transform.py-INFO-Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2023-08-24 21:25:05,873-etl_transform.py-INFO-Use pytorch device: cpu
+2023-08-24 21:25:05,912-etl_transform.py-INFO-Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2023-08-24 21:25:06,122-etl_transform.py-INFO-Use pytorch device: cpu
+2023-08-24 21:25:06,162-etl_transform.py-INFO-Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2023-08-24 21:25:06,383-etl_transform.py-INFO-Use pytorch device: cpu
+2023-08-24 21:25:06,419-etl_transform.py-INFO-Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2023-08-24 21:25:06,625-etl_transform.py-INFO-Use pytorch device: cpu
+2023-08-24 21:25:06,670-etl_transform.py-INFO-Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2023-08-24 21:25:06,882-etl_transform.py-INFO-Use pytorch device: cpu
+2023-08-24 21:25:06,928-etl_transform.py-INFO-Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2023-08-24 21:25:07,134-etl_transform.py-INFO-Use pytorch device: cpu
+2023-08-24 21:25:07,183-etl_transform.py-INFO-Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2023-08-24 21:25:07,390-etl_transform.py-INFO-Use pytorch device: cpu
+2023-08-24 21:25:07,427-etl_transform.py-INFO-Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2023-08-24 21:25:07,631-etl_transform.py-INFO-Use pytorch device: cpu
+2023-08-24 21:25:07,670-etl_transform.py-INFO-Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2023-08-24 21:25:07,883-etl_transform.py-INFO-Use pytorch device: cpu
+2023-08-24 21:25:07,917-etl_transform.py-INFO-Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2023-08-24 21:25:08,122-etl_transform.py-INFO-Use pytorch device: cpu
+2023-08-24 21:25:08,159-etl_transform.py-INFO-Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2023-08-24 21:25:08,370-etl_transform.py-INFO-Use pytorch device: cpu
+2023-08-24 21:25:08,405-etl_transform.py-INFO-Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2023-08-24 21:25:08,612-etl_transform.py-INFO-Use pytorch device: cpu
+2023-08-24 21:25:08,647-etl_transform.py-INFO-Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2023-08-24 21:25:08,856-etl_transform.py-INFO-Use pytorch device: cpu
+2023-08-24 21:25:08,891-etl_transform.py-INFO-Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2023-08-24 21:25:09,098-etl_transform.py-INFO-Use pytorch device: cpu
+2023-08-24 21:25:09,140-etl_transform.py-INFO-Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2023-08-24 21:25:09,349-etl_transform.py-INFO-Use pytorch device: cpu
+2023-08-24 21:25:09,387-etl_transform.py-INFO-Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2023-08-24 21:25:09,596-etl_transform.py-INFO-Use pytorch device: cpu
+2023-08-24 21:25:09,701-etl_transform.py-INFO--START:2023-08-24 21:07:43 - END:2023-08-24 21:25:09
