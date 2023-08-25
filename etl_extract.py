@@ -156,18 +156,26 @@ def main(
 
             # Go through each articles of the urls with double match (REGEX + SIMILARITY)
             for u, s in zip(urls_second_match, urls_second_match_score):
+
                 date, content, link, author, title, summary = download_and_parse_article(u)                            
 
-                dates.append(date)
-                contents.append(content)
-                links.append(link)
-                similarities.append(s)
-                authors.append(author)
-                titles.append(title)
-                sumaries.append(summary)
-                state_list.append(state)
-                cities_list.append(city)
-                time.sleep(int(sleep_time)) 
+                # Parse the date string to a datetime object
+                parsed_datetime = datetime.datetime.fromisoformat(str(date))
+                article_date_str = parsed_datetime.date().strftime('%Y-%m-%d')
+                current_date = datetime.datetime.now()
+                current_date_str = current_date.date().strftime('%Y-%m-%d')  
+
+                # Save articles only if date_article == today/script runs. Only articles from today.
+                if article_date_str == current_date_str:                    
+                    dates.append(date)
+                    contents.append(content)
+                    links.append(link)
+                    similarities.append(s)
+                    authors.append(author)
+                    titles.append(title)
+                    sumaries.append(summary)
+                    state_list.append(state)
+                    cities_list.append(city)                
             
             # Store results
             url_list.append(url)            
