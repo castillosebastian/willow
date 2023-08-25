@@ -5,6 +5,8 @@ import matplotlib.pyplot as plt
 import sys
 from IPython.display import Markdown
 from tabulate import tabulate
+import networkx as nx
+import matplotlib.pyplot as plt
 
 
 def consolidate_news(news):
@@ -17,16 +19,28 @@ def consolidate_news(news):
     return news
 
 def consolidate_ner(newsner):
-    try:        
+   
+    try:
+        # elimino signos de puntuación        
         newsner = (
             newsner.with_columns(
                 pl.col('word').str.replace_all(r'[^\w\s]', ' ').str.strip().alias('word')
             )
         )
+        # elimino blancos
         newsner = (
             newsner
             .filter((pl.col('word') != ''))                    
         )
+        # elimino new en blanco
+        #newsner = (
+        #    newsner
+        #    .filter(pl.col('word').str.lengths()>0)                    
+        #)
+        
+        # una entrada por artículo. Ojo me puedo estar quedando con score bajo en la entrada
+        newsner = newsner.unique(subset=['word', 'index'])
+
     except Exception as e:
         raise Exception(f"Error in consolidation step: {str(e)}")    
     return newsner
@@ -208,3 +222,81 @@ def table_ner(newsner):
     #newsner = newsner.drop(columns=['entity_group'])
     
     return newsner
+
+
+def ner_to_network(newsner):
+    try:
+        # Converting to pandas DataFrame
+        df = newsner.to_pandas()
+
+        # Selecting relevant columns and renaming
+        df = df[['word', 'index', 'entity_group']]
+        df.rename(columns={'index': 'article'}, inplace=True)
+
+        # Filtering based on entity group and non-numeric words
+        df = df[
+            (df['entity_group'] == 'PER') &
+            (~df['word'].str.isnumeric())
+        ]
+
+        # Filtering to retain values with two or more words (by counting spaces)
+        df = df[df['word'].str.count(' ') >= 1]  # 1 space means 2 words, First and Second name patern
+
+        # Grouping by 'word' and aggregating 'article' into a list
+        transformed_df = df.groupby('word')['article'].apply(list).reset_index(name='articles')
+        transformed_df['occurrences'] = transformed_df['articles'].apply(len)
+
+        return transformed_df
+
+    except Exception as e:
+        print(f"An error occurred: {str(e)}")
+        return None
+
+def draw_top_ner(df, top_n):
+    # Create a figure object
+    fig = plt.figure(figsize=(10, 15)) # You can adjust the width and height as needed
+
+    # Create a Graph
+    G = nx.Graph()
+
+    # Select the top N words based on article occurrences
+    top_words = df.nlargest(top_n, 'occurrences')
+
+    # Add nodes and edges for words and articles
+    for _, row in top_words.iterrows():
+        word_node = row['word']
+        G.add_node(word_node, type="word")
+        for article_index in row['articles']:
+            article_node = f"{article_index}"
+            G.add_node(article_node, type="article")
+            G.add_edge(word_node, article_node)
+
+    # Draw nodes and edges using a spring layout
+    pos = nx.spring_layout(G, k=0.3)
+
+    # Draw word nodes
+    word_nodes = [node for node in G.nodes if G.nodes[node]['type'] == 'word']
+    nx.draw_networkx_nodes(G, pos, nodelist=word_nodes, node_color='blue', node_size=500)
+
+    # Draw article nodes
+    article_nodes = [node for node in G.nodes if G.nodes[node]['type'] == 'article']
+    nx.draw_networkx_nodes(G, pos, nodelist=article_nodes, node_color='gray', node_size=200)
+
+    # Draw edges
+    nx.draw_networkx_edges(G, pos)
+
+    # Draw labels for words and articles
+    labels = {node: node for node in G.nodes}
+    nx.draw_networkx_labels(G, pos, labels=labels, font_size=12)
+
+    # Add legends for node types
+    plt.legend(handles=[plt.Line2D([0], [0], marker='o', color='w', markerfacecolor='blue', markersize=10, label='Entidades'),
+                        plt.Line2D([0], [0], marker='o', color='w', markerfacecolor='gray', markersize=10, label='Artículos')],
+               loc='best')
+
+    # Add a title
+    plt.title("Entidades más nombradas entre los artículos analizados")
+
+    # Return the figure object
+    return fig
+    

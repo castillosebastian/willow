@@ -10,7 +10,7 @@ author:
 email: castilloclaudiosebastian@gmail.com
 phone: (54) 9-11-26794601
 department: Consulting
-organization: Willow - Semantic Technologies
+organization: Willow - Semantic Technology
 number-sections: true
 fig-height: 5
 fig-width: 8
@@ -41,13 +41,13 @@ topic = "narcotráfico"
 ```
 
 ```{python}
+# Processing and consolidate news
 collection_news = get_collection(host='mongodb://localhost:27017/', db_name='wdocuments', collection_name='news')
 news = get_news(collection_news, start_date, end_date, topic, embed=False)
-
+news = consolidate_news(news) # es muy importate consolidar pues la base en los primeros días tuvo duplicados
+# Processing and consolidate ner
 collection_newsner = get_collection(host='mongodb://localhost:27017/', db_name='wdocuments', collection_name='newsner')
 newsner = get_ner_byindex(collection_newsner, news)
-# Processing
-news = consolidate_news(news)
 newsner = consolidate_ner(newsner)
 # Tabla de Estadística por Provincia
 newstat = get_news_stat(news, newsner)
@@ -71,12 +71,12 @@ sd = start_date
 ed = end_date
 display(Markdown(
 f"""
-En este documento presentamos un análisis de la cobertura realizada sobre el tema **{topic}** entre los días {sd} y {ed}.  Los medios incluidos en nuestra base de seguimiento incluyen portales de noticias de todas las provincias, dando cobertura nacional al estudio. Dicho listado se puede ampliar o reconfigurar a demanda según necesidades particulares de nuestros clientes. 
+En este documento presentamos un análisis de la cobertura realizada sobre el tema **{topic}** entre los días {sd} y {ed}.  Los medios incluidos en nuestra base de seguimiento incluyen portales de noticias de todas las provincias, dando cobertura nacional al estudio. Dicho listado se puede ampliar o reconfigurar a demanda según necesidades particulares. 
 """
 ))
 ```
 
-En lo que respecta a metodología empleamos *búsqueda semántica* y *algoritmos inteligentes* para el procesamiento de información. El resultado del documento debe brindar un conocimiento sistemático y actualizado del tópico en estudio bajo el **enfoque de los medios de comunicación**, con acceso a datos desagregados sobre eventos, personas, lugares y organizaciones asociadas al tema. En esta versión inicial de nuestro análisis nos concentramos en la presentación de los datos recuperados (ver: @tbl-news), dejando para solicitudes particulares estudios más avanzados sobre modelos, patrones y proyecciones. 
+En lo que respecta a metodología empleamos *búsqueda semántica* y *algoritmos inteligentes* para el procesamiento de información. El resultado del documento debe brindar un conocimiento sistemático y actualizado del tópico en estudio bajo el **enfoque de los medios de comunicación**, con acceso a datos desagregados sobre eventos, personas, lugares y organizaciones asociadas al tema. En esta versión inicial de nuestro análisis nos concentramos en la presentación de los datos recuperados (ver: @tbl-news), dejando para próximos estudios la construcción de *modelos predictivos* y *proyecciones*. 
 
 ```{python}
 #| label: graph-stat
@@ -176,14 +176,18 @@ Markdown(tabulate(
 ))
 ```
 
+\newpage
 
+# Gráficos
 
-```{python} 
-
+```{python}
+#| label: graph-net-per
+#| fig-cap: "Personas más nombradas"
+df = ner_to_network(newsner)
+fig = draw_top_ner(df, 20)
+plt.show(fig)
 ```
 
 
 
-
 <!-- In a famous paper, @BC64 introduced a family of transformations \dots -->
-<!-- : Manually changed {tbl-colwidths="[50,50]"} -->
