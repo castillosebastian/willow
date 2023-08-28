@@ -130,6 +130,17 @@ def table_news(news, type = 'abstract'):
 
     if type =='abstract':
         try:
+            
+            news = (
+                news.with_columns(
+                    pl.when(pl.col("state") == 'Jujuy')
+                    .then(pl.col('summary').str.slice(0,300))
+                    .otherwise(pl.col("summary_llm"))
+                    .alias("summary_llm"),
+                )
+            )
+            
+            
             table = (
                 news.with_columns(
                     pl.col("link").str.extract(r"www.(\w+)", 1).alias("portal"),

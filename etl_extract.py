@@ -157,7 +157,9 @@ def main(
             # Go through each articles of the urls with double match (REGEX + SIMILARITY)
             for u, s in zip(urls_second_match, urls_second_match_score):
 
-                date, content, link, author, title, summary = download_and_parse_article(u)                            
+                date, content, link, author, title, summary = download_and_parse_article(u)   
+
+                # add cleaning step for noisy data!                         
 
                 # Parse the date string to a datetime object
                 parsed_datetime = datetime.datetime.fromisoformat(str(date))

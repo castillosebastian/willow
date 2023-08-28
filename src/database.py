@@ -47,11 +47,11 @@ def get_news(collection, start_date, end_date, topic=None, embed=False):
     if topic:
         query = {
             "topic": {'$regex': topic, '$options': 'i'},
-            "date_extract": {'$gte': start_date, '$lt': end_date}
+            "date_extract": {'$gte': start_date, '$lte': end_date}
         }
     else: 
         query = {           
-            "date_extract": {'$gte': start_date, '$lt': end_date}
+            "date_extract": {'$gte': start_date, '$lte': end_date}
         }
 
     # Construct the projection to exclude '_id', and optionally 'embeddings'
