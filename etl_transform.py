@@ -39,6 +39,15 @@ def main(
                 # 1. Read the input DataFrame
                 df = load_file(file)
 
+                ## 1.1. Deduplicate articles against database by 'content_hash'
+                df = remove_duplicates(collection_news, df)
+
+                # Check if df has 0 rows. If it does, move the file and continue to the next iteration.
+                if df.shape[0] == 0:
+                    print(f"No new data in {file}, moving to archive.")
+                    move_to_archive(file)
+                    continue  # Skip the rest of the loop and go to the next file
+
                 # 2. Clean the DataFrame
                 df_clean = clean_dataframe(df, replace_white_lines=True)
 
@@ -60,6 +69,8 @@ def main(
                 print('Starting NER')
                 ner_function = lambda text: ner_on_large_document(text, model=ner_model) # Customize as needed
                 ner_news_df = calculate_ner(df_clean, max_index, ner_function)
+
+                #print(f'index: {max_index}'), print(f'df_clean: {df_clean.shape}'), print(f'ner: {ner_news_df.shape}')
 
                 # 5. Arrange both datasets and Save to DB
                 news_df, ner_df = arrange_datasets(max_index, df_clean, ner_news_df)

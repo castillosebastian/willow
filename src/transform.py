@@ -281,3 +281,42 @@ def process_documents(collection,  model):
                 collection.update_one(update_query, new_values)
     except Exception as e:
         print(f"An error occurred while processing documents: {e}")
+
+def remove_duplicates(collection, df):
+    try:
+        # Step 1: Get all elements of 'content_hash' field from the MongoDB collection
+        cursor = collection.find({}, {'content_hash': 1, '_id': 0})
+    except Exception as e:
+        print(f"Error fetching data from MongoDB: {e}")
+        return None
+    
+    try:
+        result = [doc['content_hash'] for doc in cursor]
+    except Exception as e:
+        print(f"Error processing MongoDB cursor: {e}")
+        return None
+    
+    try:
+        # Format the MongoDB data as a Polars DataFrame
+        df_mongo = pl.DataFrame({"content_hash": result})
+        df_mongo = df_mongo.with_columns(pl.col('content_hash').cast(pl.UInt64))
+    except Exception as e:
+        print(f"Error creating or transforming Polars DataFrame: {e}")
+        return None
+    
+    try:
+        # Step 2: Compare the 'content_hash' column in the DataFrame with the MongoDB 'content_hash' field
+        # Identify duplicates based on 'content_hash'
+        duplicates = df.join(df_mongo, on='content_hash', how='inner')
+    except Exception as e:
+        print(f"Error joining DataFrames: {e}")
+        return None
+    
+    try:
+        # Step 3: Remove duplicates from the original DataFrame
+        deduplicated_df = df.join(duplicates, on='content_hash', how='anti')
+    except Exception as e:
+        print(f"Error deduplicating DataFrame: {e}")
+        return None
+    
+    return deduplicated_df
