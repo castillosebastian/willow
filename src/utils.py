@@ -39,10 +39,11 @@ def load_keywords(topic="narcotráfico"):
     df = df.filter(pl.col("topic") == topic)
     return df["keywords"].to_list()
 
-def load_bd_source(topic="narcotráfico", state=None):
+def load_bd_source(topic=None, state=None):
     df = pl.read_csv("data/portals.csv")
     # Filter by topic
-    df = df.filter(pl.col("topic") == topic)
+    if topic is not None:
+        df = df.filter(pl.col("topic") == topic)
     # Filter by state if provided
     if state is not None:
         df = df.filter(df["state"] == state)    

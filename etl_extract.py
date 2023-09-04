@@ -260,8 +260,8 @@ if __name__ == "__main__":
     start_time = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
     log_messages = [f"-START:{start_time}"]
 
-    info_source_bd = load_bd_source(topic=topic)
-    #info_source_bd = load_bd_source(topic=topic, state = 'Buenos Aires')
+    #info_source_bd = load_bd_source(topic=topic)
+    info_source_bd = load_bd_source(state = 'CABA')
     
     stat_etl_topic_related, news_topic_related = main(info_source_bd=info_source_bd)
     
