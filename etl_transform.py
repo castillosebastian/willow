@@ -115,7 +115,8 @@ if __name__ == "__main__":
     log_messages = [f"-START:{start_time}"]
 
     # Define the model paths
-    summary_model_str = "IIC/mt5-spanish-mlsum"
+    #summary_model_str = "IIC/mt5-spanish-mlsum"
+    summary_model_str = "josmunpen/mt5-small-spanish-summarization"
     ner_model = "mrm8488/bert-spanish-cased-finetuned-ner"
     wordvector = load_embeddings(path="models/wiki.es.vec", limit=200000)
     keywords = load_keywords(topic='narcotráfico')   
